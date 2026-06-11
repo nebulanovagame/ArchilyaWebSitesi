@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useInView, useSpring } from 'framer-motion';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { logAnalyticsEvent } from '../firebase';
 
 function useCounter(target, duration = 2000, start = false) {
   const [count, setCount] = useState(0);
@@ -178,7 +179,7 @@ function CaseStudyCard({ cs, index, cardCount, scrollYProgress }) {
   return (
     <motion.div style={{ opacity: cardOpacity, width: '100vw', flexShrink: 0, height: '100%', position: 'relative' }} className="relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src={cs.image} alt={cs.title} className="w-full h-full object-cover" loading={index === 0 ? 'eager' : 'lazy'} />
+        <img src={cs.image} alt={cs.title} className="w-full h-full object-cover" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
       </div>
 
       <div className="absolute inset-0 bg-black/70" />
@@ -250,7 +251,7 @@ function CaseStudyCard({ cs, index, cardCount, scrollYProgress }) {
                 <p className={`text-3xl md:text-4xl font-serif italic mb-3 leading-tight ${accentColor}`}>{cs.result}</p>
                 <p className="text-gray-400 text-xs font-sans leading-relaxed mb-6">{cs.resultSub}</p>
 
-                <a href="#contact" className={`group/cta inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest ${accentColor} border-b pb-0.5 ${accentBorder} hover:gap-3 transition-all duration-300`}>
+                <a href="#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'portfolio_cta_1', location: 'Portfolio' })} className={`group/cta inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest ${accentColor} border-b pb-0.5 ${accentBorder} hover:gap-3 transition-all duration-300`}>
                   Siz de Başlayın
                   <ArrowUpRight className="w-3 h-3 group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5 transition-transform" />
                 </a>
@@ -277,7 +278,7 @@ export default function Portfolio() {
 
         <div className="container mx-auto px-6 py-24 relative z-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true, margin: '-60px' }} className="text-center mb-20">
-            <h3 className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Platform Kapsamı</h3>
+            <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Platform Kapsamı</p>
             <h2 className="text-5xl md:text-7xl font-serif text-white italic leading-tight mb-4">Sayılarla Archilya.</h2>
             <p className="text-gray-600 text-sm font-sans max-w-sm mx-auto leading-relaxed">AI üretim, interaktif sunum ve workspace katmanlarını tek premium mimari akışta toplar.</p>
           </motion.div>
@@ -324,7 +325,7 @@ export default function Portfolio() {
               </h3>
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
-              <a href="#contact" className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-bold text-[11px] uppercase tracking-widest hover:bg-white transition-colors duration-300 whitespace-nowrap">
+              <a href="#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'portfolio_cta_2', location: 'Portfolio' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-bold text-[11px] uppercase tracking-widest hover:bg-white transition-colors duration-300 whitespace-nowrap">
                 Ücretsiz Demo Talep Et
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>

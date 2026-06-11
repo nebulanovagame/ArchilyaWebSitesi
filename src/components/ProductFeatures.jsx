@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import {
   Link2, BarChart3, Sparkles, MonitorPlay, ShieldCheck, ArrowRight, CheckCircle2,
 } from 'lucide-react';
+import { logAnalyticsEvent } from '../firebase';
 
 const LAYERS = [
   {
@@ -34,7 +35,7 @@ const LAYERS = [
     label: 'Panel / Workspace',
     icon: BarChart3,
     slogan: ['Projeler, Ekip ve Krediler,', 'Tek Merkezde.'],
-    desc: 'Projeler, dosyalar, AI kredileri, abonelik ve ekip rolleriniz tek workspace\'te toplanır. Dağınık klasörler yerine güvenli, senkronize bir üretim hafızası.',
+    desc: 'Projeler, dosyalar, AI işlem hakları, abonelik ve ekip rolleriniz tek workspace\'te toplanır. Dağınık klasörler yerine güvenli, senkronize bir üretim hafızası.',
     badges: ['Proje ve Dosya Yönetimi', 'Kredi / Abonelik Takibi', 'Ekip Rolleri ve Marka Alanı'],
     accent: 'primary',
     image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=1600&q=80&auto=format&fit=crop',
@@ -113,7 +114,7 @@ function Layer({ layer }) {
   return (
     <section id={layer.id === 'ai-studio' ? 'ai-studio' : `feature-${layer.id}`} className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={layer.image} alt="" className="w-full h-full object-cover scale-105" loading="lazy" />
+        <img src={layer.image} alt="" className="w-full h-full object-cover scale-105" loading="lazy" decoding="async" />
       </div>
       <div className="absolute inset-0 bg-black/75" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80" />
@@ -164,9 +165,9 @@ function Layer({ layer }) {
               <div className={`w-9 h-9 rounded-sm border flex items-center justify-center shrink-0 ${A.icon}`}>
                 <Icon className="w-4 h-4" />
               </div>
-              <h3 className={`text-[10px] font-bold uppercase tracking-[0.35em] ${A.label}`}>
+              <p className={`text-[10px] font-bold uppercase tracking-[0.35em] ${A.label}`}>
                 {layer.label}
-              </h3>
+              </p>
             </div>
 
             <div className={`w-12 h-0.5 ${A.line} mb-8 rounded-full`} />
@@ -230,9 +231,9 @@ export default function ProductFeatures() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true, margin: '-80px' }}
           >
-            <h2 className="text-primary text-[10px] uppercase tracking-[0.4em] mb-5">
+            <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-5">
               Platform Yetenekleri
-            </h2>
+            </p>
             <h2 className="text-4xl md:text-6xl font-serif text-white italic mb-6 leading-tight">
               Mimari Ofisin<br />
               <span className="text-primary/80">Dijital İşletim Sistemi.</span>
@@ -275,9 +276,9 @@ export default function ProductFeatures() {
             <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">
               Tüm Yetenekler, Tek Platform
             </p>
-            <h3 className="text-4xl md:text-5xl font-serif text-white italic mb-5 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-serif text-white italic mb-5 leading-tight">
               Ofisinize Özel Bir<br />Demo Ayarlayalım.
-            </h3>
+            </h2>
             <p className="text-gray-500 text-sm font-sans mb-10 leading-relaxed max-w-lg mx-auto">
               Yıllık abonelik planlarımızla VR kurulum, eğitim ve entegrasyon desteği dahildir.
               Hangi pakette ne alacağınızı birlikte konuşalım.
@@ -293,6 +294,7 @@ export default function ProductFeatures() {
               </a>
               <a
                 href="#contact"
+                onClick={() => logAnalyticsEvent('cta_click', { label: 'features_contact', location: 'ProductFeatures' })}
                 className="group inline-flex items-center gap-3 px-8 py-4 border border-white/12 text-gray-400 hover:text-white hover:border-white/30 text-[11px] uppercase tracking-widest rounded-sm transition-all duration-300 whitespace-nowrap"
               >
                 Demo Talep Et

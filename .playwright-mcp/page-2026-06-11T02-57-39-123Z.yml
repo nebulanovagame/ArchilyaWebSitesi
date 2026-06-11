@@ -1,0 +1,51 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - heading "Archilya" [level=1] [ref=e6]
+      - paragraph [ref=e7]: Luxury
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - paragraph [ref=e11]: Ücretsiz Keşfetmeye Başlayın
+        - paragraph [ref=e12]: 150 işlem hakkı, 3 proje ve 5 GB depolama ile ücretsiz başlayın. Kredi kartı gerekmez.
+      - paragraph [ref=e13]: Giriş
+      - heading "Hesabınıza Giriş Yapın" [level=2] [ref=e14]
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - generic [ref=e17]: E-posta
+        - textbox "E-posta" [ref=e18]:
+          - /placeholder: ornek@email.com
+      - generic [ref=e19]:
+        - generic [ref=e20]: Şifre
+        - textbox "Şifre" [ref=e21]:
+          - /placeholder: ••••••••
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - checkbox "Beni hatırla" [ref=e24]
+          - generic [ref=e25]: Beni hatırla
+        - link "Şifremi unuttum" [ref=e26] [cursor=pointer]:
+          - /url: /sifre-sifirla
+      - button "Giriş Yap" [ref=e27]:
+        - img [ref=e28]
+        - text: Giriş Yap
+    - generic [ref=e31]:
+      - generic [ref=e36]: veya
+      - button "Google ile Giriş" [ref=e37]:
+        - img [ref=e38]
+        - text: Google ile Giriş
+    - paragraph [ref=e43]:
+      - text: Hesabınız yok mu?
+      - link "Ücretsiz Kayıt Ol" [ref=e44] [cursor=pointer]:
+        - /url: /kayit
+  - alert [ref=e45]
+  - generic [ref=e47]:
+    - paragraph [ref=e48]:
+      - text: Bu web sitesi, size daha iyi bir deneyim sunmak için çerezleri kullanır. Çerezleri kabul ederek
+      - link "Gizlilik Politikamızı" [ref=e49] [cursor=pointer]:
+        - /url: /gizlilik
+      - text: ve
+      - link "Kullanım Koşullarımızı" [ref=e50] [cursor=pointer]:
+        - /url: /sartlar
+      - text: onaylamış olursunuz.
+    - generic [ref=e51]:
+      - button "Kabul Et" [ref=e52]
+      - button "Reddet" [ref=e53]

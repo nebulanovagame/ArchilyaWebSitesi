@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Preloader from './components/Preloader';
 import CustomCursor from './components/CustomCursor';
 import ArchilyaAIAssistant from './components/ArchilyaAIAssistant';
+import { SEO_PAGES, setPageMeta } from './utils/seo';
 
 /* Lazy-loaded route’lar */
 const ComingSoon = lazy(() => import('./components/ComingSoon'));
@@ -18,7 +19,17 @@ const KVKK = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.KVK
 const KullanimKosullari = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.KullanimKosullari })));
 const IptalIade = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.IptalIade })));
 const MesafeliSatis = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.MesafeliSatis })));
+const CerezPolitikasi = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.CerezPolitikasi })));
+const TicariElektronikIletiOnayi = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.TicariElektronikIletiOnayi })));
+const GizlilikKosullari = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.GizlilikKosullari })));
 const Hakkimizda = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.Hakkimizda })));
+function PanelRedirect() {
+  useEffect(() => {
+    window.location.href = 'https://panel.archilya.com';
+  }, []);
+  return null;
+}
+
 const AiStudioLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.AiStudioLanding })));
 const VrSunumLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.VrSunumLanding })));
 const MimarlikOfisleriLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.MimarlikOfisleriLanding })));
@@ -53,6 +64,10 @@ function PageFallback() {
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setPageMeta(SEO_PAGES.HOME.title, SEO_PAGES.HOME.desc);
+  }, []);
 
   useEffect(() => {
     if (isLoading) {
@@ -105,6 +120,14 @@ function RouteAnalyticsTracker() {
 }
 
 function SiteNotFound() {
+  useEffect(() => {
+    setPageMeta(
+      'Sayfa Bulunamadı',
+      'Aradığınız Archilya sayfası bulunamadı. Ana sayfadan AI render, VR sunum ve fiyatlandırma bilgilerine ulaşabilirsiniz.',
+      { robots: 'noindex,follow' },
+    );
+  }, []);
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-background px-6 py-10 text-white">
       <div className="pointer-events-none absolute inset-0">
@@ -139,12 +162,12 @@ function SiteNotFound() {
           >
             Ana Sayfaya Dön
           </Link>
-          <Link
-            to="/panel"
+          <a
+            href="https://panel.archilya.com"
             className="inline-flex min-w-[220px] items-center justify-center rounded-sm border border-white/15 bg-white/[0.02] px-6 py-3 text-[10px] font-bold uppercase tracking-[0.28em] text-white transition-colors hover:border-primary/40 hover:text-primary"
           >
             Panel Girişine Git
-          </Link>
+          </a>
         </div>
       </motion.div>
     </div>
@@ -158,9 +181,7 @@ function App() {
       <CustomCursor />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/panel" element={
-          <Suspense fallback={<PageFallback />}><ComingSoon /></Suspense>
-        } />
+        <Route path="/panel" element={<PanelRedirect />} />
         <Route path="/ai-studio" element={
           <Suspense fallback={<PageFallback />}><AiStudioLanding /></Suspense>
         } />
@@ -205,6 +226,15 @@ function App() {
         } />
         <Route path="/mesafeli-satis" element={
           <Suspense fallback={<PageFallback />}><MesafeliSatis /></Suspense>
+        } />
+        <Route path="/cerez-politikasi" element={
+          <Suspense fallback={<PageFallback />}><CerezPolitikasi /></Suspense>
+        } />
+        <Route path="/ticari-elektronik-ileti-onayi" element={
+          <Suspense fallback={<PageFallback />}><TicariElektronikIletiOnayi /></Suspense>
+        } />
+        <Route path="/gizlilik-kosullari" element={
+          <Suspense fallback={<PageFallback />}><GizlilikKosullari /></Suspense>
         } />
         <Route path="/hakkimizda" element={
           <Suspense fallback={<PageFallback />}><Hakkimizda /></Suspense>

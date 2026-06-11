@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
+import { logAnalyticsEvent } from '../firebase';
 
 
 const containerVariants = {
@@ -26,7 +27,7 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
-          className="py-16 grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/5"
+          className="py-16 grid grid-cols-1 md:grid-cols-6 gap-12 border-b border-white/5"
         >
           <motion.div variants={itemVariants} className="md:col-span-2">
             <Link to="/" className="inline-flex flex-col mb-4">
@@ -74,7 +75,7 @@ export default function Footer() {
                 { label: 'Hakkımızda', to: '/hakkimizda' },
                 { label: 'Fiyatlandırma', href: '#pricing' },
                 { label: 'Entegrasyon', href: '#workflow' },
-                { label: 'İletişim', href: '#contact' },
+                { label: 'İletişim', href: '#contact', analyticsLabel: 'footer_iletisim' },
               ].map((item) => (
                 <li key={item.label}>
                   {item.to ? (
@@ -87,6 +88,7 @@ export default function Footer() {
                   ) : (
                     <a
                       href={item.href}
+                      onClick={item.analyticsLabel ? () => logAnalyticsEvent('cta_click', { label: item.analyticsLabel, location: 'Footer' }) : undefined}
                       className="text-xs font-sans text-gray-500 hover:text-primary transition-colors uppercase tracking-widest"
                     >
                       {item.label}
@@ -98,15 +100,58 @@ export default function Footer() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <p className="text-[10px] font-sans font-bold text-gray-500 uppercase tracking-[0.25em] mb-5">Hesap</p>
-            <ul className="space-y-3 mb-8">
+            <p className="text-[10px] font-sans font-bold text-gray-500 uppercase tracking-[0.25em] mb-5">Çözümler</p>
+            <ul className="space-y-3">
               {[
-                { label: 'Giriş Yap', to: '/panel' },
-                { label: 'Kayıt Ol', to: '/panel' },
+                { label: 'AI Studio', to: '/ai-studio' },
+                { label: 'VR Sunum', to: '/vr-sunum' },
+                { label: 'Mimarlık Ofisleri', to: '/mimarlik-ofisleri' },
+                { label: 'Emlak VR Sunum', to: '/emlak-vr-sunum' },
+                { label: 'Müteahhit Proje Sunumu', to: '/muteahhit-proje-sunumu' },
               ].map((item) => (
                 <li key={item.label}>
                   <Link
                     to={item.to}
+                    className="text-xs font-sans text-gray-500 hover:text-primary transition-colors uppercase tracking-widest"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <p className="text-[10px] font-sans font-bold text-gray-500 uppercase tracking-[0.25em] mb-5">Rehberler</p>
+            <ul className="space-y-3">
+              {[
+                { label: 'VR Sunum Satış', to: '/rehber/vr-sunum-satis' },
+                { label: 'AI Render Revizyon', to: '/rehber/ai-render-revizyon' },
+                { label: 'Emlak 360 VR', to: '/rehber/emlak-360-vr' },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link
+                    to={item.to}
+                    className="text-xs font-sans text-gray-500 hover:text-primary transition-colors uppercase tracking-widest"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          <motion.div variants={itemVariants}>
+            <p className="text-[10px] font-sans font-bold text-gray-500 uppercase tracking-[0.25em] mb-5">Hesap</p>
+            <ul className="space-y-3 mb-8">
+              {[
+                { label: 'Giriş Yap', to: '/panel', analyticsLabel: 'footer_giris' },
+                { label: 'Kayıt Ol', to: '/panel', analyticsLabel: 'footer_kayit' },
+              ].map((item) => (
+                <li key={item.label}>
+                  <Link
+                    to={item.to}
+                    onClick={() => logAnalyticsEvent('cta_click', { label: item.analyticsLabel, location: 'Footer' })}
                     className="text-xs font-sans text-gray-500 hover:text-primary transition-colors uppercase tracking-widest"
                   >
                     {item.label}
@@ -121,6 +166,9 @@ export default function Footer() {
                 { label: 'Gizlilik Politikası', to: '/gizlilik-politikasi' },
                 { label: 'KVKK', to: '/kvkk' },
                 { label: 'Kullanım Koşulları', to: '/kullanim-kosullari' },
+                { label: 'Çerez Politikası', to: '/cerez-politikasi' },
+                { label: 'Ticari Elektronik İleti Onayı', to: '/ticari-elektronik-ileti-onayi' },
+                { label: 'Gizlilik Koşulları', to: '/gizlilik-kosullari' },
                 { label: 'İptal ve İade', to: '/iptal-iade' },
                 { label: 'Mesafeli Satış Sözleşmesi', to: '/mesafeli-satis' },
               ].map((item) => (
@@ -138,14 +186,13 @@ export default function Footer() {
             <p className="text-[10px] font-sans font-bold text-gray-500 uppercase tracking-[0.25em] mb-4">Sosyal</p>
             <div className="flex gap-5">
               {['Instagram', 'LinkedIn', 'Vimeo'].map((social) => (
-                <a
+                <span
                   key={social}
-                  href="#"
                   data-cursor={social}
                   className="text-xs font-sans text-gray-500 hover:text-primary transition-colors uppercase tracking-widest"
                 >
                   {social}
-                </a>
+                </span>
               ))}
             </div>
           </motion.div>
@@ -180,7 +227,7 @@ export default function Footer() {
                 <span className="text-[11px] font-bold text-gray-400 tracking-widest">TROY</span>
               </div>
               <div className="bg-white/5 border border-white/8 rounded px-3 py-1.5 flex items-center justify-center">
-                <img src="/iyzico_logo_white.svg" alt="iyzico ile öde" className="h-4 object-contain" />
+                <img src="/iyzico_logo_white.svg" alt="iyzico ile öde" className="h-4 object-contain" loading="lazy" decoding="async" />
               </div>
               <div className="bg-white/5 border border-white/8 rounded px-3 py-1.5 flex items-center gap-1.5">
                 <svg className="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
@@ -207,6 +254,9 @@ export default function Footer() {
               { label: 'Gizlilik Politikası', to: '/gizlilik-politikasi' },
               { label: 'KVKK', to: '/kvkk' },
               { label: 'Kullanım Koşulları', to: '/kullanim-kosullari' },
+              { label: 'Çerez Politikası', to: '/cerez-politikasi' },
+              { label: 'Ticari Elektronik İleti Onayı', to: '/ticari-elektronik-ileti-onayi' },
+              { label: 'Gizlilik Koşulları', to: '/gizlilik-kosullari' },
               { label: 'İptal ve İade', to: '/iptal-iade' },
               { label: 'Mesafeli Satış', to: '/mesafeli-satis' },
             ].map((item) => (

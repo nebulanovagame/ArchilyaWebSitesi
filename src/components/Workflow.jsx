@@ -115,7 +115,7 @@ function StepCard({ step, index }) {
 function MediaCard({ step, mobile }) {
   return (
     <div className={clsx('relative rounded-sm overflow-hidden border border-white/8 group', mobile ? 'aspect-video' : 'aspect-[4/3]')}>
-      <img src={step.media} alt={step.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-all duration-700" />
+      <img src={step.media} alt={step.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-[1.03] transition-all duration-700" loading="lazy" decoding="async" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
       <div className="absolute top-0 left-0 w-5 h-5 border-t border-l border-primary/30" />
       <div className="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-primary/30" />

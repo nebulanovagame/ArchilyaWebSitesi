@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useRef } from 'react';
+import { logAnalyticsEvent } from '../firebase';
 
 const TRUST_BADGES = [
   'AI Studio',
@@ -30,6 +31,9 @@ export default function Hero() {
         <img
           src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
           alt="Archilya AI Studio ve VR sunum platformu mimari ofis görseli"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover"
         />
       </motion.div>
@@ -61,6 +65,7 @@ export default function Hero() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
             <a
               href="#contact"
+              onClick={() => logAnalyticsEvent('cta_click', { label: 'hero_contact', location: 'Hero' })}
               data-cursor="Demo İste"
               className="group inline-flex items-center gap-3 bg-primary text-black px-10 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all duration-300"
             >

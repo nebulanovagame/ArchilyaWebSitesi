@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, MonitorPlay, BarChart3, Building2, Home, Globe } from 'lucide-react';
 import { setPageMeta, SEO_PAGES } from '../utils/seo';
+import { logAnalyticsEvent } from '../firebase';
 
 /* ─── Base Layout ─────────────────────────────────────────── */
 
@@ -25,10 +26,10 @@ function PageShell({ children, id }) {
 function CTAButtons() {
   return (
     <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
-      <a href="#contact" className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all duration-300">
+      <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'landing_demo_talep', location: 'LandingPages' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all duration-300">
         Ücretsiz Demo Talep Et
         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-      </a>
+      </Link>
       <Link to="/" className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
         Ana Sayfaya Dön
       </Link>
@@ -144,13 +145,13 @@ export function MimarlikOfisleriLanding() {
           {[
             { icon: Sparkles, title: 'AI Üretim', desc: 'Render, revizyon, analiz ve plan boyama araçlarıyla üretim sürenizi kısaltın.' },
             { icon: Globe, title: 'Pixel Streaming & VR', desc: 'Projelerinizi web ve VR üzerinden müşteriye yaşanabilir deneyime dönüştürün.' },
-            { icon: BarChart3, title: 'Workspace', desc: 'Proje dosyaları, ekip rolleri, kredi ve abonelik yönetimi tek panelde.' },
+            { icon: BarChart3, title: 'Workspace', desc: 'Proje dosyaları, ekip rolleri, işlem hakkı ve abonelik yönetimi tek panelde.' },
           ].map((item) => {
             const Icon = item.icon;
             return (
               <div key={item.title} className="rounded-sm border border-white/[0.06] bg-white/[0.015] p-6 text-center hover:border-primary/20 transition-all">
                 <Icon className="w-8 h-8 text-primary mx-auto mb-4" />
-                <h3 className="text-white font-serif italic text-lg mb-2">{item.title}</h3>
+                <h2 className="text-white font-serif italic text-lg mb-2">{item.title}</h2>
                 <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
               </div>
             );
@@ -189,7 +190,7 @@ export function EmlakVrLanding() {
             { title: 'VR Modelleme — Emlak', desc: '2D plandan sıfırdan modelleyin, toplu daire tipleriyle satış ofisi kurun.' },
           ].map((item) => (
             <div key={item.title} className="rounded-sm border border-amber-400/10 bg-white/[0.015] p-6 text-left">
-              <h3 className="text-white font-serif italic text-lg mb-2">{item.title}</h3>
+              <h2 className="text-white font-serif italic text-lg mb-2">{item.title}</h2>
               <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
             </div>
           ))}
@@ -270,7 +271,7 @@ export function MuteahhitLanding() {
             return (
               <div key={item.title} className="rounded-sm border border-white/[0.06] bg-white/[0.015] p-6 text-center hover:border-primary/20 transition-all">
                 <Icon className="w-8 h-8 text-primary mx-auto mb-4" />
-                <h3 className="text-white font-serif italic text-lg mb-2">{item.title}</h3>
+                <h2 className="text-white font-serif italic text-lg mb-2">{item.title}</h2>
                 <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
               </div>
             );
@@ -295,7 +296,7 @@ export function FiyatlandirmaLanding() {
           Abonelik ve<br /><span className="text-primary/80">Premium Hizmet Planları.</span>
         </h1>
         <p className="text-gray-400 text-sm font-sans max-w-2xl mx-auto leading-relaxed mb-8">
-          AI Studio abonelikleri işlem kredisiyle çalışır; VR, modelleme ve emlak sunumları proje alanına göre özel tekliflenir.
+          AI Studio abonelikleri işlem hakkıyla çalışır. Aşağıdaki Mimari Üretim Paketleri ise mimarlık ofisimizin kendi el emeği ile hazırladığı profesyonel proje hizmetleridir ve abonelere %20 indirim uygulanır.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-10">

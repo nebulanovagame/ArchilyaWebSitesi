@@ -1,10 +1,16 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion as Motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import { setPageMeta } from '../utils/seo';
 
-const LEGAL_LAST_UPDATED = '17.04.2026';
+const LEGAL_LAST_UPDATED = '11 Haziran 2026';
 
 function LegalLayout({ title, children }) {
+  useEffect(() => {
+    setPageMeta(title, `Archilya ${title} sayfası.`);
+  }, [title]);
+
   return (
     <div className="min-h-screen bg-background text-white">
       <div className="container mx-auto px-6 py-16 max-w-3xl">
@@ -21,7 +27,7 @@ function LegalLayout({ title, children }) {
           <div className="mt-16 pt-8 border-t border-white/5 text-xs text-gray-700 font-sans">
             <p>NEBULA NOVA GAMES DIŞ TİCARET LİMİTED ŞİRKETİ</p>
             <p>Silahtar&#x131;ağa Mah. Üniversite 1. Sk. No:13/1 İç Kapı No:Z109, 59000 Çorlu / TEKİRDAĞ</p>
-            <p>Tel: 0 (282) 606 06 39 | E-posta: info@nebulanovagames.com</p>
+            <p>Tel: 0 (282) 606 06 39 | E-posta: info@nebulanovagames.com | MERSİS: 0630135919700001</p>
           </div>
         </Motion.div>
       </div>
@@ -60,6 +66,7 @@ export function Hakkimizda() {
           <li><strong>Adres:</strong> Silahtarağa Mah. Üniversite 1. Sk. No:13/1 İç Kapı No:Z109, 59000 Çorlu / TEKİRDAĞ</li>
           <li><strong>Telefon:</strong> 0 (282) 606 06 39</li>
           <li><strong>E-posta:</strong> info@nebulanovagames.com</li>
+          <li><strong>MERSİS No:</strong> 0630135919700001</li>
         </ul>
       </section>
     </LegalLayout>
@@ -102,7 +109,7 @@ export function GizlilikPolitikasi() {
 
       <section>
         <h2 className="text-white font-serif text-xl italic mb-3">4. Üçüncü Taraflarla Paylaşım</h2>
-        <p>Kişisel verileriniz; hizmet sağlayıcılar (Firebase/Google, Iyzico, Replicate, Hugging Face), yasal zorunluluk halinde yetkili kamu kuruluşları ile paylaşılabilir. Verileriniz üçüncü taraflara ticari amaçla satılmaz veya kiralanmaz.</p>
+        <p>Kişisel verileriniz; hizmet sağlayıcılar (Supabase, Iyzico, Google Gemini, OpenAI, Cloudflare R2, Sentry), yasal zorunluluk halinde yetkili kamu kuruluşları ile paylaşılabilir. Verileriniz üçüncü taraflara ticari amaçla satılmaz veya kiralanmaz.</p>
       </section>
 
       <section>
@@ -112,7 +119,7 @@ export function GizlilikPolitikasi() {
 
       <section>
         <h2 className="text-white font-serif text-xl italic mb-3">6. Veri Güvenliği</h2>
-        <p>Kişisel verileriniz 256-bit SSL şifrelemesi, Firebase güvenlik kuralları ve erişim kontrolleri ile korunmaktadır. Veri ihlali durumunda yasal süre içinde ilgili makamlar ve kullanıcılar bilgilendirilir.</p>
+        <p>Kişisel verileriniz 256-bit SSL şifrelemesi, Row-Level Security (RLS) politikaları ve sıkı erişim kontrolleri ile korunmaktadır. Veri ihlali durumunda yasal süre içinde ilgili makamlar ve kullanıcılar bilgilendirilir.</p>
       </section>
 
       <section>
@@ -155,7 +162,7 @@ export function KVKK() {
 
       <section>
         <h2 className="text-white font-serif text-xl italic mb-3">Aktarım</h2>
-        <p>Verileriniz; hizmet alınan yurt içi ve yurt dışı teknoloji sağlayıcıları (Google/Firebase, Iyzico, Replicate, Hugging Face) ile yasal zorunluluk halinde kamu kuruluşlarıyla paylaşılabilir.</p>
+        <p>Verileriniz; hizmet alınan yurt içi ve yurt dışı teknoloji sağlayıcıları (Supabase, Iyzico, Google Gemini, OpenAI, Cloudflare R2, Sentry) ile yasal zorunluluk halinde kamu kuruluşlarıyla paylaşılabilir.</p>
       </section>
 
       <section>
@@ -198,17 +205,28 @@ export function KullanimKosullari() {
       </section>
 
       <section>
-        <h2 className="text-white font-serif text-xl italic mb-3">4. Kredi ve Ödeme</h2>
+        <h2 className="text-white font-serif text-xl italic mb-3">4. AI Hizmetleri ve Çıktılar</h2>
+        <p>Platform, yapay zeka tabanlı mimari görsel üretimi, analiz ve düzenleme hizmetleri sunar. AI Hizmetlerinin kullanımı şu koşullara tabidir:</p>
         <ul className="list-disc list-inside space-y-1 mt-2 ml-2">
-          <li>Satın alınan krediler, aktif plan modeline göre bireysel hesaba veya workspace havuzuna tanımlanır; bu haklar kullanıcılar arasında keyfi olarak devredilemez.</li>
-          <li>Kullanılmış kredilerin iadesi yapılmaz; hiç kullanılmamış kredi ve paketlerde iade değerlendirmesi ilgili iade politikasına göre yapılır.</li>
-          <li>Plan ve kota ödemeleri satın alma akışında gösterilen bedel üzerinden tahsil edilir; aktifleşme ödeme doğrulamasından sonra hesabınıza tanımlanır.</li>
-          <li>Fiyatlar KDV hariç TL cinsinden belirtilmiştir.</li>
+          <li><strong className="text-gray-300">Çıktı Mülkiyeti:</strong> AI Hizmetleri sonucu oluşan çıktıların (render, analiz raporu, doku, video vb.) tüm fikri mülkiyet hakları size aittir.</li>
+          <li><strong className="text-gray-300">Girdi Sorumluluğu:</strong> Yüklediğiniz görsellerin size ait olduğunu veya kullanım hakkına sahip olduğunuzu taahhüt edersiniz.</li>
+          <li><strong className="text-gray-300">Yasaklı İçerik:</strong> Yasa dışı, müstehcen, nefret söylemi içeren veya üçüncü kişilerin haklarını ihlal eden görsellerin yüklenmesi ve işlenmesi yasaktır.</li>
+          <li><strong className="text-gray-300">AI Sınırlamaları:</strong> AI çıktıları olasılıksal modeller tarafından üretilir. Çıktıların mimari doğruluğu veya yapısal uygunluğu garanti edilmez.</li>
         </ul>
       </section>
 
       <section>
-        <h2 className="text-white font-serif text-xl italic mb-3">5. Kabul Edilemez Kullanım</h2>
+        <h2 className="text-white font-serif text-xl italic mb-3">5. Kredi ve Ödeme</h2>
+        <ul className="list-disc list-inside space-y-1 mt-2 ml-2">
+          <li>Satın alınan işlem hakları, aktif plan modeline göre bireysel hesaba veya workspace havuzuna tanımlanır; bu haklar kullanıcılar arasında keyfi olarak devredilemez.</li>
+          <li>Kullanılmış işlem haklarının iadesi yapılmaz; hiç kullanılmamış işlem hakları ve paketlerde iade değerlendirmesi ilgili iade politikasına göre yapılır.</li>
+          <li>Plan ve kota ödemeleri satın alma akışında gösterilen bedel üzerinden tahsil edilir; aktifleşme ödeme doğrulamasından sonra hesabınıza tanımlanır.</li>
+          <li>Fiyatlar KDV hariç TL cinsinden belirtilmiştir. KDV oranı %20 olarak uygulanır ve fatura kesilirken ayrıca tahsil edilir.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">6. Kabul Edilemez Kullanım</h2>
         <ul className="list-disc list-inside space-y-1 mt-2 ml-2">
           <li>Platformun güvenliğini tehdit eden eylemler</li>
           <li>Telif hakkı ihlali oluşturacak içerik yüklemek</li>
@@ -218,22 +236,22 @@ export function KullanimKosullari() {
       </section>
 
       <section>
-        <h2 className="text-white font-serif text-xl italic mb-3">6. Fikri Mülkiyet</h2>
+        <h2 className="text-white font-serif text-xl italic mb-3">7. Fikri Mülkiyet</h2>
         <p>Platform üzerinde ürettiğiniz görseller size aittir. Platformun tasarımı, kodu ve marka unsurları NEBULA NOVA GAMES DIŞ TİCARET LİMİTED ŞİRKETİ'ne aittir; izinsiz kopyalanamaz veya dağıtılamaz.</p>
       </section>
 
       <section>
-        <h2 className="text-white font-serif text-xl italic mb-3">7. Sorumluluğun Sınırlandırılması</h2>
+        <h2 className="text-white font-serif text-xl italic mb-3">8. Sorumluluğun Sınırlandırılması</h2>
         <p>Platform "olduğu gibi" sunulmaktadır. Hizmet kesintileri, veri kayıpları veya üçüncü taraf hizmetlerinden kaynaklanan sorunlar için azami sorumluluğumuz, son 3 ay içinde ödediğiniz ücretle sınırlıdır.</p>
       </section>
 
       <section>
-        <h2 className="text-white font-serif text-xl italic mb-3">8. Değişiklikler ve Fesih</h2>
+        <h2 className="text-white font-serif text-xl italic mb-3">9. Değişiklikler ve Fesih</h2>
         <p>Bu koşulları önceden bildirmeksizin değiştirme hakkımız saklıdır. Devam eden kullanım, güncel koşulların kabulü anlamına gelir. İhlal durumunda hesabınızı askıya alma veya sonlandırma hakkımız mevcuttur.</p>
       </section>
 
       <section>
-        <h2 className="text-white font-serif text-xl italic mb-3">9. Uygulanacak Hukuk</h2>
+        <h2 className="text-white font-serif text-xl italic mb-3">10. Uygulanacak Hukuk</h2>
         <p>Bu koşullar Türkiye Cumhuriyeti hukuku kapsamında yorumlanır. Uyuşmazlıklarda Tekirdağ Mahkemeleri yetkilidir.</p>
       </section>
     </LegalLayout>
@@ -250,8 +268,8 @@ export function IptalIade() {
         <p>6502 sayılı Tüketicinin Korunması Hakkında Kanun'un 49. maddesi uyarınca; dijital içerik ve hizmetlerde, tüketicinin onayı ile teslimat başladıktan sonra cayma hakkı kullanılamaz.</p>
         <p className="mt-2">Bu çerçevede:</p>
         <ul className="list-disc list-inside space-y-1 mt-2 ml-2">
-          <li><strong className="text-gray-300">AI Kredileri:</strong> Satın alınan ve kullanılmış krediler iade edilmez. Teknik hata nedeniyle harcanan krediler otomatik olarak iade edilir.</li>
-          <li><strong className="text-gray-300">Kullanılmamış Krediler:</strong> Satın alım tarihinden itibaren 14 gün içinde hiç kullanılmamış krediler için iade talep edilebilir.</li>
+          <li><strong className="text-gray-300">AI İşlem Hakları:</strong> Satın alınan ve kullanılmış işlem hakları iade edilmez. Teknik hata nedeniyle harcanan işlem hakları otomatik olarak iade edilir.</li>
+          <li><strong className="text-gray-300">Kullanılmamış İşlem Hakları:</strong> Satın alım tarihinden itibaren 14 gün içinde hiç kullanılmamış işlem hakları için iade talep edilebilir.</li>
         </ul>
       </section>
 
@@ -299,7 +317,7 @@ export function MesafeliSatis() {
             <p className="text-gray-300 font-bold mb-1">Satıcı:</p>
             <p>NEBULA NOVA GAMES DIŞ TİCARET LİMİTED ŞİRKETİ</p>
             <p>Silahtar&#x131;ağa Mah. Üniversite 1. Sk. No:13/1 İç Kapı No:Z109, 59000 Çorlu / TEKİRDAĞ</p>
-            <p>Tel: 0 (282) 606 06 39 | E-posta: info@nebulanovagames.com</p>
+            <p>Tel: 0 (282) 606 06 39 | E-posta: info@nebulanovagames.com | MERSİS: 0630135919700001</p>
           </div>
           <div>
             <p className="text-gray-300 font-bold mb-1">Alıcı (Tüketici):</p>
@@ -325,10 +343,10 @@ export function MesafeliSatis() {
             </thead>
             <tbody className="space-y-2">
               {[
-                ['Keşif Abonelik', 'Ücretsiz (5 GB Depolama, 3 Proje, 150 İşlem/ay)'],
-                ['Solo Abonelik', '₺699 / ay (30 GB Depolama, 15 Proje, 1.000 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
-                ['Pro Abonelik', '₺1.499 / ay (100 GB Depolama, 100 Proje, 2.200 İşlem/ay, 5 Kişilik Ekip) · Yıllık kurumsal teklif ayrıca sunulur'],
-                ['Studio Abonelik', '₺4.999 / ay (750 GB Depolama, Sınırsız Proje, 7.000 İşlem/ay, 20 Kişilik Ekip) · Yıllık kurumsal teklif ayrıca sunulur'],
+                ['Keşif Abonelik', 'Ücretsiz (150 İşlem/ay)'],
+                ['Solo Abonelik', '₺699 / ay (1.000 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
+                ['Pro Abonelik', '₺1.499 / ay (2.200 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
+                ['Studio Abonelik', '₺4.999 / ay (7.000 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
                 ['500 Ek İşlem — Akış Takviyesi', 'Abone: ₺350 · Standart: ₺450'],
                 ['1.500 Ek İşlem — Proje Hızı', 'Abone: ₺900 · Standart: ₺1.150'],
                 ['4.000 Ek İşlem — İhale Sprinti', 'Abone: ₺2.200 · Standart: ₺2.700'],
@@ -384,6 +402,96 @@ export function MesafeliSatis() {
       <section>
         <h2 className="text-white font-serif text-xl italic mb-3">Madde 8 — Yürürlük</h2>
         <p>İşbu sözleşme, Alıcı'nın ödeme işlemini tamamlaması ve "Ödemeyi Onayla" butonuna tıklaması ile elektronik ortamda kurulmuş ve yürürlüğe girmiş sayılır.</p>
+      </section>
+    </LegalLayout>
+  );
+}
+
+export function CerezPolitikasi() {
+  return (
+    <LegalLayout title="Çerez Politikası">
+      <p><strong className="text-gray-200">Son Güncelleme:</strong> {LEGAL_LAST_UPDATED}</p>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">1. Çerez Nedir?</h2>
+        <p>Çerezler, bir web sitesini ziyaret ettiğinizde tarayıcınıza kaydedilen küçük metin dosyalarıdır. siteyi daha verimli çalıştırmak ve kullanıcı deneyimini iyileştirmek için kullanılır.</p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">2. Kullandığımız Çerez Türleri</h2>
+        <ul className="list-disc list-inside space-y-1 mt-2 ml-2">
+          <li><strong className="text-gray-300">Zorunlu Çerezler:</strong> Oturum yönetimi ve güvenlik için gereklidir. Devre dışı bırakılamaz.</li>
+          <li><strong className="text-gray-300">Tercih Çerezleri:</strong> Dil ve çerez onayı gibi tercihlerinizi hatırlar.</li>
+          <li><strong className="text-gray-300">Analitik Çerezler:</strong> Hata izleme ve performans takibi için Sentry kullanılır.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">3. Çerez Yönetimi</h2>
+        <p>Tarayıcı ayarlarınızdan çerezleri yönetebilir, silebilir veya engelleyebilirsiniz. Zorunlu çerezlerin devre dışı bırakılması platformun bazı işlevlerini etkileyebilir.</p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">4. İletişim</h2>
+        <p>Çerez politikamız hakkında sorularınız için: <strong className="text-gray-300">info@nebulanovagames.com</strong></p>
+      </section>
+    </LegalLayout>
+  );
+}
+
+export function TicariElektronikIletiOnayi() {
+  return (
+    <LegalLayout title="Ticari Elektronik İleti Onayı">
+      <p><strong className="text-gray-200">Son Güncelleme:</strong> {LEGAL_LAST_UPDATED}</p>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">1. Onay Kapsamı</h2>
+        <p>6563 sayılı Elektronik Ticaretin Düzenlenmesi Hakkında Kanun uyarınca, tarafınıza ticari elektronik ileti gönderilebilmesi için açık rızanız gerekmektedir. Bu onayı vererek NEBULA NOVA GAMES DIŞ TİCARET LİMİTED ŞİRKETİ tarafından ticari elektronik ileti almayı kabul edersiniz.</p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">2. İleti İçerikleri</h2>
+        <ul className="list-disc list-inside space-y-1 mt-2 ml-2">
+          <li>Abonelik yenileme ve ödeme hatırlatmaları</li>
+          <li>Yeni özellik ve ürün duyuruları</li>
+          <li>Kampanya, indirim ve özel teklifler</li>
+          <li>Kullanıcı anketleri ve etkinlik davetleri</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">3. Onay Geri Çekme</h2>
+        <p>Onayınızı istediğiniz zaman e-posta altındaki "Abonelikten Ayrıl" bağlantısını kullanarak veya <strong className="text-gray-300">info@nebulanovagames.com</strong> adresine talep göndererek geri çekebilirsiniz.</p>
+      </section>
+    </LegalLayout>
+  );
+}
+
+export function GizlilikKosullari() {
+  return (
+    <LegalLayout title="Gizlilik Koşulları">
+      <p><strong className="text-gray-200">Son Güncelleme:</strong> {LEGAL_LAST_UPDATED}</p>
+      <p className="text-gray-500 text-sm">Bu sayfa, Gizlilik Politikamızın ayrılmaz bir parçasıdır.</p>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">1. Veri İşleme Koşulları</h2>
+        <p>Kişisel verileriniz, 6698 sayılı KVKK kapsamında, hukuka ve dürüstlük kurallarına uygun olarak, yalnızca belirtilen amaçlarla ve ölçülü bir şekilde işlenir.</p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">2. Veri Sahibinin Hakları</h2>
+        <ul className="list-disc list-inside space-y-1 mt-2 ml-2">
+          <li>Verilerinizin işlenip işlenmediğini öğrenme</li>
+          <li>İşlenmişse bilgi talep etme</li>
+          <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme</li>
+          <li>Kanun kapsamında silinmesini isteme</li>
+          <li>İşleme itiraz etme ve zararın giderilmesini talep etme</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">3. İletişim</h2>
+        <p>Talepleriniz için: <strong className="text-gray-300">info@nebulanovagames.com</strong></p>
       </section>
     </LegalLayout>
   );

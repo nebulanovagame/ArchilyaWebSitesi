@@ -172,6 +172,8 @@ function MediaBlock({ feature, accent }) {
       <img
         src={feature.media}
         alt={feature.mediaAlt}
+        loading="lazy"
+        decoding="async"
         className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-[1.02] transition-all duration-700"
       />
 
@@ -241,9 +243,9 @@ function FeatureBlock({ features, accent }) {
               </div>
               <div>
                 <p className={clsx('text-[9px] font-bold uppercase tracking-widest mb-1 opacity-80', A.tag)}>{f.tag}</p>
-                <h4 className={clsx('text-sm font-serif leading-snug transition-colors', active === i ? 'text-white' : 'text-gray-400 group-hover:text-gray-200')}>
+                <p className={clsx('text-sm font-serif leading-snug transition-colors', active === i ? 'text-white' : 'text-gray-400 group-hover:text-gray-200')}>
                   {f.title}
-                </h4>
+                </p>
               </div>
             </div>
             {active === i && (
@@ -318,7 +320,7 @@ export default function Features() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-center mb-20"
         >
-          <h3 className="text-primary text-xs uppercase tracking-[0.3em] mb-4">Ekosistem</h3>
+          <p className="text-primary text-xs uppercase tracking-[0.3em] mb-4">Ekosistem</p>
           <h2 className="text-3xl md:text-5xl font-serif text-white italic mb-4">Özellikler</h2>
           <p className="text-gray-500 text-sm font-sans max-w-xl mx-auto leading-relaxed">
             Archilya, mimari ofislere üç bütünleşik güç sunar: üretimi hızlandıran AI Studio,
@@ -372,7 +374,7 @@ export default function Features() {
                         {tool.label}
                       </p>
                       <p className="mt-1 text-[7px] text-gray-600 font-sans">
-                        {tool.active ? `${tool.credit} kredi` : '\u00A0'}
+                        {tool.active ? `${tool.credit} işlem hakkı` : '\u00A0'}
                       </p>
                     </div>
                   </div>
@@ -467,7 +469,7 @@ export default function Features() {
                       <Icon className="h-6 w-6" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-serif text-white italic mb-2">{item.title}</h4>
+                      <p className="text-sm font-serif text-white italic mb-2">{item.title}</p>
                       <p className="text-[11px] text-gray-500 font-sans leading-relaxed">{item.desc}</p>
                     </div>
                   </div>

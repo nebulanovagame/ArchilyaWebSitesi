@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, MonitorPlay, Sparkles, Globe } from 'lucide-react';
-import { setPageMeta } from '../utils/seo';
+import { SEO_PAGES, setPageMeta } from '../utils/seo';
+import { logAnalyticsEvent } from '../firebase';
 
 function RehberShell({ children, title, desc }) {
   useEffect(() => { setPageMeta(title, desc); }, [title, desc]);
@@ -27,8 +28,8 @@ function RehberShell({ children, title, desc }) {
 export function VrSunumRehber() {
   return (
     <RehberShell
-      title="VR Sunum ile Satış Kararını Hızlandırma Rehberi"
-      desc="Mimari projelerde VR sunum müşteri onay sürecini nasıl hızlandırır? Pixel Streaming ile donanımsız sunum, 360 tur ve canlı malzeme değişimi."
+      title={SEO_PAGES.VR_SUNUM_REHBER.title}
+      desc={SEO_PAGES.VR_SUNUM_REHBER.desc}
     >
       <div className="max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-3 px-5 py-2 border border-amber-400/20 rounded-sm bg-amber-400/5 mb-8">
@@ -81,9 +82,9 @@ export function VrSunumRehber() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
-          <a href="#contact" className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
+          <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'rehber_vr_cta', location: 'RehberPages' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
             Demo Talep Et <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
           <Link to="/vr-sunum" className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
             VR Sunum Özellikleri
           </Link>
@@ -98,8 +99,8 @@ export function VrSunumRehber() {
 export function AiRenderRehber() {
   return (
     <RehberShell
-      title="AI Render ile Revizyon Süresini Azaltma Rehberi"
-      desc="Mimarlık ofislerinde AI destekli render ve revizyon araçlarıyla üretim sürecini nasıl hızlandırabilirsiniz? Premium Render, plan boyama ve analiz."
+      title={SEO_PAGES.AI_RENDER_REHBER.title}
+      desc={SEO_PAGES.AI_RENDER_REHBER.desc}
     >
       <div className="max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-3 px-5 py-2 border border-primary/20 rounded-sm bg-primary/5 mb-8">
@@ -144,9 +145,9 @@ export function AiRenderRehber() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
-          <a href="#contact" className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
+          <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'rehber_ai_render_cta', location: 'RehberPages' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
             AI Studio'yu Dene <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
           <Link to="/ai-studio" className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
             AI Studio Özellikleri
           </Link>
@@ -161,8 +162,8 @@ export function AiRenderRehber() {
 export function Emlak360Rehber() {
   return (
     <RehberShell
-      title="Emlak Projelerinde 360 ve VR Sunum Kullanımı Rehberi"
-      desc="Emlak projelerinde 360 sanal tur ve VR sunum kullanımı. Dijital satış ofisi, uzaktan gayrimenkul tanıtımı ve alıcı deneyimini iyileştirme."
+      title={SEO_PAGES.EMLAK_360_REHBER.title}
+      desc={SEO_PAGES.EMLAK_360_REHBER.desc}
     >
       <div className="max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-3 px-5 py-2 border border-amber-400/20 rounded-sm bg-amber-400/5 mb-8">
@@ -216,9 +217,9 @@ export function Emlak360Rehber() {
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
-          <a href="#contact" className="group inline-flex items-center gap-3 bg-amber-400 text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
+          <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'rehber_360vr_cta', location: 'RehberPages' })} className="group inline-flex items-center gap-3 bg-amber-400 text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
             Demo Talep Et <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
           <Link to="/emlak-vr-sunum" className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
             Emlak Çözümleri
           </Link>

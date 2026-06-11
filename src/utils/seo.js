@@ -1,70 +1,97 @@
 /**
- * SEO yardımcısı — sayfa bazında title & meta description günceller.
+ * SEO yardımcısı — sayfa bazında title, meta description ve canonical günceller.
  * Kullanım: useEffect içinde setPageMeta('Başlık', 'Açıklama')
  */
 
-export function setPageMeta(title, description) {
+const SITE_URL = 'https://archilya.com';
+const DEFAULT_TITLE = 'Archilya | Mimarlık Ofisleri İçin AI Render ve VR Sunum Platformu';
+
+function canonicalUrlFor(pathname) {
+  const path = pathname || (typeof window !== 'undefined' ? window.location.pathname : '/');
+  const normalizedPath = path === '/' ? '/' : `/${path.replace(/^\/+|\/+$/g, '')}`;
+  return `${SITE_URL}${normalizedPath === '/' ? '/' : normalizedPath}`;
+}
+
+function updateMetaTag(selector, content) {
+  if (!content) return;
+  const tag = document.querySelector(selector);
+  if (tag) tag.setAttribute('content', content);
+}
+
+function updateCanonical(canonicalUrl) {
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement('link');
+    canonical.setAttribute('rel', 'canonical');
+    document.head.appendChild(canonical);
+  }
+  canonical.setAttribute('href', canonicalUrl);
+}
+
+export function setPageMeta(title, description, options = {}) {
   if (typeof document === 'undefined') return;
 
-  document.title = title ? `${title} | Archilya` : 'Archilya | Mimarlık Ofisleri İçin AI Render ve VR Sunum Platformu';
+  const pageTitle = title ? `${title} | Archilya` : DEFAULT_TITLE;
+  const canonicalUrl = options.canonicalUrl || canonicalUrlFor(options.pathname);
 
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc && description) {
-    metaDesc.setAttribute('content', description);
-  }
+  document.title = pageTitle;
 
-  const ogTitle = document.querySelector('meta[property="og:title"]');
-  if (ogTitle && title) {
-    ogTitle.setAttribute('content', `${title} | Archilya`);
-  }
+  updateMetaTag('meta[name="description"]', description);
+  updateMetaTag('meta[name="robots"]', options.robots || 'index,follow');
 
-  const ogDesc = document.querySelector('meta[property="og:description"]');
-  if (ogDesc && description) {
-    ogDesc.setAttribute('content', description);
-  }
+  updateMetaTag('meta[property="og:title"]', pageTitle);
+  updateMetaTag('meta[property="og:description"]', description);
+  updateMetaTag('meta[property="og:url"]', canonicalUrl);
 
-  const twitterTitle = document.querySelector('meta[name="twitter:title"]');
-  if (twitterTitle && title) {
-    twitterTitle.setAttribute('content', `${title} | Archilya`);
-  }
+  updateMetaTag('meta[name="twitter:title"]', pageTitle);
+  updateMetaTag('meta[name="twitter:description"]', description);
 
-  const twitterDesc = document.querySelector('meta[name="twitter:description"]');
-  if (twitterDesc && description) {
-    twitterDesc.setAttribute('content', description);
-  }
+  updateCanonical(canonicalUrl);
 }
 
 export const SEO_PAGES = {
   HOME: {
-    title: 'Archilya | Mimarlık Ofisleri İçin AI Render ve VR Sunum Platformu',
-    desc: 'Archilya ile CAD, SketchUp ve proje görsellerinizi AI ile premium render\'a dönüştürün. VR, Pixel Streaming ve 360 sunumlarla müşterinize projeyi yaşatın.',
+    title: 'AI Render ve VR Sunum Platformu',
+    desc: 'Mimarlık ofisleri, emlak ve müteahhit projeleri için AI render, pixel streaming, VR sunum ve 360 sanal tur ile satış sunumlarını hızlandırın.',
   },
   AI_STUDIO: {
-    title: 'AI Studio | AI Destekli Mimari Render, Revizyon ve Analiz',
-    desc: 'Premium Render, kontrollü revizyon, plan boyama, tasarım analizi ve daha fazlası. Mimari üretim akışınızı AI ile hızlandırın.',
+    title: 'Mimarlık İçin AI Render ve Revizyon',
+    desc: 'AI render ile mimarlık ofislerinde render revizyonlarını dakikalara indirin; plan boyama, analiz ve fotogerçekçi görsel üretimini hızlandırın.',
   },
   VR_SUNUM: {
-    title: 'VR Sunum | Pixel Streaming ile Web Tarayıcısından 4K Sunum',
-    desc: 'Pixel Streaming teknolojisiyle projelerinizi web tarayıcısına taşıyın. VR, 360 panorama ve etkileşimli sunumlarla müşteri deneyimini güçlendirin.',
+    title: 'VR Sunum ve Pixel Streaming Çözümleri',
+    desc: 'Mimari projeleri pixel streaming ile web tarayıcısında VR sunum ve 360 sanal tur olarak paylaşın; müşteri onayını hızlandırın.',
   },
   MIMARLIK_OFISLERI: {
-    title: 'Mimarlık Ofisleri İçin AI Render ve VR Sunum Çözümleri',
-    desc: 'Mimarlık ofisleriniz için AI Studio ile render üretimi, Pixel Streaming ile web sunum ve workspace ile proje yönetimi. Revizyon süresini kısaltın, müşteri onayını hızlandırın.',
+    title: 'Mimarlık Ofisleri İçin AI Render',
+    desc: 'Mimarlık ofisleri için AI render, VR sunum ve pixel streaming ile tasarım sunumlarını güçlendirin; revizyonu azaltıp onayı hızlandırın.',
   },
   EMLAK_VR: {
-    title: 'Emlak İçin VR Sunum ve Pixel Streaming Çözümleri',
-    desc: 'Emlak projelerinizi VR ve Pixel Streaming ile dijital satış ofisine dönüştürün. Daire tipleri, 360 turlar ve interaktif sunumlarla satışı hızlandırın.',
+    title: 'Emlak İçin VR Sunum ve 360 Sanal Tur',
+    desc: 'Emlak projelerinde VR sunum, 360 sanal tur ve pixel streaming ile dijital satış ofisi kurun; alıcı deneyimini ve ön satışı artırın.',
   },
   EMLAK_PIXEL: {
-    title: 'Emlak İçin Pixel Streaming | Web Tarayıcısından 4K Sunum',
-    desc: 'Pixel Streaming ile emlak projelerinizi web üzerinden 4K kalitesinde sunun. Kurulum gerektirmez, linki paylaşın, müşteri anında projeyi gezsin.',
+    title: 'Emlak Pixel Streaming ile 4K Proje Sunumu',
+    desc: 'Emlak projelerini pixel streaming ile webden 4K sunun; kurulum yok. Daire tipleri, VR sunum ve 360 sanal tur linkle anında açılsın.',
   },
   MUTEAHHIT: {
-    title: 'Müteahhitler İçin Proje Sunum ve Lansman Çözümleri',
-    desc: 'Müteahhitler için VR sunum, Pixel Streaming ve 360 görüntüleme. Proje lansmanı, yatırımcı sunumu ve satış ofisi deneyimlerini dijitalleştirin.',
+    title: 'Müteahhitler İçin VR Sunum ve Satış',
+    desc: 'Müteahhit projelerinde VR sunum, pixel streaming ve 360 sanal tur ile lansman, yatırımcı görüşmesi ve satış ofisi deneyimini dijitalleştirin.',
   },
   FIYATLANDIRMA: {
-    title: 'Fiyatlandırma | AI Studio ve VR Sunum Abonelik Planları',
-    desc: 'Keşif, Solo, Pro ve Studio abonelik planları. AI işlem kredisi, bulut depolama ve ekip yönetimi seçeneklerini karşılaştırın.',
+    title: 'AI Render ve VR Sunum Fiyatlandırma',
+    desc: 'AI işlem hakları, bulut depolama, ekip yönetimi, pixel streaming ve VR sunum planlarını karşılaştırın; mimarlık ve emlak için doğru paketi seçin.',
+  },
+  VR_SUNUM_REHBER: {
+    title: 'VR Sunum ile Satış Kararını Hızlandırma Rehberi',
+    desc: 'Mimari VR sunum, pixel streaming ve 360 sanal tur ile mimarlık projelerinde müşteri onayını hızlandırma faydalarını öğrenin.',
+  },
+  AI_RENDER_REHBER: {
+    title: 'AI Render Revizyon Sürecini Kısaltma Rehberi',
+    desc: 'AI ile render revizyonlarını dakikalara indirin; mimarlık ofislerinde görsel üretim, plan boyama ve müşteri geri bildirimini hızlandırın.',
+  },
+  EMLAK_360_REHBER: {
+    title: 'Emlak 360 VR Sanal Tur Rehberi',
+    desc: 'Emlakta 360 sanal tur, VR sunum ve pixel streaming ile alıcı deneyimini geliştirin; emlak ve müteahhit satış süreçlerini hızlandırın.',
   },
 };

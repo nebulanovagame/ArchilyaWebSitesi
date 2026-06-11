@@ -22,7 +22,7 @@ const services = [
     id: '03',
     tag: 'Workspace Kontrolü',
     title: 'Projeyi, Ekibi ve Sunum Hafızasını Tek Merkezde Tutun.',
-    desc: 'Panel, kredi sistemi, bulut depolama ve ekip rolleriyle üretim operasyonunuz dağınık klasörlerden kurtulur. Aynı proje hafızası üzerinden AI, VR ve teslim süreçlerini yönetin.',
+    desc: 'Panel, işlem hakkı sistemi, bulut depolama ve ekip rolleriyle üretim operasyonunuz dağınık klasörlerden kurtulur. Aynı proje hafızası üzerinden AI, VR ve teslim süreçlerini yönetin.',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop',
     accent: 'primary',
   },
@@ -65,7 +65,7 @@ export default function Services() {
           className="flex flex-col md:flex-row justify-between items-end gap-6"
         >
           <div>
-            <h3 className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Avantajlar</h3>
+            <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Avantajlar</p>
             <h2 className="text-4xl md:text-6xl font-serif text-white italic leading-tight">
               Ofisiniz İçin<br />
               <span className="text-primary/80">Somut Getiri.</span>
@@ -102,6 +102,7 @@ export default function Services() {
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[40%] group-hover:grayscale-0"
                       loading="lazy"
+                      decoding="async"
                     />
                     <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-sm">
                       <span className="text-[8px] uppercase tracking-widest text-primary/80 font-bold">Archilya</span>

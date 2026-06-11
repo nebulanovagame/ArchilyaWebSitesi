@@ -38,6 +38,8 @@ export default function BeforeAfter() {
             <img
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
               alt="Archilya AI Studio premium fotorealistik mimari render çıktısı"
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             />
             <div
@@ -50,6 +52,8 @@ export default function BeforeAfter() {
             <img
               src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2053&auto=format&fit=crop"
               alt="Ham 3D model veya CAD dosyası AI öncesi taslak görünümü"
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               style={{
                 filter: 'grayscale(85%) contrast(110%) brightness(110%)',

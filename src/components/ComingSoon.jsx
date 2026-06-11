@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Wrench, Heart, Sparkles, ArrowUpRight, ArrowLeft } from 'lucide-react';
+import { setPageMeta } from '../utils/seo';
 
 function ParticleCanvas() {
   const canvasRef = useRef(null);
@@ -120,6 +121,14 @@ export default function ComingSoon() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    setPageMeta(
+      'Archilya Panel',
+      'Archilya Panel ve AI Studio sınırlı beta erişim sürecindedir. Demo talebiyle ofisinize özel erişim planı oluşturun.',
+      { robots: 'noindex,follow' },
+    );
+  }, []);
+
+  useEffect(() => {
     const handleMouseMove = (e) => {
       setMousePos({ x: e.clientX, y: e.clientY });
     };
@@ -191,11 +200,11 @@ export default function ComingSoon() {
               <Wrench className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <h3 className="mb-1 text-xs font-semibold uppercase tracking-wider text-white/80">
+              <h2 className="mb-1 text-xs font-semibold uppercase tracking-wider text-white/80">
                 Beta Erişim
-              </h3>
+              </h2>
               <p className="text-[11px] leading-relaxed text-white/40">
-                AI stüdyosu, proje yönetimi ve kredi sistemi kontrollü erişimle
+                AI stüdyosu, proje yönetimi ve işlem hakkı sistemi kontrollü erişimle
                 mimari ofislerin kullanımına hazırlanıyor.
               </p>
             </div>
@@ -206,9 +215,9 @@ export default function ComingSoon() {
               <Sparkles className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <h3 className="mb-1 text-xs font-semibold uppercase tracking-wider text-white/80">
+              <h2 className="mb-1 text-xs font-semibold uppercase tracking-wider text-white/80">
                 Premium Onboarding
-              </h3>
+              </h2>
               <p className="text-[11px] leading-relaxed text-white/40">
                 Ekibinizin AI, VR ve proje akışını doğru kurması için demo ve
                 onboarding sürecini birlikte planlıyoruz.

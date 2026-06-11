@@ -11,4 +11,10 @@
   <url><loc>https://archilya.com/rehber/vr-sunum-satis</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://archilya.com/rehber/ai-render-revizyon</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://archilya.com/rehber/emlak-360-vr</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://archilya.com/hakkimizda</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://archilya.com/gizlilik-politikasi</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://archilya.com/kvkk</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://archilya.com/kullanim-kosullari</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://archilya.com/iptal-iade</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://archilya.com/mesafeli-satis</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
 </urlset>

@@ -486,12 +486,12 @@ export default function PricingCalculator() {
           <p className="text-primary text-xs uppercase tracking-[0.3em] mb-4">Yatırım Planı</p>
           <h2 className="text-4xl md:text-5xl font-serif text-white italic mb-4">Abonelik ve Premium Hizmetler</h2>
           <p className="text-gray-500 text-sm font-sans max-w-2xl mx-auto leading-relaxed mb-4">
-            AI Studio abonelikleri işlem kredisiyle çalışır; VR, modelleme ve emlak sunumları ise demo ve proje alanına göre özel tekliflenir.
+            AI Studio abonelikleri işlem hakkıyla çalışır. Aşağıdaki Mimari Üretim Paketleri ise mimarlık ofisimizin kendi el emeği ile hazırladığı profesyonel proje hizmetleridir.
           </p>
           <p className="text-gray-400 text-xs font-sans tracking-wide opacity-50">TÜM FİYATLAR KDV HARİÇ TÜRKİYE CUMHURİYETİ TÜRK LİRASI CİNSİNDENDİR</p>
         </Motion.div>
 
-        <SectionHeader tag="AI Studio & Workspace" title="Abonelik Planları" subtitle="Keşif, Solo, Pro ve Studio katmanları; AI render, revizyon, plan, analiz ve workspace kullanımını işlem kredisiyle ölçeklendirir." />
+        <SectionHeader tag="AI Studio" title="Abonelik Planları" subtitle="Keşif, Solo, Pro ve Studio katmanları; AI render, revizyon, plan, analiz ve üretim araçlarını işlem hakkıyla ölçeklendirir." />
 
         <Motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-40px' }} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {SUBSCRIPTION_PLANS.map((plan) => <SubCard key={plan.id} plan={plan} />)}
@@ -522,7 +522,7 @@ export default function PricingCalculator() {
         <div className={clsx('px-4 py-8 md:px-6 md:py-10 lg:px-8', PRICING_FAMILY_CANVAS)}>
           <Divider icon={LayoutGrid} label="Premium Üretim Hizmetleri" color="primary" />
 
-          <SectionHeader tag="Modelleme, Görselleştirme ve Teknik Destek" title="Mimari Üretim Paketleri" subtitle={<>Alan büyüdükçe m² başına fiyat düşer · <span className="text-primary font-bold">ortak proje alanı</span> mimari destek, VR ve emlak sunum tekliflerini birlikte günceller</>} />
+          <SectionHeader tag="Archilya Mimarlık Ofisi · El Emeğı Proje Hizmetleri" title="Mimari Üretim Paketleri" subtitle={<>Bu paketler AI abonelik sisteminden bağımsızdır. Tamamen mimarlık ofisimizin <span className="text-primary font-bold">kendi el emeği</span> ile hazırladığı profesyonel mimari proje hizmetleridir. Abonelik planınıza sahipseniz tüm paketlerde <span className="text-primary font-bold">%20 indirim</span> uygulanır.</>} />
 
           <M2Slider m2={sharedM2} setM2={setSharedM2} />
 
