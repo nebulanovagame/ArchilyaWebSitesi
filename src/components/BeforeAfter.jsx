@@ -19,12 +19,12 @@ export default function BeforeAfter() {
         >
           <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Önce & Sonra</p>
           <h2 className="text-4xl md:text-5xl font-serif text-white italic mb-4">
-            CAD'den Gerçekliğe.<br />
-            <span className="text-primary/80">Tek Platform.</span>
+            Eskizden Render'a.<br />
+            <span className="text-primary/80">Render'dan Sunuma.</span>
           </h2>
           <p className="text-gray-500 text-sm font-sans max-w-md mx-auto leading-relaxed">
-            Mevcut BIM dosyanızı Archilya'ya aktarın. Saniyeler içinde fotorealistik,
-            interaktif bir VR deneyimine dönüşsün.
+            Ham modelinizi veya proje görselinizi Archilya'ya aktarın. AI Studio üretim kalitesini
+            yükseltsin; Pixel Streaming ve VR sunum katmanı müşteriye yaşanabilir bir deneyim sunsun.
           </p>
         </motion.div>
 
@@ -37,19 +37,19 @@ export default function BeforeAfter() {
           <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-sm select-none group border border-white/6">
             <img
               src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
-              alt="Fotorealistik VR Render"
+              alt="Archilya AI Studio premium fotorealistik mimari render çıktısı"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             />
             <div
               className="absolute top-6 right-6 bg-black/60 backdrop-blur-md border border-primary/20 px-4 py-2 text-primary text-[10px] font-bold uppercase tracking-widest pointer-events-none z-10 transition-opacity duration-300 rounded-sm"
               style={{ opacity: sliderPosition < 92 ? 1 : 0 }}
             >
-              Archilya VR Render
+              Archilya AI + Pixel Streaming
             </div>
 
             <img
               src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2053&auto=format&fit=crop"
-              alt="BIM / CAD Modeli"
+              alt="Ham 3D model veya CAD dosyası AI öncesi taslak görünümü"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               style={{
                 filter: 'grayscale(85%) contrast(110%) brightness(110%)',
@@ -60,7 +60,7 @@ export default function BeforeAfter() {
               className="absolute top-6 left-6 bg-white/90 backdrop-blur-md border border-white/20 px-4 py-2 text-black text-[10px] font-bold uppercase tracking-widest pointer-events-none z-10 transition-opacity duration-200 rounded-sm"
               style={{ opacity: sliderPosition > 8 ? 1 : 0 }}
             >
-              BIM / CAD Dosyası
+              Ham Model / Taslak
             </div>
 
             <div
@@ -99,16 +99,16 @@ export default function BeforeAfter() {
             className="flex flex-col md:flex-row items-center justify-between gap-4 mt-6 px-1"
           >
             <p className="text-gray-600 text-xs font-sans">
-              Kaydırarak BIM modelinden fotorealistik VR sahnesine geçişi inceleyin.
+              Kaydırarak ham modelden AI destekli sunum sahnesine geçişi inceleyin.
             </p>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <div className="w-3 h-px bg-gray-500" />
-                <span className="text-gray-600 text-[10px] uppercase tracking-widest">BIM / CAD</span>
+                <span className="text-gray-600 text-[10px] uppercase tracking-widest">Ham Model</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-px bg-primary" />
-                <span className="text-primary text-[10px] uppercase tracking-widest">Archilya VR</span>
+                <span className="text-primary text-[10px] uppercase tracking-widest">AI + Pixel Streaming</span>
               </div>
             </div>
           </motion.div>

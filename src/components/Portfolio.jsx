@@ -24,10 +24,10 @@ function useCounter(target, duration = 2000, start = false) {
 }
 
 const STATS = [
-  { value: 120, suffix: '+', label: 'Aktif Mimari Ofis' },
-  { value: 400, suffix: '+', label: 'Teslim Edilen VR Projesi' },
-  { value: 40, suffix: '%', label: 'Daha Hızlı Müşteri Onayı' },
-  { value: 98, suffix: '%', label: 'Müşteri Memnuniyeti' },
+  { value: 4, suffix: '', label: 'Ürün Ailesi' },
+  { value: 12, suffix: '+', label: 'AI Studio Aracı' },
+  { value: 3, suffix: '', label: 'Sunum Katmanı' },
+  { value: 1, suffix: '', label: 'Premium Platform' },
 ];
 
 const CASE_STUDIES = [
@@ -39,10 +39,10 @@ const CASE_STUDIES = [
     accent: 'primary',
     image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop',
     challenge: 'Müşteri, zemin ve duvar malzemelerini tekrar tekrar değiştirip karar veremiyor, her revizyon 3–5 gün sürüyordu.',
-    solution: 'Archilya VR Tasarım Modu ile malzeme seçimi sunum içinde canlı yapıldı. Bütçe barı eşzamanlı güncellendi.',
+    solution: 'AI Studio ile alternatif render dili hazırlandı; Archilya VR Tasarım Modu ile malzeme seçimi sunum içinde canlı yapıldı.',
     result: '2 Saatte Satış Kapama',
-    resultSub: 'Müşteri, VR turunda 3 malzeme kombinasyonu denedi ve toplantı bitmeden imzaladı.',
-    tags: ['Canlı Malzeme Değişimi', 'Bütçe Takibi', 'VR Sunum'],
+    resultSub: 'Müşteri, AI ile hazırlanan 3 konsepti VR turunda deneyip toplantı bitmeden imzaladı.',
+    tags: ['AI Render', 'Canlı Malzeme Değişimi', 'VR Sunum'],
   },
   {
     id: '02',
@@ -52,10 +52,10 @@ const CASE_STUDIES = [
     accent: 'amber',
     image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
     challenge: 'Yatırımcılar farklı ülkelerdeydi. Statik PDF renderlar üzerinden karar almak güçtü, toplantı planlamak ay alıyordu.',
-    solution: 'Archilya\'nın web tarayıcısı üzerinden anında erişilen VR turu ile yatırımcılar sunum linkini alıp kendi cihazlarından gezdi.',
+    solution: 'AI ile render seti güncellendi; web tarayıcısı üzerinden anında erişilen VR turu ile yatırımcılar sunum linkini alıp kendi cihazlarından gezdi.',
     result: '3 Ülke, 1 Toplantı',
     resultSub: 'Sunum linki paylaşıldı; Londra, Dubai ve İstanbul\'daki yatırımcılar eşzamanlı turu tamamladı.',
-    tags: ['Donanımsız Sunum', 'Uzaktan Erişim', 'Çok Kullanıcılı'],
+    tags: ['AI Sunum Hazırlığı', 'Donanımsız Sunum', 'Uzaktan Erişim'],
   },
   {
     id: '03',
@@ -65,10 +65,10 @@ const CASE_STUDIES = [
     accent: 'primary',
     image: 'https://images.unsplash.com/photo-1599809275372-b4036fa0954b?q=80&w=2070&auto=format&fit=crop',
     challenge: 'Belediye kuruluna sunum yapılacaktı. Mevcut 2D çizimler ve statik görseller projenin etkisini yeterince aktaramıyordu.',
-    solution: 'Farklı mevsim ve ışık senaryolarıyla güçlendirilmiş 4K sinematik çıktı ve VR turu belediye salonunda canlı gösterildi.',
+    solution: 'Plan ve görseller AI Studio ile sunuma hazırlandı; farklı mevsim ve ışık senaryolarıyla güçlendirilmiş 4K çıktı ve VR turu canlı gösterildi.',
     result: 'İlk Toplantıda Onay',
     resultSub: 'Belediye kurulu oybirliğiyle onayladı. Standart 3 toplantılık süreç tek oturuma indi.',
-    tags: ['4K Sinematik Çıktı', 'Senaryo Geçişi', 'Kurul Sunumu'],
+    tags: ['Plan Sunumu', '4K Sinematik Çıktı', 'Kurul Sunumu'],
   },
   {
     id: '04',
@@ -78,10 +78,10 @@ const CASE_STUDIES = [
     accent: 'amber',
     image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop',
     challenge: 'Proje; 12 farklı villa tipini kapsıyordu. Her opsiyonu ayrı ayrı sunmak haftalar alacaktı ve maliyet karşılaştırması yapılamıyordu.',
-    solution: 'Archilya VR\'ın çoklu ünite desteğiyle tüm 12 villa tipi tek projede toplandı. Malzeme ve bütçe karşılaştırması tek ekranda yapıldı.',
+    solution: 'Workspace içinde villa tipleri organize edildi; Archilya VR\'ın çoklu ünite desteğiyle tüm seçenekler tek sunum projesinde toplandı.',
     result: '%60 Daha Az Revizyon',
     resultSub: 'Müşteri tüm opsiyonları ilk turda gördü, bütçe sınırını aşmadan tercihini belirledi.',
-    tags: ['Çoklu Ünite', 'Maliyet Karşılaştırma', 'Bütçe Limiti'],
+    tags: ['Workspace Yönetimi', 'Çoklu Ünite', 'Bütçe Limiti'],
   },
 ];
 
@@ -277,9 +277,9 @@ export default function Portfolio() {
 
         <div className="container mx-auto px-6 py-24 relative z-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true, margin: '-60px' }} className="text-center mb-20">
-            <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Referanslar</p>
+            <h3 className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Platform Kapsamı</h3>
             <h2 className="text-5xl md:text-7xl font-serif text-white italic leading-tight mb-4">Sayılarla Archilya.</h2>
-            <p className="text-gray-600 text-sm font-sans max-w-sm mx-auto leading-relaxed">Mimari ofislerin Archilya ile elde ettiği somut sonuçlar.</p>
+            <p className="text-gray-600 text-sm font-sans max-w-sm mx-auto leading-relaxed">AI üretim, interaktif sunum ve workspace katmanlarını tek premium mimari akışta toplar.</p>
           </motion.div>
 
           <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -294,16 +294,16 @@ export default function Portfolio() {
         <div className="container mx-auto px-6">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true, margin: '-60px' }} className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6">
             <div>
-              <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-3">Başarı Hikayeleri</p>
+              <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-3">Temsili Kullanım Senaryoları</p>
               <h3 className="text-3xl md:text-5xl font-serif text-white italic leading-tight">
                 Archilya ile<br />
-                <span className="text-primary/80">Kazanılan Projeler.</span>
+                <span className="text-primary/80">Kurgulanan Sunumlar.</span>
               </h3>
             </div>
             <div className="flex items-center gap-3 text-gray-600">
               <div className="w-8 h-px bg-white/10" />
               <p className="text-xs font-sans max-w-xs leading-relaxed text-right">
-                Kaydırarak her projenin hikayesini ve elde edilen sonucu inceleyin.
+                Kaydırarak AI, VR ve workspace katmanlarının örnek bir projede nasıl çalıştığını inceleyin.
               </p>
             </div>
           </motion.div>

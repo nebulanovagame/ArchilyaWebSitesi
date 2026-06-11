@@ -121,7 +121,7 @@ export default function Contact() {
               İletişim
             </motion.h2>
             <motion.p variants={itemVariants} className="text-gray-400 font-light text-lg mb-12 max-w-md">
-              Her büyük proje bir konuşma ile başlar. Vizyonunuzu gerçeğe dönüştürmek için buradayız.
+              AI Studio, VR/Web sunum veya premium üretim hizmetleri için doğru başlangıç planını birlikte çıkaralım.
             </motion.p>
 
             <div className="space-y-6">
@@ -201,7 +201,7 @@ export default function Contact() {
 
             <motion.div variants={itemVariants}>
               <AnimatedTextarea
-                placeholder="Proje Notları"
+                  placeholder="Proje, AI veya VR ihtiyaçlarınız"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required

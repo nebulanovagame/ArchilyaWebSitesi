@@ -31,10 +31,10 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="md:col-span-2">
             <Link to="/" className="inline-flex flex-col mb-4">
               <span className="font-serif text-3xl text-white italic tracking-wide">Archilya</span>
-              <span className="text-[9px] text-primary uppercase tracking-[0.3em] mt-0.5">Luxury</span>
+              <span className="text-[9px] text-primary uppercase tracking-[0.3em] mt-0.5">AI Studio</span>
             </Link>
             <p className="text-xs text-gray-600 font-sans leading-relaxed mt-4 mb-6 max-w-[280px]">
-              BIM odaklı proje yönetim ve otomasyon platformu. Mimarlık ofisleri için.
+              Mimarlık ofisleri için AI destekli render, proje yönetimi ve interaktif sunum platformu.
             </p>
 
             <div className="space-y-3">
@@ -67,7 +67,9 @@ export default function Footer() {
             <p className="text-[10px] font-sans font-bold text-gray-500 uppercase tracking-[0.25em] mb-5">Platform</p>
             <ul className="space-y-3">
               {[
-                { label: 'Özellikler', href: '#platform' },
+                { label: 'Platform', href: '#platform' },
+                { label: 'AI Studio', href: '#ai-studio' },
+                { label: 'VR Sunum', href: '#vr-sunum' },
                 { label: 'Portfolyo', href: '#portfolio' },
                 { label: 'Hakkımızda', to: '/hakkimizda' },
                 { label: 'Fiyatlandırma', href: '#pricing' },

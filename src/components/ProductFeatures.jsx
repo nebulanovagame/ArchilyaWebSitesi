@@ -5,49 +5,49 @@ import {
 
 const LAYERS = [
   {
-    id: 'cad',
+    id: 'ai-studio',
     num: '01',
-    label: 'CAD / BIM Entegrasyonu',
-    icon: Link2,
-    slogan: ['Yazılımlarınızla Konuşur,', 'İş Akışınızı Bölmez.'],
-    desc: 'Mevcut tasarım dosyalarınızı Archilya\'ya taşımak için ekstra iş yoktur. Projeleriniz olduğu gibi gelir, VR deneyimi olarak anında canlanır.',
-    badges: ['Tek Tıkla Model Aktarımı', 'Revit / SketchUp / Rhino Uyumu', 'Kayıpsız Geometri Transferi'],
+    label: 'AI Studio',
+    icon: Sparkles,
+    slogan: ['Render Beklemeyi Bırakın,', 'Kararı Hızlandırın.'],
+    desc: 'Görsel, plan veya referans yükleyin. AI Studio; premium render, kontrollü revizyon, plan boyama, analiz ve konsept üretimini tek akışta birleştirir.',
+    badges: ['Premium Render & Revizyon', 'Kat Planı ve Tasarım Analizi', 'İç / Dış Mekan / Peyzaj AI Araçları'],
     accent: 'primary',
     image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&auto=format&fit=crop',
     align: 'left',
   },
   {
-    id: 'budget',
+    id: 'presentation',
     num: '02',
-    label: 'Parametrik Maliyet & Tasarım',
-    icon: BarChart3,
-    slogan: ['Her Kararın Bir Bedeli Vardır.', 'Müşterinize Anında Gösterin.'],
-    desc: 'VR oturumu biterken maliyet tablosu da hazırdır. Malzeme seçimi değişir, bütçe eşzamanlı güncellenir. Müşteriniz fiyatı sormadan önce siz sunarsınız.',
-    badges: ['Eşzamanlı Excel / HTML Çıktısı', 'Dinamik Materyal Varyasyonları', 'Bütçe Limit Uyarı Sistemi'],
+    label: 'Pixel Streaming & VR Sunum',
+    icon: MonitorPlay,
+    slogan: ['Donanım Beklemeden,', '4K Deneyim.'],
+    desc: 'Pixel Streaming ile yüksek kaliteli 3D sahnelerinizi doğrudan web tarayıcısına aktarın. Kurulum gerektirmez, güçlü bilgisayar şartı yoktur. Linki paylaşın; müşteriniz telefon, tablet veya VR başlıkla projenin içinde yürüsün.',
+    badges: ['Pixel Streaming — Web Tarayıcısına 4K', '360 Panorama & VR Yürüyüş', 'Dokunmatik / Gamepad / VR Kontrol'],
     accent: 'amber',
     image: 'https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=1600&q=80&auto=format&fit=crop',
     align: 'right',
   },
   {
-    id: 'ai',
+    id: 'workspace',
     num: '03',
-    label: 'AI + Sinematik Çıktı',
-    icon: Sparkles,
-    slogan: ['Zamanı Durdurun, Mevsimi Değiştirin.', 'AI İle Yeniden Yaratın.'],
-    desc: 'Güneşi istediğiniz açıya alın, kışı yaza çevirin. Yapay zeka ile konsept alternatiflerini saniyeler içinde üretin. 4K sinematik kamerayı serbest bırakın.',
-    badges: ['AI Concept Studio', '4K Sinematik Kamera', 'Gerçek Zamanlı Güneş Döngüsü'],
+    label: 'Panel / Workspace',
+    icon: BarChart3,
+    slogan: ['Projeler, Ekip ve Krediler,', 'Tek Merkezde.'],
+    desc: 'Projeler, dosyalar, AI kredileri, abonelik ve ekip rolleriniz tek workspace\'te toplanır. Dağınık klasörler yerine güvenli, senkronize bir üretim hafızası.',
+    badges: ['Proje ve Dosya Yönetimi', 'Kredi / Abonelik Takibi', 'Ekip Rolleri ve Marka Alanı'],
     accent: 'primary',
     image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=1600&q=80&auto=format&fit=crop',
     align: 'left',
   },
   {
-    id: 'streaming',
+    id: 'premium-services',
     num: '04',
-    label: 'Donanımsız Şov',
-    icon: MonitorPlay,
-    slogan: ['Müşterinizin Cihazı Ne Olursa Olsun,', 'Sizin Şovunuz Kusursuzdur.'],
-    desc: 'Kurulum yok, kablo yok, güçlü bilgisayar şartı yok. Sunum linkini paylaşın; müşteriniz web tarayıcısından, tabletinden veya telefonundan anında girer.',
-    badges: ['Web Tarayıcısından Anında Erişim', 'Dokunmatik Kontrol', 'Kurulum Gerektirmez'],
+    label: 'Premium VR & Üretim Hizmetleri',
+    icon: Link2,
+    slogan: ['Modeli veya Planı Getirin,', 'Sunuma Hazır Deneyime Dönüşsün.'],
+    desc: 'Hazır modeli VR\'a aktarın veya 2D plandan sıfırdan sahne üretin. Materyalli, etkileşimli ve emlak odaklı paketlerle satış ofisinize özel şov kurun.',
+    badges: ['2D Plandan VR Modelleme', 'Materyalli / Etkileşimli Paketler', 'Emlak ve Lansman Sunumları'],
     accent: 'amber',
     image: 'https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=1600&q=80&auto=format&fit=crop',
     align: 'right',
@@ -111,7 +111,7 @@ function Layer({ layer }) {
   };
 
   return (
-    <section id={`feature-${layer.id}`} className="relative min-h-screen flex items-center overflow-hidden">
+    <section id={layer.id === 'ai-studio' ? 'ai-studio' : `feature-${layer.id}`} className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={layer.image} alt="" className="w-full h-full object-cover scale-105" loading="lazy" />
       </div>
@@ -140,7 +140,7 @@ function Layer({ layer }) {
       <div className="absolute top-0 left-0 right-0 h-px bg-white/5" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-white/5" />
 
-      <div className="container mx-auto px-6 relative z-10 py-24">
+      <div className="container mx-auto px-6 relative z-10 py-16 md:py-24">
         <div className={`flex flex-col ${isRight ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16 lg:gap-24`}>
           <motion.div
             variants={numVariants}
@@ -164,9 +164,9 @@ function Layer({ layer }) {
               <div className={`w-9 h-9 rounded-sm border flex items-center justify-center shrink-0 ${A.icon}`}>
                 <Icon className="w-4 h-4" />
               </div>
-              <span className={`text-[10px] font-bold uppercase tracking-[0.35em] ${A.label}`}>
+              <h3 className={`text-[10px] font-bold uppercase tracking-[0.35em] ${A.label}`}>
                 {layer.label}
-              </span>
+              </h3>
             </div>
 
             <div className={`w-12 h-0.5 ${A.line} mb-8 rounded-full`} />
@@ -213,7 +213,7 @@ function Layer({ layer }) {
 export default function ProductFeatures() {
   return (
     <div id="platform">
-      <section className="relative py-28 bg-background overflow-hidden">
+      <section className="relative py-16 md:py-28 bg-background overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
@@ -230,16 +230,16 @@ export default function ProductFeatures() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true, margin: '-80px' }}
           >
-            <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-5">
+            <h2 className="text-primary text-[10px] uppercase tracking-[0.4em] mb-5">
               Platform Yetenekleri
-            </p>
-            <h2 className="text-5xl md:text-6xl font-serif text-white italic mb-6 leading-tight">
+            </h2>
+            <h2 className="text-4xl md:text-6xl font-serif text-white italic mb-6 leading-tight">
               Mimari Ofisin<br />
-              <span className="text-primary/80">Yeni Altyapısı.</span>
+              <span className="text-primary/80">Dijital İşletim Sistemi.</span>
             </h2>
             <p className="text-gray-500 text-sm font-sans max-w-lg mx-auto leading-relaxed">
-              Archilya; CAD entegrasyonundan maliyet takibine, AI stüdyosundan donanımsız
-              sunuma kadar mimari ofisin tüm dijital iş akışını tek çatı altında yönetir.
+              Archilya; AI destekli üretimi, interaktif sunumu, workspace yönetimini ve
+              premium VR hizmetlerini demo ve sınırlı erişim süreciyle aynı lüks deneyimde birleştirir.
             </p>
           </motion.div>
 
@@ -260,7 +260,7 @@ export default function ProductFeatures() {
         <Layer key={layer.id} layer={layer} index={i} />
       ))}
 
-      <section className="relative py-24 bg-background overflow-hidden">
+      <section className="relative py-16 md:py-24 bg-background overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-surface/20 to-background pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/4 rounded-full blur-[150px] pointer-events-none" />
 

@@ -8,12 +8,12 @@ import clsx from 'clsx';
 const SALES_CONTACT_PHONE = '0 (282) 606 06 39';
 const SALES_CONTACT_EMAIL = 'info@nebulanovagames.com';
 
-const WELCOME_MESSAGE = 'Merhaba, ben Archilya satış asistanı. Archilya paketleri, özellikleri, AI Studio ve proje süreçleri konusunda hızlı yönlendirme sağlayabilirim. Özel teklif ihtiyacınız varsa sizi doğrudan satış ekibimize yönlendiririm.';
+const WELCOME_MESSAGE = 'Merhaba, ben Archilya satış asistanı. AI Studio, VR/Web sunum, workspace abonelikleri ve premium üretim hizmetleri konusunda hızlı yönlendirme sağlayabilirim. Özel teklif ihtiyacınız varsa sizi doğrudan satış ekibimize yönlendiririm.';
 
 const QUICK_QUESTIONS = [
-  'Paketler hakkında bilgi alabilir miyim?',
+  'AI Studio neler sunuyor?',
   'Studio paketi ne sunuyor?',
-  'VR hizmetiniz nasıl çalışır?',
+  'VR/Web sunum nasıl çalışır?',
   'Abonelik fiyatları neler?',
 ];
 
@@ -94,7 +94,6 @@ export default function ArchilyaAIAssistant() {
   useEffect(() => {
     if (!open) return undefined;
 
-    setUnread(false);
     const focusTimer = window.setTimeout(() => inputRef.current?.focus(), 280);
 
     return () => window.clearTimeout(focusTimer);
@@ -245,7 +244,13 @@ export default function ArchilyaAIAssistant() {
 
       <motion.button
         type="button"
-        onClick={() => setOpen((previous) => !previous)}
+        onClick={() => {
+          setOpen((previous) => {
+            const next = !previous;
+            if (next) setUnread(false);
+            return next;
+          });
+        }}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1.2, type: 'spring', stiffness: 260, damping: 20 }}

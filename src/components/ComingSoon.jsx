@@ -110,7 +110,7 @@ function ConstructionBadge() {
         <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
       </span>
       <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-primary">
-        Panel Yapım Aşamasında
+        Özel Erişim Sürecinde
       </span>
     </motion.div>
   );
@@ -166,9 +166,9 @@ export default function ComingSoon() {
           transition={{ delay: 0.4, duration: 0.7 }}
           className="mb-12 max-w-lg text-sm leading-relaxed tracking-wide text-white/40 sm:text-base"
         >
-          Müşteri paneli ve yapay zeka stüdyosu şu anda geliştirme aşamasında.
+          Archilya Panel ve AI Studio sınırlı beta erişim sürecinde.
           <br className="hidden sm:block" />
-          <span className="text-primary/80"> Çok yakında hizmetinizde. </span>
+          <span className="text-primary/80"> Demo talebiyle ofisinize özel erişim planı oluşturalım. </span>
         </motion.p>
 
         {/* Divider */}
@@ -192,11 +192,11 @@ export default function ComingSoon() {
             </div>
             <div>
               <h3 className="mb-1 text-xs font-semibold uppercase tracking-wider text-white/80">
-                Panel Geliştiriliyor
+                Beta Erişim
               </h3>
               <p className="text-[11px] leading-relaxed text-white/40">
-                AI stüdyosu, proje yönetimi ve kredi sistemi gibi özellikler
-                üzerinde çalışıyoruz. Çok yakında erişime açılacak.
+                AI stüdyosu, proje yönetimi ve kredi sistemi kontrollü erişimle
+                mimari ofislerin kullanımına hazırlanıyor.
               </p>
             </div>
           </div>
@@ -207,11 +207,11 @@ export default function ComingSoon() {
             </div>
             <div>
               <h3 className="mb-1 text-xs font-semibold uppercase tracking-wider text-white/80">
-                Profesyonel Standartta
+                Premium Onboarding
               </h3>
               <p className="text-[11px] leading-relaxed text-white/40">
-                Mimari ofislerin ihtiyaçlarına özel, güvenli ve hızlı bir
-                panel deneyimi sunmak için titizlikle çalışıyoruz.
+                Ekibinizin AI, VR ve proje akışını doğru kurması için demo ve
+                onboarding sürecini birlikte planlıyoruz.
               </p>
             </div>
           </div>

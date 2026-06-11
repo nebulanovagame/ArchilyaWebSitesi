@@ -4,25 +4,25 @@ import { ArrowRight } from 'lucide-react';
 const services = [
   {
     id: '01',
-    tag: 'VR Sunum',
-    title: 'Müşteriniz Projeyi İzlemesin, İçinde Yürüsün.',
-    desc: '1:1 ölçekte, derinlik ve hacim algısıyla gerçekleştirilen VR turları; müşterinizin "evet" demesini beklemeden kararı o an almasını sağlar. Satış kapama oranı artar, revizyon döngüsü kısalır.',
+    tag: 'AI Üretim',
+    title: 'Render ve Revizyon Süresini Karar Anına Yaklaştırın.',
+    desc: 'Premium Render, referans stil, plan boyama ve kontrollü revizyon araçlarıyla üretim bekleme sürelerini kısaltın. Müşteri geri bildirimini yeni bir teslim döngüsüne çevirmeden aynı akışta yanıtlayın.',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop',
     accent: 'primary',
   },
   {
     id: '02',
-    tag: 'Canlı Malzeme & Bütçe',
-    title: '"Zemin Mermer Olsa?" Sorusunu Canlı Yanıtlayın.',
-    desc: 'Müşteri malzeme değiştirmek istediğinde render beklemenize gerek yok. Tek tıkla değiştirin, bütçe tablosu eşzamanlı güncellensin. Toplantı bitmeden karar alınsın.',
+    tag: 'Pixel Streaming & VR',
+    title: 'Linki Paylaşın, Müşteriniz Projenin İçinde Yürüsün.',
+    desc: 'Pixel Streaming ile 4K sahnenizi doğrudan web tarayıcısına aktarın. Müşteriniz linke tıklar, projeyi keşfeder, malzeme değiştirir ve toplantı bitmeden karar verir. Kurulum, kablo veya güçlü bilgisayar gerekmez.',
     image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop',
     accent: 'amber',
   },
   {
     id: '03',
-    tag: 'Sinematik Çıktı',
-    title: 'Projenizin Hikayesini 4K ile Anlatın.',
-    desc: 'Mevsim değişimleri, farklı ışık senaryoları ve sinematik kamera hareketleriyle sosyal medya, lansman ve basın bülteni için hazır 4K içerikler üretin. Render ajansına gerek kalmaz.',
+    tag: 'Workspace Kontrolü',
+    title: 'Projeyi, Ekibi ve Sunum Hafızasını Tek Merkezde Tutun.',
+    desc: 'Panel, kredi sistemi, bulut depolama ve ekip rolleriyle üretim operasyonunuz dağınık klasörlerden kurtulur. Aynı proje hafızası üzerinden AI, VR ve teslim süreçlerini yönetin.',
     image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop',
     accent: 'primary',
   },
@@ -47,7 +47,7 @@ const ACCENT = {
 
 export default function Services() {
   return (
-    <section id="studio" className="py-32 bg-background relative overflow-hidden">
+    <section id="studio" className="py-16 md:py-32 bg-background relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
@@ -65,15 +65,15 @@ export default function Services() {
           className="flex flex-col md:flex-row justify-between items-end gap-6"
         >
           <div>
-            <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Avantajlar</p>
+            <h3 className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Avantajlar</h3>
             <h2 className="text-4xl md:text-6xl font-serif text-white italic leading-tight">
               Ofisiniz İçin<br />
               <span className="text-primary/80">Somut Getiri.</span>
             </h2>
           </div>
           <p className="text-gray-500 text-sm font-sans max-w-sm leading-relaxed md:text-right">
-            Archilya; tasarım sürecini hızlandıran, müşteri onayını kolaylaştıran ve
-            içerik maliyetlerini düşüren üç temel avantaj sunar.
+            Archilya; üretimi hızlandıran, Pixel Streaming ve VR ile müşteri iknasını güçlendiren,
+            ofis operasyonunu tek merkezde tutan üç temel avantaj sunar.
           </p>
         </motion.div>
       </div>
@@ -96,13 +96,19 @@ export default function Services() {
                   <div className={`absolute -inset-4 border border-white/6 -z-10 transition-colors duration-500 ${A.frame}`} />
                   <div className={`absolute bottom-0 left-0 h-0.5 ${A.line} w-0 group-hover:w-full transition-all duration-700 z-10`} />
 
-                  <div className="aspect-[4/3] overflow-hidden rounded-sm">
+                  <div className="aspect-[4/3] overflow-hidden rounded-sm relative">
                     <img
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[40%] group-hover:grayscale-0"
                       loading="lazy"
                     />
+                    <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-sm">
+                      <span className="text-[8px] uppercase tracking-widest text-primary/80 font-bold">Archilya</span>
+                    </div>
+                    <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm border border-white/8 px-2 py-1 rounded-sm">
+                      <span className="text-[7px] uppercase tracking-widest text-gray-500">{service.accent === 'amber' ? 'Pixel Streaming' : 'AI Studio'}</span>
+                    </div>
                   </div>
                 </motion.div>
 

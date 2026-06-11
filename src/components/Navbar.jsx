@@ -15,12 +15,11 @@ export default function Navbar() {
   });
 
   const navItems = [
-    { label: 'Özellikler', href: '#platform' },
+    { label: 'Platform', href: '#platform' },
+    { label: 'AI Studio', href: '#ai-studio' },
+    { label: 'VR Sunum', href: '#vr-sunum' },
     { label: 'Portfolyo', href: '#portfolio' },
-    { label: 'Hakkımızda', to: '/hakkimizda' },
     { label: 'Fiyatlandırma', href: '#pricing' },
-    { label: 'Entegrasyon', href: '#workflow' },
-    { label: 'İletişim', href: '#contact' },
   ];
 
   return (
@@ -38,7 +37,7 @@ export default function Navbar() {
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
           <Link to="/" className="flex flex-col items-center group">
             <span className="font-serif text-2xl text-white tracking-wider italic">Archilya</span>
-            <span className="text-[8px] text-primary uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity">Luxury</span>
+              <span className="text-[8px] text-primary uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity">AI Studio</span>
           </Link>
 
           <div className="hidden md:flex items-center gap-10">
@@ -128,7 +127,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className="font-sans text-sm font-bold text-black bg-primary px-8 py-2.5 rounded-sm hover:bg-white transition-colors uppercase tracking-wider"
                 >
-                  Kayıt Ol
+                    Demo İste
                 </Link>
               </div>
             </div>

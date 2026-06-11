@@ -273,8 +273,8 @@ function M2Slider({ m2, setM2, min = SHARED_M2_SLIDER.min, max = SHARED_M2_SLIDE
             <Ruler className="w-4 h-4 text-primary" />
           </div>
           <div>
-            <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-bold">Ortak Alan Kontrolü</p>
-            <p className="text-xs text-gray-400 font-sans mt-0.5">Mimari ve VR tekliflerini şekillendir</p>
+            <p className="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-bold">Ortak Proje Alanı</p>
+            <p className="text-xs text-gray-400 font-sans mt-0.5">Premium VR ve üretim hizmetlerini şekillendir</p>
           </div>
         </div>
 
@@ -484,11 +484,14 @@ export default function PricingCalculator() {
       <div className="container mx-auto px-6 relative z-10">
         <Motion.div initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true, margin: '-80px' }} className="text-center mb-20">
           <p className="text-primary text-xs uppercase tracking-[0.3em] mb-4">Yatırım Planı</p>
-          <h2 className="text-4xl md:text-5xl font-serif text-white italic mb-4">Fiyatlandırma</h2>
+          <h2 className="text-4xl md:text-5xl font-serif text-white italic mb-4">Abonelik ve Premium Hizmetler</h2>
+          <p className="text-gray-500 text-sm font-sans max-w-2xl mx-auto leading-relaxed mb-4">
+            AI Studio abonelikleri işlem kredisiyle çalışır; VR, modelleme ve emlak sunumları ise demo ve proje alanına göre özel tekliflenir.
+          </p>
           <p className="text-gray-400 text-xs font-sans tracking-wide opacity-50">TÜM FİYATLAR KDV HARİÇ TÜRKİYE CUMHURİYETİ TÜRK LİRASI CİNSİNDENDİR</p>
         </Motion.div>
 
-        <SectionHeader tag="Archilya Bulut Paneli" title="Abonelik & Entegrasyon" subtitle="Keşif, Solo, Pro ve Studio katmanlarıyla bireysel üretimden ekip operasyonuna kadar net geçiş sunar. İşlem mantığı ve ek kotalar profesyonel kullanım senaryosuna göre yeniden kalibre edilmiştir." />
+        <SectionHeader tag="AI Studio & Workspace" title="Abonelik Planları" subtitle="Keşif, Solo, Pro ve Studio katmanları; AI render, revizyon, plan, analiz ve workspace kullanımını işlem kredisiyle ölçeklendirir." />
 
         <Motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-40px' }} className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {SUBSCRIPTION_PLANS.map((plan) => <SubCard key={plan.id} plan={plan} />)}
@@ -517,9 +520,9 @@ export default function PricingCalculator() {
         </Motion.div>
 
         <div className={clsx('px-4 py-8 md:px-6 md:py-10 lg:px-8', PRICING_FAMILY_CANVAS)}>
-          <Divider icon={LayoutGrid} label="Klasik Mimari Çözüm Ortaklığı" color="primary" />
+          <Divider icon={LayoutGrid} label="Premium Üretim Hizmetleri" color="primary" />
 
-          <SectionHeader tag="Fason Çizim & Model Hizmetleri" title="Mimari Destek Paketleri" subtitle={<>Alan büyüdükçe m² başına fiyat düşer · <span className="text-primary font-bold">ortak alan slider&apos;ı</span> mimari destek, mimari VR ve emlak VR tekliflerini birlikte günceller</>} />
+          <SectionHeader tag="Modelleme, Görselleştirme ve Teknik Destek" title="Mimari Üretim Paketleri" subtitle={<>Alan büyüdükçe m² başına fiyat düşer · <span className="text-primary font-bold">ortak proje alanı</span> mimari destek, VR ve emlak sunum tekliflerini birlikte günceller</>} />
 
           <M2Slider m2={sharedM2} setM2={setSharedM2} />
 
@@ -532,9 +535,9 @@ export default function PricingCalculator() {
           </Motion.div>
 
           <div className="mt-20 pt-8 border-t border-white/5 w-full"></div>
-          <Divider icon={Glasses} label="Archilya Uygulama Ekosistemi" color="amber" />
+          <Divider icon={Glasses} label="Premium VR & Web Sunum Hizmetleri" color="amber" />
 
-          <SectionHeader tag="Dijital Şov Ekosistemi" title="Archilya Uygulama Ekosistemi" subtitle="Archilya VR katmanı; mimarlık ve iç mekan sunumlarını tek bir premium aplikasyon akışında toplar. İlk 6 mimari teklif ile son 2 emlak bloğu aynı ortak proje alanına bağlanır; farkı yaratan unsur teslim kapsamı ve ticari kullanım senaryosudur." />
+          <SectionHeader tag="VR, 360 ve Satış Ofisi Deneyimleri" title="Archilya Sunum Ekosistemi" subtitle="Archilya VR katmanı; mimarlık, iç mekan ve emlak sunumlarını tek bir premium aplikasyon akışında toplar. İlk 6 mimari teklif ile son 2 emlak bloğu aynı ortak proje alanına bağlanır; farkı yaratan unsur teslim kapsamı ve ticari kullanım senaryosudur." />
 
           <Motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} viewport={{ once: true }} className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.45fr_0.95fr] gap-4 mb-8">
             <div className={clsx('p-5 md:p-6', PRICING_META_SURFACE)}>

@@ -3,10 +3,11 @@ import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useRef } from 'react';
 
 const TRUST_BADGES = [
+  'AI Studio',
+  'Pixel Streaming',
   'Revit / SketchUp / Rhino Uyumu',
-  'KVKK & GDPR Uyumlu',
-  'Web Tarayıcısından Sunum',
-  'Kurulum Gerektirmez',
+  'VR & 360 Sunum',
+  'Workspace Panel',
 ];
 
 export default function Hero() {
@@ -28,7 +29,7 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/40 to-transparent z-20 pointer-events-none" />
         <img
           src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
-          alt="Archilya Hero Background"
+          alt="Archilya AI Studio ve VR sunum platformu mimari ofis görseli"
           className="w-full h-full object-cover"
         />
       </motion.div>
@@ -43,17 +44,18 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: 'easeOut' }}
         >
           <p className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary mb-6">
-            Mimari Ofisler İçin VR Sunum Platformu
+            Mimarlık Ofisleri İçin AI Destekli Üretim ve Sunum Platformu
           </p>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 italic leading-[1.05]">
-            Projelerinizi<br />
-            <span className="not-italic text-primary/90">Yaşatın.</span>
+            AI ile Üretin.<br />
+            <span className="not-italic text-primary/90">VR ile Yaşatın.</span>
           </h1>
 
           <p className="max-w-xl mx-auto text-gray-300 font-light text-base md:text-lg mb-10 leading-relaxed">
-            CAD dosyanızı Archilya'ya aktarın; müşteriniz projeyi ekrandan izlemek yerine
-            içinde yürüsün. Sunum daha etkileyici, karar daha hızlı, revizyon daha az.
+            CAD, SketchUp veya proje görsellerinizi Archilya'ya aktarın; AI ile render,
+            revizyon ve analiz üretin. Projenizi 360, VR, web tarayıcı veya Pixel Streaming
+            ile müşteriye yüksek kalitede yaşatın.
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
@@ -70,7 +72,7 @@ export default function Hero() {
               data-cursor="Keşfet"
               className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-10 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
             >
-              Platformu İncele
+              AI Studio'yu İncele
             </a>
           </div>
 
