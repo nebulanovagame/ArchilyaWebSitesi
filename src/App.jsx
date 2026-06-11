@@ -1,30 +1,55 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { logAnalyticsEvent } from './firebase';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import ProductFeatures from './components/ProductFeatures';
-import Features from './components/Features';
-import BeforeAfter from './components/BeforeAfter';
-import Portfolio from './components/Portfolio';
-import Workflow from './components/Workflow';
-import Services from './components/Services';
-import PricingCalculator from './components/PricingCalculator';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Preloader from './components/Preloader';
 import CustomCursor from './components/CustomCursor';
 import ArchilyaAIAssistant from './components/ArchilyaAIAssistant';
-import ComingSoon from './components/ComingSoon';
-import {
-  GizlilikPolitikasi,
-  KVKK,
-  KullanimKosullari,
-  IptalIade,
-  MesafeliSatis,
-  Hakkimizda,
-} from './pages/LegalPages';
+
+/* Lazy-loaded route’lar */
+const ComingSoon = lazy(() => import('./components/ComingSoon'));
+
+/* Lazy-loaded route bileşenleri (legal, landing, rehber) */
+const GizlilikPolitikasi = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.GizlilikPolitikasi })));
+const KVKK = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.KVKK })));
+const KullanimKosullari = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.KullanimKosullari })));
+const IptalIade = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.IptalIade })));
+const MesafeliSatis = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.MesafeliSatis })));
+const Hakkimizda = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.Hakkimizda })));
+const AiStudioLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.AiStudioLanding })));
+const VrSunumLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.VrSunumLanding })));
+const MimarlikOfisleriLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.MimarlikOfisleriLanding })));
+const EmlakVrLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.EmlakVrLanding })));
+const EmlakPixelStreamingLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.EmlakPixelStreamingLanding })));
+const MuteahhitLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.MuteahhitLanding })));
+const FiyatlandirmaLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.FiyatlandirmaLanding })));
+const VrSunumRehber = lazy(() => import('./pages/RehberPages').then(m => ({ default: m.VrSunumRehber })));
+const AiRenderRehber = lazy(() => import('./pages/RehberPages').then(m => ({ default: m.AiRenderRehber })));
+const Emlak360Rehber = lazy(() => import('./pages/RehberPages').then(m => ({ default: m.Emlak360Rehber })));
+
+/* Lazy-loaded ana sayfa bölümleri — scroll ile yüklenir */
+const ProductFeatures = lazy(() => import('./components/ProductFeatures'));
+const Features = lazy(() => import('./components/Features'));
+const BeforeAfter = lazy(() => import('./components/BeforeAfter'));
+const Portfolio = lazy(() => import('./components/Portfolio'));
+const Workflow = lazy(() => import('./components/Workflow'));
+const Services = lazy(() => import('./components/Services'));
+const PricingCalculator = lazy(() => import('./components/PricingCalculator'));
+const Contact = lazy(() => import('./components/Contact'));
+
+function PageFallback() {
+  return (
+    <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-6 h-6 border border-primary/30 border-t-primary rounded-full animate-spin" />
+        <p className="text-[10px] text-gray-600 uppercase tracking-widest">Yükleniyor</p>
+      </div>
+    </div>
+  );
+}
 
 function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,14 +73,14 @@ function HomePage() {
           <Navbar />
           <main>
             <Hero />
-            <ProductFeatures />
-            <Features />
-            <BeforeAfter />
-            <Services />
-            <Portfolio />
-            <Workflow />
-            <PricingCalculator />
-            <Contact />
+            <Suspense fallback={<div className="h-screen" />}><ProductFeatures /></Suspense>
+            <Suspense fallback={<div className="h-[400px]" />}><Features /></Suspense>
+            <Suspense fallback={<div className="h-[300px]" />}><BeforeAfter /></Suspense>
+            <Suspense fallback={<div className="h-[400px]" />}><Services /></Suspense>
+            <Suspense fallback={<div className="h-screen" />}><Portfolio /></Suspense>
+            <Suspense fallback={<div className="h-[400px]" />}><Workflow /></Suspense>
+            <Suspense fallback={<div className="h-screen" />}><PricingCalculator /></Suspense>
+            <Suspense fallback={<div className="h-[300px]" />}><Contact /></Suspense>
           </main>
           <Footer />
         </>
@@ -133,13 +158,57 @@ function App() {
       <CustomCursor />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/panel" element={<ComingSoon />} />
-        <Route path="/gizlilik-politikasi" element={<GizlilikPolitikasi />} />
-        <Route path="/kvkk" element={<KVKK />} />
-        <Route path="/kullanim-kosullari" element={<KullanimKosullari />} />
-        <Route path="/iptal-iade" element={<IptalIade />} />
-        <Route path="/mesafeli-satis" element={<MesafeliSatis />} />
-        <Route path="/hakkimizda" element={<Hakkimizda />} />
+        <Route path="/panel" element={
+          <Suspense fallback={<PageFallback />}><ComingSoon /></Suspense>
+        } />
+        <Route path="/ai-studio" element={
+          <Suspense fallback={<PageFallback />}><AiStudioLanding /></Suspense>
+        } />
+        <Route path="/vr-sunum" element={
+          <Suspense fallback={<PageFallback />}><VrSunumLanding /></Suspense>
+        } />
+        <Route path="/mimarlik-ofisleri" element={
+          <Suspense fallback={<PageFallback />}><MimarlikOfisleriLanding /></Suspense>
+        } />
+        <Route path="/emlak-vr-sunum" element={
+          <Suspense fallback={<PageFallback />}><EmlakVrLanding /></Suspense>
+        } />
+        <Route path="/emlak-pixel-streaming-sunum" element={
+          <Suspense fallback={<PageFallback />}><EmlakPixelStreamingLanding /></Suspense>
+        } />
+        <Route path="/muteahhit-proje-sunumu" element={
+          <Suspense fallback={<PageFallback />}><MuteahhitLanding /></Suspense>
+        } />
+        <Route path="/fiyatlandirma" element={
+          <Suspense fallback={<PageFallback />}><FiyatlandirmaLanding /></Suspense>
+        } />
+        <Route path="/rehber/vr-sunum-satis" element={
+          <Suspense fallback={<PageFallback />}><VrSunumRehber /></Suspense>
+        } />
+        <Route path="/rehber/ai-render-revizyon" element={
+          <Suspense fallback={<PageFallback />}><AiRenderRehber /></Suspense>
+        } />
+        <Route path="/rehber/emlak-360-vr" element={
+          <Suspense fallback={<PageFallback />}><Emlak360Rehber /></Suspense>
+        } />
+        <Route path="/gizlilik-politikasi" element={
+          <Suspense fallback={<PageFallback />}><GizlilikPolitikasi /></Suspense>
+        } />
+        <Route path="/kvkk" element={
+          <Suspense fallback={<PageFallback />}><KVKK /></Suspense>
+        } />
+        <Route path="/kullanim-kosullari" element={
+          <Suspense fallback={<PageFallback />}><KullanimKosullari /></Suspense>
+        } />
+        <Route path="/iptal-iade" element={
+          <Suspense fallback={<PageFallback />}><IptalIade /></Suspense>
+        } />
+        <Route path="/mesafeli-satis" element={
+          <Suspense fallback={<PageFallback />}><MesafeliSatis /></Suspense>
+        } />
+        <Route path="/hakkimizda" element={
+          <Suspense fallback={<PageFallback />}><Hakkimizda /></Suspense>
+        } />
         <Route path="*" element={<SiteNotFound />} />
       </Routes>
       <ArchilyaAIAssistant />
