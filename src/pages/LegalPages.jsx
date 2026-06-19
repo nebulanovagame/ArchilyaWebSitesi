@@ -276,8 +276,8 @@ export function IptalIade() {
       <section>
         <h2 className="text-white font-serif text-xl italic mb-3">2. Abonelik İptali</h2>
         <ul className="list-disc list-inside space-y-1 mt-2 ml-2">
-          <li>Plan değişikliği, düşürme veya kapatma talepleri satın alma modeli ve aktif hizmet kapsamına göre değerlendirilir.</li>
-          <li>Devam, yenileme veya kapatma koşulları satın alma akışında ya da size sunulan özel teklifte ayrıca belirtilir.</li>
+          <li><strong className="text-gray-300">Abonelik iptali:</strong> Aboneliğinizi istediğiniz zaman iptal edebilirsiniz. İptal talebiniz bir sonraki fatura döneminden itibaren geçerli olur; mevcut fatura döneminin sonuna kadar hizmet devam eder. İptal sonrası hesabınızdaki kalan işlem hakları, aktif fatura dönemi sonunda kullanılabilir durumda kalır.</li>
+          <li><strong className="text-gray-300">Plan düşürme/yükseltme:</strong> Plan değişikliği talebiniz, içinde bulunduğunuz fatura dönemine bağlı olarak bir sonraki dönemden itibaren geçerli olur. Yükseltme durumunda fark ücreti anında yansıtılır; düşürmede fark iadesi yapılmaz.</li>
           <li>Plan değişikliği sonrası hesabınızın hangi pakete döneceği, aktif haklar ve depolama durumu destek ekibi tarafından yazılı olarak teyit edilir.</li>
           <li>Bu konudaki talepler için Dashboard destek kanalı veya info@nebulanovagames.com kullanılabilir.</li>
         </ul>
@@ -345,11 +345,11 @@ export function MesafeliSatis() {
               {[
                 ['Keşif Abonelik', 'Ücretsiz (150 İşlem/ay)'],
                 ['Solo Abonelik', '₺699 / ay (1.000 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
-                ['Pro Abonelik', '₺1.499 / ay (2.200 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
-                ['Studio Abonelik', '₺4.999 / ay (7.000 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
-                ['500 Ek İşlem — Akış Takviyesi', 'Abone: ₺350 · Standart: ₺450'],
-                ['1.500 Ek İşlem — Proje Hızı', 'Abone: ₺900 · Standart: ₺1.150'],
-                ['4.000 Ek İşlem — İhale Sprinti', 'Abone: ₺2.200 · Standart: ₺2.700'],
+                ['Pro Abonelik', '₺1.599 / ay (3.000 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
+                ['Studio Abonelik', '₺4.999 / ay (12.000 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
+                ['500 Ek İşlem — Akış Takviyesi', '₺450'],
+                ['1.500 Ek İşlem — Proje Hızı', '₺1.200'],
+                ['4.000 Ek İşlem — İhale Sprinti', '₺3.000'],
                 ['Konsept Tasarım (100m² baz)', '₺18.000 · Abonelere: ₺14.400'],
                 ['İç Mekan Tasarımı (100m² baz)', '₺18.000 · Abonelere: ₺14.400'],
                 ['Peyzaj ve Çevre Düzenleme (100m² baz)', '₺8.000 · Abonelere: ₺6.400'],
@@ -378,7 +378,7 @@ export function MesafeliSatis() {
 
       <section>
         <h2 className="text-white font-serif text-xl italic mb-3">Madde 4 — Ödeme Koşulları</h2>
-        <p>Ödemeler Iyzico altyapısı üzerinden güvenli şekilde Türk Lirası cinsinden alınır. Kredi kartı ile taksitli ödeme imkânı sunulur. Ödeme bilgileri Şirketimizde saklanmaz; Iyzico'nun PCI-DSS uyumlu altyapısında güvence altında tutulur.</p>
+        <p>Ödemeler Iyzico altyapısı üzerinden güvenli şekilde Türk Lirası cinsinden tek çekim olarak alınır. Ödeme bilgileri Şirketimizde saklanmaz; Iyzico'nun PCI-DSS uyumlu altyapısında güvence altında tutulur.</p>
       </section>
 
       <section>

@@ -511,7 +511,7 @@ export default function PricingCalculator() {
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-2">{pkg.label}</p>
                 <div className="flex items-baseline gap-1 mb-1"><Zap className="w-3.5 h-3.5 text-primary" /><span className="text-xl font-serif text-white">{fmt(pkg.credits)}</span><span className="text-gray-600 text-xs">işlem kotası</span></div>
                 <p className="text-[11px] text-gray-500 mb-3 leading-relaxed">{pkg.description}</p>
-                <div className="space-y-1.5 mb-4"><p className="text-xs text-primary font-bold">Abone fiyatı: ₺{fmt(pkg.subscriberPrice)}</p><p className="text-[11px] text-gray-500">Standart fiyat: ₺{fmt(pkg.standardPrice)}</p></div>
+                <div className="space-y-1.5 mb-4"><p className="text-xs text-primary font-bold">₺{fmt(pkg.subscriberPrice)}</p></div>
                 <button onClick={scrollToContact} className="w-full py-2 text-[10px] font-bold uppercase tracking-widest border border-slate-700/80 bg-slate-950/45 text-gray-400 hover:border-primary/35 hover:text-primary rounded-sm transition-all">Satın Al</button>
               </div>
             ))}

@@ -303,8 +303,8 @@ export function FiyatlandirmaLanding() {
           {[
             { name: 'Keşif', price: 'Ücretsiz', credits: '150 işlem/ay', color: 'text-gray-400' },
             { name: 'Solo', price: '₺699/ay', credits: '1.000 işlem/ay', color: 'text-sky-300' },
-            { name: 'Pro', price: '₺1.499/ay', credits: '2.200 işlem/ay', color: 'text-primary', popular: true },
-            { name: 'Studio', price: '₺4.999/ay', credits: '7.000 işlem/ay', color: 'text-amber-400' },
+            { name: 'Pro', price: '₺1.599/ay', credits: '3.000 işlem/ay', color: 'text-primary', popular: true },
+            { name: 'Studio', price: '₺4.999/ay', credits: '12.000 işlem/ay', color: 'text-amber-400' },
           ].map((plan) => (
             <div key={plan.name} className={`rounded-sm border ${plan.popular ? 'border-primary/30 bg-primary/[0.03]' : 'border-white/[0.06] bg-white/[0.015]'} p-5 text-center`}>
               {plan.popular && <span className="text-[8px] text-primary font-bold uppercase tracking-widest bg-primary/10 px-2 py-0.5 rounded-sm mb-2 inline-block">Popüler</span>}
