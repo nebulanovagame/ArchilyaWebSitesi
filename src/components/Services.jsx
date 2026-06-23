@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { modernBuilding, interiorModern, heroBg } from '../assets/images';
 
 const services = [
   {
@@ -7,7 +8,7 @@ const services = [
     tag: 'AI Üretim',
     title: 'Render ve Revizyon Süresini Karar Anına Yaklaştırın.',
     desc: 'Premium Render, referans stil, plan boyama ve kontrollü revizyon araçlarıyla üretim bekleme sürelerini kısaltın. Müşteri geri bildirimini yeni bir teslim döngüsüne çevirmeden aynı akışta yanıtlayın.',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop',
+    image: modernBuilding,
     accent: 'primary',
   },
   {
@@ -15,7 +16,7 @@ const services = [
     tag: 'Pixel Streaming & VR',
     title: 'Linki Paylaşın, Müşteriniz Projenin İçinde Yürüsün.',
     desc: 'Pixel Streaming ile 4K sahnenizi doğrudan web tarayıcısına aktarın. Müşteriniz linke tıklar, projeyi keşfeder, malzeme değiştirir ve toplantı bitmeden karar verir. Kurulum, kablo veya güçlü bilgisayar gerekmez.',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop',
+    image: interiorModern,
     accent: 'amber',
   },
   {
@@ -23,7 +24,7 @@ const services = [
     tag: 'Workspace Kontrolü',
     title: 'Projeyi, Ekibi ve Sunum Hafızasını Tek Merkezde Tutun.',
     desc: 'Panel, işlem hakkı sistemi, bulut depolama ve ekip rolleriyle üretim operasyonunuz dağınık klasörlerden kurtulur. Aynı proje hafızası üzerinden AI, VR ve teslim süreçlerini yönetin.',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop',
+    image: heroBg,
     accent: 'primary',
   },
 ];

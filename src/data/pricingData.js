@@ -65,11 +65,36 @@ export const SUBSCRIPTION_PLANS = [
       'Aylık 12.000 işlem',
       'Özel proje yöneticisi ve öncelikli destek',
     ],
-    cta: 'Studio’ya Geç',
+    cta: 'Studio\'ya Geç',
+  },
+  {
+    id: 'emlak_beta',
+    name: 'AI Emlak Beta',
+    title: 'Emlakçılara özel pratik araçlar',
+    description: 'Emlak profesyonelleri için AI destekli ilan görseli düzenleme, metin yazma ve pazarlama araçları.',
+    price: 10,
+    credits: 500,
+    iconKey: 'zap',
+    color: 'text-emerald-300',
+    features: [
+      'Aylık 500 işlem',
+      'Emlak AI araçlarına tam erişim',
+      'İlan görseli düzenleme ve iyileştirme',
+      'AI destekli ilan metni ve başlık oluşturma',
+    ],
+    cta: 'Emlak Beta\'ya Geç',
   },
 ];
 
 export const ADD_ON_PACKAGES = [
+  {
+    id: 'boost-100',
+    label: 'Mini Takviye',
+    credits: 100,
+    subscriberPrice: 5,
+    standardPrice: 5,
+    description: 'Emlak ilanları için hızlı ve ekonomik işlem takviyesi.',
+  },
   {
     id: 'boost-500',
     label: 'Akış Takviyesi',

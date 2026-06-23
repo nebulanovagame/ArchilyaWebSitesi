@@ -3,6 +3,7 @@ import {
   Plug, Settings2, GraduationCap, MessageSquareHeart, ArrowRight,
 } from 'lucide-react';
 import clsx from 'clsx';
+import { creativeProcess, codingSetup, trainingSession, clientMeeting } from '../assets/images';
 
 const STEPS = [
   {
@@ -16,7 +17,7 @@ const STEPS = [
       'Ekip Erişim Yetkilendirmesi',
       'Donanım ve İhtiyaç Analizi (Kickoff)',
     ],
-    media: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80&auto=format&fit=crop',
+    media: creativeProcess,
     side: 'left',
   },
   {
@@ -30,7 +31,7 @@ const STEPS = [
       'Mevcut Dosyaların Buluta Senkronizasyonu',
       'Sürüm Geçmişi & Save Slot Yapılandırması',
     ],
-    media: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80&auto=format&fit=crop',
+    media: codingSetup,
     side: 'right',
   },
   {
@@ -44,7 +45,7 @@ const STEPS = [
       'Canlı Maliyet Takibi & Rapor Üretimi',
       'AI Stüdyo Araçları & Konsept Üretimi',
     ],
-    media: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80&auto=format&fit=crop',
+    media: trainingSession,
     side: 'left',
   },
   {
@@ -58,7 +59,7 @@ const STEPS = [
       'Revizyon & Geri Bildirim Takip Sistemi',
       'Periyodik AI & VR Özellik Güncellemeleri',
     ],
-    media: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80&auto=format&fit=crop',
+    media: clientMeeting,
     side: 'right',
   },
 ];

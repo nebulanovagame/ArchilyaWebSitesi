@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MoveHorizontal } from 'lucide-react';
+import { heroBg, constructionDrawing } from '../assets/images';
 
 export default function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -36,7 +37,7 @@ export default function BeforeAfter() {
         >
           <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-sm select-none group border border-white/6">
             <img
-              src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
+              src={heroBg}
               alt="Archilya AI Studio premium fotorealistik mimari render çıktısı"
               loading="lazy"
               decoding="async"
@@ -50,7 +51,7 @@ export default function BeforeAfter() {
             </div>
 
             <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2053&auto=format&fit=crop"
+              src={constructionDrawing}
               alt="Ham 3D model veya CAD dosyası AI öncesi taslak görünümü"
               loading="lazy"
               decoding="async"

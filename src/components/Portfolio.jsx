@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useInView, useSpring } from 'framer-motion';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { logAnalyticsEvent } from '../firebase';
+import { luxuryBuilding, modernTower, culturalBuilding, villaEstate } from '../assets/images';
 
 function useCounter(target, duration = 2000, start = false) {
   const [count, setCount] = useState(0);
@@ -38,7 +39,7 @@ const CASE_STUDIES = [
     category: 'Lüks Konut',
     location: 'İstanbul, TR',
     accent: 'primary',
-    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop',
+    image: luxuryBuilding,
     challenge: 'Müşteri, zemin ve duvar malzemelerini tekrar tekrar değiştirip karar veremiyor, her revizyon 3–5 gün sürüyordu.',
     solution: 'AI Studio ile alternatif render dili hazırlandı; Archilya VR Tasarım Modu ile malzeme seçimi sunum içinde canlı yapıldı.',
     result: '2 Saatte Satış Kapama',
@@ -51,7 +52,7 @@ const CASE_STUDIES = [
     category: 'Ofis & Ticari',
     location: 'Dubai, UAE',
     accent: 'amber',
-    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
+    image: modernTower,
     challenge: 'Yatırımcılar farklı ülkelerdeydi. Statik PDF renderlar üzerinden karar almak güçtü, toplantı planlamak ay alıyordu.',
     solution: 'AI ile render seti güncellendi; web tarayıcısı üzerinden anında erişilen VR turu ile yatırımcılar sunum linkini alıp kendi cihazlarından gezdi.',
     result: '3 Ülke, 1 Toplantı',
@@ -64,7 +65,7 @@ const CASE_STUDIES = [
     category: 'Kültürel Yapı',
     location: 'Ankara, TR',
     accent: 'primary',
-    image: 'https://images.unsplash.com/photo-1599809275372-b4036fa0954b?q=80&w=2070&auto=format&fit=crop',
+    image: culturalBuilding,
     challenge: 'Belediye kuruluna sunum yapılacaktı. Mevcut 2D çizimler ve statik görseller projenin etkisini yeterince aktaramıyordu.',
     solution: 'Plan ve görseller AI Studio ile sunuma hazırlandı; farklı mevsim ve ışık senaryolarıyla güçlendirilmiş 4K çıktı ve VR turu canlı gösterildi.',
     result: 'İlk Toplantıda Onay',
@@ -77,7 +78,7 @@ const CASE_STUDIES = [
     category: 'Tatil Konutu',
     location: 'Bodrum, TR',
     accent: 'amber',
-    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=2070&auto=format&fit=crop',
+    image: villaEstate,
     challenge: 'Proje; 12 farklı villa tipini kapsıyordu. Her opsiyonu ayrı ayrı sunmak haftalar alacaktı ve maliyet karşılaştırması yapılamıyordu.',
     solution: 'Workspace içinde villa tipleri organize edildi; Archilya VR\'ın çoklu ünite desteğiyle tüm seçenekler tek sunum projesinde toplandı.',
     result: '%60 Daha Az Revizyon',

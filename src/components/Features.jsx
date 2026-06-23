@@ -5,6 +5,10 @@ import {
   Image, Maximize, Globe, Grid3X3, Layers, FileEdit,
 } from 'lucide-react';
 import clsx from 'clsx';
+import {
+  constructionDrawing, abstractGeometric, blueprintAnalysis,
+  heroBg, workspaceMeeting, teamCollaboration, laptopMockup,
+} from '../assets/images';
 
 const AI_STUDIO_FEATURES = [
   {
@@ -20,7 +24,7 @@ const AI_STUDIO_FEATURES = [
       'Çok Açılı Render ile Tutarlı Mekan Dili',
       'Render Kalite Analizi ve İyileştirme Önerileri',
     ],
-    media: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format&fit=crop',
+    media: constructionDrawing,
     mediaAlt: 'AI Studio — Premium Render Demo',
     mediaType: 'image',
   },
@@ -37,7 +41,7 @@ const AI_STUDIO_FEATURES = [
       'Malzeme, Işık, Mobilya ve Zemin Revizyonları',
       'Prompt Kütüphanesi ve İş Akışı Devam Ettirme',
     ],
-    media: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=900&q=80&auto=format&fit=crop',
+    media: abstractGeometric,
     mediaAlt: 'AI Studio — Revizyon Demo',
     mediaType: 'image',
   },
@@ -54,7 +58,7 @@ const AI_STUDIO_FEATURES = [
       'Doku Üretici ve Malzeme Listesi Yol Haritası',
       '360 Panorama ve Video Generator Beta Hattı',
     ],
-    media: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop',
+    media: blueprintAnalysis,
     mediaAlt: 'AI Studio — Plan ve Analiz Demo',
     mediaType: 'image',
   },
@@ -85,7 +89,7 @@ const VR_FEATURES = [
       'Nesne Bazlı Bilgi Ekranları (Object Info)',
       'Toplu Tasarım Şemaları (Design Schemes)',
     ],
-    media: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=80&auto=format&fit=crop',
+    media: heroBg,
     mediaAlt: 'Yaşayan Mekan — Canlı Tasarım Demo',
     mediaType: 'image',
   },
@@ -102,7 +106,7 @@ const VR_FEATURES = [
       'HTML, CSV, JSON Formatında Maliyet Raporu',
       'Malzeme Karşılaştırma ve Varyasyon Tablosu',
     ],
-    media: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80&auto=format&fit=crop',
+    media: blueprintAnalysis,
     mediaAlt: 'Eşzamanlı Bütçe Yönetimi Demo',
     mediaType: 'image',
   },
@@ -119,7 +123,7 @@ const VR_FEATURES = [
       'Aydınlatma & Yerleşim Senaryoları Arası Geçiş',
       'Sinematik Kamera ile Yüksek Çözünürlüklü Çıktı',
     ],
-    media: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80&auto=format&fit=crop',
+    media: workspaceMeeting,
     mediaAlt: 'Dinamik Senaryolar & Mevsim Döngüsü Demo',
     mediaType: 'image',
   },
@@ -139,7 +143,7 @@ const PANEL_FEATURES = [
       'Ekip İçi Revizyon Takibi ve Geri Dönüş',
       'Güvenli & Şifrelenmiş Bulut Depolama',
     ],
-    media: 'https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=900&q=80&auto=format&fit=crop',
+    media: teamCollaboration,
     mediaAlt: 'Dosya Senkronizasyonu & Sürüm Kontrolü Demo',
     mediaType: 'image',
   },
@@ -156,7 +160,7 @@ const PANEL_FEATURES = [
       'Bulut Altyapısıyla Veri & Kullanıcı Yönetimi',
       'Çoklu Ünite (Multi-Unit) Proje Desteği',
     ],
-    media: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=900&q=80&auto=format&fit=crop',
+    media: laptopMockup,
     mediaAlt: 'Çoklu Platform Desteği Demo',
     mediaType: 'image',
   },

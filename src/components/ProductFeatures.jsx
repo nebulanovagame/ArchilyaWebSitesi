@@ -3,6 +3,7 @@ import {
   Link2, BarChart3, Sparkles, MonitorPlay, ShieldCheck, ArrowRight, CheckCircle2,
 } from 'lucide-react';
 import { logAnalyticsEvent } from '../firebase';
+import { constructionDrawing, techWorkspace, abstractGeometric, creativeProcess, teamMeeting } from '../assets/images';
 
 const LAYERS = [
   {
@@ -14,7 +15,7 @@ const LAYERS = [
     desc: 'Görsel, plan veya referans yükleyin. AI Studio; premium render, kontrollü revizyon, plan boyama, analiz ve konsept üretimini tek akışta birleştirir.',
     badges: ['Premium Render & Revizyon', 'Kat Planı ve Tasarım Analizi', 'İç / Dış Mekan / Peyzaj AI Araçları'],
     accent: 'primary',
-    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&auto=format&fit=crop',
+    image: constructionDrawing,
     align: 'left',
   },
   {
@@ -26,7 +27,7 @@ const LAYERS = [
     desc: 'Pixel Streaming ile yüksek kaliteli 3D sahnelerinizi doğrudan web tarayıcısına aktarın. Kurulum gerektirmez, güçlü bilgisayar şartı yoktur. Linki paylaşın; müşteriniz telefon, tablet veya VR başlıkla projenin içinde yürüsün.',
     badges: ['Pixel Streaming — Web Tarayıcısına 4K', '360 Panorama & VR Yürüyüş', 'Dokunmatik / Gamepad / VR Kontrol'],
     accent: 'amber',
-    image: 'https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=1600&q=80&auto=format&fit=crop',
+    image: techWorkspace,
     align: 'right',
   },
   {
@@ -38,7 +39,7 @@ const LAYERS = [
     desc: 'Projeler, dosyalar, AI işlem hakları, abonelik ve ekip rolleriniz tek workspace\'te toplanır. Dağınık klasörler yerine güvenli, senkronize bir üretim hafızası.',
     badges: ['Proje ve Dosya Yönetimi', 'Kredi / Abonelik Takibi', 'Ekip Rolleri ve Marka Alanı'],
     accent: 'primary',
-    image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=1600&q=80&auto=format&fit=crop',
+    image: abstractGeometric,
     align: 'left',
   },
   {
@@ -50,7 +51,7 @@ const LAYERS = [
     desc: 'Hazır modeli VR\'a aktarın veya 2D plandan sıfırdan sahne üretin. Materyalli, etkileşimli ve emlak odaklı paketlerle satış ofisinize özel şov kurun.',
     badges: ['2D Plandan VR Modelleme', 'Materyalli / Etkileşimli Paketler', 'Emlak ve Lansman Sunumları'],
     accent: 'amber',
-    image: 'https://images.unsplash.com/photo-1558655146-364adaf1fcc9?w=1600&q=80&auto=format&fit=crop',
+    image: creativeProcess,
     align: 'right',
   },
   {
@@ -62,7 +63,7 @@ const LAYERS = [
     desc: 'Her proje dosyası şifrelenmiş sunucularda tutulur. Ekibiniz nerede olursa olsun aynı anda senkronize çalışır, hiçbir revizyon kaybolmaz.',
     badges: ['KVKK & GDPR Uyumlu Şifreli Sunucular', 'Save Slots', '10+ Kişilik Ekip Senkronizasyonu'],
     accent: 'primary',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80&auto=format&fit=crop',
+    image: teamMeeting,
     align: 'left',
   },
 ];

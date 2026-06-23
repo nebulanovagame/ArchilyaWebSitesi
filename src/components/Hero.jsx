@@ -2,6 +2,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useRef } from 'react';
 import { logAnalyticsEvent } from '../firebase';
+import { heroBg } from '../assets/images';
 
 const TRUST_BADGES = [
   'AI Studio',
@@ -29,7 +30,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/55 z-10" />
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/40 to-transparent z-20 pointer-events-none" />
         <img
-          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop"
+          src={heroBg}
           alt="Archilya AI Studio ve VR sunum platformu mimari ofis görseli"
           loading="eager"
           fetchPriority="high"
