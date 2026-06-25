@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion as Motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, FileText } from 'lucide-react';
 import { setPageMeta } from '../utils/seo';
 
 const LEGAL_LAST_UPDATED = '11 Haziran 2026';
@@ -494,5 +494,334 @@ export function GizlilikKosullari() {
         <p>Talepleriniz için: <strong className="text-gray-300">info@nebulanovagames.com</strong></p>
       </section>
     </LegalLayout>
+  );
+}
+
+export function MimarlikHizmetSozlesmesi() {
+  const handleDownloadWord = useCallback(() => {
+    const el = document.getElementById('sozlesme-icerik');
+    if (!el) return;
+    const style = document.createElement('style');
+    style.textContent = `
+      body { font-family: 'Calibri', 'Arial', sans-serif; font-size: 11pt; color: #1a1a1a; line-height: 1.7; max-width: 800px; margin: auto; padding: 40px; }
+      h1 { font-size: 20pt; color: #8b6f4c; border-bottom: 2px solid #c6a87c; padding-bottom: 8px; }
+      h2 { font-size: 14pt; color: #8b6f4c; margin-top: 24px; }
+      strong { color: #1a1a1a; }
+      ul { margin: 8px 0; padding-left: 20px; }
+      li { margin-bottom: 4px; }
+      .imza-blok { display: flex; gap: 20px; margin-top: 30px; }
+      .imza-kart { flex: 1; border: 1px solid #ccc; padding: 16px; border-radius: 4px; }
+      .imza-cizgi { border-bottom: 1px solid #999; margin: 16px 0; }
+    `;
+    const html = `<!DOCTYPE html>
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head><meta charset="utf-8"><title>Archilya - Mimarlık Hizmet Sözleşmesi</title>${style.outerHTML}</head>
+<body>
+  <div style="text-align:center;margin-bottom:32px">
+    <p style="font-size:16pt;font-weight:bold;color:#8b6f4c;margin:0">ARCHİLYA</p>
+    <p style="font-size:10pt;color:#666;margin:4px 0 0 0">Mimarlık Hizmet Sözleşmesi</p>
+  </div>
+  ${el.innerHTML.replace(/class="[^"]*"/g, '').replace(/<style[\s\S]*?<\/style>/g, '').replace(/<svg[\s\S]*?<\/svg>/g, '').replace(/<img[^>]*>/g, '')}
+  <p style="text-align:center;margin-top:40px;font-size:9pt;color:#999;border-top:1px solid #ddd;padding-top:12px">
+    Archilya &mdash; NEBULA NOVA GAMES DIŞ TİCARET LİMİTED ŞİRKETİ &mdash; Bu belge dijital ortamda hazırlanmıştır.
+  </p>
+</body></html>`;
+    const blob = new Blob([html], { type: 'application/msword' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `Archilya-Mimarlik-Hizmet-Sozlesmesi.doc`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  }, []);
+
+  return (
+    <>
+      {/* Floating action buttons */}
+      <div className="fixed top-20 right-4 z-50 print:hidden">
+        <button
+          onClick={handleDownloadWord}
+          className="flex items-center gap-2 px-4 py-2.5 rounded-sm border border-primary/30 bg-surface/80 backdrop-blur-md text-[10px] font-bold uppercase tracking-[0.25em] text-primary hover:bg-primary/20 transition-all cursor-pointer shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+          title="Word belgesi olarak indir"
+        >
+          <FileText className="h-3.5 w-3.5" />
+          Word
+        </button>
+      </div>
+
+    <LegalLayout title="Mimarlık Hizmet Sözleşmesi">
+      <div id="sozlesme-icerik">
+      <p><strong className="text-gray-200">Son Güncelleme:</strong> {LEGAL_LAST_UPDATED}</p>
+      <p className="text-gray-500 text-sm">
+        Bu sözleşme, Archilya platformu üzerinden sunulan mimarlık ve görselleştirme hizmetlerine ilişkin
+        hüküm ve koşulları düzenler. Ödemenin gerçekleştirilmesiyle birlikte taraflar aşağıdaki koşulları
+        kabul etmiş sayılır.
+      </p>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">1. Taraflar</h2>
+        <div className="rounded-sm border border-white/10 bg-white/[0.03] p-4 space-y-2 text-sm">
+          <p><strong className="text-gray-200">Hizmet Sağlayıcı (Archilya):</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-2 text-gray-400">
+            <li>Unvan: NEBULA NOVA GAMES DIŞ TİCARET LİMİTED ŞİRKETİ</li>
+            <li>Adres: Silahtarağa Mah. Üniversite 1. Sk. No:13/1 İç Kapı No:Z109, 59000 Çorlu / TEKİRDAĞ</li>
+            <li>Vergi Dairesi: Çorlu Vergi Dairesi</li>
+            <li>Vergi Numarası: 0630135919</li>
+            <li>MERSİS Numarası: 0630135919700001</li>
+            <li>Ticari İletişim: info@archilya.com — 0 (282) 606 06 39</li>
+          </ul>
+        </div>
+        <div className="mt-3 rounded-sm border border-white/10 bg-white/[0.03] p-4 space-y-2 text-sm">
+          <p><strong className="text-gray-200">Müşteri:</strong></p>
+          <ul className="list-disc list-inside space-y-1 ml-2 text-gray-400">
+            <li>Ad / Unvan: ................................................</li>
+            <li>Adres: ................................................</li>
+            <li>T.C. Kimlik / Vergi Numarası: ................................................</li>
+            <li>Telefon / E-posta: ................................................</li>
+          </ul>
+        </div>
+        <p className="mt-3">
+          Taraflar, işbu sözleşme hükümlerini kabul ederek aşağıda belirtilen şartlar çerçevesinde
+          mimarlık hizmetinin ifası konusunda anlaşmışlardır.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">2. Sözleşmenin Konusu ve Kapsamı</h2>
+        <p>
+          İşbu sözleşme, Archilya platformu üzerinden Müşteri tarafından seçilen hizmet veya hizmet
+          setinin (konsept tasarım, iç mekan tasarımı, peyzaj düzenleme, profesyonel modelleme,
+          görselleştirme, ruhsat ve uygulama çizimleri, VR/dijital sunum hizmetleri ve benzeri)
+          kapsamını, bedelini, teslim koşullarını ve tarafların hak ile yükümlülüklerini düzenler.
+        </p>
+        <p className="mt-2">
+          Hizmet kapsamı, Archilya tarafından Müşteri'ye sunulan fiyat teklifinde (teklif sunumu)
+          belirtilen hizmetler, alan büyüklükleri, fiyatlandırma ve varsa özel koşullar ile sınırlıdır.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">3. Hizmet Bedeli ve Ödeme Koşulları</h2>
+        <p>
+          <strong className="text-gray-200">3.1.</strong> Hizmet bedeli, Archilya tarafından Müşteri'ye sunulan
+          fiyat teklifinde belirtilen toplam tutardır. Tüm fiyatlar Türk Lirası (TL) olarak ifade
+          edilmiştir ve KDV dahil değildir.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">3.2.</strong> Ödeme aşağıdaki şekilde yapılır:
+        </p>
+        <ul className="list-disc list-inside space-y-1 mt-1 ml-2">
+          <li>Toplam bedelin <strong className="text-gray-200">%50'si</strong>, sipariş onayında ön ödeme olarak tahsil edilir.</li>
+          <li>Kalan <strong className="text-gray-200">%50 bakiye</strong>, işin teslimi sırasında tahsil edilir.</li>
+        </ul>
+        <p className="mt-2">
+          <strong className="text-gray-200">3.3.</strong> Ödemeler, banka havalesi veya EFT yoluyla Archilya
+          tarafından bildirilecek banka hesabına yapılır. Ödemenin gecikmesi durumunda teslim tarihi
+          de gecikme süresi kadar ertelenir.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">3.4.</strong> Ödemenin gerçekleştirilmesiyle birlikte Müşteri,
+          işbu sözleşme hükümlerini okumuş, anlamış ve kabul etmiş sayılır.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">3.5.</strong> Hizmet bedeli, TMMOB Mimarlar Odası tarafından
+          belirlenen <strong className="text-gray-200">En Az Bedel Tarifesi</strong>'nin altında
+          belirlenemez. Bedel tespitinde Mimarlar Odası'nın yürürlükteki tarifesi esas alınır.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">3.6.</strong> İşbu sözleşmeye ilişkin
+          <strong className="text-gray-200"> Damga Vergisi</strong> ve diğer yasal yükümlülükler
+          Müşteri tarafından karşılanır.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">4. Teslim ve Süreç</h2>
+        <p>
+          <strong className="text-gray-200">4.1.</strong> Teslim süresi, ön ödemenin alınmasını takiben
+          başlar. Standart teslim süresi <strong className="text-gray-200">3 (üç) haftadır</strong>.
+          Revizyon süreçleri bu süreye dahil değildir.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">4.2.</strong> Teslimat, dijital ortamda (e-posta, bulut depolama
+          bağlantısı veya Archilya platformu üzerinden) yapılır. Fiziksel bir teslimat yapılmaz.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">4.3.</strong> Müşteri, teslim edilen işi teslim tarihinden
+          itibaren 7 (yedi) iş günü içinde incelemeli ve varsayılan ayıp veya uygunsuzlukları
+          Archilya'ya bildirmelidir. Bu süre içinde bildirilmeyen ayıplardan Archilya sorumlu tutulamaz.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">5. Revizyon ve Değişiklik Hakları</h2>
+        <p>
+          <strong className="text-gray-200">5.1.</strong> Her hizmet kapsamında 2 (iki) adet kapsamlı revizyon
+          hakkı ücretsizdir. Küçük rötuşlar (renk, malzeme, obje değişikliği) ücretsizdir ve revizyon
+          hakkından düşülmez.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">5.2.</strong> 2 (iki) ücretsiz revizyon hakkı aşıldığında,
+          sonraki her kapsamlı revizyon için fiyat teklifinde belirtilen revizyon ücreti yansıtılır.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">5.3.</strong> Revizyon talepleri, teslim edilen işin kapsamını
+          aşan veya sözleşme konusu hizmetin niteliğini değiştiren talepler olması durumunda ayrıca
+          fiyatlandırılır.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">6. Cayma ve Fesih Hakkı</h2>
+        <p>
+          <strong className="text-gray-200">6.1.</strong> Müşteri, ön ödemeyi yaptıktan sonra 14 (on dört)
+          gün içinde hiçbir gerekçe göstermeksizin cayma hakkına sahiptir. Bu durumda, henüz işe
+          başlanmamışsa ön ödeme iade edilir. İşe başlanmışsa, yapılan işin karşılığı düşüldükten sonra
+          kalan tutar iade edilir.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">6.2.</strong> Archilya, Müşteri'nin sözleşme hükümlerine aykırı
+          davranması veya işbirliği yükümlülüğünü yerine getirmemesi durumunda sözleşmeyi tek taraflı
+          feshetme hakkına sahiptir. Bu durumda, o ana kadar yapılan işin bedeli Müşteri'ye yansıtılır
+          ve kalan tutar iade edilmez.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">6.3.</strong> %50 iade garantisi bulunan hizmetlerde, Müşteri
+          teslim edilen işten memnun kalmazsa koşulsuz olarak ödediği toplam bedelin %50'sini iade
+          alma hakkına sahiptir. Bu hak, teslim tarihinden itibaren 7 (yedi) gün içinde kullanılmalıdır.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">7. İkametgah ve Bildirimler</h2>
+        <p>
+          <strong className="text-gray-200">7.1.</strong> Tarafların işbu sözleşmede belirtilen adresleri,
+          yasal ikametgahları olup taraflarca yapılacak tüm bildirimler bu adreslere yazılı olarak
+          yapılır.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">7.2.</strong> Adres değişiklikleri, değişiklik tarihinden
+          itibaren <strong className="text-gray-200">7 (yedi) gün</strong> içinde karşı tarafa yazılı
+          olarak bildirilir. Bildirilmeyen adres değişikliklerinden doğan sorumluluk değişikliği
+          yapmayan tarafa aittir.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">7.3.</strong> Bildirimler, taahhütlü mektupla veya noter
+          aracılığıyla yapılır. Bildirimin karşı tarafa ulaştığı tarih, tebliğ tarihi olarak kabul
+          edilir. Bildirimin ulaşmaması halinde, gönderim tarihinden itibaren 5 (beş) iş günü sonunda
+          bildirim yapılmış sayılır.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">8. Gizlilik</h2>
+        <p>
+          Taraflar, işbu sözleşme kapsamında birbirlerinden edindikleri ticari, teknik ve kişisel
+          bilgileri üçüncü kişilerle paylaşmayacaklarını, yalnızca sözleşmenin ifası amacıyla
+          kullanacaklarını ve sözleşmenin sona ermesinden sonra da gizlilik yükümlülüğünün devam
+          edeceğini kabul eder.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">9. Fikri Mülkiyet ve Yasal Dayanak</h2>
+        <p>
+          <strong className="text-gray-200">9.1.</strong> Teslim edilen tüm dijital içeriklerin (render
+          görselleri, 3D modeller, VR ortamları, çizimler ve diğer materyaller) kullanım hakkı,
+          bedelin tamamının ödenmesi koşuluyla Müşteri'ye devredilir.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">9.2.</strong> Archilya, teslim edilen işleri portföy amaçlı
+          kullanma hakkına sahiptir. Müşteri'nin açık yazılı izni olmadan ticari amaçlı kullanılamaz.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">9.3.</strong> Archilya'ya ait yazılım, altyapı, materyal
+          kütüphanesi ve tescilli araçlar üzerindeki tüm fikri mülkiyet hakları Archilya'ya aittir.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">9.4.</strong> İşbu sözleşme kapsamında tarafların hak ve
+          yükümlülükleri aşağıda belirtilen yasal düzenlemelere tabidir:
+        </p>
+        <ul className="list-disc list-inside space-y-1 mt-1 ml-2">
+          <li><strong className="text-gray-200">3194 sayılı İmar Kanunu</strong> ve ilgili yönetmelikler</li>
+          <li><strong className="text-gray-200">5846 sayılı Fikir ve Sanat Eserleri Kanunu (FSEK)</strong></li>
+          <li><strong className="text-gray-200">6235/7303 sayılı TMMOB Kanunu</strong></li>
+          <li><strong className="text-gray-200">3458 sayılı Mühendislik ve Mimarlık Hakkında Kanun</strong></li>
+          <li>TMMOB Mimarlar Odası Serbest Mimarlık Hizmetlerini Uygulama, Tescil ve Mesleki Denetim Yönetmeliği</li>
+          <li>Mimarlık Hizmetleri Şartnamesi ve En Az Bedel Tarifesi</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">10. Sorumluluk ve Garanti</h2>
+        <p>
+          <strong className="text-gray-200">10.1.</strong> Archilya, hizmeti özen ve sadakat yükümlülüğü
+          çerçevesinde, mesleki standartlara uygun olarak ifa etmeyi taahhüt eder.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">10.2.</strong> Archilya'nın sorumluluğu, Müşteri'nin ödediği
+          toplam hizmet bedelini aşamaz. Archilya, dolaylı veya tali zararlardan sorumlu tutulamaz.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">10.3.</strong> Müşteri tarafından sağlanan kaynak dosyaların
+          (CAD, PDF, görsel, referans vb.) doğruluğundan Müşteri sorumludur. Hatalı kaynak dosyalarından
+          kaynaklanan revizyon talepleri ek ücrete tabidir.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">11. Uyuşmazlık Çözümü</h2>
+        <p>
+          İşbu sözleşmeden doğan veya sözleşmeyle ilgili uyuşmazlıkların çözümünde Türkiye Cumhuriyeti
+          kanunları uygulanır. Uyuşmazlık durumunda öncelikle <strong className="text-gray-200">arabuluculuk</strong>
+          yoluna başvurulur. Arabuluculuktan sonuç alınamaması halinde taraflar,
+          <strong className="text-gray-200">TMMOB Mimarlar Odası hakemliğine</strong> başvurabilir.
+          Anlaşma sağlanamaması halinde <strong className="text-gray-200">Tekirdağ Mahkemeleri ve İcra
+          Daireleri</strong> yetkilidir.
+        </p>
+      </section>
+
+      <section>
+        <h2 className="text-white font-serif text-xl italic mb-3">12. Yürürlük ve İmza</h2>
+        <p>
+          <strong className="text-gray-200">12.1.</strong> İşbu sözleşme, Müşteri'nin ön ödemeyi
+          gerçekleştirdiği tarihte yürürlüğe girer ve tarafların tüm edimlerini yerine getirmesiyle
+          veya sözleşmenin feshiyle sona erer.
+        </p>
+        <p className="mt-2">
+          <strong className="text-gray-200">12.2.</strong> İşbu sözleşme 12 (on iki) maddeden ibaret
+          olup taraflarca okunup anlaşılarak imzalanmıştır. Sözleşmenin bir nüshası
+          <strong className="text-gray-200"> TMMOB Mimarlar Odası</strong>'na teslim edilmek üzere
+          Archilya nezdinde, bir nüshası Müşteri nezdinde saklanır.
+        </p>
+
+        {/* İmza Blokları */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="rounded-sm border border-primary/20 bg-primary/[0.04] p-5">
+            <p className="text-[9px] uppercase tracking-[0.2em] text-primary font-bold mb-3">Hizmet Sağlayıcı (Archilya)</p>
+            <p className="text-xs text-gray-400">NEBULA NOVA GAMES DIŞ TİCARET LİMİTED ŞİRKETİ</p>
+            <div className="mt-6 mb-6 border-b border-white/10" />
+            <p className="text-xs text-gray-500">Adı Soyadı / Yetkili: ................................................</p>
+            <div className="mt-6 mb-6 border-b border-white/10" />
+            <p className="text-xs text-gray-500">İmza: ................................................</p>
+            <p className="mt-4 text-xs text-gray-500">Tarih: ....../....../......</p>
+          </div>
+          <div className="rounded-sm border border-primary/20 bg-primary/[0.04] p-5">
+            <p className="text-[9px] uppercase tracking-[0.2em] text-primary font-bold mb-3">Müşteri</p>
+            <p className="text-xs text-gray-400">Müşteri Adı / Unvanı</p>
+            <div className="mt-6 mb-6 border-b border-white/10" />
+            <p className="text-xs text-gray-500">Adı Soyadı / Yetkili: ................................................</p>
+            <div className="mt-6 mb-6 border-b border-white/10" />
+            <p className="text-xs text-gray-500">İmza: ................................................</p>
+            <p className="mt-4 text-xs text-gray-500">Tarih: ....../....../......</p>
+          </div>
+        </div>
+      </section>
+      </div>{/* #sozlesme-icerik */}
+    </LegalLayout>
+
+    </>
   );
 }

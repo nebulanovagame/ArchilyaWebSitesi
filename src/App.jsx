@@ -23,6 +23,7 @@ const CerezPolitikasi = lazy(() => import('./pages/LegalPages').then(m => ({ def
 const TicariElektronikIletiOnayi = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.TicariElektronikIletiOnayi })));
 const GizlilikKosullari = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.GizlilikKosullari })));
 const Hakkimizda = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.Hakkimizda })));
+const MimarlikHizmetSozlesmesi = lazy(() => import('./pages/LegalPages').then(m => ({ default: m.MimarlikHizmetSozlesmesi })));
 function PanelRedirect() {
   useEffect(() => {
     window.location.href = 'https://panel.archilya.com';
@@ -238,6 +239,9 @@ function App() {
         } />
         <Route path="/hakkimizda" element={
           <Suspense fallback={<PageFallback />}><Hakkimizda /></Suspense>
+        } />
+        <Route path="/mimarlik-hizmet-sozlesmesi" element={
+          <Suspense fallback={<PageFallback />}><MimarlikHizmetSozlesmesi /></Suspense>
         } />
         <Route path="*" element={<SiteNotFound />} />
       </Routes>
