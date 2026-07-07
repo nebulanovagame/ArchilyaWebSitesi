@@ -131,7 +131,7 @@ export function AiRenderRehber() {
           <ul className="list-disc list-inside space-y-2 text-gray-400 pl-4">
             <li><strong className="text-white">Premium Render:</strong> SketchUp veya ham görseli fotorealistik çıktıya dönüştürün.</li>
             <li><strong className="text-white">Revizyon Düzenleyici:</strong> Müşteri notlarını kontrollü revizyon olarak uygulayın.</li>
-            <li><strong className="text-white">Premium Kat Planı:</strong> Plan görselinizi sunuma hazır hale getirin, renklendirin.</li>
+            <li><strong className="text-white">3D Kat Planı:</strong> Boyanmış kat planınızı 3 boyutlu perspektif görüntüye dönüştürün, duvarları yükseltin, mobilya ekleyin.</li>
             <li><strong className="text-white">Tasarım Analizi:</strong> Malzeme, ışık, kompozisyon ve sunum kalitesini analiz edin.</li>
             <li><strong className="text-white">Doku Üretici (Beta):</strong> Malzeme fotoğrafından sonsuz tekrarlanabilir doku üretin.</li>
           </ul>

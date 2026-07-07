@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 import { submitContactFormSecure } from '../services/entitlementService';
+import { getUserFriendlyErrorMessage } from '../errors/user-messages';
 
 function AnimatedInput({ type = 'text', placeholder, value, onChange, required }) {
   const [focused, setFocused] = useState(false);
@@ -101,7 +102,7 @@ export default function Contact() {
       }
     } catch (err) {
       setSending(false);
-      toast.error(err.message || 'Mesaj gönderilemedi.');
+      toast.error(getUserFriendlyErrorMessage(err, 'Mesaj gönderilemedi.'));
     }
   }
 

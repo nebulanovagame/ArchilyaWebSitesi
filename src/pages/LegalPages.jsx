@@ -328,7 +328,7 @@ export function MesafeliSatis() {
 
       <section>
         <h2 className="text-white font-serif text-xl italic mb-3">Madde 2 — Sözleşmenin Konusu</h2>
-        <p>Bu sözleşme; Alıcı'nın Archilya platformu üzerinden satın aldığı dijital hizmetleri (Ek İşlem Paketleri, Keşif / Solo / Pro / Studio Abonelik Planları) ile mimari danışmanlık hizmetleri (Konsept Tasarım, İç Mekan Tasarımı, Peyzaj ve Çevre Düzenleme, Profesyonel Modelleme, Görselleştirme, Ruhsat ve Uygulama) ve Archilya VR hizmetlerini (Materyalsiz Aktarma, Materyalli 4K Aktarma, Full Etkileşimli 4K Aktarma, Materyalsiz Modelleme, Materyalli Modelleme, Full Etkileşimli Materyalli Modelleme, VR Aktarma — Emlak, VR Modelleme — Emlak) kapsamaktadır.</p>
+        <p>Bu sözleşme; Alıcı'nın Archilya platformu üzerinden satın aldığı dijital hizmetleri (Ek İşlem Paketleri, Keşif / Solo / Pro / Studio Abonelik Planları) ile mimari danışmanlık hizmetleri (Konsept Tasarım, İç Mekan Tasarımı, Peyzaj ve Çevre Düzenleme, Profesyonel Modelleme, Görselleştirme, Ruhsat ve Uygulama) ve Archilya VR hizmetlerini (Materyalsiz Aktarma, Materyalli 4K Aktarma, Full Etkileşimli 4K Aktarma, Materyalsiz Modelleme, Materyalli Modelleme, Full Etkileşimli Materyalli Modelleme, VR Aktarma — Emlak, VR Modelleme — Emlak) ve Archilya Pixel Streaming hizmetlerini (Pixel Streaming — Sunucusuz, Pixel Streaming — Sunuculu) kapsamaktadır.</p>
       </section>
 
       <section>
@@ -344,11 +344,12 @@ export function MesafeliSatis() {
             <tbody className="space-y-2">
               {[
                 ['Keşif Abonelik', 'Ücretsiz (150 İşlem/ay)'],
-                ['Solo Abonelik', '₺699 / ay (1.000 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
-                ['Pro Abonelik', '₺1.599 / ay (3.000 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
-                ['Studio Abonelik', '₺4.999 / ay (12.000 İşlem/ay) · Yıllık kurumsal teklif ayrıca sunulur'],
-                ['500 Ek İşlem — Akış Takviyesi', '₺450'],
-                ['1.500 Ek İşlem — Proje Hızı', '₺1.200'],
+                ['AI Emlak Beta Abonelik', '₺359 / ay (500 İşlem/ay) · Yıllık: ₺289/ay'],
+                ['Solo Abonelik', '₺699 / ay (1.000 İşlem/ay) · Yıllık: ₺549/ay'],
+                ['Pro Abonelik', '₺1.599 / ay (3.000 İşlem/ay) · Yıllık: ₺1.279/ay'],
+                ['Studio Abonelik', '₺4.999 / ay (12.000 İşlem/ay) · Yıllık: ₺3.999/ay'],
+['500 Ek İşlem — Akış Takviyesi', '₺400'],
+['1.500 Ek İşlem — Proje Hızı', '₺1.150'],
                 ['4.000 Ek İşlem — İhale Sprinti', '₺3.000'],
                 ['Konsept Tasarım (100m² baz)', '₺18.000 · Abonelere: ₺14.400'],
                 ['İç Mekan Tasarımı (100m² baz)', '₺18.000 · Abonelere: ₺14.400'],
@@ -364,6 +365,8 @@ export function MesafeliSatis() {
                 ['Full Etkileşimli Materyalli Modelleme', 'Temel: ₺32.000 · Orta: ₺48.000 · Geniş: ₺65.000+ · Abone: %20 indirim'],
                 ['VR Aktarma — Emlak', '₺5.500–₺9.000 / daire · Abone: ek %20 indirim'],
                 ['VR Modelleme — Emlak', '₺11.000–₺18.000 / daire · Abone: ek %20 indirim'],
+                ['Pixel Streaming — Sunucusuz (100m² baz)', 'Normal: ₺6.000 · Abone: ₺4.800'],
+                ['Pixel Streaming — Sunuculu (100m² baz)', 'Normal: ₺12.500 · Abone: ₺10.000'],
               ].map(([hizmet, fiyat]) => (
                 <tr key={hizmet} className="border-b border-white/5">
                   <td className="py-2 pr-4 text-gray-300">{hizmet}</td>

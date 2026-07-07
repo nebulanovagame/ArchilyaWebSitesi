@@ -53,7 +53,7 @@ const AI_STUDIO_FEATURES = [
     tag: 'Archilya AI Studio',
     desc: 'Kat planı, analiz, doku ve malzeme çıktılarıyla sunum dosyanızı tek platformda zenginleştirin.',
     details: [
-      'Premium Kat Planı ve Plan Boyama',
+      '3D Kat Planı ve Plan Boyama',
       'Tasarım Analizi ve Mimari Rapor Altyapısı',
       'Doku Üretici ve Malzeme Listesi Yol Haritası',
       '360 Panorama ve Video Generator Beta Hattı',
@@ -67,7 +67,7 @@ const AI_STUDIO_FEATURES = [
 const AI_TOOLS_GRID = [
   { id: 'premium-render', icon: Image, label: 'Premium Render', credit: 15, active: true },
   { id: 'revision-edit', icon: FileEdit, label: 'Revizyon Düzenleyici', credit: 25, active: true },
-  { id: 'plan-color', icon: Palette, label: 'Premium Kat Planı', credit: 15, active: true },
+  { id: 'plan-color', icon: Palette, label: '3D Kat Planı', credit: 15, active: true },
   { id: 'analysis', icon: ScanLine, label: 'Tasarım Analizi', credit: 5, active: true },
   { id: 'multi-angle', icon: Layers, label: 'Çok Açılı Render', credit: 15, active: true },
   { id: 'texture', icon: Grid3X3, label: 'Doku Üretici', credit: 15, active: false, badge: 'Beta' },
