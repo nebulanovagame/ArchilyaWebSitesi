@@ -43,7 +43,7 @@ const STEPS = [
     details: [
       'VR Kontrolleri & İnteraktif Mekan Yürüyüşü',
       'Canlı Maliyet Takibi & Rapor Üretimi',
-      'AI Stüdyo Araçları & Konsept Üretimi',
+      'Premium Görsel Üretim Araçları',
     ],
     media: trainingSession,
     side: 'left',
@@ -57,7 +57,7 @@ const STEPS = [
     details: [
       'Panel İçi Anlık Mesajlaşma & Destek Talebi',
       'Revizyon & Geri Bildirim Takip Sistemi',
-      'Periyodik AI & VR Özellik Güncellemeleri',
+      'Periyodik Özellik Güncellemeleri',
     ],
     media: clientMeeting,
     side: 'right',
@@ -178,7 +178,7 @@ export default function Workflow() {
         >
           <div className="inline-flex items-center gap-3 px-5 py-2.5 border border-primary/20 rounded-sm bg-primary/5">
             <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-[10px] font-bold text-primary uppercase tracking-[0.28em]">Pro &amp; Studio Abonelere Entegrasyon Süreci Ücretsizdir</span>
+            <span className="text-[10px] font-bold text-primary uppercase tracking-[0.28em]">Kurumsal Abonelere Entegrasyon Süreci Ücretsizdir</span>
           </div>
         </motion.div>
 
@@ -196,8 +196,8 @@ export default function Workflow() {
           className="text-center mt-20"
         >
           <p className="text-gray-600 text-xs font-sans mb-6 uppercase tracking-widest">Adım atmaya hazır mısınız?</p>
-          <a href="#pricing" className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-black font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-white transition-colors duration-300">
-            Abonelik Planlarını İncele
+          <a href="#kurumsal" className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-black font-bold text-xs uppercase tracking-widest rounded-sm hover:bg-white transition-colors duration-300">
+            Kurumsal Başvuru / Teklif Al
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
         </motion.div>

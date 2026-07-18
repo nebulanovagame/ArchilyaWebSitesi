@@ -32,10 +32,10 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="md:col-span-2">
             <Link to="/" className="inline-flex flex-col mb-4">
               <span className="font-serif text-3xl text-white italic tracking-wide">Archilya</span>
-              <span className="text-[9px] text-primary uppercase tracking-[0.3em] mt-0.5">AI Studio</span>
+              <span className="text-[9px] text-primary uppercase tracking-[0.3em] mt-0.5">Premium Studio</span>
             </Link>
             <p className="text-xs text-gray-600 font-sans leading-relaxed mt-4 mb-6 max-w-[280px]">
-              Mimarlık ofisleri için AI destekli render, proje yönetimi ve interaktif sunum platformu.
+              Profesyonel görselleştirme, VR sunum ve dijital sunum çözümleri platformu.
             </p>
 
             <div className="space-y-3">
@@ -69,11 +69,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { label: 'Platform', href: '#platform' },
-                { label: 'AI Studio', href: '#ai-studio' },
+                { label: 'Premium Studio', href: '#platform' },
                 { label: 'VR Sunum', href: '#vr-sunum' },
                 { label: 'Portfolyo', href: '#portfolio' },
                 { label: 'Hakkımızda', to: '/hakkimizda' },
-                { label: 'Fiyatlandırma', href: '#pricing' },
+                { label: 'Şubeler & Ortaklar', href: '#subeler' },
+                { label: 'Kurumsal Başvuru', href: '#kurumsal' },
                 { label: 'Entegrasyon', href: '#workflow' },
                 { label: 'İletişim', href: '#contact', analyticsLabel: 'footer_iletisim' },
               ].map((item) => (
@@ -103,11 +104,12 @@ export default function Footer() {
             <p className="text-[10px] font-sans font-bold text-gray-500 uppercase tracking-[0.25em] mb-5">Çözümler</p>
             <ul className="space-y-3">
               {[
-                { label: 'AI Studio', to: '/ai-studio' },
+                { label: 'Premium Studio', to: '/ai-studio' },
                 { label: 'VR Sunum', to: '/vr-sunum' },
                 { label: 'Mimarlık Ofisleri', to: '/mimarlik-ofisleri' },
                 { label: 'Emlak VR Sunum', to: '/emlak-vr-sunum' },
                 { label: 'Müteahhit Proje Sunumu', to: '/muteahhit-proje-sunumu' },
+                { label: 'Franchise/Partner', to: '/franchise-partner' },
               ].map((item) => (
                 <li key={item.label}>
                   <Link
@@ -126,7 +128,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { label: 'VR Sunum Satış', to: '/rehber/vr-sunum-satis' },
-                { label: 'AI Render Revizyon', to: '/rehber/ai-render-revizyon' },
+                { label: 'VR Sunum Satış Rehberi', to: '/rehber/vr-sunum-satis' },
                 { label: 'Emlak 360 VR', to: '/rehber/emlak-360-vr' },
               ].map((item) => (
                 <li key={item.label}>

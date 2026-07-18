@@ -123,7 +123,7 @@ export default function ComingSoon() {
   useEffect(() => {
     setPageMeta(
       'Archilya Panel',
-      'Archilya Panel ve AI Studio sınırlı beta erişim sürecindedir. Demo talebiyle ofisinize özel erişim planı oluşturun.',
+      'Archilya Panel şu anda sınırlı erişim sürecindedir. Demo talebiyle size özel erişim planı oluşturun.',
       { robots: 'noindex,follow' },
     );
   }, []);
@@ -175,7 +175,7 @@ export default function ComingSoon() {
           transition={{ delay: 0.4, duration: 0.7 }}
           className="mb-12 max-w-lg text-sm leading-relaxed tracking-wide text-white/40 sm:text-base"
         >
-          Archilya Panel ve AI Studio sınırlı beta erişim sürecinde.
+          Archilya Panel sınırlı erişim sürecindedir.
           <br className="hidden sm:block" />
           <span className="text-primary/80"> Demo talebiyle ofisinize özel erişim planı oluşturalım. </span>
         </motion.p>
@@ -204,7 +204,7 @@ export default function ComingSoon() {
                 Beta Erişim
               </h2>
               <p className="text-[11px] leading-relaxed text-white/40">
-                AI stüdyosu, proje yönetimi ve işlem hakkı sistemi kontrollü erişimle
+                Premium görselleştirme, proje yönetimi ve işlem hakkı sistemi kontrollü erişimle
                 mimari ofislerin kullanımına hazırlanıyor.
               </p>
             </div>

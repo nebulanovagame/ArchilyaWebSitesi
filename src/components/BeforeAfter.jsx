@@ -7,7 +7,7 @@ export default function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);
 
   return (
-    <section className="py-32 bg-background relative overflow-hidden">
+    <section className="py-20 md:py-32 bg-background relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-primary/3 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -24,7 +24,7 @@ export default function BeforeAfter() {
             <span className="text-primary/80">Render'dan Sunuma.</span>
           </h2>
           <p className="text-gray-500 text-sm font-sans max-w-md mx-auto leading-relaxed">
-            Ham modelinizi veya proje görselinizi Archilya'ya aktarın. AI Studio üretim kalitesini
+            Ham modelinizi veya proje görselinizi Archilya'ya aktarın. Premium görselleştirme kalitesini
             yükseltsin; Pixel Streaming ve VR sunum katmanı müşteriye yaşanabilir bir deneyim sunsun.
           </p>
         </motion.div>
@@ -38,7 +38,7 @@ export default function BeforeAfter() {
           <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-sm select-none group border border-white/6">
             <img
               src={heroBg}
-              alt="Archilya AI Studio premium fotorealistik mimari render çıktısı"
+              alt="Archilya premium fotorealistik mimari render çıktısı"
               loading="lazy"
               decoding="async"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -47,12 +47,12 @@ export default function BeforeAfter() {
               className="absolute top-6 right-6 bg-black/60 backdrop-blur-md border border-primary/20 px-4 py-2 text-primary text-[10px] font-bold uppercase tracking-widest pointer-events-none z-10 transition-opacity duration-300 rounded-sm"
               style={{ opacity: sliderPosition < 92 ? 1 : 0 }}
             >
-              Archilya AI + Pixel Streaming
+              Archilya Premium + Pixel Streaming
             </div>
 
             <img
               src={constructionDrawing}
-              alt="Ham 3D model veya CAD dosyası AI öncesi taslak görünümü"
+              alt="Ham 3D model veya CAD dosyası öncesi taslak görünümü"
               loading="lazy"
               decoding="async"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -104,7 +104,7 @@ export default function BeforeAfter() {
             className="flex flex-col md:flex-row items-center justify-between gap-4 mt-6 px-1"
           >
             <p className="text-gray-600 text-xs font-sans">
-              Kaydırarak ham modelden AI destekli sunum sahnesine geçişi inceleyin.
+              Kaydırarak ham modelden profesyonel sunum sahnesine geçişi inceleyin.
             </p>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
@@ -113,7 +113,7 @@ export default function BeforeAfter() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-px bg-primary" />
-                <span className="text-primary text-[10px] uppercase tracking-widest">AI + Pixel Streaming</span>
+                <span className="text-primary text-[10px] uppercase tracking-widest">Premium + Pixel Streaming</span>
               </div>
             </div>
           </motion.div>

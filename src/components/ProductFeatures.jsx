@@ -7,20 +7,8 @@ import { constructionDrawing, techWorkspace, abstractGeometric, creativeProcess,
 
 const LAYERS = [
   {
-    id: 'ai-studio',
-    num: '01',
-    label: 'AI Studio',
-    icon: Sparkles,
-    slogan: ['Render Beklemeyi Bırakın,', 'Kararı Hızlandırın.'],
-    desc: 'Görsel, plan veya referans yükleyin. AI Studio; premium render, kontrollü revizyon, plan boyama, analiz ve konsept üretimini tek akışta birleştirir.',
-    badges: ['Premium Render & Revizyon', 'Kat Planı ve Tasarım Analizi', 'İç / Dış Mekan / Peyzaj AI Araçları'],
-    accent: 'primary',
-    image: constructionDrawing,
-    align: 'left',
-  },
-  {
     id: 'presentation',
-    num: '02',
+    num: '01',
     label: 'Pixel Streaming & VR Sunum',
     icon: MonitorPlay,
     slogan: ['Donanım Beklemeden,', '4K Deneyim.'],
@@ -31,20 +19,8 @@ const LAYERS = [
     align: 'right',
   },
   {
-    id: 'workspace',
-    num: '03',
-    label: 'Panel / Workspace',
-    icon: BarChart3,
-    slogan: ['Projeler, Ekip ve Krediler,', 'Tek Merkezde.'],
-    desc: 'Projeler, dosyalar, AI işlem hakları, abonelik ve ekip rolleriniz tek workspace\'te toplanır. Dağınık klasörler yerine güvenli, senkronize bir üretim hafızası.',
-    badges: ['Proje ve Dosya Yönetimi', 'Kredi / Abonelik Takibi', 'Ekip Rolleri ve Marka Alanı'],
-    accent: 'primary',
-    image: abstractGeometric,
-    align: 'left',
-  },
-  {
     id: 'premium-services',
-    num: '04',
+    num: '02',
     label: 'Premium VR & Üretim Hizmetleri',
     icon: Link2,
     slogan: ['Modeli veya Planı Getirin,', 'Sunuma Hazır Deneyime Dönüşsün.'],
@@ -53,18 +29,6 @@ const LAYERS = [
     accent: 'amber',
     image: creativeProcess,
     align: 'right',
-  },
-  {
-    id: 'security',
-    num: '05',
-    label: 'Güvenlik & Ekip',
-    icon: ShieldCheck,
-    slogan: ['Fikirleriniz En Değerli Sermayenizdir.', 'Onları Korumaya Aldık.'],
-    desc: 'Her proje dosyası şifrelenmiş sunucularda tutulur. Ekibiniz nerede olursa olsun aynı anda senkronize çalışır, hiçbir revizyon kaybolmaz.',
-    badges: ['KVKK & GDPR Uyumlu Şifreli Sunucular', 'Save Slots', '10+ Kişilik Ekip Senkronizasyonu'],
-    accent: 'primary',
-    image: teamMeeting,
-    align: 'left',
   },
 ];
 
@@ -113,7 +77,7 @@ function Layer({ layer }) {
   };
 
   return (
-    <section id={layer.id === 'ai-studio' ? 'ai-studio' : `feature-${layer.id}`} className="relative min-h-screen flex items-center overflow-hidden">
+              <section id={`feature-${layer.id}`} className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img src={layer.image} alt="" className="w-full h-full object-cover scale-105" loading="lazy" decoding="async" />
       </div>
@@ -215,7 +179,7 @@ function Layer({ layer }) {
 export default function ProductFeatures() {
   return (
     <div id="platform">
-      <section className="relative py-16 md:py-28 bg-background overflow-hidden">
+      <section className="relative py-12 md:py-28 bg-background overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.025]"
           style={{
@@ -236,12 +200,11 @@ export default function ProductFeatures() {
               Platform Yetenekleri
             </p>
             <h2 className="text-4xl md:text-6xl font-serif text-white italic mb-6 leading-tight">
-              Mimari Ofisin<br />
-              <span className="text-primary/80">Dijital İşletim Sistemi.</span>
+              Profesyonel VR Sunum<br />
+              <span className="text-primary/80">ve Görselleştirme.</span>
             </h2>
             <p className="text-gray-500 text-sm font-sans max-w-lg mx-auto leading-relaxed">
-              Archilya; AI destekli üretimi, interaktif sunumu, workspace yönetimini ve
-              premium VR hizmetlerini demo ve sınırlı erişim süreciyle aynı lüks deneyimde birleştirir.
+              Projelerinizi etkileyici VR sunumlar ve yüksek kaliteli görsellerle müşterilerinize yaşatın.
             </p>
           </motion.div>
 
@@ -262,7 +225,7 @@ export default function ProductFeatures() {
         <Layer key={layer.id} layer={layer} index={i} />
       ))}
 
-      <section className="relative py-16 md:py-24 bg-background overflow-hidden">
+      <section className="relative py-12 md:py-24 bg-background overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-surface/20 to-background pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/4 rounded-full blur-[150px] pointer-events-none" />
 
@@ -281,16 +244,16 @@ export default function ProductFeatures() {
               Ofisinize Özel Bir<br />Demo Ayarlayalım.
             </h2>
             <p className="text-gray-500 text-sm font-sans mb-10 leading-relaxed max-w-lg mx-auto">
-              Yıllık abonelik planlarımızla VR kurulum, eğitim ve entegrasyon desteği dahildir.
-              Hangi pakette ne alacağınızı birlikte konuşalım.
+              VR kurulum, eğitim ve entegrasyon desteği ile projelerinizi dijitalleştirin.
+              Size özel teklifimizi oluşturmak için iletişime geçin.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="#pricing"
+                href="#kurumsal"
                 className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-black font-bold text-[11px] uppercase tracking-widest rounded-sm hover:bg-white transition-colors duration-300 whitespace-nowrap"
               >
-                Abonelik Planlarını İncele
+                Kurumsal Başvuru Yap
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a

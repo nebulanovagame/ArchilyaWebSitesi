@@ -1,79 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Palette, BarChart3, Sun, GitBranch, MonitorPlay, Check, Sparkles, Wand2, ScanLine,
-  Image, Maximize, Globe, Grid3X3, Layers, FileEdit,
+  Palette, BarChart3, Sun, MonitorPlay, Globe, Check,
 } from 'lucide-react';
 import clsx from 'clsx';
 import {
-  constructionDrawing, abstractGeometric, blueprintAnalysis,
-  heroBg, workspaceMeeting, teamCollaboration, laptopMockup,
+  blueprintAnalysis, heroBg, workspaceMeeting,
 } from '../assets/images';
-
-const AI_STUDIO_FEATURES = [
-  {
-    id: 'render',
-    icon: Sparkles,
-    title: 'Premium Render & Stil Transferi',
-    subtitle: 'AI Üretim Motoru',
-    tag: 'Archilya AI Studio',
-    desc: 'Görseli yükleyin. Referans stil, atmosfer ve malzeme diliyle profesyonel render seviyesine çıksın.',
-    details: [
-      'Premium Render ve Referans Stil Render',
-      'İç Mekan, Dış Cephe ve Peyzaj Premium Araçları',
-      'Çok Açılı Render ile Tutarlı Mekan Dili',
-      'Render Kalite Analizi ve İyileştirme Önerileri',
-    ],
-    media: constructionDrawing,
-    mediaAlt: 'AI Studio — Premium Render Demo',
-    mediaType: 'image',
-  },
-  {
-    id: 'revision',
-    icon: Wand2,
-    title: 'Kontrollü Revizyon & Konsept İlhamı',
-    subtitle: 'Müşteri Notundan Görsele',
-    tag: 'Archilya AI Studio',
-    desc: 'Render sürecini başa sarmayın. Sahne düzenleme, malzeme revizyonu ve konsept ilhamıyla karar döngüsünü hızlandırın.',
-    details: [
-      'Revizyon Düzenleyici ve Sahne Düzenleme',
-      'İç Mekan İlham ve Konsept Alternatifleri',
-      'Malzeme, Işık, Mobilya ve Zemin Revizyonları',
-      'Prompt Kütüphanesi ve İş Akışı Devam Ettirme',
-    ],
-    media: abstractGeometric,
-    mediaAlt: 'AI Studio — Revizyon Demo',
-    mediaType: 'image',
-  },
-  {
-    id: 'presentation-ai',
-    icon: ScanLine,
-    title: 'Plan, Analiz ve Sunuma Hazırlık',
-    subtitle: 'Çizimden Paftaya',
-    tag: 'Archilya AI Studio',
-    desc: 'Kat planı, analiz, doku ve malzeme çıktılarıyla sunum dosyanızı tek platformda zenginleştirin.',
-    details: [
-      '3D Kat Planı ve Plan Boyama',
-      'Tasarım Analizi ve Mimari Rapor Altyapısı',
-      'Doku Üretici ve Malzeme Listesi Yol Haritası',
-      '360 Panorama ve Video Generator Beta Hattı',
-    ],
-    media: blueprintAnalysis,
-    mediaAlt: 'AI Studio — Plan ve Analiz Demo',
-    mediaType: 'image',
-  },
-];
-
-const AI_TOOLS_GRID = [
-  { id: 'premium-render', icon: Image, label: 'Premium Render', credit: 15, active: true },
-  { id: 'revision-edit', icon: FileEdit, label: 'Revizyon Düzenleyici', credit: 25, active: true },
-  { id: 'plan-color', icon: Palette, label: '3D Kat Planı', credit: 15, active: true },
-  { id: 'analysis', icon: ScanLine, label: 'Tasarım Analizi', credit: 5, active: true },
-  { id: 'multi-angle', icon: Layers, label: 'Çok Açılı Render', credit: 15, active: true },
-  { id: 'texture', icon: Grid3X3, label: 'Doku Üretici', credit: 15, active: false, badge: 'Beta' },
-  { id: 'panorama', icon: Globe, label: '360 Panorama', credit: 25, active: false, badge: 'Beta' },
-  { id: 'upscale', icon: Maximize, label: '4K İyileştirme', credit: 10, active: false, badge: 'Beta' },
-];
 
 const VR_FEATURES = [
   {
@@ -125,43 +58,6 @@ const VR_FEATURES = [
     ],
     media: workspaceMeeting,
     mediaAlt: 'Dinamik Senaryolar & Mevsim Döngüsü Demo',
-    mediaType: 'image',
-  },
-];
-
-const PANEL_FEATURES = [
-  {
-    id: 'sync',
-    icon: GitBranch,
-    title: 'Dosya Senkronizasyonu & Sürüm Kontrolü',
-    subtitle: 'Revizyon Yönetimi',
-    tag: 'Archilya Panel',
-    desc: 'Revizyon geçmişiniz bulutta, ekibiniz senkronize. İstediğiniz an önceki tasarıma dönün, hiçbir dosya kaybolmasın.',
-    details: [
-      'Bulut Tabanlı Sürüm Geçmişi & Anlık Senkronizasyon',
-      '5 Kayıt Yuvası + Varsayılan Profil (Save Slots)',
-      'Ekip İçi Revizyon Takibi ve Geri Dönüş',
-      'Güvenli & Şifrelenmiş Bulut Depolama',
-    ],
-    media: teamCollaboration,
-    mediaAlt: 'Dosya Senkronizasyonu & Sürüm Kontrolü Demo',
-    mediaType: 'image',
-  },
-  {
-    id: 'platform',
-    icon: MonitorPlay,
-    title: 'Çoklu Platform & Sunum Esnekliği',
-    subtitle: 'Her Cihazdan Erişim',
-    tag: 'Archilya Panel',
-    desc: 'Web tarayıcı, dokunmatik, gamepad, VR başlık. Projeniz her cihazda aynı premium deneyimi sunsun.',
-    details: [
-      'Klavye / Mouse / Gamepad / Dokunmatik Kontrol',
-      'Çoklu Platform Desteği (Windows & Uyumlu Cihazlar)',
-      'Bulut Altyapısıyla Veri & Kullanıcı Yönetimi',
-      'Çoklu Ünite (Multi-Unit) Proje Desteği',
-    ],
-    media: laptopMockup,
-    mediaAlt: 'Çoklu Platform Desteği Demo',
     mediaType: 'image',
   },
 ];
@@ -327,81 +223,9 @@ export default function Features() {
           <p className="text-primary text-xs uppercase tracking-[0.3em] mb-4">Ekosistem</p>
           <h2 className="text-3xl md:text-5xl font-serif text-white italic mb-4">Özellikler</h2>
           <p className="text-gray-500 text-sm font-sans max-w-xl mx-auto leading-relaxed">
-            Archilya, mimari ofislere üç bütünleşik güç sunar: üretimi hızlandıran AI Studio,
-            müşteriyi ikna eden VR/Web sunum ve arka planda ofisi yöneten workspace.
-          </p>
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, margin: '-60px' }} className="mb-20">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="flex items-center gap-3 px-5 py-2 border border-primary/20 rounded-sm bg-primary/5 shrink-0">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Archilya AI Studio — Üretim Motoru</span>
-            </div>
-            <div className="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
-          </div>
-
-          <FeatureBlock features={AI_STUDIO_FEATURES} accent="primary" />
-        </motion.div>
-
-        {/* AI Tool Grid Vitrini */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true, margin: '-60px' }}
-          className="mb-24"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <span className="text-[9px] font-bold uppercase tracking-[0.3em] text-primary/70">
-              AI Studio Araç Seti
-            </span>
-            <span className="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-            {AI_TOOLS_GRID.map((tool) => {
-              const Icon = tool.icon;
-              return (
-                <motion.div
-                  key={tool.id}
-                  whileHover={{ y: -3 }}
-                  transition={{ duration: 0.2 }}
-                  className="group relative rounded-sm border border-white/[0.06] bg-white/[0.015] p-3 md:p-4 text-center transition-all duration-200 hover:border-white/[0.14] hover:bg-white/[0.025]"
-                >
-                  <div className="flex flex-col items-center gap-2.5">
-                    <div className="flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-sm border border-primary/15 bg-primary/[0.06] text-primary transition-colors group-hover:bg-primary/[0.12]">
-                      <Icon className="h-4 w-4 md:h-5 md:w-5" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-[10px] font-sans font-semibold text-white/70 group-hover:text-white transition-colors leading-tight">
-                        {tool.label}
-                      </p>
-                      <p className="mt-1 text-[7px] text-gray-600 font-sans">
-                        {tool.active ? `${tool.credit} işlem hakkı` : '\u00A0'}
-                      </p>
-                    </div>
-                  </div>
-                  {tool.badge && (
-                    <span className="absolute top-1.5 right-1.5 rounded-sm bg-amber-500/10 px-1.5 py-0.5 text-[6px] font-bold uppercase tracking-wider text-amber-400">
-                      {tool.badge}
-                    </span>
-                  )}
-                  {tool.active && (
-                    <span className="absolute top-1.5 left-1.5 flex h-1.5 w-1.5">
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    </span>
-                  )}
-                </motion.div>
-              );
-            })}
-          </div>
-
-          <p className="text-[9px] text-gray-600 text-center mt-4 uppercase tracking-widest">
-            Aktif araçlar · Beta araçlar · Yakında 4+ yeni modül
-          </p>
-        </motion.div>
+          Archilya, profesyonel görselleştirme, etkileyici VR/Web sunum ve workspace yönetimini tek platformda birleştirir.
+        </p>
+      </motion.div>
 
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, margin: '-60px' }}>
           <div className="flex items-center gap-4 mb-8">
@@ -492,23 +316,6 @@ export default function Features() {
           </p>
         </motion.div>
 
-        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="flex items-center gap-5 my-20">
-          <div className="h-px flex-1 bg-white/5" />
-          <span className="text-[9px] font-bold text-gray-700 uppercase tracking-[0.35em] px-4">Archilya Ekosistemi</span>
-          <div className="h-px flex-1 bg-white/5" />
-        </motion.div>
-
-        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true, margin: '-60px' }}>
-          <div className="flex items-center gap-4 mb-8">
-            <div className="flex items-center gap-3 px-5 py-2 border border-primary/20 rounded-sm bg-primary/5 shrink-0">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Archilya Panel — Bulut Yönetimi</span>
-            </div>
-            <div className="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
-          </div>
-
-          <FeatureBlock features={PANEL_FEATURES} accent="primary" />
-        </motion.div>
       </div>
     </section>
   );

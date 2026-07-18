@@ -27,7 +27,7 @@ function useCounter(target, duration = 2000, start = false) {
 
 const STATS = [
   { value: 4, suffix: '', label: 'Ürün Ailesi' },
-  { value: 12, suffix: '+', label: 'AI Studio Aracı' },
+    { value: 12, suffix: '+', label: 'Premium Studio Aracı' },
   { value: 3, suffix: '', label: 'Sunum Katmanı' },
   { value: 1, suffix: '', label: 'Premium Platform' },
 ];
@@ -41,10 +41,10 @@ const CASE_STUDIES = [
     accent: 'primary',
     image: luxuryBuilding,
     challenge: 'Müşteri, zemin ve duvar malzemelerini tekrar tekrar değiştirip karar veremiyor, her revizyon 3–5 gün sürüyordu.',
-    solution: 'AI Studio ile alternatif render dili hazırlandı; Archilya VR Tasarım Modu ile malzeme seçimi sunum içinde canlı yapıldı.',
+    solution: 'Premium Studio ile alternatif render dili hazırlandı; Archilya VR Tasarım Modu ile malzeme seçimi sunum içinde canlı yapıldı.',
     result: '2 Saatte Satış Kapama',
-    resultSub: 'Müşteri, AI ile hazırlanan 3 konsepti VR turunda deneyip toplantı bitmeden imzaladı.',
-    tags: ['AI Render', 'Canlı Malzeme Değişimi', 'VR Sunum'],
+    resultSub: 'Müşteri, hazırlanan 3 konsepti VR turunda deneyip toplantı bitmeden imzaladı.',
+    tags: ['Premium Render', 'Canlı Malzeme Değişimi', 'VR Sunum'],
   },
   {
     id: '02',
@@ -54,10 +54,10 @@ const CASE_STUDIES = [
     accent: 'amber',
     image: modernTower,
     challenge: 'Yatırımcılar farklı ülkelerdeydi. Statik PDF renderlar üzerinden karar almak güçtü, toplantı planlamak ay alıyordu.',
-    solution: 'AI ile render seti güncellendi; web tarayıcısı üzerinden anında erişilen VR turu ile yatırımcılar sunum linkini alıp kendi cihazlarından gezdi.',
+    solution: 'Render seti güncellendi; web tarayıcısı üzerinden anında erişilen VR turu ile yatırımcılar sunum linkini alıp kendi cihazlarından gezdi.',
     result: '3 Ülke, 1 Toplantı',
     resultSub: 'Sunum linki paylaşıldı; Londra, Dubai ve İstanbul\'daki yatırımcılar eşzamanlı turu tamamladı.',
-    tags: ['AI Sunum Hazırlığı', 'Donanımsız Sunum', 'Uzaktan Erişim'],
+    tags: ['Sunum Hazırlığı', 'Donanımsız Sunum', 'Uzaktan Erişim'],
   },
   {
     id: '03',
@@ -67,7 +67,7 @@ const CASE_STUDIES = [
     accent: 'primary',
     image: culturalBuilding,
     challenge: 'Belediye kuruluna sunum yapılacaktı. Mevcut 2D çizimler ve statik görseller projenin etkisini yeterince aktaramıyordu.',
-    solution: 'Plan ve görseller AI Studio ile sunuma hazırlandı; farklı mevsim ve ışık senaryolarıyla güçlendirilmiş 4K çıktı ve VR turu canlı gösterildi.',
+    solution: 'Plan ve görseller Premium Studio ile sunuma hazırlandı; farklı mevsim ve ışık senaryolarıyla güçlendirilmiş 4K çıktı ve VR turu canlı gösterildi.',
     result: 'İlk Toplantıda Onay',
     resultSub: 'Belediye kurulu oybirliğiyle onayladı. Standart 3 toplantılık süreç tek oturuma indi.',
     tags: ['Plan Sunumu', '4K Sinematik Çıktı', 'Kurul Sunumu'],
@@ -277,11 +277,11 @@ export default function Portfolio() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-transparent to-amber-400/3 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-primary/4 rounded-full blur-[150px] pointer-events-none" />
 
-        <div className="container mx-auto px-6 py-24 relative z-10">
+        <div className="container mx-auto px-6 py-16 md:py-24 relative z-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true, margin: '-60px' }} className="text-center mb-20">
             <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Platform Kapsamı</p>
             <h2 className="text-5xl md:text-7xl font-serif text-white italic leading-tight mb-4">Sayılarla Archilya.</h2>
-            <p className="text-gray-600 text-sm font-sans max-w-sm mx-auto leading-relaxed">AI üretim, interaktif sunum ve workspace katmanlarını tek premium mimari akışta toplar.</p>
+            <p className="text-gray-600 text-sm font-sans max-w-sm mx-auto leading-relaxed">Premium görselleştirme, interaktif sunum ve workspace katmanlarını tek akışta toplar.</p>
           </motion.div>
 
           <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -314,7 +314,7 @@ export default function Portfolio() {
 
       <HorizontalCaseStudies />
 
-      <div className="relative bg-surface border-t border-white/5 py-24 overflow-hidden">
+      <div className="relative bg-surface border-t border-white/5 py-16 md:py-24 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="container mx-auto px-6 relative z-10">
@@ -330,8 +330,8 @@ export default function Portfolio() {
                 Ücretsiz Demo Talep Et
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
-              <a href="#pricing" className="inline-flex items-center gap-2 text-gray-500 hover:text-white text-[11px] uppercase tracking-widest transition-colors duration-300 whitespace-nowrap">
-                Fiyatlandırmayı İncele
+              <a href="#kurumsal" className="inline-flex items-center gap-2 text-gray-500 hover:text-white text-[11px] uppercase tracking-widest transition-colors duration-300 whitespace-nowrap">
+                Kurumsal Başvuru
               </a>
             </div>
           </motion.div>

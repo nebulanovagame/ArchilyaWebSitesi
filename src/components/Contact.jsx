@@ -107,7 +107,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-32 bg-surface relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-32 bg-surface relative overflow-hidden">
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary/4 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -122,7 +122,7 @@ export default function Contact() {
               İletişim
             </motion.h2>
             <motion.p variants={itemVariants} className="text-gray-400 font-light text-lg mb-12 max-w-md">
-              AI Studio, VR/Web sunum veya premium üretim hizmetleri için doğru başlangıç planını birlikte çıkaralım.
+              Premium Studio, VR/Web sunum veya profesyonel görselleştirme hizmetleri için doğru başlangıç planını birlikte çıkaralım.
             </motion.p>
 
             <div className="space-y-6">
@@ -202,7 +202,7 @@ export default function Contact() {
 
             <motion.div variants={itemVariants}>
               <AnimatedTextarea
-                  placeholder="Proje, AI veya VR ihtiyaçlarınız"
+                  placeholder="Proje, sunum veya VR ihtiyaçlarınız"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required

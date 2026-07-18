@@ -5,10 +5,9 @@ import { logAnalyticsEvent } from '../firebase';
 import { heroBg } from '../assets/images';
 
 const TRUST_BADGES = [
-  'AI Studio',
   'Pixel Streaming',
-  'Revit / SketchUp / Rhino Uyumu',
   'VR & 360 Sunum',
+  '4K Kalite',
   'Workspace Panel',
 ];
 
@@ -22,7 +21,7 @@ export default function Hero() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section ref={ref} className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative h-[90vh] md:h-screen flex items-center justify-center overflow-hidden">
       <motion.div
         className="absolute inset-0 z-0"
         style={{ y: bgY, scale: bgScale }}
@@ -31,7 +30,7 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/40 to-transparent z-20 pointer-events-none" />
         <img
           src={heroBg}
-          alt="Archilya AI Studio ve VR sunum platformu mimari ofis görseli"
+          alt="Archilya premium mimari sunum ve görselleştirme platformu"
           loading="eager"
           fetchPriority="high"
           decoding="async"
@@ -49,18 +48,17 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: 'easeOut' }}
         >
           <p className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary mb-6">
-            Mimarlık Ofisleri İçin AI Destekli Üretim ve Sunum Platformu
+            Profesyonel Görselleştirme ve Dijital Sunum Platformu
           </p>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 italic leading-[1.05]">
-            AI ile Üretin.<br />
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 italic leading-[1.05]">
+            Archilya ile Üretin.<br />
             <span className="not-italic text-primary/90">VR ile Yaşatın.</span>
           </h1>
 
           <p className="max-w-xl mx-auto text-gray-300 font-light text-base md:text-lg mb-10 leading-relaxed">
-            CAD, SketchUp veya proje görsellerinizi Archilya'ya aktarın; AI ile render,
-            revizyon ve analiz üretin. Projenizi 360, VR, web tarayıcı veya Pixel Streaming
-            ile müşteriye yüksek kalitede yaşatın.
+            Projelerinizi yüksek kaliteli görsellere ve etkileyici VR sunumlara dönüştürün.
+            360, web tarayıcı veya Pixel Streaming ile müşterilerinize profesyonel bir deneyim yaşatın.
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
@@ -70,7 +68,7 @@ export default function Hero() {
               data-cursor="Demo İste"
               className="group inline-flex items-center gap-3 bg-primary text-black px-10 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all duration-300"
             >
-              Ücretsiz Demo Talep Et
+              Demo Talep Et
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
@@ -78,7 +76,7 @@ export default function Hero() {
               data-cursor="Keşfet"
               className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-10 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
             >
-              AI Studio'yu İncele
+              Çözümleri İncele
             </a>
           </div>
 

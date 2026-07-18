@@ -5,7 +5,7 @@ import { modernBuilding, interiorModern, heroBg } from '../assets/images';
 const services = [
   {
     id: '01',
-    tag: 'AI Üretim',
+            tag: 'Premium Üretim',
     title: 'Render ve Revizyon Süresini Karar Anına Yaklaştırın.',
     desc: 'Premium Render, referans stil, plan boyama ve kontrollü revizyon araçlarıyla üretim bekleme sürelerini kısaltın. Müşteri geri bildirimini yeni bir teslim döngüsüne çevirmeden aynı akışta yanıtlayın.',
     image: modernBuilding,
@@ -109,7 +109,7 @@ export default function Services() {
                       <span className="text-[8px] uppercase tracking-widest text-primary/80 font-bold">Archilya</span>
                     </div>
                     <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm border border-white/8 px-2 py-1 rounded-sm">
-                      <span className="text-[7px] uppercase tracking-widest text-gray-500">{service.accent === 'amber' ? 'Pixel Streaming' : 'AI Studio'}</span>
+                      <span className="text-[7px] uppercase tracking-widest text-gray-500">{service.accent === 'amber' ? 'Pixel Streaming' : 'Premium Studio'}</span>
                     </div>
                   </div>
                 </motion.div>
