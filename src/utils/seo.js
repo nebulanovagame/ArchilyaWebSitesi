@@ -4,7 +4,7 @@
  */
 
 const SITE_URL = 'https://archilya.com';
-const DEFAULT_TITLE = 'Archilya | Mimarlık Ofisleri İçin AI Render ve VR Sunum Platformu';
+const DEFAULT_TITLE = 'Archilya Design Studio | Profesyonel Görselleştirme ve VR Sunum';
 
 function canonicalUrlFor(pathname) {
   const path = pathname || (typeof window !== 'undefined' ? window.location.pathname : '/');
@@ -51,20 +51,20 @@ export function setPageMeta(title, description, options = {}) {
 
 export const SEO_PAGES = {
   HOME: {
-    title: 'AI Render ve VR Sunum Platformu',
-    desc: 'Mimarlık ofisleri, emlak ve müteahhit projeleri için AI render, pixel streaming, VR sunum ve 360 sanal tur ile satış sunumlarını hızlandırın.',
+    title: 'Profesyonel Görselleştirme ve VR Sunum Platformu',
+    desc: 'Mimarlık ofisleri, emlak ve müteahhit projeleri için premium görselleştirme, pixel streaming, VR sunum ve 360 sanal tur ile satış sunumlarını hızlandırın.',
   },
   AI_STUDIO: {
-    title: 'Mimarlık İçin AI Render ve Revizyon',
-    desc: 'AI render ile mimarlık ofislerinde render revizyonlarını dakikalara indirin; plan boyama, analiz ve fotogerçekçi görsel üretimini hızlandırın.',
+    title: 'Mimarlık İçin Profesyonel Görselleştirme',
+    desc: 'Premium render, revizyon, plan boyama ve analiz ile mimarlık projelerinizi en yüksek kalitede görselleştirin; plan boyama ve fotogerçekçi görsel üretimi.',
   },
   VR_SUNUM: {
     title: 'VR Sunum ve Pixel Streaming Çözümleri',
     desc: 'Mimari projeleri pixel streaming ile web tarayıcısında VR sunum ve 360 sanal tur olarak paylaşın; müşteri onayını hızlandırın.',
   },
   MIMARLIK_OFISLERI: {
-    title: 'Mimarlık Ofisleri İçin AI Render',
-    desc: 'Mimarlık ofisleri için AI render, VR sunum ve pixel streaming ile tasarım sunumlarını güçlendirin; revizyonu azaltıp onayı hızlandırın.',
+    title: 'Mimarlık Ofisleri İçin Premium Görselleştirme',
+    desc: 'Mimarlık ofisleri için premium görselleştirme, VR sunum ve pixel streaming ile tasarım sunumlarını güçlendirin; revizyonu azaltıp onayı hızlandırın.',
   },
   EMLAK_VR: {
     title: 'Emlak İçin VR Sunum ve 360 Sanal Tur',
@@ -78,17 +78,17 @@ export const SEO_PAGES = {
     title: 'Müteahhitler İçin VR Sunum ve Satış',
     desc: 'Müteahhit projelerinde VR sunum, pixel streaming ve 360 sanal tur ile lansman, yatırımcı görüşmesi ve satış ofisi deneyimini dijitalleştirin.',
   },
-  FIYATLANDIRMA: {
-    title: 'AI Render ve VR Sunum Fiyatlandırma',
-    desc: 'AI işlem hakları, bulut depolama, ekip yönetimi, pixel streaming ve VR sunum planlarını karşılaştırın; mimarlık ve emlak için doğru paketi seçin.',
-  },
   VR_SUNUM_REHBER: {
     title: 'VR Sunum ile Satış Kararını Hızlandırma Rehberi',
     desc: 'Mimari VR sunum, pixel streaming ve 360 sanal tur ile mimarlık projelerinde müşteri onayını hızlandırma faydalarını öğrenin.',
   },
   AI_RENDER_REHBER: {
-    title: 'AI Render Revizyon Sürecini Kısaltma Rehberi',
-    desc: 'AI ile render revizyonlarını dakikalara indirin; mimarlık ofislerinde görsel üretim, plan boyama ve müşteri geri bildirimini hızlandırın.',
+    title: 'Premium Render ve Revizyon Rehberi',
+    desc: 'Premium render ve revizyon süreçleri ile mimarlık ofislerinde görsel üretim, plan boyama ve müşteri geri bildirimini hızlandırın.',
+  },
+  FRANCHISE_PARTNER: {
+    title: 'Archilya Franchise ve Partnerlik Fırsatları',
+    desc: 'Premium görselleştirme ve VR sunum platformu Archilya Design Studio\'nun franchise ve iş ortaklığı fırsatlarını keşfedin; kendi şehrinizde yenilikçi çözümleri temsil edin.',
   },
   EMLAK_360_REHBER: {
     title: 'Emlak 360 VR Sanal Tur Rehberi',

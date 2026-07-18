@@ -66,7 +66,7 @@ export function VrSunumRehber() {
           <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Adım Adım VR Sunum Süreci</h2>
           <ol className="list-decimal list-inside space-y-3 text-gray-400 pl-4">
             <li><strong className="text-white">Hazırlık:</strong> CAD modeli veya 3D sahne Archilya'ya aktarılır.</li>
-            <li><strong className="text-white">Optimizasyon:</strong> AI Studio ile render kalitesi yükseltilir, materyaller atanır.</li>
+            <li><strong className="text-white">Optimizasyon:</strong> Premium Studio ile render kalitesi yükseltilir, materyaller atanır.</li>
             <li><strong className="text-white">Sunum Linki:</strong> Pixel Streaming ile web üzerinden erişilebilir bağlantı oluşturulur.</li>
             <li><strong className="text-white">Müşteri Deneyimi:</strong> Müşteri linke tıklar, mekanı keşfeder, malzemeleri dener.</li>
             <li><strong className="text-white">Karar:</strong> Toplantı bitmeden seçimler netleşir, revizyon döngüsü kısalır.</li>
@@ -94,7 +94,7 @@ export function VrSunumRehber() {
   );
 }
 
-/* ─── Rehber 2: AI Render Revizyon ─────────────────────────── */
+/* ─── Rehber 2: Premium Render Revizyon ─────────────────────────── */
 
 export function AiRenderRehber() {
   return (
@@ -109,47 +109,47 @@ export function AiRenderRehber() {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-serif text-white italic mb-6 leading-tight">
-          AI Render Mimarlık Ofislerinde<br />
-          <span className="text-primary/80">Revizyon Süresini Nasıl Azaltır?</span>
+          Premium Render ile<br />
+          <span className="text-primary/80">Revizyon Süresini Nasıl Azaltırsınız?</span>
         </h1>
 
         <div className="text-gray-400 text-sm font-sans leading-relaxed space-y-6">
           <p>
             Mimari projelerde en fazla zaman kaybı render revizyonlarında yaşanır. Müşteriden gelen
             "zemin rengini değiştirelim", "ışığı biraz daha yumuşatalım" gibi geri bildirimler,
-            saatler süren render kuyruklarına ve teslim gecikmelerine yol açar.
+            saatler süren bekleme sürelerine ve teslim gecikmelerine yol açar.
           </p>
 
-          <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">AI Studio ile Anında Revizyon</h2>
+          <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Premium Studio ile Anında Revizyon</h2>
           <p>
-            Archilya AI Studio, geleneksel render motorlarının aksine, her revizyon için sıfırdan
-            hesaplama yapmaz. Referans stil, atmosfer ve malzeme dilini koruyarak kontrollü
+            Archilya Premium Studio, geleneksel yöntemlerin aksine, her revizyon için başa
+            dönmez. Referans stil, atmosfer ve malzeme dilini koruyarak kontrollü
             düzenlemeler yapar. Bu, tek bir revizyonu saatlerden dakikalara indirir.
           </p>
 
-          <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Temel AI Araçları</h2>
+          <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Temel Araçlar</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-400 pl-4">
             <li><strong className="text-white">Premium Render:</strong> SketchUp veya ham görseli fotorealistik çıktıya dönüştürün.</li>
             <li><strong className="text-white">Revizyon Düzenleyici:</strong> Müşteri notlarını kontrollü revizyon olarak uygulayın.</li>
-            <li><strong className="text-white">3D Kat Planı:</strong> Boyanmış kat planınızı 3 boyutlu perspektif görüntüye dönüştürün, duvarları yükseltin, mobilya ekleyin.</li>
+            <li><strong className="text-white">3D Kat Planı:</strong> Boyanmış kat planınızı 3 boyutlu perspektif görüntüye dönüştürün.</li>
             <li><strong className="text-white">Tasarım Analizi:</strong> Malzeme, ışık, kompozisyon ve sunum kalitesini analiz edin.</li>
-            <li><strong className="text-white">Doku Üretici (Beta):</strong> Malzeme fotoğrafından sonsuz tekrarlanabilir doku üretin.</li>
+            <li><strong className="text-white">Doku Üretici:</strong> Malzeme fotoğrafından sonsuz tekrarlanabilir doku üretin.</li>
           </ul>
 
           <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">İş Akışı Dönüşümü</h2>
           <p>
-            AI Studio ile mimari ofisler, render ajanslarına bağımlılığı azaltır, birden fazla
+            Premium Studio ile mimari ofisler, dış kaynak bağımlılığını azaltır, birden fazla
             konsepti aynı gün içinde üretebilir ve müşteri geri bildirimlerine anında yanıt
             verebilir. Bu hem maliyet avantajı hem de rekabet gücü sağlar.
           </p>
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
-          <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'rehber_ai_render_cta', location: 'RehberPages' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
-            AI Studio'yu Dene <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'rehber_render_cta', location: 'RehberPages' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
+            Premium Studio'yu Dene <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link to="/ai-studio" className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-            AI Studio Özellikleri
+            Premium Studio Özellikleri
           </Link>
         </div>
       </div>

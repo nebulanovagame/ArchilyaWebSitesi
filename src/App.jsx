@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { logAnalyticsEvent } from './firebase';
 import Navbar from './components/Navbar';
@@ -37,7 +37,7 @@ const MimarlikOfisleriLanding = lazy(() => import('./pages/LandingPages').then(m
 const EmlakVrLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.EmlakVrLanding })));
 const EmlakPixelStreamingLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.EmlakPixelStreamingLanding })));
 const MuteahhitLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.MuteahhitLanding })));
-const FiyatlandirmaLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.FiyatlandirmaLanding })));
+const FranchisePartnerLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.FranchisePartnerLanding })));
 const VrSunumRehber = lazy(() => import('./pages/RehberPages').then(m => ({ default: m.VrSunumRehber })));
 const AiRenderRehber = lazy(() => import('./pages/RehberPages').then(m => ({ default: m.AiRenderRehber })));
 const Emlak360Rehber = lazy(() => import('./pages/RehberPages').then(m => ({ default: m.Emlak360Rehber })));
@@ -47,9 +47,8 @@ const ProductFeatures = lazy(() => import('./components/ProductFeatures'));
 const Features = lazy(() => import('./components/Features'));
 const BeforeAfter = lazy(() => import('./components/BeforeAfter'));
 const Portfolio = lazy(() => import('./components/Portfolio'));
-const Workflow = lazy(() => import('./components/Workflow'));
-const Services = lazy(() => import('./components/Services'));
-const PricingCalculator = lazy(() => import('./components/PricingCalculator'));
+const KurumsalBasvuru = lazy(() => import('./components/KurumsalBasvuru'));
+const BranchesPartners = lazy(() => import('./components/BranchesPartners'));
 const Contact = lazy(() => import('./components/Contact'));
 
 function PageFallback() {
@@ -92,10 +91,9 @@ function HomePage() {
             <Suspense fallback={<div className="h-screen" />}><ProductFeatures /></Suspense>
             <Suspense fallback={<div className="h-[400px]" />}><Features /></Suspense>
             <Suspense fallback={<div className="h-[300px]" />}><BeforeAfter /></Suspense>
-            <Suspense fallback={<div className="h-[400px]" />}><Services /></Suspense>
             <Suspense fallback={<div className="h-screen" />}><Portfolio /></Suspense>
-            <Suspense fallback={<div className="h-[400px]" />}><Workflow /></Suspense>
-            <Suspense fallback={<div className="h-screen" />}><PricingCalculator /></Suspense>
+            <Suspense fallback={<div className="h-screen" />}><BranchesPartners /></Suspense>
+            <Suspense fallback={<div className="h-screen" />}><KurumsalBasvuru /></Suspense>
             <Suspense fallback={<div className="h-[300px]" />}><Contact /></Suspense>
           </main>
           <Footer />
@@ -124,7 +122,7 @@ function SiteNotFound() {
   useEffect(() => {
     setPageMeta(
       'Sayfa Bulunamadı',
-      'Aradığınız Archilya sayfası bulunamadı. Ana sayfadan AI render, VR sunum ve fiyatlandırma bilgilerine ulaşabilirsiniz.',
+        'Aradığınız Archilya sayfası bulunamadı. Ana sayfadan premium görselleştirme, VR sunum ve kurumsal çözümlerimize ulaşabilirsiniz.',
       { robots: 'noindex,follow' },
     );
   }, []);
@@ -201,8 +199,9 @@ function App() {
         <Route path="/muteahhit-proje-sunumu" element={
           <Suspense fallback={<PageFallback />}><MuteahhitLanding /></Suspense>
         } />
-        <Route path="/fiyatlandirma" element={
-          <Suspense fallback={<PageFallback />}><FiyatlandirmaLanding /></Suspense>
+        <Route path="/fiyatlandirma" element={<Navigate to="/#kurumsal" replace />} />
+        <Route path="/franchise-partner" element={
+          <Suspense fallback={<PageFallback />}><FranchisePartnerLanding /></Suspense>
         } />
         <Route path="/rehber/vr-sunum-satis" element={
           <Suspense fallback={<PageFallback />}><VrSunumRehber /></Suspense>
