@@ -244,7 +244,9 @@ export function EmlakPixelStreamingLanding() {
 
 /* ─── Franchise/Partner Landing ────────────────────────────── */
 
-function FranchiseStep({ num, icon: Icon, title, desc }) {
+function FranchiseStep({ num, icon, title, desc }) {
+  const Icon = icon;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -480,5 +482,4 @@ export function MuteahhitLanding() {
     </PageShell>
   );
 }
-
 

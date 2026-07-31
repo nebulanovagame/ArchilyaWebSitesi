@@ -4,26 +4,6 @@
  * If not set, all queries return null (graceful fallback to static data).
  */
 
-let _client = null;
-
-function getClient() {
-  if (_client !== null) return _client;
-  if (_client === undefined) {
-    _client = false; // mark as attempted
-    const url = import.meta.env.VITE_SUPABASE_URL;
-    const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-    if (url && anonKey) {
-      // Dynamic import: only load when env vars are available
-      import('@supabase/supabase-js').then(({ createClient }) => {
-        _client = createClient(url, anonKey);
-      }).catch(() => {
-        _client = false;
-      });
-    }
-  }
-  return _client || null;
-}
-
 let _pendingPromise = null;
 
 export async function fetchActivePartnerFirms() {

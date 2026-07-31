@@ -26,12 +26,11 @@ function scrollToContact() {
 export default function BranchesPartners() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [firms, setFirms] = useState(STATIC_FIRMS);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     getPartnerFirms().then((data) => {
       if (data && data.length > 0) setFirms(data);
-    }).catch(() => {}).finally(() => setLoading(false));
+    }).catch(() => {});
   }, []);
 
   const filtered = activeFilter === 'all'

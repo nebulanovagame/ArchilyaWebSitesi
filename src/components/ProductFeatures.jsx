@@ -3,7 +3,7 @@ import {
   Link2, BarChart3, Sparkles, MonitorPlay, ShieldCheck, ArrowRight, CheckCircle2,
 } from 'lucide-react';
 import { logAnalyticsEvent } from '../firebase';
-import { constructionDrawing, techWorkspace, abstractGeometric, creativeProcess, teamMeeting } from '../assets/images';
+import { techWorkspace, creativeProcess } from '../assets/images';
 
 const LAYERS = [
   {

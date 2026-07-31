@@ -630,10 +630,10 @@ export function CerezPolitikasi() {
           Popüler tarayıcılarda çerez ayarlarını yönetmek için:
         </p>
         <ul className="list-disc list-inside space-y-1 text-gray-400 text-sm leading-relaxed mt-2 pl-4">
-          <li>Google Chrome: Ayarlar > Gizlilik ve Güvenlik > Çerezler</li>
-          <li>Mozilla Firefox: Seçenekler > Gizlilik & Güvenlik > Çerezler</li>
-          <li>Safari: Tercihler > Gizlilik > Çerezler</li>
-          <li>Microsoft Edge: Ayarlar > Çerezler ve Site İzinleri</li>
+          <li>Google Chrome: Ayarlar &gt; Gizlilik ve Güvenlik &gt; Çerezler</li>
+          <li>Mozilla Firefox: Seçenekler &gt; Gizlilik & Güvenlik &gt; Çerezler</li>
+          <li>Safari: Tercihler &gt; Gizlilik &gt; Çerezler</li>
+          <li>Microsoft Edge: Ayarlar &gt; Çerezler ve Site İzinleri</li>
         </ul>
       </section>
 
