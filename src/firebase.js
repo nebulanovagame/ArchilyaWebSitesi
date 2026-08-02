@@ -1,6 +1,5 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics, logEvent } from 'firebase/analytics';
-import { getFunctions } from 'firebase/functions';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -52,7 +51,6 @@ export function logAnalyticsEvent(name, params = {}) {
   }
 }
 
-export const functions = getFunctions(app, 'europe-west1');
 export { analytics };
 
 export default app;

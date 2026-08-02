@@ -31,6 +31,8 @@ export default function Hero() {
         <img
           src={heroBg}
           alt="Archilya premium mimari sunum ve görselleştirme platformu"
+          width="1600"
+          height="1088"
           loading="eager"
           fetchPriority="high"
           decoding="async"

@@ -1,13 +1,12 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { logAnalyticsEvent } from './firebase';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
-import Preloader from './components/Preloader';
 import CustomCursor from './components/CustomCursor';
-import ArchilyaAIAssistant from './components/ArchilyaAIAssistant';
+const ArchilyaAIAssistant = lazy(() => import('./components/ArchilyaAIAssistant'));
 import CookieConsent from './components/CookieConsent';
 import { SEO_PAGES, setPageMeta } from './utils/seo';
 
@@ -64,42 +63,24 @@ function PageFallback() {
 }
 
 function HomePage() {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     setPageMeta(SEO_PAGES.HOME.title, SEO_PAGES.HOME.desc);
   }, []);
 
-  useEffect(() => {
-    if (isLoading) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [isLoading]);
-
   return (
     <div className="min-h-screen bg-background text-white selection:bg-primary/30 selection:text-white">
-      <AnimatePresence mode="wait">
-        {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
-      </AnimatePresence>
-
-      {!isLoading && (
-        <>
-          <Navbar />
-          <main>
-            <Hero />
-            <Suspense fallback={<div className="h-screen" />}><ProductFeatures /></Suspense>
-            <Suspense fallback={<div className="h-[400px]" />}><Features /></Suspense>
-            <Suspense fallback={<div className="h-[300px]" />}><BeforeAfter /></Suspense>
-            <Suspense fallback={<div className="h-screen" />}><Portfolio /></Suspense>
-            <Suspense fallback={<div className="h-screen" />}><BranchesPartners /></Suspense>
-            <Suspense fallback={<div className="h-screen" />}><KurumsalBasvuru /></Suspense>
-            <Suspense fallback={<div className="h-[300px]" />}><Contact /></Suspense>
-          </main>
-          <Footer />
-        </>
-      )}
+      <Navbar />
+      <main>
+        <Hero />
+        <Suspense fallback={<div className="h-screen" />}><ProductFeatures /></Suspense>
+        <Suspense fallback={<div className="h-[400px]" />}><Features /></Suspense>
+        <Suspense fallback={<div className="h-[300px]" />}><BeforeAfter /></Suspense>
+        <Suspense fallback={<div className="h-screen" />}><Portfolio /></Suspense>
+        <Suspense fallback={<div className="h-screen" />}><BranchesPartners /></Suspense>
+        <Suspense fallback={<div className="h-screen" />}><KurumsalBasvuru /></Suspense>
+        <Suspense fallback={<div className="h-[300px]" />}><Contact /></Suspense>
+      </main>
+      <Footer />
     </div>
   );
 }
@@ -246,7 +227,9 @@ function App() {
         } />
         <Route path="*" element={<SiteNotFound />} />
       </Routes>
-      <ArchilyaAIAssistant />
+      <Suspense fallback={null}>
+        <ArchilyaAIAssistant />
+      </Suspense>
       <CookieConsent />
     </BrowserRouter>
   );

@@ -79,7 +79,7 @@ function Layer({ layer }) {
   return (
               <section id={`feature-${layer.id}`} className="relative min-h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
-        <img src={layer.image} alt="" className="w-full h-full object-cover scale-105" loading="lazy" decoding="async" />
+        <img src={layer.image} alt="" width="1600" height="1067" className="w-full h-full object-cover scale-105" loading="lazy" decoding="async" />
       </div>
       <div className="absolute inset-0 bg-black/75" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background/80" />

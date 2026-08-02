@@ -72,6 +72,8 @@ function MediaBlock({ feature, accent }) {
       <img
         src={feature.media}
         alt={feature.mediaAlt}
+        width="1600"
+        height="900"
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover opacity-70 group-hover:opacity-90 group-hover:scale-[1.02] transition-all duration-700"

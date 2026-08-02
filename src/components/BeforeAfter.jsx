@@ -39,6 +39,8 @@ export default function BeforeAfter() {
             <img
               src={heroBg}
               alt="Archilya premium fotorealistik mimari render çıktısı"
+              width="1600"
+              height="1088"
               loading="lazy"
               decoding="async"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -53,6 +55,8 @@ export default function BeforeAfter() {
             <img
               src={constructionDrawing}
               alt="Ham 3D model veya CAD dosyası öncesi taslak görünümü"
+              width="1600"
+              height="1088"
               loading="lazy"
               decoding="async"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"

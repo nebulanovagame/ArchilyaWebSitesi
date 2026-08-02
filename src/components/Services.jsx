@@ -101,6 +101,8 @@ export default function Services() {
                     <img
                       src={service.image}
                       alt={service.title}
+                      width="1600"
+                      height="1200"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[40%] group-hover:grayscale-0"
                       loading="lazy"
                       decoding="async"

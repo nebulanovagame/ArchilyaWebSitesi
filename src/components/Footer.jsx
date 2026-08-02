@@ -229,7 +229,7 @@ export default function Footer() {
                 <span className="text-[11px] font-bold text-gray-400 tracking-widest">TROY</span>
               </div>
               <div className="bg-white/5 border border-white/8 rounded px-3 py-1.5 flex items-center justify-center">
-                <img src="/iyzico_logo_white.svg" alt="iyzico ile öde" className="h-4 object-contain" loading="lazy" decoding="async" />
+                <img src="/iyzico_logo_white.svg" alt="iyzico ile öde" width="120" height="16" className="h-4 object-contain" loading="lazy" decoding="async" />
               </div>
               <div className="bg-white/5 border border-white/8 rounded px-3 py-1.5 flex items-center gap-1.5">
                 <svg className="w-3 h-3 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">

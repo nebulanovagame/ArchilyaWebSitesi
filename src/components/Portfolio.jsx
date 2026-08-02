@@ -180,7 +180,7 @@ function CaseStudyCard({ cs, index, cardCount, scrollYProgress }) {
   return (
     <motion.div style={{ opacity: cardOpacity, width: '100vw', flexShrink: 0, height: '100%', position: 'relative' }} className="relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src={cs.image} alt={cs.title} className="w-full h-full object-cover" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+        <img src={cs.image} alt={cs.title} width="1600" height="1067" className="w-full h-full object-cover" loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
       </div>
 
       <div className="absolute inset-0 bg-black/70" />

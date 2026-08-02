@@ -1,6 +1,8 @@
-import { httpsCallable } from 'firebase/functions';
-import { functions } from '../firebase';
+import { httpsCallable, getFunctions } from 'firebase/functions';
+import { app } from '../firebase';
 import { captureException } from './errorTracking';
+
+const functions = getFunctions(app, 'europe-west1');
 
 async function callSecure(callable, payload, fallback) {
   try {
