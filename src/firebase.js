@@ -15,12 +15,20 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 let analytics = null;
 
-if (typeof window !== 'undefined' && firebaseConfig.measurementId) {
+function ensureAnalytics() {
+  if (analytics || !firebaseConfig.measurementId) return;
+  if (!window.__ARCHILYA_ANALYTICS_CONSENT__) return;
   try {
     analytics = getAnalytics(app);
   } catch {
     analytics = null;
   }
+}
+
+if (typeof window !== 'undefined') {
+  window.addEventListener('analytics-consent-granted', () => {
+    ensureAnalytics();
+  });
 }
 
 function sanitizeAnalyticsParams(params = {}) {
@@ -32,6 +40,9 @@ function sanitizeAnalyticsParams(params = {}) {
 }
 
 export function logAnalyticsEvent(name, params = {}) {
+  if (!window.__ARCHILYA_ANALYTICS_CONSENT__) return;
+
+  ensureAnalytics();
   if (!analytics) return;
 
   try {

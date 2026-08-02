@@ -5,6 +5,12 @@ import './index.css';
 import App from './App.jsx';
 import { Sentry, initErrorTracking } from './services/errorTracking.js';
 
+try {
+  window.__ARCHILYA_ANALYTICS_CONSENT__ = localStorage.getItem('archilya-cookie-consent') === 'accepted';
+} catch {
+  window.__ARCHILYA_ANALYTICS_CONSENT__ = false;
+}
+
 initErrorTracking();
 
 createRoot(document.getElementById('root')).render(

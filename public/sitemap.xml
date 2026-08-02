@@ -7,6 +7,7 @@
   <url><loc>https://archilya.com/emlak-vr-sunum</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://archilya.com/emlak-pixel-streaming-sunum</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://archilya.com/muteahhit-proje-sunumu</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://archilya.com/ai-studio</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://archilya.com/rehber/vr-sunum-satis</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://archilya.com/rehber/ai-render-revizyon</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://archilya.com/rehber/emlak-360-vr</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -16,4 +17,8 @@
   <url><loc>https://archilya.com/kullanim-kosullari</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://archilya.com/iptal-iade</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://archilya.com/mesafeli-satis</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://archilya.com/cerez-politikasi</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://archilya.com/ticari-elektronik-ileti-onayi</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://archilya.com/gizlilik-kosullari</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://archilya.com/mimarlik-hizmet-sozlesmesi</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
 </urlset>

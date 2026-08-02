@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import Preloader from './components/Preloader';
 import CustomCursor from './components/CustomCursor';
 import ArchilyaAIAssistant from './components/ArchilyaAIAssistant';
+import CookieConsent from './components/CookieConsent';
 import { SEO_PAGES, setPageMeta } from './utils/seo';
 
 /* Lazy-loaded route’lar */
@@ -121,10 +122,11 @@ function RouteAnalyticsTracker() {
 function SiteNotFound() {
   useEffect(() => {
     setPageMeta(
-      'Sayfa Bulunamadı',
+      '404 Sayfa Bulunamadı',
         'Aradığınız Archilya sayfası bulunamadı. Ana sayfadan premium görselleştirme, VR sunum ve kurumsal çözümlerimize ulaşabilirsiniz.',
       { robots: 'noindex,follow' },
     );
+    document.title = '404 | Sayfa Bulunamadı';
   }, []);
 
   return (
@@ -245,6 +247,7 @@ function App() {
         <Route path="*" element={<SiteNotFound />} />
       </Routes>
       <ArchilyaAIAssistant />
+      <CookieConsent />
     </BrowserRouter>
   );
 }
