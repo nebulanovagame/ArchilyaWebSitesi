@@ -36,7 +36,7 @@ src/
 - **🔴 `.gitignore` only covers `.vercel`** — does NOT ignore `.env`, `node_modules`, or `dist/`. If an `.env` file is created, it will be committed. Fix: add `node_modules/`, `dist/`, `.env`, `*.log` to `.gitignore`.
 - No test framework configured.
 - No CI pipeline.
-- No Sentry configuration (unlike WebPanel).
+- Sentry AKTİF: `@sentry/react` ^10.48.0 + `main.jsx`'te Sentry ErrorBoundary. (Eski "No Sentry" notu bayat — 2026-08-03 doğrulandı.)
 
 ## COMMANDS
 ```bash
