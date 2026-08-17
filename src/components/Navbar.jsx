@@ -20,6 +20,7 @@ export default function Navbar() {
     { label: 'Franchise/Partner', to: '/franchise-partner' },
     { label: 'Portfolyo', href: '#portfolio' },
     { label: 'Şubeler', href: '#subeler' },
+    { label: 'Trakya Ruhsat Takibi', to: '/trakya-ruhsat-is-takibi' },
     { label: 'İletişim', href: '#contact' },
   ];
 

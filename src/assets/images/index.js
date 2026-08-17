@@ -30,6 +30,7 @@ import teamMeeting from './team-meeting.jpg';
 import codingSetup from './coding-setup.jpg';
 import trainingSession from './training-session.jpg';
 import clientMeeting from './client-meeting.jpg';
+import trakyaHaritasi from './trakya-haritasi.jpg';
 
 export {
   heroBg,
@@ -51,4 +52,5 @@ export {
   codingSetup,
   trainingSession,
   clientMeeting,
+  trakyaHaritasi,
 };

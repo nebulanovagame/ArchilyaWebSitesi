@@ -94,4 +94,8 @@ export const SEO_PAGES = {
     title: 'Emlak 360 VR Sanal Tur Rehberi',
     desc: 'Emlakta 360 sanal tur, VR sunum ve pixel streaming ile alıcı deneyimini geliştirin; emlak ve müteahhit satış süreçlerini hızlandırın.',
   },
+  TRAKYA_IS_TAKIBI: {
+    title: 'Trakya & İstanbul Ruhsat İş Takibi',
+    desc: 'İmar durumundan iskâna; Tekirdağ ve İstanbul\'daki LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerinizi uzman mimar kadromuzla uçtan uca yönetiyoruz. Bölgenin ruhsat süreç uzmanı.',
+  },
 };

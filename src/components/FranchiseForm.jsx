@@ -35,7 +35,7 @@ export default function FranchiseForm() {
     setSending(true);
     try {
       const res = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL || 'https://backend.archilya.com'}/call/submitFranchiseApplication`,
+        `${import.meta.env.VITE_BACKEND_URL || 'https://api.archilya.com'}/call/submitFranchiseApplication`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
