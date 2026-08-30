@@ -5,7 +5,7 @@ import { ArrowRight, Building2, MapPin, Phone, Mail, FileText, ChevronDown, Work
 import { setPageMeta, SEO_PAGES } from '../utils/seo';
 import { logAnalyticsEvent } from '../firebase';
 import toast from 'react-hot-toast';
-import { constructionDrawing, heroBg, trakyaHaritasi } from '../assets/images/index';
+import { constructionDrawing, heroBg, trakyaHaritasi, partnerModulYapi, partnerMarmaraYapi, partnerUysallar, partnerKarmod, partnerEmirkon, partnerModernPrefabrik, partnerArtvila } from '../assets/images/index';
 
 /* ─── WhatsApp Icon ─────────────────────────────────────────── */
 
@@ -102,14 +102,14 @@ export default function TrakyaRuhsatIsTakibi() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="inline-flex items-center gap-3 px-5 py-2 border border-primary/20 rounded-sm bg-primary/5 mb-8">
               <Building2 className="w-4 h-4 text-primary" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Trakya &amp; İstanbul Bölgesi Ruhsat / Süreç Yönetimi</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Trakya &amp; Marmara Bölgesi Ruhsat / Süreç Yönetimi</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-serif text-white italic mb-6 leading-tight">
               Belediyelerde Vakit Kaybetmeyin.<br />
               <span className="text-primary/80">Süreçleri Bize Bırakın.</span>
             </h1>
             <p className="text-gray-400 text-sm font-sans max-w-2xl mx-auto leading-relaxed mb-6">
-              İmar durumundan iskân sürecine kadar, Tekirdağ ve İstanbul bölgesindeki tüm resmi kurum süreçlerinizi — LİHKAB, TESKİ, İtfaiye, Belediye — uzman mimar kadromuzla uçtan uca yönetiyoruz. Siz projenize odaklanın, resmi süreçler bizim işimiz.
+              İmar durumundan iskân sürecine kadar, Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova&apos;daki tüm resmi kurum süreçlerinizi — LİHKAB, TESKİ, İtfaiye, Belediye — uzman mimar kadromuzla uçtan uca yönetiyoruz. Siz projenize odaklanın, resmi süreçler bizim işimiz.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
@@ -130,7 +130,7 @@ export default function TrakyaRuhsatIsTakibi() {
               {[
                 { label: 'Uzman Mimar Kadrosu', desc: 'Tecrübeli ekip' },
                 { label: 'Uçtan Uca Takip', desc: 'Baştan sona yönetim' },
-                { label: 'Tekirdağ + İstanbul', desc: 'Bölge uzmanlığı' },
+                { label: 'Trakya + Marmara', desc: 'Bölge uzmanlığı' },
               ].map((item) => (
                 <div key={item.label} className="rounded-sm border border-white/[0.06] bg-white/[0.015] p-5 text-center">
                   <p className="text-white text-sm font-serif italic mb-1">{item.label}</p>
@@ -157,13 +157,13 @@ export default function TrakyaRuhsatIsTakibi() {
                 Bölgenin Ruhsat Süreç Uzmanı,<br />Tek Elden Yönetim.
               </h2>
               <p className="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">
-                Tekirdağ ve İstanbul&apos;da imar durumundan iskâna kadar tüm resmi süreçleri tek çatı altında topluyoruz.
+                Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova&apos;da imar durumundan iskâna kadar tüm resmi süreçleri tek çatı altında topluyoruz.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[
-                { icon: Building2, title: 'Bölge Uzmanlığı', desc: 'Hangi belediye hangi evrakı ister, hangi kurum ne kadar sürer — önceden biliriz. Tekirdağ ve İstanbul Avrupa yakasını sahada tanıyoruz.' },
+                { icon: Building2, title: 'Bölge Uzmanlığı', desc: 'Hangi belediye hangi evrakı ister, hangi kurum ne kadar sürer — önceden biliriz. Trakya genelini (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova&apos;yı sahada tanıyoruz.' },
                 { icon: Workflow, title: 'Tek Elden Yönetim', desc: 'Mimari projeden kurum onayına, ruhsat başvurusundan iskâna kadar her süreç tek sorumluda toplanır; siz tek muhatap tanırsınız.' },
                 { icon: FileCheck, title: 'Şeffaf Takip', desc: 'Hangi evrak nerede, hangi aşama ne zaman tamamlanacak — her adım size raporlanır, sürpriz yok.' },
                 { icon: Timer, title: 'Hız & Öncelik', desc: 'Eksiksiz evrak ve kurumlarla kurulu ilişkiler, bekleme sürelerini ciddi ölçüde kısaltır.' },
@@ -184,7 +184,7 @@ export default function TrakyaRuhsatIsTakibi() {
             {/* Stats Band */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16">
               {[
-                { num: '11', label: 'İlçe' },
+                { num: '9', label: 'İl' },
                 { num: '6', label: 'Resmi Kurum' },
                 { num: '21', label: 'Evrak Kalemi' },
                 { num: '5', label: 'Aşamalı Süreç' },
@@ -213,7 +213,7 @@ export default function TrakyaRuhsatIsTakibi() {
           {[
             { icon: Building2, title: 'Belediye', desc: 'İmar durumu, yapı ruhsatı başvurusu ve iskân (yapı kullanma izni) süreçlerinin tamamı.' },
             { icon: Map, title: 'LİHKAB', desc: 'Güncel aplikasyon krokisi ve harita işlemleri.' },
-            { icon: Droplets, title: 'TESKİ', desc: 'Kanal kotu tutanağı, sıhhi tesisat onayı ve kanal bağlantı işlemleri.' },
+            { icon: Droplets, title: 'Su & Kanalizasyon', desc: 'TESKİ, İSKİ, BUSKİ gibi il su ve kanalizasyon idareleri; kanal kotu tutanağı, sıhhi tesisat onayı ve kanal bağlantı işlemleri.' },
             { icon: Flame, title: 'İtfaiye', desc: 'Yangın güvenlik önlemleri ve itfaiye uygunluk süreçleri.' },
             { icon: Zap, title: 'TREDAŞ', desc: 'Elektrik tesisatı proje onayı ve bağlantı süreçleri.' },
             { icon: ScrollText, title: 'Tapu Müdürlüğü', desc: 'Güncel tapu, ifraz, tevhit ve yol terk işlemleri.' },
@@ -332,34 +332,73 @@ export default function TrakyaRuhsatIsTakibi() {
         <div className="max-w-5xl mx-auto text-center mb-16">
           <p className="text-primary text-[10px] uppercase tracking-[0.3em] mb-3">Hizmet Bölgesi</p>
           <h2 className="text-3xl md:text-4xl font-serif text-white italic mb-4">
-            Tekirdağ Geneli<br />ve İstanbul.
+            Trakya Geneli, İstanbul, Çanakkale,<br />Bursa, Balıkesir, Sakarya ve Yalova.
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-start">
-          <div className="rounded-sm border border-white/[0.06] bg-surface p-3 hover:border-white/15 transition-all">
-            <img src={trakyaHaritasi} alt="Trakya ve İstanbul bölgesi idari haritası" className="w-full h-auto object-contain rounded-sm [filter:invert(0.9)_hue-rotate(180deg)_saturate(0.7)_brightness(0.95)_contrast(1.05)]" width="1200" height="886" loading="lazy" decoding="async" />
-          </div>
-          <div className="space-y-6">
-            <div className="rounded-sm border border-white/[0.06] bg-white/[0.015] backdrop-blur-2xl p-6 hover:border-white/15 transition-all">
-              <div className="flex items-center gap-3 mb-4">
-                <MapPin className="w-5 h-5 text-primary" />
-                <h3 className="text-white font-serif italic text-lg">Tekirdağ</h3>
+        <div className="max-w-6xl mx-auto space-y-10">
+          {[
+            { bolge: 'Trakya Geneli', iller: [
+              { il: 'Tekirdağ', ilceler: ['Süleymanpaşa','Çorlu','Çerkezköy','Kapaklı','Ergene','Muratlı','Malkara','Hayrabolu','Saray','Şarköy','Marmara Ereğlisi'] },
+              { il: 'Edirne', ilceler: ['Merkez','Enez','Havsa','İpsala','Keşan','Lalapaşa','Meriç','Süloğlu','Uzunköprü'] },
+              { il: 'Kırklareli', ilceler: ['Merkez','Babaeski','Demirköy','Kofçaz','Lüleburgaz','Pehlivanköy','Pınarhisar','Vize'] },
+            ]},
+            { bolge: 'Marmara & Çevre', iller: [
+              { il: 'İstanbul (Avrupa Yakası)', plus: true, ilceler: ['Silivri','Çatalca','Büyükçekmece','Arnavutköy','Beylikdüzü','Esenyurt','+ tüm ilçeler'] },
+              { il: 'Çanakkale', ilceler: ['Merkez','Ayvacık','Bayramiç','Biga','Bozcaada','Çan','Eceabat','Ezine','Gelibolu','Gökçeada','Lapseki','Yenice'] },
+              { il: 'Bursa', ilceler: ['Osmangazi','Nilüfer','Yıldırım','Büyükorhan','Gemlik','Gürsu','Harmancık','İnegöl','İznik','Karacabey','Keles','Kestel','Mudanya','Mustafakemalpaşa','Orhaneli','Orhangazi','Yenişehir'] },
+              { il: 'Balıkesir', ilceler: ['Altıeylül','Karesi','Ayvalık','Balya','Bandırma','Bigadiç','Burhaniye','Dursunbey','Edremit','Erdek','Gömeç','Gönen','Havran','İvrindi','Kepsut','Manyas','Marmara','Savaştepe','Sındırgı','Susurluk'] },
+              { il: 'Sakarya', ilceler: ['Adapazarı','Akyazı','Arifiye','Erenler','Ferizli','Geyve','Hendek','Karapürçek','Karasu','Kaynarca','Kocaali','Pamukova','Sapanca','Serdivan','Söğütlü','Taraklı'] },
+              { il: 'Yalova', ilceler: ['Merkez','Altınova','Armutlu','Çınarcık','Çiftlikköy','Termal'] },
+            ]},
+          ].map((grup, gi) => {
+            const renderCards = (colsClass) => (
+              <div className={colsClass}>
+                {grup.iller.map((item) => (
+                  <motion.div
+                    key={item.il}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4 }}
+                    className="rounded-sm border border-white/[0.06] bg-white/[0.015] backdrop-blur-2xl p-6 hover:border-white/15 transition-all"
+                  >
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-8 h-8 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                        <MapPin className="w-4 h-4 text-primary" />
+                      </div>
+                      <h3 className="text-white font-serif italic text-base flex-1 leading-tight">{item.il}</h3>
+                      <span className="text-[10px] font-bold text-primary border border-primary/20 bg-primary/10 px-2 py-0.5 rounded-sm shrink-0">{item.ilceler.length}{item.plus ? '+' : ''}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {item.ilceler.map((ilce) => (
+                        <span key={ilce} className="rounded-sm border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] text-gray-300 hover:border-primary/30 hover:text-white transition-colors">{ilce}</span>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Süleymanpaşa, Çorlu, Çerkezköy, Kapaklı, Ergene, Muratlı, Malkara, Hayrabolu, Saray, Şarköy, Marmara Ereğlisi
-              </p>
-            </div>
-            <div className="rounded-sm border border-white/[0.06] bg-white/[0.015] backdrop-blur-2xl p-6 hover:border-white/15 transition-all">
-              <div className="flex items-center gap-3 mb-4">
-                <MapPin className="w-5 h-5 text-primary" />
-                <h3 className="text-white font-serif italic text-lg">İstanbul (Avrupa Yakası)</h3>
+            );
+
+            return (
+              <div key={grup.bolge}>
+                <p className="text-primary text-[10px] uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
+                  <span className="inline-block w-6 h-px bg-primary/40" aria-hidden="true" />
+                  {grup.bolge}
+                </p>
+                {gi === 0 ? (
+                  <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,420px)_1fr] gap-6 items-start">
+                    <div className="rounded-sm border border-white/[0.06] bg-surface p-3 hover:border-white/15 transition-all">
+                      <img src={trakyaHaritasi} alt="Trakya bölgesi idari haritası" className="w-full h-auto object-contain rounded-sm [filter:invert(0.9)_hue-rotate(180deg)_saturate(0.7)_brightness(0.95)_contrast(1.05)]" width="1200" height="886" loading="lazy" decoding="async" />
+                    </div>
+                    {renderCards('grid grid-cols-1 md:grid-cols-2 gap-6')}
+                  </div>
+                ) : (
+                  renderCards('grid grid-cols-1 md:grid-cols-3 gap-6')
+                )}
               </div>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Silivri, Çatalca, Büyükçekmece, Arnavutköy, Beylikdüzü, Esenyurt ve tüm ilçeler
-              </p>
-            </div>
-          </div>
+            );
+          })}
         </div>
 
         <div className="text-center mt-10">
@@ -367,6 +406,51 @@ export default function TrakyaRuhsatIsTakibi() {
             Listede olmayan bir bölge mi? Bizi arayın, değerlendirelim.
           </a>
         </div>
+      </PageShell>
+
+      {/* 6b ─ İş ve Çözüm Ortaklarımız */}
+      <PageShell id="cozum-ortaklari">
+        <div className="max-w-5xl mx-auto text-center mb-16">
+          <p className="text-primary text-[10px] uppercase tracking-[0.3em] mb-3">İş &amp; Çözüm Ortaklarımız</p>
+          <h2 className="text-3xl md:text-4xl font-serif text-white italic mb-4">
+            Projelerinizi Birlikte,<br />Uçtan Uca Tamamlıyoruz.
+          </h2>
+          <p className="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">
+            Anlaşmalı olduğumuz prefabrik, çelik yapı ve yapım çözüm firmaları ile projenizi üretimden teslimata kadar tek elden yürütüyoruz.
+          </p>
+        </div>
+
+        <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+          <style>{`
+            @keyframes archilya-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+            .archilya-marquee-track { animation: archilya-marquee 38s linear infinite; }
+            .archilya-marquee-wrap:hover .archilya-marquee-track { animation-play-state: paused; }
+          `}</style>
+          <div className="archilya-marquee-wrap relative overflow-hidden border-y border-white/[0.06] bg-white/[0.015] py-8 md:py-10">
+            <div className="archilya-marquee-track flex w-max items-center gap-10 md:gap-14 lg:gap-16 will-change-transform">
+              {/* first set */}
+              <div className="flex items-center gap-10 md:gap-14 lg:gap-16 shrink-0">
+                <img src={partnerModulYapi} alt="Modül Yapı" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" />
+                <img src={partnerMarmaraYapi} alt="Marmara Yapı Mimarlık" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" />
+                <img src={partnerUysallar} alt="Uysallar Grup" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" />
+                <img src={partnerKarmod} alt="Karmod" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" />
+                <img src={partnerEmirkon} alt="Emirkon" className="w-48 h-24 md:w-64 md:h-32 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" />
+                <img src={partnerModernPrefabrik} alt="Modern Prefabrik" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" />
+                <img src={partnerArtvila} alt="Artvila Yapı" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" />
+              </div>
+              {/* duplicate set for seamless loop */}
+              <div className="flex items-center gap-10 md:gap-14 lg:gap-16 shrink-0" aria-hidden="true">
+                <img src={partnerModulYapi} alt="" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" aria-hidden="true" />
+                <img src={partnerMarmaraYapi} alt="" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" aria-hidden="true" />
+                <img src={partnerUysallar} alt="" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" aria-hidden="true" />
+                <img src={partnerKarmod} alt="" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" aria-hidden="true" />
+                <img src={partnerEmirkon} alt="" className="w-48 h-24 md:w-64 md:h-32 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" aria-hidden="true" />
+                <img src={partnerModernPrefabrik} alt="" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" aria-hidden="true" />
+                <img src={partnerArtvila} alt="" className="w-32 h-14 md:w-44 md:h-20 object-contain opacity-85 hover:opacity-100 transition-opacity duration-300 shrink-0 select-none" style={{ filter: 'brightness(0) invert(1)' }} loading="lazy" decoding="async" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </PageShell>
 
       {/* 7 ─ Belge ve Projeler (21 madde) */}
@@ -377,7 +461,7 @@ export default function TrakyaRuhsatIsTakibi() {
             Başvuru İçin Gereken<br />Belge ve Projeler.
           </h2>
           <p className="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">
-            Tekirdağ belediyelerinin güncel ruhsat evrak şartlarına göre hazırlanmıştır; proje türüne göre değişiklik gösterebilir. Elektrik ve sıhhi tesisat projeleri ile kanal kotu tutanağı, ruhsat başvurusundan sonra da teslim edilebilir.
+            Trakya ve Marmara bölgesi belediyelerinin güncel ruhsat evrak şartlarına göre hazırlanmıştır; proje türüne ve ilçeye göre değişiklik gösterebilir. Elektrik ve sıhhi tesisat projeleri ile kanal kotu tutanağı, ruhsat başvurusundan sonra da teslim edilebilir.
           </p>
         </div>
 
@@ -541,7 +625,7 @@ export default function TrakyaRuhsatIsTakibi() {
           {[
             { q: 'Ruhsat süreci ne kadar sürer?', a: 'Proje türüne ve kurum yoğunluğuna göre değişir. Evrak tamlığı ve imar durumu netleştiğinde tahmini süreyi ilk görüşmede söyleriz; süreç boyunca her aşamayı size raporlarız.' },
             { q: 'Uzaktaki bir firmayız, saha işlerini nasıl yürüteceksiniz?', a: 'Bölgedeki tüm saha ve kurum işlerini biz yürütürüz; sizden yalnızca evrak ve onaylar gelir. Samsun\'dan, Bursa\'dan çalışan firmalarımız var — yüz yüze görüşme zorunluluğu yoktur.' },
-            { q: 'Hangi bölgelerde hizmet veriyorsunuz?', a: 'Tekirdağ geneli ve İstanbul, özellikle Avrupa yakası. Kapsam dışı bir bölge için bizi arayın, değerlendirelim.' },
+            { q: 'Hangi bölgelerde hizmet veriyorsunuz?', a: 'Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul (özellikle Avrupa yakası), Çanakkale geneli, Bursa, Balıkesir, Sakarya ve Yalova. Kapsam dışı bir bölge için bizi arayın, değerlendirelim.' },
             { q: 'Evrak listesi her projede aynı mı?', a: 'Hayır; proje türüne ve belediyeye göre değişir. Sizin projeniz için gerekli listeyi başvuru öncesinde netleştirip size bildiririz.' },
             { q: 'Projeleri de siz mi hazırlıyorsunuz?', a: 'Evet; mimari projeden statik, elektrik, sıhhi tesisat ve zemin etüdüne kadar tüm proje ve raporları koordine eder, eksikleri tamamlarız.' },
             { q: 'İskân (yapı kullanma izni) sürecini de yönetiyor musunuz?', a: 'Evet; ruhsattan iskâna kadar tüm süreç uçtan uca yönetim kapsamındadır.' },
@@ -571,7 +655,7 @@ export default function TrakyaRuhsatIsTakibi() {
                 <span className="text-[9px] text-primary uppercase tracking-[0.3em] mt-0.5">Premium Studio</span>
               </Link>
               <p className="text-xs text-gray-600 font-sans leading-relaxed mt-4 mb-6 max-w-[320px]">
-                Tekirdağ ve İstanbul bölgesinde imar durumundan iskâna tüm resmi kurum süreçlerini tek elden yönetiyoruz.
+                Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova bölgelerinde imar durumundan iskâna tüm resmi kurum süreçlerini tek elden yönetiyoruz.
               </p>
               <div className="space-y-3">
                 <p className="text-[10px] text-gray-500 font-sans uppercase tracking-[0.2em] mb-3">
@@ -632,7 +716,7 @@ export default function TrakyaRuhsatIsTakibi() {
             <div className="md:col-span-4">
               <p className="text-[10px] font-sans font-bold text-gray-500 uppercase tracking-[0.25em] mb-5">Ruhsat Hizmeti</p>
               <p className="text-xs text-gray-600 font-sans leading-relaxed mb-6">
-                Tekirdağ ve İstanbul'da imar durumundan iskâna tüm resmi süreçleri tek elden yönetiyoruz.
+                Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova&apos;da imar durumundan iskâna tüm resmi süreçleri tek elden yönetiyoruz.
               </p>
               <div className="flex flex-col gap-3">
                 <a href="https://wa.me/902826060639" target="_blank" rel="noopener noreferrer"

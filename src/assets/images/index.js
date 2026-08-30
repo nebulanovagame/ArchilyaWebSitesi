@@ -32,6 +32,15 @@ import trainingSession from './training-session.jpg';
 import clientMeeting from './client-meeting.jpg';
 import trakyaHaritasi from './trakya-haritasi.jpg';
 
+// Çözüm ortakları logoları
+import partnerModulYapi from './partners/modulyapi.png';
+import partnerMarmaraYapi from './partners/marmarayapi.png';
+import partnerUysallar from './partners/uysallar.png';
+import partnerKarmod from './partners/karmod-logo.svg';
+import partnerEmirkon from './partners/emirkon.png';
+import partnerModernPrefabrik from './partners/modernprefabrik.png';
+import partnerArtvila from './partners/artvila.png';
+
 export {
   heroBg,
   constructionDrawing,
@@ -53,4 +62,11 @@ export {
   trainingSession,
   clientMeeting,
   trakyaHaritasi,
+  partnerModulYapi,
+  partnerMarmaraYapi,
+  partnerUysallar,
+  partnerKarmod,
+  partnerEmirkon,
+  partnerModernPrefabrik,
+  partnerArtvila,
 };

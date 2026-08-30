@@ -95,7 +95,7 @@ export const SEO_PAGES = {
     desc: 'Emlakta 360 sanal tur, VR sunum ve pixel streaming ile alıcı deneyimini geliştirin; emlak ve müteahhit satış süreçlerini hızlandırın.',
   },
   TRAKYA_IS_TAKIBI: {
-    title: 'Trakya & İstanbul Ruhsat İş Takibi',
-    desc: 'İmar durumundan iskâna; Tekirdağ ve İstanbul\'daki LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerinizi uzman mimar kadromuzla uçtan uca yönetiyoruz. Bölgenin ruhsat süreç uzmanı.',
+    title: 'Trakya & Marmara Ruhsat İş Takibi',
+    desc: 'İmar durumundan iskâna; Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova\'daki LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerinizi uzman mimar kadromuzla uçtan uca yönetiyoruz. Bölgenin ruhsat süreç uzmanı.',
   },
 };
