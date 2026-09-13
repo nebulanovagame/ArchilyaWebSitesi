@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MoveHorizontal } from 'lucide-react';
-import { heroBg, constructionDrawing } from '../assets/images';
 
 export default function BeforeAfter() {
   const [sliderPosition, setSliderPosition] = useState(50);
@@ -37,10 +36,10 @@ export default function BeforeAfter() {
         >
           <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-sm select-none group border border-white/6">
             <img
-              src={heroBg}
-              alt="Archilya mimari görselleştirme çıktısı"
-              width="1600"
-              height="1088"
+              src="/ai-ornekler/sonra-render.webp"
+              alt="Archilya görselleştirme çıktısı: aynı konutun fotogerçekçi render'ı"
+              width="1563"
+              height="1006"
               loading="lazy"
               decoding="async"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
@@ -53,15 +52,14 @@ export default function BeforeAfter() {
             </div>
 
             <img
-              src={constructionDrawing}
-              alt="Ham 3D model veya CAD dosyası öncesi taslak görünümü"
-              width="1600"
-              height="1088"
+              src="/ai-ornekler/once-ham-model.webp"
+              alt="Ham SketchUp modeli: aynı konutun dokusuz 3D taslak hali"
+              width="1200"
+              height="772"
               loading="lazy"
               decoding="async"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
               style={{
-                filter: 'grayscale(85%) contrast(110%) brightness(110%)',
                 clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
               }}
             />
@@ -69,7 +67,7 @@ export default function BeforeAfter() {
               className="absolute top-6 left-6 bg-white/90 backdrop-blur-md border border-white/20 px-4 py-2 text-black text-[10px] font-bold uppercase tracking-widest pointer-events-none z-10 transition-opacity duration-200 rounded-sm"
               style={{ opacity: sliderPosition > 8 ? 1 : 0 }}
             >
-              Ham Model / Taslak
+              Ham SketchUp Modeli
             </div>
 
             <div
@@ -108,7 +106,7 @@ export default function BeforeAfter() {
             className="flex flex-col md:flex-row items-center justify-between gap-4 mt-6 px-1"
           >
             <p className="text-gray-600 text-xs font-sans">
-              Kaydırarak ham modelden hizmet çıktısına (görselleştirme + sunum) geçişi inceleyin.
+              Gerçek üretim örneği: kaydırarak ham SketchUp modelinden hizmet çıktısına (fotogerçekçi render + sunum) geçişi inceleyin.
             </p>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">

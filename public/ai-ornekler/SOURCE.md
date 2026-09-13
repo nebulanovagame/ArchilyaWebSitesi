@@ -27,6 +27,11 @@ WebP kopyalarıdır.
 | `peyzaj-2.webp` | `landscape-premium/ornek-2-sonrasi.png` | landscape-premium | Peyzaj |
 | `gorsellestirme-1.webp` | `exterior-premium/ornek-1-sonrasi.png` | exterior-premium | Görselleştirme |
 | `ruhsat-uygulama-1.webp` | `plan-color-concept/ornek-1-sonrasi.jpg` | plan-color-concept | Ruhsat & Uygulama |
+| `once-ham-model.webp` | `exterior-premium/ornek-1-oncesi.jpg` | exterior-premium | Önce & Sonra — ham SketchUp modeli |
+| `sonra-render.webp` | `exterior-premium/ornek-1-sonrasi.png` | exterior-premium | Önce & Sonra — fotogerçekçi render |
+
+`once-ham-model.webp` + `sonra-render.webp` **aynı villanın** gerçek girdi→çıktı çiftidir ve ana
+sayfadaki "Önce & Sonra" kaydırıcısında kullanılır (ham SketchUp modeli → fotogerçekçi render).
 
 Yalnızca "sonrasi" (after) görselleri seçilmiştir; before görselleri avif/webp karışık
 olduğundan ve bu bölümde before+after çifti gerekmediğinden kullanılmamıştır.
