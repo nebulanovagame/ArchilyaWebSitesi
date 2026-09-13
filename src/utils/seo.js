@@ -131,6 +131,6 @@ export const SEO_PAGES = {
   },
   TRAKYA_IS_TAKIBI: {
     title: 'Trakya & Marmara Ruhsat İş Takibi',
-    desc: 'İmar durumundan iskâna; Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova\'daki LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerinizi uzman mimar kadromuzla uçtan uca yönetiyoruz. Bölgenin ruhsat süreç uzmanı.',
+    desc: 'İmar durumundan iskâna; Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul ve Çanakkale\'deki LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerinizi uzman mimar kadromuzla uçtan uca yönetiyoruz. Bölgenin ruhsat süreç uzmanı.',
   },
 };

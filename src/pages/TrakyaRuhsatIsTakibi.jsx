@@ -102,14 +102,14 @@ export default function TrakyaRuhsatIsTakibi() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="inline-flex items-center gap-3 px-5 py-2 border border-primary/20 rounded-sm bg-primary/5 mb-8">
               <Building2 className="w-4 h-4 text-primary" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Trakya &amp; Marmara Bölgesi Ruhsat / Süreç Yönetimi</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Trakya, İstanbul &amp; Çanakkale Bölgesi Ruhsat / Süreç Yönetimi</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-serif text-white italic mb-6 leading-tight">
               Belediyelerde Vakit Kaybetmeyin.<br />
               <span className="text-primary/80">Süreçleri Bize Bırakın.</span>
             </h1>
             <p className="text-gray-400 text-sm font-sans max-w-2xl mx-auto leading-relaxed mb-6">
-              İmar durumundan iskân sürecine kadar, Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova&apos;daki tüm resmi kurum süreçlerinizi — LİHKAB, TESKİ, İtfaiye, Belediye — uzman mimar kadromuzla uçtan uca yönetiyoruz. Siz projenize odaklanın, resmi süreçler bizim işimiz.
+              İmar durumundan iskân sürecine kadar, Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul ve Çanakkale&apos;deki tüm resmi kurum süreçlerinizi — LİHKAB, TESKİ, İtfaiye, Belediye — uzman mimar kadromuzla uçtan uca yönetiyoruz. Siz projenize odaklanın, resmi süreçler bizim işimiz.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
@@ -130,7 +130,7 @@ export default function TrakyaRuhsatIsTakibi() {
               {[
                 { label: 'Uzman Mimar Kadrosu', desc: 'Tecrübeli ekip' },
                 { label: 'Uçtan Uca Takip', desc: 'Baştan sona yönetim' },
-                { label: 'Trakya + Marmara', desc: 'Bölge uzmanlığı' },
+                { label: 'Trakya + İstanbul + Çanakkale', desc: 'Bölge uzmanlığı' },
               ].map((item) => (
                 <div key={item.label} className="rounded-sm border border-white/[0.06] bg-white/[0.015] p-5 text-center">
                   <p className="text-white text-sm font-serif italic mb-1">{item.label}</p>
@@ -157,17 +157,17 @@ export default function TrakyaRuhsatIsTakibi() {
                 Bölgenin Ruhsat Süreç Uzmanı,<br />Tek Elden Yönetim.
               </h2>
               <p className="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">
-                Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova&apos;da imar durumundan iskâna kadar tüm resmi süreçleri tek çatı altında topluyoruz.
+                Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul ve Çanakkale&apos;de imar durumundan iskâna kadar tüm resmi süreçleri tek çatı altında topluyoruz.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {[
-                { icon: Building2, title: 'Bölge Uzmanlığı', desc: 'Hangi belediye hangi evrakı ister, hangi kurum ne kadar sürer — önceden biliriz. Trakya genelini (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova&apos;yı sahada tanıyoruz.' },
+                { icon: Building2, title: 'Bölge Uzmanlığı', desc: 'Hangi belediye hangi evrakı ister, hangi kurum ne kadar sürer — önceden biliriz. Trakya genelini (Tekirdağ, Edirne, Kırklareli), İstanbul ve Çanakkale&apos;i sahada tanıyoruz.' },
                 { icon: Workflow, title: 'Tek Elden Yönetim', desc: 'Mimari projeden kurum onayına, ruhsat başvurusundan iskâna kadar her süreç tek sorumluda toplanır; siz tek muhatap tanırsınız.' },
                 { icon: FileCheck, title: 'Şeffaf Takip', desc: 'Hangi evrak nerede, hangi aşama ne zaman tamamlanacak — her adım size raporlanır, sürpriz yok.' },
                 { icon: Timer, title: 'Hız & Öncelik', desc: 'Eksiksiz evrak ve kurumlarla kurulu ilişkiler, bekleme sürelerini ciddi ölçüde kısaltır.' },
-                { icon: MapPin, title: 'Uzaktan Çalışma Dostu', desc: 'Samsun\'dan, Bursa\'dan çalışın; saha ve kurum işlerini biz yürütürüz, yüz yüze görüşme şart değil.' },
+                { icon: MapPin, title: 'Uzaktan Çalışma Dostu', desc: 'Samsun\'dan çalışın; saha ve kurum işlerini biz yürütürüz, yüz yüze görüşme şart değil.' },
                 { icon: ClipboardCheck, title: 'Evrak & Proje Tamamlama', desc: 'Eksik belge mi var? Proje mi gerekiyor? Biz tamamlar, koordine eder, onaya hazır hale getiririz.' },
               ].map((item) => (
                 <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -184,7 +184,7 @@ export default function TrakyaRuhsatIsTakibi() {
             {/* Stats Band */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16">
               {[
-                { num: '9', label: 'İl' },
+                { num: '5', label: 'İl' },
                 { num: '6', label: 'Resmi Kurum' },
                 { num: '21', label: 'Evrak Kalemi' },
                 { num: '5', label: 'Aşamalı Süreç' },
@@ -213,7 +213,7 @@ export default function TrakyaRuhsatIsTakibi() {
           {[
             { icon: Building2, title: 'Belediye', desc: 'İmar durumu, yapı ruhsatı başvurusu ve iskân (yapı kullanma izni) süreçlerinin tamamı.' },
             { icon: Map, title: 'LİHKAB', desc: 'Güncel aplikasyon krokisi ve harita işlemleri.' },
-            { icon: Droplets, title: 'Su & Kanalizasyon', desc: 'TESKİ, İSKİ, BUSKİ gibi il su ve kanalizasyon idareleri; kanal kotu tutanağı, sıhhi tesisat onayı ve kanal bağlantı işlemleri.' },
+                { icon: Droplets, title: 'Su & Kanalizasyon', desc: 'TESKİ, İSKİ gibi il su ve kanalizasyon idareleri; kanal kotu tutanağı, sıhhi tesisat onayı ve kanal bağlantı işlemleri.' },
             { icon: Flame, title: 'İtfaiye', desc: 'Yangın güvenlik önlemleri ve itfaiye uygunluk süreçleri.' },
             { icon: Zap, title: 'TREDAŞ', desc: 'Elektrik tesisatı proje onayı ve bağlantı süreçleri.' },
             { icon: ScrollText, title: 'Tapu Müdürlüğü', desc: 'Güncel tapu, ifraz, tevhit ve yol terk işlemleri.' },
@@ -332,7 +332,7 @@ export default function TrakyaRuhsatIsTakibi() {
         <div className="max-w-5xl mx-auto text-center mb-16">
           <p className="text-primary text-[10px] uppercase tracking-[0.3em] mb-3">Hizmet Bölgesi</p>
           <h2 className="text-3xl md:text-4xl font-serif text-white italic mb-4">
-            Trakya Geneli, İstanbul, Çanakkale,<br />Bursa, Balıkesir, Sakarya ve Yalova.
+            Trakya Geneli, İstanbul,<br />Çanakkale.
           </h2>
         </div>
 
@@ -343,13 +343,9 @@ export default function TrakyaRuhsatIsTakibi() {
               { il: 'Edirne', ilceler: ['Merkez','Enez','Havsa','İpsala','Keşan','Lalapaşa','Meriç','Süloğlu','Uzunköprü'] },
               { il: 'Kırklareli', ilceler: ['Merkez','Babaeski','Demirköy','Kofçaz','Lüleburgaz','Pehlivanköy','Pınarhisar','Vize'] },
             ]},
-            { bolge: 'Marmara & Çevre', iller: [
+            { bolge: 'İstanbul & Çanakkale', iller: [
               { il: 'İstanbul (Avrupa Yakası)', plus: true, ilceler: ['Silivri','Çatalca','Büyükçekmece','Arnavutköy','Beylikdüzü','Esenyurt','+ tüm ilçeler'] },
               { il: 'Çanakkale', ilceler: ['Merkez','Ayvacık','Bayramiç','Biga','Bozcaada','Çan','Eceabat','Ezine','Gelibolu','Gökçeada','Lapseki','Yenice'] },
-              { il: 'Bursa', ilceler: ['Osmangazi','Nilüfer','Yıldırım','Büyükorhan','Gemlik','Gürsu','Harmancık','İnegöl','İznik','Karacabey','Keles','Kestel','Mudanya','Mustafakemalpaşa','Orhaneli','Orhangazi','Yenişehir'] },
-              { il: 'Balıkesir', ilceler: ['Altıeylül','Karesi','Ayvalık','Balya','Bandırma','Bigadiç','Burhaniye','Dursunbey','Edremit','Erdek','Gömeç','Gönen','Havran','İvrindi','Kepsut','Manyas','Marmara','Savaştepe','Sındırgı','Susurluk'] },
-              { il: 'Sakarya', ilceler: ['Adapazarı','Akyazı','Arifiye','Erenler','Ferizli','Geyve','Hendek','Karapürçek','Karasu','Kaynarca','Kocaali','Pamukova','Sapanca','Serdivan','Söğütlü','Taraklı'] },
-              { il: 'Yalova', ilceler: ['Merkez','Altınova','Armutlu','Çınarcık','Çiftlikköy','Termal'] },
             ]},
           ].map((grup, gi) => {
             const renderCards = (colsClass) => (
@@ -624,8 +620,8 @@ export default function TrakyaRuhsatIsTakibi() {
         <div className="max-w-3xl mx-auto space-y-4">
           {[
             { q: 'Ruhsat süreci ne kadar sürer?', a: 'Proje türüne ve kurum yoğunluğuna göre değişir. Evrak tamlığı ve imar durumu netleştiğinde tahmini süreyi ilk görüşmede söyleriz; süreç boyunca her aşamayı size raporlarız.' },
-            { q: 'Uzaktaki bir firmayız, saha işlerini nasıl yürüteceksiniz?', a: 'Bölgedeki tüm saha ve kurum işlerini biz yürütürüz; sizden yalnızca evrak ve onaylar gelir. Samsun\'dan, Bursa\'dan çalışan firmalarımız var — yüz yüze görüşme zorunluluğu yoktur.' },
-            { q: 'Hangi bölgelerde hizmet veriyorsunuz?', a: 'Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul (özellikle Avrupa yakası), Çanakkale geneli, Bursa, Balıkesir, Sakarya ve Yalova. Kapsam dışı bir bölge için bizi arayın, değerlendirelim.' },
+            { q: 'Uzaktaki bir firmayız, saha işlerini nasıl yürüteceksiniz?', a: 'Bölgedeki tüm saha ve kurum işlerini biz yürütürüz; sizden yalnızca evrak ve onaylar gelir. Samsun\'dan çalışan firmalarımız var — yüz yüze görüşme zorunluluğu yoktur.' },
+            { q: 'Hangi bölgelerde hizmet veriyorsunuz?', a: 'Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul (özellikle Avrupa yakası) ve Çanakkale geneli. Kapsam dışı bir bölge için bizi arayın, değerlendirelim.' },
             { q: 'Evrak listesi her projede aynı mı?', a: 'Hayır; proje türüne ve belediyeye göre değişir. Sizin projeniz için gerekli listeyi başvuru öncesinde netleştirip size bildiririz.' },
             { q: 'Projeleri de siz mi hazırlıyorsunuz?', a: 'Evet; mimari projeden statik, elektrik, sıhhi tesisat ve zemin etüdüne kadar tüm proje ve raporları koordine eder, eksikleri tamamlarız.' },
             { q: 'İskân (yapı kullanma izni) sürecini de yönetiyor musunuz?', a: 'Evet; ruhsattan iskâna kadar tüm süreç uçtan uca yönetim kapsamındadır.' },
@@ -655,7 +651,7 @@ export default function TrakyaRuhsatIsTakibi() {
                 <span className="text-[9px] text-primary uppercase tracking-[0.3em] mt-0.5">Mimari Destek</span>
               </Link>
               <p className="text-xs text-gray-600 font-sans leading-relaxed mt-4 mb-6 max-w-[320px]">
-                Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova bölgelerinde imar durumundan iskâna tüm resmi kurum süreçlerini tek elden yönetiyoruz.
+                Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul ve Çanakkale bölgelerinde imar durumundan iskâna tüm resmi kurum süreçlerini tek elden yönetiyoruz.
               </p>
               <div className="space-y-3">
                 <p className="text-[10px] text-gray-500 font-sans uppercase tracking-[0.2em] mb-3">
@@ -716,7 +712,7 @@ export default function TrakyaRuhsatIsTakibi() {
             <div className="md:col-span-4">
               <p className="text-[10px] font-sans font-bold text-gray-500 uppercase tracking-[0.25em] mb-5">Ruhsat Hizmeti</p>
               <p className="text-xs text-gray-600 font-sans leading-relaxed mb-6">
-                Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova&apos;da imar durumundan iskâna tüm resmi süreçleri tek elden yönetiyoruz.
+                Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul ve Çanakkale&apos;de imar durumundan iskâna tüm resmi süreçleri tek elden yönetiyoruz.
               </p>
               <div className="flex flex-col gap-3">
                 <a href="https://wa.me/902826060639" target="_blank" rel="noopener noreferrer"
