@@ -1,31 +1,62 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { modernBuilding, interiorModern, heroBg } from '../assets/images';
+import {
+  modernBuilding,
+  interiorModern,
+  creativeProcess,
+  villaEstate,
+  modernTower,
+  constructionDrawing,
+} from '../assets/images';
 
 const services = [
   {
     id: '01',
-            tag: 'Premium Üretim',
-    title: 'Render ve Revizyon Süresini Karar Anına Yaklaştırın.',
-    desc: 'Premium Render, referans stil, plan boyama ve kontrollü revizyon araçlarıyla üretim bekleme sürelerini kısaltın. Müşteri geri bildirimini yeni bir teslim döngüsüne çevirmeden aynı akışta yanıtlayın.',
-    image: modernBuilding,
+    tag: 'Konsept & Fikir',
+    title: 'Projenin İlk Fikrini Hızla Olgunlaştırın.',
+    desc: 'Kütle, plan ve tasarım kararlarını erken aşamada netleştirin; konseptten uygulanabilir çözüme tek akışta ilerleyin. Belirsizliği azaltın, doğru kararı ilk toplantıda verin.',
+    image: creativeProcess,
     accent: 'primary',
   },
   {
     id: '02',
-    tag: 'Pixel Streaming & VR',
-    title: 'Linki Paylaşın, Müşteriniz Projenin İçinde Yürüsün.',
-    desc: 'Pixel Streaming ile 4K sahnenizi doğrudan web tarayıcısına aktarın. Müşteriniz linke tıklar, projeyi keşfeder, malzeme değiştirir ve toplantı bitmeden karar verir. Kurulum, kablo veya güçlü bilgisayar gerekmez.',
+    tag: 'İç Mekan',
+    title: 'Mekanı Karar Anında Deneyimleyin.',
+    desc: 'İç mekan kurgusu, malzeme ve atmosfer kararlarını görselleştirerek müşterinizin mekanı daha inşa edilmeden hissetmesini sağlayın.',
     image: interiorModern,
     accent: 'amber',
   },
   {
     id: '03',
-    tag: 'Workspace Kontrolü',
-    title: 'Projeyi, Ekibi ve Sunum Hafızasını Tek Merkezde Tutun.',
-    desc: 'Panel, işlem hakkı sistemi, bulut depolama ve ekip rolleriyle üretim operasyonunuz dağınık klasörlerden kurtulur. Aynı proje hafızası üzerinden AI, VR ve teslim süreçlerini yönetin.',
-    image: heroBg,
+    tag: 'Peyzaj',
+    title: 'Yapıyı Çevresiyle Birlikte Tasarlayın.',
+    desc: 'Yapı ve çevre ilişkisini kuran peyzaj ve dış mekan kurgusuyla projenin bütününü sunun; açık alan kararlarını erkenden kesinleştirin.',
+    image: villaEstate,
     accent: 'primary',
+  },
+  {
+    id: '04',
+    tag: '3D Modelleme',
+    title: 'Projeyi Doğru ve Koordineli Modelleyin.',
+    desc: 'BIM/CAD altyapısıyla projeyi doğru, ölçekli ve koordineli biçimde modelleyin; disiplinler arası çakışmaları erken yakalayın.',
+    image: modernTower,
+    accent: 'amber',
+  },
+  {
+    id: '05',
+    tag: 'Görselleştirme',
+    title: 'Tasarımınızı Fotogerçekçi Anlatın.',
+    desc: 'Fotogerçekçi görseller, canlı sunum ve kontrollü revizyonlarla tasarımı müşteriye net aktarın; onay sürecini kısaltın.',
+    image: modernBuilding,
+    accent: 'primary',
+  },
+  {
+    id: '06',
+    tag: 'Ruhsat & Uygulama',
+    title: 'İmar Durumundan İskâna Kadar Yanınızda.',
+    desc: 'İmar durumu, ruhsat ve resmi süreçleri uçtan uca yönetin; LİHKAB, TESKİ, İtfaiye ve Belediye adımlarını tek ekipten takip edin.',
+    image: constructionDrawing,
+    accent: 'amber',
   },
 ];
 
@@ -48,7 +79,7 @@ const ACCENT = {
 
 export default function Services() {
   return (
-    <section id="studio" className="py-16 md:py-32 bg-background relative overflow-hidden">
+    <section id="hizmetler" className="py-16 md:py-32 bg-background relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.02]"
         style={{
@@ -66,15 +97,15 @@ export default function Services() {
           className="flex flex-col md:flex-row justify-between items-end gap-6"
         >
           <div>
-            <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Avantajlar</p>
+            <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Hizmetler</p>
             <h2 className="text-4xl md:text-6xl font-serif text-white italic leading-tight">
-              Ofisiniz İçin<br />
-              <span className="text-primary/80">Somut Getiri.</span>
+              Uçtan Uca<br />
+              <span className="text-primary/80">Mimari Destek.</span>
             </h2>
           </div>
           <p className="text-gray-500 text-sm font-sans max-w-sm leading-relaxed md:text-right">
-            Archilya; üretimi hızlandıran, Pixel Streaming ve VR ile müşteri iknasını güçlendiren,
-            ofis operasyonunu tek merkezde tutan üç temel avantaj sunar.
+            Archilya; konsept tasarımdan ruhsata, modellemeden görselleştirmeye uzanan altı hizmetle
+            mimari sürecin tamamını tek çatı altında toplar.
           </p>
         </motion.div>
       </div>
@@ -100,7 +131,7 @@ export default function Services() {
                   <div className="aspect-[4/3] overflow-hidden rounded-sm relative">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={`Archilya ${service.tag} hizmeti`}
                       width="1600"
                       height="1200"
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[40%] group-hover:grayscale-0"
@@ -108,10 +139,7 @@ export default function Services() {
                       decoding="async"
                     />
                     <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-md border border-white/10 px-2.5 py-1 rounded-sm">
-                      <span className="text-[8px] uppercase tracking-widest text-primary/80 font-bold">Archilya</span>
-                    </div>
-                    <div className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm border border-white/8 px-2 py-1 rounded-sm">
-                      <span className="text-[7px] uppercase tracking-widest text-gray-500">{service.accent === 'amber' ? 'Pixel Streaming' : 'Premium Studio'}</span>
+                      <span className="text-[8px] uppercase tracking-widest text-primary/80 font-bold">{service.tag}</span>
                     </div>
                   </div>
                 </motion.div>
@@ -143,7 +171,7 @@ export default function Services() {
                     href="#contact"
                     className={`group/btn inline-flex items-center gap-2.5 text-[11px] font-bold uppercase tracking-widest border-b pb-1 transition-colors ${A.btn}`}
                   >
-                    Demo Talep Et
+                    Teklif Al
                     <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                   </a>
                 </motion.div>
