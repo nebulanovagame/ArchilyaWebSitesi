@@ -19,10 +19,10 @@
       "@context": "https://schema.org",
       "@type": "Organization",
       "@id": "https://archilya.com#organization",
-      "name": "Archilya Design Studio",
+      "name": "Archilya",
       "url": "https://archilya.com",
       "logo": "https://archilya.com/favicon.ico",
-      "description": "Profesyonel görselleştirme ve VR sunum platformu",
+      "description": "Mimari destek platformu",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Silahtarağa Mah. Üniversite 1. Sk. No:13/1 İç Kapı No:Z109",
@@ -72,62 +72,14 @@
       <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     </noscript>
 
-    <!-- Structured Data: SoftwareApplication -->
+    <!-- Structured Data: WebSite -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Archilya Design Studio",
-      "operatingSystem": "Web",
-      "applicationCategory": "DesignApplication",
-      "description": "Premium görselleştirme, VR sunum ve Pixel Streaming çözümleri. Profesyonel proje sunumu ve dijital görselleştirme platformu.",
-      "offers": {
-        "@type": "AggregateOffer",
-        "offerCount": "4",
-        "availability": "https://schema.org/OnlineOnly"
-      }
-    }
-    </script>
-
-    <!-- Structured Data: FAQ -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "VR sunum için özel donanım gerekli mi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Hayır. Pixel Streaming teknolojimiz sayesinde sunumlar web tarayıcısından izlenebilir. VR başlık ile deneyim opsiyoneldir."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Archilya hangi dosya formatlarını destekliyor?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Revit, SketchUp, Rhino, AutoCAD ve yaygın CAD/BIM formatlarıyla uyumludur."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Archilya franchise fırsatları nelerdir?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Premium görselleştirme ve VR sunum alanında franchise ortaklığı imkanı. Kapsamlı eğitim, pazarlama ve teknik destek ile kendi işinizi kurun."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Abonelik planları nelerdir?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Keşif (ücretsiz), Solo, Pro ve Studio olmak üzere dört abonelik katmanı sunuyoruz. Her katman farklı işlem kredisi, depolama ve ekip kapasitesi içerir."
-          }
-        }
-      ]
+      "@type": "WebSite",
+      "name": "Archilya",
+      "url": "https://archilya.com",
+      "inLanguage": "tr-TR"
     }
     </script>
 
@@ -138,13 +90,20 @@
       "@type": "Service",
       "name": "Archilya",
       "url": "https://archilya.com",
-      "description": "Mimarlık ofisleri için AI destekli render, revizyon, analiz ve Pixel Streaming / VR sunum platformu.",
+      "description": "Mimari destek platformu",
       "provider": {
         "@type": "Organization",
         "name": "Archilya",
         "url": "https://archilya.com"
       },
-      "serviceType": ["AI Studio", "VR Sunum", "Pixel Streaming"],
+      "serviceType": [
+        "Konsept Tasarım",
+        "İç Mekan",
+        "Peyzaj",
+        "Modelleme",
+        "Görselleştirme",
+        "Ruhsat & Uygulama"
+      ],
       "areaServed": {
         "@type": "Country",
         "name": "Türkiye"
@@ -157,24 +116,48 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "AI Studio",
-              "description": "Premium render, revizyon düzenleyici, kat planı renklendirme, tasarım analizi ve 4K iyileştirme araçları."
+              "name": "Konsept Tasarım",
+              "description": "Projenin ilk fikrinden uygulanabilir konsepte; kütle, plan ve tasarım kararlarının hızlıca olgunlaştırılması."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "VR Sunum",
-              "description": "Mimari projeleri VR ve 360 sunumlarla müşterilere deneyimleten interaktif sunum hizmeti."
+              "name": "İç Mekan",
+              "description": "İç mekan kurgusu, malzeme ve atmosfer kararlarıyla yaşanabilir, tutarlı mekanlar."
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Pixel Streaming",
-              "description": "Yüksek kaliteli mimari sunumları web tarayıcısı üzerinden erişilebilir hale getiren canlı yayın teknolojisi."
+              "name": "Peyzaj",
+              "description": "Yapı ve çevre ilişkisini kuran peyzaj tasarımı ve dış mekan kurgusu."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Modelleme",
+              "description": "Projenin 3D model ve BIM/CAD altyapısıyla doğru ve koordineli biçimde modellenmesi."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Görselleştirme",
+              "description": "Fotogerçekçi görseller, canlı sunum ve revizyonlarla tasarımın müşteriye net aktarılması."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Ruhsat & Uygulama",
+              "description": "İmar durumundan iskâna; ruhsat ve resmi süreçlerin uçtan uca yönetimi."
             }
           }
         ]
@@ -193,7 +176,7 @@
       "provider": {
         "@type": "Organization",
         "@id": "https://archilya.com#organization",
-        "name": "Archilya Design Studio",
+        "name": "Archilya",
         "url": "https://archilya.com"
       },
       "areaServed": [
@@ -202,37 +185,38 @@
           "name": "Tekirdağ"
         },
         {
+          "@type": "State",
+          "name": "Edirne"
+        },
+        {
+          "@type": "State",
+          "name": "Kırklareli"
+        },
+        {
           "@type": "City",
           "name": "İstanbul"
+        },
+        {
+          "@type": "State",
+          "name": "Çanakkale"
+        },
+        {
+          "@type": "State",
+          "name": "Bursa"
+        },
+        {
+          "@type": "State",
+          "name": "Balıkesir"
+        },
+        {
+          "@type": "State",
+          "name": "Sakarya"
+        },
+        {
+          "@type": "State",
+          "name": "Yalova"
         }
       ]
-    }
-    </script>
-
-    <!-- Structured Data: Article -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Mimari Projelerde VR Sunum Satış Kararını Nasıl Hızlandırır?",
-      "description": "VR sunum, 360 deneyim ve Pixel Streaming teknolojilerinin mimari projelerde müşteri deneyimini güçlendirerek satış kararlarını nasıl hızlandırdığını anlatan rehber.",
-      "url": "https://archilya.com/rehber/vr-sunum-satis-karari",
-      "author": {
-        "@type": "Organization",
-        "name": "Archilya",
-        "url": "https://archilya.com"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Archilya",
-        "url": "https://archilya.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://archilya.com/favicon.png"
-        }
-      },
-      "datePublished": "2025-01-15",
-      "dateModified": "2025-01-15"
     }
     </script>
   </head>
