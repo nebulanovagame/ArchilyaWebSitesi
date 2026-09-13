@@ -293,7 +293,7 @@ export function KullanimKosullari() {
         <h2 className="font-serif text-2xl text-white italic mb-4">2. Tanımlar</h2>
         <ul className="list-disc list-inside space-y-2 text-gray-400 text-sm leading-relaxed pl-4">
           <li><strong className="text-white">Platform:</strong> Archilya web sitesi (archilya.com) ve alt alan adları.</li>
-          <li><strong className="text-white">Hizmet:</strong> Platform üzerinden sunulan premium render, VR sunum, pixel streaming, 360 sanal tur ve ilgili tüm dijital hizmetler.</li>
+          <li><strong className="text-white">Hizmet:</strong> Platform üzerinden sunulan konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme (render / canlı sunum) ve ruhsat &amp; uygulama dahil tüm mimari destek hizmetleri.</li>
           <li><strong className="text-white">Kullanıcı:</strong> Platform'a kayıt olan veya ziyaret eden gerçek/tüzel kişi.</li>
           <li><strong className="text-white">İçerik:</strong> Kullanıcı tarafından yüklenen dosyalar, görseller, metinler ve diğer veriler.</li>
         </ul>
@@ -413,9 +413,10 @@ export function IptalIade() {
           Platform üzerinde sunulan hizmetler aşağıdaki kategorilere ayrılmaktadır:
         </p>
         <ul className="list-disc list-inside space-y-2 text-gray-400 text-sm leading-relaxed pl-4">
-          <li><strong className="text-white">Premium Render Kredileri:</strong> Tek kullanımlık render işleme kredileri.</li>
+          <li><strong className="text-white">Görselleştirme ve Render Kredileri:</strong> Tek kullanımlık render/görselleştirme işleme kredileri.</li>
           <li><strong className="text-white">Platform Aboneliği:</strong> Aylık/yıllık abonelik bazlı hizmet paketleri.</li>
-          <li><strong className="text-white">VR Sunum ve Pixel Streaming:</strong> Proje bazlı sunum hizmetleri.</li>
+          <li><strong className="text-white">Canlı Sunum ve Pixel Streaming:</strong> Proje bazlı sunum hizmetleri.</li>
+          <li><strong className="text-white">Modelleme, Ruhsat ve Uygulama:</strong> Proje bazlı modelleme ve resmi süreç yönetimi hizmetleri.</li>
           <li><strong className="text-white">Franchise Başvuru ve Lisans:</strong> İş ortaklığı ve lisans ücretleri.</li>
         </ul>
       </section>
@@ -444,9 +445,9 @@ export function IptalIade() {
           İade taleplerinde aşağıdaki koşullar uygulanır:
         </p>
         <ul className="list-disc list-inside space-y-2 text-gray-400 text-sm leading-relaxed pl-4">
-          <li>Premium render kredileri, kullanılmamış olmaları kaydıyla 14 gün içinde iade edilebilir.</li>
+          <li>Görselleştirme kredileri, kullanılmamış olmaları kaydıyla 14 gün içinde iade edilebilir.</li>
           <li>Abonelik iadeleri, abonelik döneminin kalan kısmıyla orantılı olarak hesaplanır.</li>
-          <li>VR sunum ve pixel streaming hizmetleri, teslim edilmiş çıktılar için iade edilemez.</li>
+          <li>Canlı sunum ve pixel streaming hizmetleri, teslim edilmiş çıktılar için iade edilemez.</li>
           <li>Franchise başvuru ücretleri, başvuru değerlendirmeye alındıktan sonra iade edilmez.</li>
         </ul>
         <p className="text-gray-400 text-sm leading-relaxed mt-4">
@@ -526,9 +527,9 @@ export function MesafeliSatis() {
           gerçekleştirilir:
         </p>
         <ul className="list-disc list-inside space-y-2 text-gray-400 text-sm leading-relaxed pl-4">
-          <li><strong className="text-white">Premium Render:</strong> Sipariş onayı sonrası kredi hesaba tanımlanır.</li>
+          <li><strong className="text-white">Görselleştirme:</strong> Sipariş onayı sonrası kredi hesaba tanımlanır.</li>
           <li><strong className="text-white">Platform Aboneliği:</strong> Anında aktifleşir, kullanıma hazırdır.</li>
-          <li><strong className="text-white">VR Sunum / Pixel Streaming:</strong> Proje teslimi sonrası 1-5 iş günü içinde hazırlanır.</li>
+          <li><strong className="text-white">Canlı Sunum / Pixel Streaming:</strong> Proje teslimi sonrası 1-5 iş günü içinde hazırlanır.</li>
         </ul>
       </section>
 
@@ -828,7 +829,7 @@ export function MimarlikHizmetSozlesmesi() {
   return (
     <LegalLayout
       title="Mimarlık Hizmet Sözleşmesi"
-      description="Archilya premium görselleştirme ve VR sunum hizmetlerine ilişkin mimarlık hizmet sözleşmesi."
+      description="Archilya mimari destek hizmetlerine ilişkin mimarlık hizmet sözleşmesi."
       date="1 Mart 2025"
     >
       <section className="rounded-sm border border-white/[0.06] bg-white/[0.015] p-8">
@@ -846,9 +847,9 @@ export function MimarlikHizmetSozlesmesi() {
         <h2 className="font-serif text-2xl text-white italic mb-4">Madde 2 — Sözleşmenin Konusu</h2>
         <p className="text-gray-400 text-sm leading-relaxed">
           İşbu sözleşme, İş Sahibi tarafından Archilya platformu üzerinden talep edilen
-          premium görselleştirme (render), VR sunum, pixel streaming, 360 sanal tur ve
-          diğer dijital hizmetlerin Yüklenici tarafından sağlanmasına ilişkin koşulları
-          düzenlemektedir.
+          mimari destek hizmetlerinin (konsept tasarım, iç mekan, peyzaj, modelleme,
+          görselleştirme, ruhsat &amp; uygulama dahil) Yüklenici tarafından sağlanmasına
+          ilişkin koşulları düzenlemektedir.
         </p>
       </section>
 
@@ -860,11 +861,13 @@ export function MimarlikHizmetSozlesmesi() {
           hizmetler şunlardır:
         </p>
         <ul className="list-disc list-inside space-y-2 text-gray-400 text-sm leading-relaxed pl-4">
-          <li>Premium fotorealistik render üretimi,</li>
+          <li>Konsept tasarım ve kütle/plan kurgusu,</li>
+          <li>İç mekan ve peyzaj tasarımı,</li>
+          <li>Fotogerçekçi görselleştirme (render) üretimi,</li>
           <li>3D model ve sahne optimizasyonu,</li>
-          <li>VR sunum ve pixel streaming altyapısı,</li>
+          <li>Canlı sunum ve pixel streaming altyapısı,</li>
           <li>360 sanal tur hazırlama,</li>
-          <li>Plan boyama ve görselleştirme,</li>
+          <li>Ruhsat ve resmi süreç yönetimi,</li>
           <li>Doku ve malzeme üretimi.</li>
         </ul>
       </section>
@@ -955,7 +958,7 @@ export function MimarlikHizmetSozlesmesi() {
 
 
 export function Hakkimizda() {
-  useEffect(() => { setPageMeta("Hakkımızda", "Archilya — premium görselleştirme ve VR sunum çözümleri sunan teknoloji platformu."); }, []);
+  useEffect(() => { setPageMeta("Hakkımızda", "Archilya — konsept tasarımdan ruhsata mimari destek hizmetleri sunan mimari destek platformu."); }, []);
 
   return (
     <div className="min-h-screen bg-background text-white">
@@ -971,9 +974,10 @@ export function Hakkimizda() {
           <div className="space-y-12">
             <section>
               <p className="text-gray-300 text-base leading-relaxed">
-                Archilya, profesyonel görselleştirme, VR sunum ve dijital sunum çözümleri sunan bir teknoloji platformudur.
+                <strong className="text-white">Mimari destek platformu</strong> Archilya; konsept tasarım, iç mekan, peyzaj,
+                modelleme, görselleştirme ve ruhsat &amp; uygulama hizmetleriyle uçtan uca destek sunar.
                 <strong className="text-white"> NEBULA NOVA GAMES DIŞ TİCARET LİMİTED ŞİRKETİ</strong> çatısı altında,
-                mimari projelerin dijital dönüşümünü sağlamak vizyonuyla kurulmuştur.
+                tasarımınıza sadık ve kararınıza hızlı bir süreç kurmak vizyonuyla kurulmuştur.
               </p>
             </section>
 
@@ -986,12 +990,12 @@ export function Hakkimizda() {
                 etkiliyordu.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
-                Bu sorunu çözmek için yola çıktık. Premium görselleştirme araçlarımız ve VR sunum
-                teknolojimizle, projelerin müşteriye etkileyici bir deneyim olarak sunulmasını sağlıyoruz.
+                Bu sorunu çözmek için yola çıktık. Konseptten ruhsata uzanan mimari destek hizmetlerimiz ve
+                görselleştirme gücümüzle, projelerin müşteriye net ve etkileyici biçimde sunulmasını sağlıyoruz.
               </p>
               <p className="text-gray-400 text-sm leading-relaxed">
                 Franchise modelimizle, bu başarıyı daha geniş bir iş ağına yayarak, yerel pazarlarda
-                premium hizmet standardını temsil edecek iş ortaklarıyla büyümeye devam ediyoruz.
+                mimari destek hizmet standardını temsil edecek iş ortaklarıyla büyümeye devam ediyoruz.
               </p>
             </section>
 
@@ -999,16 +1003,16 @@ export function Hakkimizda() {
               <section className="rounded-sm border border-primary/10 bg-primary/[0.02] p-8">
                 <h2 className="font-serif text-2xl text-white italic mb-4">Misyonumuz</h2>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Mimarlık ve emlak sektöründe sunum kalitesini yeniden tanımlamak. VR ve dijital
-                  görselleştirme çözümlerimizle, projelerin müşteriye aktarımını hızlandırmak ve
-                  karar süreçlerini iyileştirmek.
+                  Mimari süreçlerin tamamında tasarımınıza sadık, kararınıza hızlı bir destek sunmak.
+                  Konsept tasarımdan ruhsata uzanan hizmetlerimizle projelerin müşteriye aktarımını
+                  hızlandırmak ve karar süreçlerini iyileştirmek.
                 </p>
               </section>
               <section className="rounded-sm border border-amber-400/10 bg-amber-400/[0.02] p-8">
                 <h2 className="font-serif text-2xl text-white italic mb-4">Vizyonumuz</h2>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Türkiye merkezli global bir marka olarak, premium görselleştirme ve VR sunum
-                  alanında dünya çapında tanınan bir franchise ağı oluşturmak.
+                  Türkiye merkezli global bir marka olarak, mimari destek hizmetleri alanında
+                  dünya çapında tanınan bir franchise ağı oluşturmak.
                 </p>
               </section>
             </div>
