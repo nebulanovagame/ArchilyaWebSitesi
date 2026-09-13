@@ -39,6 +39,7 @@ const EmlakPixelStreamingLanding = lazy(() => import('./pages/LandingPages').the
 const MuteahhitLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.MuteahhitLanding })));
 const FranchisePartnerLanding = lazy(() => import('./pages/LandingPages').then(m => ({ default: m.FranchisePartnerLanding })));
 const TrakyaRuhsatIsTakibi = lazy(() => import('./pages/TrakyaRuhsatIsTakibi'));
+const HizmetlerPage = lazy(() => import('./pages/HizmetlerPage'));
 const VrSunumRehber = lazy(() => import('./pages/RehberPages').then(m => ({ default: m.VrSunumRehber })));
 const AiRenderRehber = lazy(() => import('./pages/RehberPages').then(m => ({ default: m.AiRenderRehber })));
 const Emlak360Rehber = lazy(() => import('./pages/RehberPages').then(m => ({ default: m.Emlak360Rehber })));
@@ -185,12 +186,15 @@ function App() {
         <Route path="/muteahhit-proje-sunumu" element={
           <Suspense fallback={<PageFallback />}><MuteahhitLanding /></Suspense>
         } />
-        <Route path="/fiyatlandirma" element={<Navigate to="/#kurumsal" replace />} />
+        <Route path="/fiyatlandirma" element={<Navigate to="/hizmetler" replace />} />
         <Route path="/franchise-partner" element={
           <Suspense fallback={<PageFallback />}><FranchisePartnerLanding /></Suspense>
         } />
         <Route path="/trakya-ruhsat-is-takibi" element={
           <Suspense fallback={<PageFallback />}><TrakyaRuhsatIsTakibi /></Suspense>
+        } />
+        <Route path="/hizmetler" element={
+          <Suspense fallback={<PageFallback />}><HizmetlerPage /></Suspense>
         } />
         <Route path="/rehber/vr-sunum-satis" element={
           <Suspense fallback={<PageFallback />}><VrSunumRehber /></Suspense>
