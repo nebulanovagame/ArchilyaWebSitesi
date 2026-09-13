@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, MonitorPlay, Sparkles, Globe } from 'lucide-react';
-import { SEO_PAGES, setPageMeta } from '../utils/seo';
+import { SEO_PAGES, setPageMeta, setPageJsonLd, clearPageJsonLd } from '../utils/seo';
 import { logAnalyticsEvent } from '../firebase';
 
 function RehberShell({ children, title, desc }) {
@@ -26,6 +26,26 @@ function RehberShell({ children, title, desc }) {
 /* ─── Rehber 1: VR Sunum Satış Kararı ──────────────────────── */
 
 export function VrSunumRehber() {
+  useEffect(() => {
+    setPageJsonLd('guide-article', {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Mimari Projelerde Canlı Sunum Satış Kararını Nasıl Hızlandırır?',
+      description: 'Canlı sunum, pixel streaming ve 360 deneyimlerin mimari projelerde müşteri kararını nasıl hızlandırdığını anlatan rehber.',
+      url: 'https://archilya.com/rehber/vr-sunum-satis',
+      author: { '@type': 'Organization', name: 'Archilya', url: 'https://archilya.com' },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Archilya',
+        url: 'https://archilya.com',
+        logo: { '@type': 'ImageObject', url: 'https://archilya.com/favicon.png' },
+      },
+      datePublished: '2025-01-15',
+      dateModified: '2026-09-13',
+    });
+    return () => clearPageJsonLd('guide-article');
+  }, []);
+
   return (
     <RehberShell
       title={SEO_PAGES.VR_SUNUM_REHBER.title}
@@ -38,7 +58,7 @@ export function VrSunumRehber() {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-serif text-white italic mb-6 leading-tight">
-          Mimari Projelerde VR Sunum<br />
+          Mimari Projelerde Canlı Sunum<br />
           <span className="text-amber-400/80">Satış Kararını Nasıl Hızlandırır?</span>
         </h1>
 
@@ -49,9 +69,9 @@ export function VrSunumRehber() {
             yanlış anlaşılmalara ve gecikmiş onaylara yol açar.
           </p>
 
-          <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">VR Sunumun Getirdiği Değişim</h2>
+          <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Canlı Sunumun Getirdiği Değişim</h2>
           <p>
-            VR sunum, müşterinin projeyi 1:1 ölçekte deneyimlemesini sağlar. Kapıları açmak,
+            Canlı sunum, müşterinin projeyi 1:1 ölçekte deneyimlemesini sağlar. Kapıları açmak,
             malzeme değiştirmek ve mekanda yürümek gibi etkileşimler, soyut çizimleri somut
             bir deneyime dönüştürür. Bu, karar süresini ortalama %40 oranında kısaltır.
           </p>
@@ -63,7 +83,7 @@ export function VrSunumRehber() {
             ihtiyacı yoktur. Tek bir linkle, tabletinden veya telefonundan projenin içine girer.
           </p>
 
-          <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Adım Adım VR Sunum Süreci</h2>
+          <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Adım Adım Canlı Sunum Süreci</h2>
           <ol className="list-decimal list-inside space-y-3 text-gray-400 pl-4">
             <li><strong className="text-white">Hazırlık:</strong> CAD modeli veya 3D sahne Archilya'ya aktarılır.</li>
             <li><strong className="text-white">Optimizasyon:</strong> Mimari Destek ile render kalitesi yükseltilir, materyaller atanır.</li>
@@ -77,16 +97,16 @@ export function VrSunumRehber() {
             <li>İlk toplantıda onay oranında belirgin artış</li>
             <li>Revizyon döngüsünde %50'ye varan azalma</li>
             <li>Müşteri memnuniyetinde ve referans potansiyelinde yükseliş</li>
-            <li>Rekabet avantajı: VR sunum yapan ofisler projeleri daha hızlı kapatıyor</li>
+            <li>Rekabet avantajı: canlı sunum yapan ofisler projeleri daha hızlı kapatıyor</li>
           </ul>
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
           <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'rehber_vr_cta', location: 'RehberPages' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
-            Demo Talep Et <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Teklif Al <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <Link to="/vr-sunum" className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-            VR Sunum Özellikleri
+          <Link to="/hizmetler" className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+            Hizmetleri İncele
           </Link>
         </div>
       </div>
@@ -94,7 +114,7 @@ export function VrSunumRehber() {
   );
 }
 
-/* ─── Rehber 2: Premium Render Revizyon ─────────────────────────── */
+/* ─── Rehber 2: Görselleştirme ve Revizyon ─────────────────────────── */
 
 export function AiRenderRehber() {
   return (
@@ -109,7 +129,7 @@ export function AiRenderRehber() {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-serif text-white italic mb-6 leading-tight">
-          Premium Render ile<br />
+          Görselleştirme ve Revizyon ile<br />
           <span className="text-primary/80">Revizyon Süresini Nasıl Azaltırsınız?</span>
         </h1>
 
@@ -129,7 +149,7 @@ export function AiRenderRehber() {
 
           <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Temel Araçlar</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-400 pl-4">
-            <li><strong className="text-white">Premium Render:</strong> SketchUp veya ham görseli fotorealistik çıktıya dönüştürün.</li>
+            <li><strong className="text-white">Görselleştirme:</strong> SketchUp veya ham görseli fotogerçekçi çıktıya dönüştürün.</li>
             <li><strong className="text-white">Revizyon Düzenleyici:</strong> Müşteri notlarını kontrollü revizyon olarak uygulayın.</li>
             <li><strong className="text-white">3D Kat Planı:</strong> Boyanmış kat planınızı 3 boyutlu perspektif görüntüye dönüştürün.</li>
             <li><strong className="text-white">Tasarım Analizi:</strong> Malzeme, ışık, kompozisyon ve sunum kalitesini analiz edin.</li>
@@ -146,10 +166,10 @@ export function AiRenderRehber() {
 
         <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
           <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'rehber_render_cta', location: 'RehberPages' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
-            Mimari Destek'yu Dene <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Teklif Al <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <Link to="/ai-studio" className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-            Mimari Destek Özellikleri
+          <Link to="/hizmetler" className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+            Hizmetleri İncele
           </Link>
         </div>
       </div>
@@ -172,7 +192,7 @@ export function Emlak360Rehber() {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-serif text-white italic mb-6 leading-tight">
-          Emlak Projelerinde 360 ve VR Sunum<br />
+          Emlak Projelerinde 360 ve Canlı Sunum<br />
           <span className="text-amber-400/80">Kullanımı ve Avantajları</span>
         </h1>
 
@@ -180,7 +200,7 @@ export function Emlak360Rehber() {
           <p>
             Gayrimenkul sektöründe alıcılar, satın alma kararı vermeden önce projeyi
             deneyimlemek ister. Geleneksel yöntemlerde bu, fiziksel showroom ziyareti veya
-            statik fotoğraflarla sınırlı kalır. 360 sanal tur ve VR sunum bu sınırı ortadan kaldırır.
+            statik fotoğraflarla sınırlı kalır. 360 sanal tur ve canlı sunum bu sınırı ortadan kaldırır.
           </p>
 
           <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">360 Sanal Tur ile Uzaktan Keşif</h2>
@@ -202,7 +222,7 @@ export function Emlak360Rehber() {
           <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Emlak Projelerinde Kullanım Senaryoları</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-400 pl-4">
             <li><strong className="text-white">Satış Ofisi:</strong> Dijital showroom ile tüm daire tiplerini tek ekranda karşılaştırma</li>
-            <li><strong className="text-white">Lansman:</strong> Proje lansmanında VR ve 360 tur ile yatırımcı çekme</li>
+            <li><strong className="text-white">Lansman:</strong> Proje lansmanında canlı sunum ve 360 tur ile yatırımcı çekme</li>
             <li><strong className="text-white">Uzaktan Satış:</strong> Yurt dışı veya şehir dışı alıcılara link üzerinden canlı sunum</li>
             <li><strong className="text-white">Toplu Projeler:</strong> A/B/C daire tiplerinde tekrar kullanılabilir sunum altyapısı</li>
           </ul>
@@ -218,10 +238,10 @@ export function Emlak360Rehber() {
 
         <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
           <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'rehber_360vr_cta', location: 'RehberPages' })} className="group inline-flex items-center gap-3 bg-amber-400 text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
-            Demo Talep Et <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Teklif Al <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
-          <Link to="/emlak-vr-sunum" className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-            Emlak Çözümleri
+          <Link to="/hizmetler" className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+            Hizmetleri İncele
           </Link>
         </div>
       </div>
