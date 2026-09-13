@@ -5,10 +5,10 @@ import { logAnalyticsEvent } from '../firebase';
 import { heroBg } from '../assets/images';
 
 const TRUST_BADGES = [
-  'Pixel Streaming',
-  'VR & 360 Sunum',
-  '4K Kalite',
-  'Workspace Panel',
+  'Mimari Destek',
+  'Konsept & Görselleştirme',
+  'Ruhsat & Uygulama',
+  'Uçtan Uca Süreç',
 ];
 
 export default function Hero() {
@@ -30,7 +30,7 @@ export default function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/40 to-transparent z-20 pointer-events-none" />
         <img
           src={heroBg}
-          alt="Archilya premium mimari sunum ve görselleştirme platformu"
+          alt="Archilya mimari destek: konsept tasarımdan ruhsata proje görselleştirme ve sunum"
           width="1600"
           height="1088"
           loading="eager"
@@ -50,35 +50,35 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: 'easeOut' }}
         >
           <p className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary mb-6">
-            Profesyonel Görselleştirme ve Dijital Sunum Platformu
+            Mimari Destek Platformu
           </p>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 italic leading-[1.05]">
-            Archilya ile Üretin.<br />
-            <span className="not-italic text-primary/90">VR ile Yaşatın.</span>
+            Projenizi yükleyin.<br />
+            <span className="not-italic text-primary/90">Müşteriniz kararını ilk toplantıda versin.</span>
           </h1>
 
           <p className="max-w-xl mx-auto text-gray-300 font-light text-base md:text-lg mb-10 leading-relaxed">
-            Projelerinizi yüksek kaliteli görsellere ve etkileyici VR sunumlara dönüştürün.
-            360, web tarayıcı veya Pixel Streaming ile müşterilerinize profesyonel bir deneyim yaşatın.
+            Projenizi bize iletin; konseptten ruhsata tek ekip olarak yanınızda olalım.
+            Tasarımınıza sadık kalır, kararınızı ilk toplantıya taşırız.
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-12">
             <a
               href="#contact"
               onClick={() => logAnalyticsEvent('cta_click', { label: 'hero_contact', location: 'Hero' })}
-              data-cursor="Demo İste"
+              data-cursor="Teklif Al"
               className="group inline-flex items-center gap-3 bg-primary text-black px-10 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all duration-300"
             >
-              Demo Talep Et
+              Teklif Al
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="#platform"
-              data-cursor="Keşfet"
+              href="/hizmetler"
+              data-cursor="Hizmetleri İncele"
               className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-10 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300"
             >
-              Çözümleri İncele
+              Hizmetleri İncele
             </a>
           </div>
 
