@@ -14,7 +14,7 @@ const VR_FEATURES = [
     icon: Palette,
     title: 'Yaşayan Mekan',
     subtitle: 'Canlı Tasarım & Mekanik Etkileşimler',
-    tag: 'Archilya VR',
+    tag: 'Canlı Sunum',
     desc: 'Görsel dili sunum sahnesine taşıyın. Kapılar açılır, malzeme değişir, karar anında verilir.',
     details: [
       'Kapı, Işık ve Mobilya Mekanik Etkileşimleri',
@@ -31,7 +31,7 @@ const VR_FEATURES = [
     icon: BarChart3,
     title: 'Eşzamanlı ve İnteraktif Bütçe Yönetimi',
     subtitle: 'Canlı Maliyet Takibi & Raporlama',
-    tag: 'Archilya VR Pro',
+    tag: 'Canlı Sunum',
     desc: 'Her malzeme değişikliği maliyet barına anında yansır. Tek tıkla HTML, CSV veya JSON raporu oluşturun.',
     details: [
       'Seçimlere Göre Eşzamanlı Maliyet Barı',
@@ -47,9 +47,9 @@ const VR_FEATURES = [
     id: 'scenarios',
     icon: Sun,
     title: 'Dinamik Senaryolar & Mevsim Döngüsü',
-    subtitle: 'Zaman & Aydınlatma Şovu',
-    tag: 'Archilya VR Pro',
-    desc: 'Güneşi oynatın, mevsimi değiştirin. Işık ve yerleşim senaryoları arasında geçişle unutulmaz bir şov yaratın.',
+    subtitle: 'Zaman & Aydınlatma Senaryoları',
+    tag: 'Canlı Sunum',
+    desc: 'Güneşi oynatın, mevsimi değiştirin. Işık ve yerleşim senaryoları arasında geçişle sunumunuzu güçlendirin.',
     details: [
       'Gerçek Zamanlı Gün Işığı, Saat & Güneş Döngüsü',
       'Mevsim Senaryoları (Yaz / Kış / Sisli / Gece)',
@@ -222,10 +222,10 @@ export default function Features() {
           viewport={{ once: true, margin: '-80px' }}
           className="text-center mb-20"
         >
-          <p className="text-primary text-xs uppercase tracking-[0.3em] mb-4">Ekosistem</p>
-          <h2 className="text-3xl md:text-5xl font-serif text-white italic mb-4">Özellikler</h2>
+          <p className="text-primary text-xs uppercase tracking-[0.3em] mb-4">Canlı Sunum</p>
+          <h2 className="text-3xl md:text-5xl font-serif text-white italic mb-4">Sunumu Deneyime Çevirin.</h2>
           <p className="text-gray-500 text-sm font-sans max-w-xl mx-auto leading-relaxed">
-          Archilya, profesyonel görselleştirme, etkileyici VR/Web sunum ve workspace yönetimini tek platformda birleştirir.
+          Canlı sunum; mimari destek hizmetlerimizin bir parçasıdır. Projeyi tarayıcıdan paylaşın, malzeme ve senaryoları birlikte deneyin.
         </p>
       </motion.div>
 
@@ -233,7 +233,7 @@ export default function Features() {
           <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center gap-3 px-5 py-2 border border-amber-400/20 rounded-sm bg-amber-400/5 shrink-0">
               <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-400">Archilya VR — Sunum Şovu</span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-400">Archilya — Canlı Sunum</span>
             </div>
             <div className="h-px flex-1 bg-gradient-to-r from-amber-400/20 to-transparent" />
           </div>
@@ -241,7 +241,7 @@ export default function Features() {
           <FeatureBlock features={VR_FEATURES} accent="amber" />
         </motion.div>
 
-        {/* VR / Pixel Streaming Deneyim Akışı */}
+        {/* Canlı sunum deneyim akışı */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -314,7 +314,7 @@ export default function Features() {
           </div>
 
           <p className="text-[10px] text-gray-600 text-center mt-5 uppercase tracking-widest">
-            Tek link · Dört adım · Sıfır kurulum
+            Canlı sunum, mimari destek sürecinin bir parçası
           </p>
         </motion.div>
 

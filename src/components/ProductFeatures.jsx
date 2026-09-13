@@ -9,23 +9,23 @@ const LAYERS = [
   {
     id: 'presentation',
     num: '01',
-    label: 'Pixel Streaming & VR Sunum',
-    icon: MonitorPlay,
-    slogan: ['Donanım Beklemeden,', '4K Deneyim.'],
-    desc: 'Pixel Streaming ile yüksek kaliteli 3D sahnelerinizi doğrudan web tarayıcısına aktarın. Kurulum gerektirmez, güçlü bilgisayar şartı yoktur. Linki paylaşın; müşteriniz telefon, tablet veya VR başlıkla projenin içinde yürüsün.',
-    badges: ['Pixel Streaming — Web Tarayıcısına 4K', '360 Panorama & VR Yürüyüş', 'Dokunmatik / Gamepad / VR Kontrol'],
-    accent: 'amber',
+    label: 'Mimari Destek Hizmetleri',
+    icon: Sparkles,
+    slogan: ['Konseptten Ruhsata,', 'Tek Ekip.'],
+    desc: 'Konsept tasarım, iç mekan, peyzaj, 3D modelleme, görselleştirme ve ruhsat & uygulama; mimari sürecin tamamını tek ekipten yönetin. Tasarımınıza sadık kalır, kararınızı hızlandırırız.',
+    badges: ['Konsept Tasarım & 3D Modelleme', 'İç Mekan, Peyzaj & Görselleştirme', 'Ruhsat & Uygulama Süreçleri'],
+    accent: 'primary',
     image: techWorkspace,
     align: 'right',
   },
   {
     id: 'premium-services',
     num: '02',
-    label: 'Premium VR & Üretim Hizmetleri',
-    icon: Link2,
-    slogan: ['Modeli veya Planı Getirin,', 'Sunuma Hazır Deneyime Dönüşsün.'],
-    desc: 'Hazır modeli VR\'a aktarın veya 2D plandan sıfırdan sahne üretin. Materyalli, etkileşimli ve emlak odaklı paketlerle satış ofisinize özel şov kurun.',
-    badges: ['2D Plandan VR Modelleme', 'Materyalli / Etkileşimli Paketler', 'Emlak ve Lansman Sunumları'],
+    label: 'Canlı Sunum & Workspace',
+    icon: MonitorPlay,
+    slogan: ['Modeli veya Planı Getirin,', 'Canlı Sunuma Dönüşsün.'],
+    desc: 'Hazır modeli canlı sunuma aktarın veya 2D plandan sıfırdan sahne üretin. Pixel Streaming, VR ve 360 sunum ile ekip ve müşteri aynı workspace üzerinden projeyi birlikte karara taşısın.',
+    badges: ['Canlı Sunum (Pixel Streaming)', '360 Panorama & VR', 'Workspace İşbirliği'],
     accent: 'amber',
     image: creativeProcess,
     align: 'right',
@@ -197,14 +197,14 @@ export default function ProductFeatures() {
             viewport={{ once: true, margin: '-80px' }}
           >
             <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-5">
-              Platform Yetenekleri
+              Mimari Destek
             </p>
             <h2 className="text-4xl md:text-6xl font-serif text-white italic mb-6 leading-tight">
-              Profesyonel VR Sunum<br />
-              <span className="text-primary/80">ve Görselleştirme.</span>
+              Mimari Destek:<br />
+              <span className="text-primary/80">Konseptten Ruhsata.</span>
             </h2>
             <p className="text-gray-500 text-sm font-sans max-w-lg mx-auto leading-relaxed">
-              Projelerinizi etkileyici VR sunumlar ve yüksek kaliteli görsellerle müşterilerinize yaşatın.
+              Konsept tasarım, modelleme, görselleştirme, canlı sunum ve ruhsat süreçleriyle projenizi baştan sona destekliyoruz.
             </p>
           </motion.div>
 
@@ -238,13 +238,13 @@ export default function ProductFeatures() {
             className="max-w-3xl mx-auto text-center"
           >
             <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">
-              Tüm Yetenekler, Tek Platform
+              Uçtan Uca Mimari Destek
             </p>
             <h2 className="text-4xl md:text-5xl font-serif text-white italic mb-5 leading-tight">
-              Ofisinize Özel Bir<br />Demo Ayarlayalım.
+              Projenize Özel Bir<br />Teklif Alalım.
             </h2>
             <p className="text-gray-500 text-sm font-sans mb-10 leading-relaxed max-w-lg mx-auto">
-              VR kurulum, eğitim ve entegrasyon desteği ile projelerinizi dijitalleştirin.
+              Hangi hizmete ihtiyacınız olduğunu birlikte netleştirelim.
               Size özel teklifimizi oluşturmak için iletişime geçin.
             </p>
 
@@ -253,15 +253,15 @@ export default function ProductFeatures() {
                 href="#kurumsal"
                 className="group inline-flex items-center gap-3 px-8 py-4 bg-primary text-black font-bold text-[11px] uppercase tracking-widest rounded-sm hover:bg-white transition-colors duration-300 whitespace-nowrap"
               >
-                Kurumsal Başvuru Yap
+                Teklif Al
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="#contact"
-                onClick={() => logAnalyticsEvent('cta_click', { label: 'features_contact', location: 'ProductFeatures' })}
+                href="/hizmetler"
+                onClick={() => logAnalyticsEvent('cta_click', { label: 'features_services', location: 'ProductFeatures' })}
                 className="group inline-flex items-center gap-3 px-8 py-4 border border-white/12 text-gray-400 hover:text-white hover:border-white/30 text-[11px] uppercase tracking-widest rounded-sm transition-all duration-300 whitespace-nowrap"
               >
-                Demo Talep Et
+                Hizmetleri İncele
               </a>
             </div>
           </motion.div>
