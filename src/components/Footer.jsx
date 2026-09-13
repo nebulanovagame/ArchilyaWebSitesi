@@ -32,10 +32,10 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="md:col-span-2">
             <Link to="/" className="inline-flex flex-col mb-4">
               <span className="font-serif text-3xl text-white italic tracking-wide">Archilya</span>
-              <span className="text-[9px] text-primary uppercase tracking-[0.3em] mt-0.5">Premium Studio</span>
+              <span className="text-[9px] text-primary uppercase tracking-[0.3em] mt-0.5">Mimari Destek</span>
             </Link>
             <p className="text-xs text-gray-600 font-sans leading-relaxed mt-4 mb-6 max-w-[280px]">
-              Profesyonel görselleştirme, VR sunum ve dijital sunum çözümleri platformu.
+              Mimari destek platformu. Konseptten ruhsata; tasarımınıza sadık, kararınıza hızlı.
             </p>
 
             <div className="space-y-3">
@@ -69,13 +69,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { label: 'Platform', href: '#platform' },
-                { label: 'Premium Studio', href: '#platform' },
+                { label: 'Hizmetler', to: '/hizmetler' },
                 { label: 'VR Sunum', href: '#vr-sunum' },
                 { label: 'Portfolyo', href: '#portfolio' },
                 { label: 'Hakkımızda', to: '/hakkimizda' },
                 { label: 'Şubeler & Ortaklar', href: '#subeler' },
                 { label: 'Kurumsal Başvuru', href: '#kurumsal' },
-                { label: 'Entegrasyon', href: '#workflow' },
                 { label: 'İletişim', href: '#contact', analyticsLabel: 'footer_iletisim' },
               ].map((item) => (
                 <li key={item.label}>
@@ -104,7 +103,7 @@ export default function Footer() {
             <p className="text-[10px] font-sans font-bold text-gray-500 uppercase tracking-[0.25em] mb-5">Çözümler</p>
             <ul className="space-y-3">
               {[
-                { label: 'Premium Studio', to: '/ai-studio' },
+                { label: 'Hizmetler', to: '/hizmetler' },
                 { label: 'VR Sunum', to: '/vr-sunum' },
                 { label: 'Mimarlık Ofisleri', to: '/mimarlik-ofisleri' },
                 { label: 'Emlak VR Sunum', to: '/emlak-vr-sunum' },
@@ -127,8 +126,7 @@ export default function Footer() {
             <p className="text-[10px] font-sans font-bold text-gray-500 uppercase tracking-[0.25em] mb-5">Rehberler</p>
             <ul className="space-y-3">
               {[
-                { label: 'VR Sunum Satış', to: '/rehber/vr-sunum-satis' },
-                { label: 'VR Sunum Satış Rehberi', to: '/rehber/vr-sunum-satis' },
+                { label: 'Canlı Sunum Satış', to: '/rehber/vr-sunum-satis' },
                 { label: 'Emlak 360 VR', to: '/rehber/emlak-360-vr' },
               ].map((item) => (
                 <li key={item.label}>
