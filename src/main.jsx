@@ -11,7 +11,12 @@ try {
   window.__ARCHILYA_ANALYTICS_CONSENT__ = false;
 }
 
-initErrorTracking();
+// Hata izlemeyi ilk boyamayı bloklamamak için tarayıcı boşta kalınca başlat.
+if ('requestIdleCallback' in window) {
+  window.requestIdleCallback(() => initErrorTracking(), { timeout: 3000 });
+} else {
+  window.setTimeout(() => initErrorTracking(), 1200);
+}
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

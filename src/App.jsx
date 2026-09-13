@@ -1,4 +1,4 @@
-import { useEffect, lazy, Suspense } from 'react';
+import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { logAnalyticsEvent } from './firebase';
@@ -54,8 +54,42 @@ const KurumsalBasvuru = lazy(() => import('./components/KurumsalBasvuru'));
 const BranchesPartners = lazy(() => import('./components/BranchesPartners'));
 const Contact = lazy(() => import('./components/Contact'));
 
-function PageFallback() {
+/**
+ * Kat altı bölümleri yalnızca görünür alana yaklaşınca mount eder.
+ * İlk yüklemede bu bölümlerin JS'i parse/exec edilmez → daha düşük TBT/LCP.
+ * Yer tutucu minHeight, kaydırma sırasında zıplamayı önler.
+ */
+function LazySection({ children, minHeight = 700, rootMargin = '600px', force = false }) {
+  const ref = useRef(null);
+  const [show, setShow] = useState(() => typeof window !== 'undefined' && typeof IntersectionObserver === 'undefined');
+
+  useEffect(() => {
+    if (show || force) return undefined;
+    const el = ref.current;
+    if (!el) return undefined;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShow(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [show, force, rootMargin]);
+
+  const visible = show || force;
+
   return (
+    <div ref={ref} style={visible ? undefined : { minHeight }}>
+      {visible ? children : null}
+    </div>
+  );
+}
+
+function PageFallback() {  return (
     <div className="min-h-screen bg-background flex items-center justify-center">
       <div className="flex flex-col items-center gap-4">
         <div className="w-6 h-6 border border-primary/30 border-t-primary rounded-full animate-spin" />
@@ -66,8 +100,33 @@ function PageFallback() {
 }
 
 function HomePage() {
+  const [forceAll, setForceAll] = useState(() => typeof window !== 'undefined' && !!window.location.hash);
+
   useEffect(() => {
     setPageMeta(SEO_PAGES.HOME.title, SEO_PAGES.HOME.desc);
+  }, []);
+
+  // In-page anchor (#contact, #hizmetler, ...) hedefleri lazy-mount olduğundan,
+  // hash değişiminde tüm bölümleri mount edip hedefe kaydır.
+  useEffect(() => {
+    const gotoHash = () => {
+      const id = window.location.hash.slice(1);
+      if (!id) return;
+      setForceAll(true);
+      let tries = 0;
+      const tick = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+        if (tries++ < 30) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    window.addEventListener('hashchange', gotoHash);
+    if (window.location.hash) gotoHash();
+    return () => window.removeEventListener('hashchange', gotoHash);
   }, []);
 
   return (
@@ -75,14 +134,14 @@ function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <Suspense fallback={<div className="h-screen" />}><Services /></Suspense>
-        <Suspense fallback={<div className="h-screen" />}><ProductFeatures /></Suspense>
-        <Suspense fallback={<div className="h-[400px]" />}><Features /></Suspense>
-        <Suspense fallback={<div className="h-[300px]" />}><BeforeAfter /></Suspense>
-        <Suspense fallback={<div className="h-screen" />}><Portfolio /></Suspense>
-        <Suspense fallback={<div className="h-screen" />}><BranchesPartners /></Suspense>
-        <Suspense fallback={<div className="h-screen" />}><KurumsalBasvuru /></Suspense>
-        <Suspense fallback={<div className="h-[300px]" />}><Contact /></Suspense>
+        <LazySection force={forceAll} minHeight={900}><Suspense fallback={<div className="h-screen" />}><Services /></Suspense></LazySection>
+        <LazySection force={forceAll} minHeight={900}><Suspense fallback={<div className="h-screen" />}><ProductFeatures /></Suspense></LazySection>
+        <LazySection force={forceAll} minHeight={700}><Suspense fallback={<div className="h-[400px]" />}><Features /></Suspense></LazySection>
+        <LazySection force={forceAll} minHeight={600}><Suspense fallback={<div className="h-[300px]" />}><BeforeAfter /></Suspense></LazySection>
+        <LazySection force={forceAll} minHeight={900}><Suspense fallback={<div className="h-screen" />}><Portfolio /></Suspense></LazySection>
+        <LazySection force={forceAll} minHeight={900}><Suspense fallback={<div className="h-screen" />}><BranchesPartners /></Suspense></LazySection>
+        <LazySection force={forceAll} minHeight={700}><Suspense fallback={<div className="h-screen" />}><KurumsalBasvuru /></Suspense></LazySection>
+        <LazySection force={forceAll} minHeight={500}><Suspense fallback={<div className="h-[300px]" />}><Contact /></Suspense></LazySection>
       </main>
       <Footer />
     </div>

@@ -82,8 +82,13 @@ export default function Navbar() {
             </div>
           </div>
 
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden text-white">
-            {isOpen ? <X /> : <Menu />}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden text-white"
+            aria-label={isOpen ? 'Menüyü kapat' : 'Menüyü aç'}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </button>
         </div>
       </motion.nav>

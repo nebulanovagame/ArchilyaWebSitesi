@@ -1,5 +1,11 @@
-import { initializeApp } from 'firebase/app';
-import { getAnalytics, logEvent } from 'firebase/analytics';
+/**
+ * Firebase Analytics — tembel (lazy) yüklenir.
+ *
+ * ÖNEMLİ: Bu modül Firebase SDK'sını ilk bundle'a sokmaz. SDK yalnızca
+ *   (a) kullanıcı analitik çerez onayı verdiyse VE
+ *   (b) ilk analitik olayı tetiklendiğinde
+ * dinamik olarak yüklenir. Bu, ilk yüklemedeki JS parse/exec yükünü ciddi azaltır.
+ */
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -11,22 +17,33 @@ const firebaseConfig = {
   measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
-export const app = initializeApp(firebaseConfig);
-let analytics = null;
+let analyticsPromise = null;
 
-function ensureAnalytics() {
-  if (analytics || !firebaseConfig.measurementId) return;
-  if (!window.__ARCHILYA_ANALYTICS_CONSENT__) return;
-  try {
-    analytics = getAnalytics(app);
-  } catch {
-    analytics = null;
-  }
+function loadAnalytics() {
+  if (analyticsPromise) return analyticsPromise;
+  if (!firebaseConfig.measurementId) return Promise.resolve(null);
+
+  analyticsPromise = Promise.all([
+    import('firebase/app'),
+    import('firebase/analytics'),
+  ])
+    .then(([appMod, analyticsMod]) => {
+      try {
+        const app = appMod.initializeApp(firebaseConfig);
+        const analytics = analyticsMod.getAnalytics(app);
+        return { analytics, logEvent: analyticsMod.logEvent };
+      } catch {
+        return null;
+      }
+    })
+    .catch(() => null);
+
+  return analyticsPromise;
 }
 
 if (typeof window !== 'undefined') {
   window.addEventListener('analytics-consent-granted', () => {
-    ensureAnalytics();
+    loadAnalytics();
   });
 }
 
@@ -39,18 +56,16 @@ function sanitizeAnalyticsParams(params = {}) {
 }
 
 export function logAnalyticsEvent(name, params = {}) {
-  if (!window.__ARCHILYA_ANALYTICS_CONSENT__) return;
+  if (typeof window === 'undefined' || !window.__ARCHILYA_ANALYTICS_CONSENT__) return;
 
-  ensureAnalytics();
-  if (!analytics) return;
-
-  try {
-    logEvent(analytics, name, sanitizeAnalyticsParams(params));
-  } catch {
-    // Analytics should never block UX flows.
-  }
+  loadAnalytics().then((res) => {
+    if (!res) return;
+    try {
+      res.logEvent(res.analytics, name, sanitizeAnalyticsParams(params));
+    } catch {
+      // Analytics should never block UX flows.
+    }
+  });
 }
 
-export { analytics };
-
-export default app;
+export default null;

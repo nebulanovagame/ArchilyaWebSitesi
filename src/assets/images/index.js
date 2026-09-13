@@ -11,26 +11,25 @@
 // silindiği için benzer bir görsel kullanılmıştır.
 // ============================================================
 
-import heroBg from './hero-bg.jpg';
-import constructionDrawing from './construction-drawing.jpg';
-import modernBuilding from './modern-building.jpg';
-import interiorModern from './interior-modern.jpg';
-import abstractGeometric from './abstract-geometric.jpg';
-import blueprintAnalysis from './blueprint-analysis.jpg';
-import workspaceMeeting from './workspace-meeting.jpg';
-import teamCollaboration from './team-collaboration.jpg';
-import laptopMockup from './laptop-mockup.jpg';
-import luxuryBuilding from './luxury-building.jpg';
-import modernTower from './modern-tower.jpg';
-import culturalBuilding from './cultural-building.jpg';
-import villaEstate from './villa-estate.jpg';
-import techWorkspace from './tech-workspace.jpg';
-import creativeProcess from './creative-process.jpg';
-import teamMeeting from './team-meeting.jpg';
-import codingSetup from './coding-setup.jpg';
-import trainingSession from './training-session.jpg';
-import clientMeeting from './client-meeting.jpg';
-import trakyaHaritasi from './trakya-haritasi.jpg';
+import constructionDrawing from './construction-drawing.webp';
+import modernBuilding from './modern-building.webp';
+import interiorModern from './interior-modern.webp';
+import abstractGeometric from './abstract-geometric.webp';
+import blueprintAnalysis from './blueprint-analysis.webp';
+import workspaceMeeting from './workspace-meeting.webp';
+import teamCollaboration from './team-collaboration.webp';
+import laptopMockup from './laptop-mockup.webp';
+import luxuryBuilding from './luxury-building.webp';
+import modernTower from './modern-tower.webp';
+import culturalBuilding from './cultural-building.webp';
+import villaEstate from './villa-estate.webp';
+import techWorkspace from './tech-workspace.webp';
+import creativeProcess from './creative-process.webp';
+import teamMeeting from './team-meeting.webp';
+import codingSetup from './coding-setup.webp';
+import trainingSession from './training-session.webp';
+import clientMeeting from './client-meeting.webp';
+import trakyaHaritasi from './trakya-haritasi.webp';
 
 // Çözüm ortakları logoları
 import partnerModulYapi from './partners/modulyapi.png';
@@ -42,7 +41,6 @@ import partnerModernPrefabrik from './partners/modernprefabrik.png';
 import partnerArtvila from './partners/artvila.png';
 
 export {
-  heroBg,
   constructionDrawing,
   modernBuilding,
   interiorModern,

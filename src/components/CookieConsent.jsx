@@ -42,9 +42,9 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-[#c6a87c]/20 bg-[#0f1115]/95 px-6 py-4 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-5xl flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-gray-300 font-sans">
+    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-[#c6a87c]/20 bg-[#0f1115]/95 px-6 py-4 backdrop-blur-sm sm:min-h-[76px] sm:flex sm:items-center">
+      <div className="mx-auto flex w-full max-w-5xl flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-sm text-gray-300 font-sans sm:whitespace-nowrap">
           Bu web sitesi, size daha iyi bir deneyim sunmak için çerezleri kullanır.
           Detaylı bilgi için{' '}
           <Link to="/cerez-politikasi" className="text-[#c6a87c] underline hover:text-white transition-colors">

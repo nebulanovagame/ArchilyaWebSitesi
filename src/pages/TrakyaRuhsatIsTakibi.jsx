@@ -5,7 +5,7 @@ import { ArrowRight, Building2, MapPin, Phone, Mail, FileText, ChevronDown, Work
 import { setPageMeta, SEO_PAGES } from '../utils/seo';
 import { logAnalyticsEvent } from '../firebase';
 import toast from 'react-hot-toast';
-import { constructionDrawing, heroBg, trakyaHaritasi, partnerModulYapi, partnerMarmaraYapi, partnerUysallar, partnerKarmod, partnerEmirkon, partnerModernPrefabrik, partnerArtvila } from '../assets/images/index';
+import { constructionDrawing, trakyaHaritasi, partnerModulYapi, partnerMarmaraYapi, partnerUysallar, partnerKarmod, partnerEmirkon, partnerModernPrefabrik, partnerArtvila } from '../assets/images/index';
 
 /* ─── WhatsApp Icon ─────────────────────────────────────────── */
 
@@ -97,7 +97,7 @@ export default function TrakyaRuhsatIsTakibi() {
           style={{ backgroundImage: 'radial-gradient(circle, #c6a87c 1px, transparent 1px)', backgroundSize: '32px 32px' }}
         />
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-primary/4 rounded-full blur-[140px] pointer-events-none" />
-        <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-10" width="1920" height="1080" loading="eager" decoding="async" />
+        <img src="/hero-bg.webp" alt="" className="absolute inset-0 w-full h-full object-cover opacity-10" width="1920" height="1080" loading="eager" decoding="async" />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="inline-flex items-center gap-3 px-5 py-2 border border-primary/20 rounded-sm bg-primary/5 mb-8">

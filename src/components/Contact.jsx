@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { submitContactFormSecure } from '../services/entitlementService';
 import { getUserFriendlyErrorMessage } from '../errors/user-messages';
 
-function AnimatedInput({ type = 'text', placeholder, value, onChange, required }) {
+function AnimatedInput({ type = 'text', placeholder, value, onChange, required, ariaLabel }) {
   const [focused, setFocused] = useState(false);
 
   return (
@@ -14,6 +14,7 @@ function AnimatedInput({ type = 'text', placeholder, value, onChange, required }
         value={value}
         onChange={onChange}
         required={required}
+        aria-label={ariaLabel || placeholder}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         className="w-full bg-transparent border-b border-white/10 py-4 text-white placeholder-gray-600 focus:outline-none font-serif text-2xl italic transition-colors"
@@ -29,7 +30,7 @@ function AnimatedInput({ type = 'text', placeholder, value, onChange, required }
   );
 }
 
-function AnimatedTextarea({ placeholder, value, onChange, required }) {
+function AnimatedTextarea({ placeholder, value, onChange, required, ariaLabel }) {
   const [focused, setFocused] = useState(false);
 
   return (
@@ -39,6 +40,7 @@ function AnimatedTextarea({ placeholder, value, onChange, required }) {
         value={value}
         onChange={onChange}
         required={required}
+        aria-label={ariaLabel || placeholder}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         className="w-full bg-transparent border-b border-white/10 py-4 text-white placeholder-gray-600 focus:outline-none font-serif text-2xl italic resize-none transition-colors"

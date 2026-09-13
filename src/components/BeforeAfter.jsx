@@ -93,6 +93,7 @@ export default function BeforeAfter() {
               max="100"
               value={sliderPosition}
               onChange={(e) => setSliderPosition(Number(e.target.value))}
+              aria-label="Ham model ile hizmet çıktısını karşılaştır"
               className="absolute inset-0 w-full h-full opacity-0 z-30"
               style={{ cursor: 'ew-resize' }}
             />

@@ -5,7 +5,7 @@ import {
 } from 'lucide-react';
 import clsx from 'clsx';
 import {
-  blueprintAnalysis, heroBg, workspaceMeeting,
+  blueprintAnalysis, workspaceMeeting,
 } from '../assets/images';
 
 const VR_FEATURES = [
@@ -22,7 +22,7 @@ const VR_FEATURES = [
       'Nesne Bazlı Bilgi Ekranları (Object Info)',
       'Toplu Tasarım Şemaları (Design Schemes)',
     ],
-    media: heroBg,
+    media: '/hero-bg.webp',
     mediaAlt: 'Yaşayan Mekan — Canlı Tasarım Demo',
     mediaType: 'image',
   },

@@ -2,7 +2,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import { useRef } from 'react';
 import { logAnalyticsEvent } from '../firebase';
-import { heroBg } from '../assets/images';
 
 const TRUST_BADGES = [
   'Mimari Destek',
@@ -29,7 +28,9 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/55 z-10" />
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-background via-background/40 to-transparent z-20 pointer-events-none" />
         <img
-          src={heroBg}
+          src="/hero-bg.webp"
+          srcSet="/hero-bg-800.webp 800w, /hero-bg-1200.webp 1200w, /hero-bg.webp 1600w"
+          sizes="100vw"
           alt="Archilya mimari destek: konsept tasarımdan ruhsata proje görselleştirme ve sunum"
           width="1600"
           height="1088"

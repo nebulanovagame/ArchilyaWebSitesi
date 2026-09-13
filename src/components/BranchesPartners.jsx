@@ -1,5 +1,5 @@
-import { useState, useEffect, lazy, Suspense } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef, lazy, Suspense } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { MapPin, Phone, Mail, Globe, Instagram, Linkedin, ArrowRight, Building2, Store, Navigation } from 'lucide-react';
 import { getPartnerFirms } from '../services/partnerService';
 import { PARTNER_FIRMS as STATIC_FIRMS, FIRM_CATEGORIES } from '../data/partnerData';
@@ -26,6 +26,8 @@ function scrollToContact() {
 export default function BranchesPartners() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [firms, setFirms] = useState(STATIC_FIRMS);
+  const mapRef = useRef(null);
+  const mapInView = useInView(mapRef, { once: true, margin: '300px' });
 
   useEffect(() => {
     getPartnerFirms().then((data) => {
@@ -85,10 +87,14 @@ export default function BranchesPartners() {
           viewport={{ once: true }}
           className="mb-16 rounded-sm overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
         >
-          <div className="h-[300px] md:h-[400px] w-full">
-            <Suspense fallback={<div className="h-full w-full bg-[#0f1115] flex items-center justify-center"><span className="text-[10px] text-gray-500 uppercase tracking-widest">Harita yükleniyor...</span></div>}>
-              <BranchesMap firms={firms} />
-            </Suspense>
+          <div ref={mapRef} className="h-[300px] md:h-[400px] w-full">
+            {mapInView ? (
+              <Suspense fallback={<div className="h-full w-full bg-[#0f1115] flex items-center justify-center"><span className="text-[10px] text-gray-500 uppercase tracking-widest">Harita yükleniyor...</span></div>}>
+                <BranchesMap firms={firms} />
+              </Suspense>
+            ) : (
+              <div className="h-full w-full bg-[#0f1115] flex items-center justify-center"><span className="text-[10px] text-gray-500 uppercase tracking-widest">Harita yükleniyor...</span></div>
+            )}
           </div>
         </motion.div>
 
@@ -154,14 +160,16 @@ export default function BranchesPartners() {
                   )}
                   {firm.socialMedia?.instagram && (
                     <a href={firm.socialMedia.instagram} target="_blank" rel="noopener noreferrer"
+                      aria-label={`${firm.name} Instagram profili`}
                       className="text-gray-500 hover:text-primary transition-colors">
-                      <Instagram className="w-3.5 h-3.5" />
+                      <Instagram className="w-3.5 h-3.5" aria-hidden="true" />
                     </a>
                   )}
                   {firm.socialMedia?.linkedin && (
                     <a href={firm.socialMedia.linkedin} target="_blank" rel="noopener noreferrer"
+                      aria-label={`${firm.name} LinkedIn profili`}
                       className="text-gray-500 hover:text-primary transition-colors">
-                      <Linkedin className="w-3.5 h-3.5" />
+                      <Linkedin className="w-3.5 h-3.5" aria-hidden="true" />
                     </a>
                   )}
                 </div>
