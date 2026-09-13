@@ -48,7 +48,7 @@ export function AiStudioLanding() {
       <div className="max-w-4xl mx-auto text-center">
         <div className="inline-flex items-center gap-3 px-5 py-2 border border-primary/20 rounded-sm bg-primary/5 mb-8">
           <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Archilya Premium Studio</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Archilya Mimari Destek</span>
         </div>
         <h1 className="text-5xl md:text-7xl font-serif text-white italic mb-6 leading-tight">
           Profesyonel Görselleştirme<br /><span className="text-primary/80">Yeniden Tanımlanıyor.</span>
@@ -74,7 +74,7 @@ export function AiStudioLanding() {
 
         <div className="mt-10">
           <Link to="/#platform" className="inline-flex items-center gap-2 text-primary text-[11px] font-bold uppercase tracking-widest border-b border-primary/30 pb-1 hover:text-white hover:border-white transition-all">
-            Premium Studio'yu Keşfet <ArrowRight className="w-3.5 h-3.5" />
+            Mimari Destek'yu Keşfet <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
       </div>

@@ -66,7 +66,7 @@ export function VrSunumRehber() {
           <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Adım Adım VR Sunum Süreci</h2>
           <ol className="list-decimal list-inside space-y-3 text-gray-400 pl-4">
             <li><strong className="text-white">Hazırlık:</strong> CAD modeli veya 3D sahne Archilya'ya aktarılır.</li>
-            <li><strong className="text-white">Optimizasyon:</strong> Premium Studio ile render kalitesi yükseltilir, materyaller atanır.</li>
+            <li><strong className="text-white">Optimizasyon:</strong> Mimari Destek ile render kalitesi yükseltilir, materyaller atanır.</li>
             <li><strong className="text-white">Sunum Linki:</strong> Pixel Streaming ile web üzerinden erişilebilir bağlantı oluşturulur.</li>
             <li><strong className="text-white">Müşteri Deneyimi:</strong> Müşteri linke tıklar, mekanı keşfeder, malzemeleri dener.</li>
             <li><strong className="text-white">Karar:</strong> Toplantı bitmeden seçimler netleşir, revizyon döngüsü kısalır.</li>
@@ -120,9 +120,9 @@ export function AiRenderRehber() {
             saatler süren bekleme sürelerine ve teslim gecikmelerine yol açar.
           </p>
 
-          <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Premium Studio ile Anında Revizyon</h2>
+          <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">Mimari Destek ile Anında Revizyon</h2>
           <p>
-            Archilya Premium Studio, geleneksel yöntemlerin aksine, her revizyon için başa
+            Archilya Mimari Destek, geleneksel yöntemlerin aksine, her revizyon için başa
             dönmez. Referans stil, atmosfer ve malzeme dilini koruyarak kontrollü
             düzenlemeler yapar. Bu, tek bir revizyonu saatlerden dakikalara indirir.
           </p>
@@ -138,7 +138,7 @@ export function AiRenderRehber() {
 
           <h2 className="text-2xl font-serif text-white italic mt-10 mb-4">İş Akışı Dönüşümü</h2>
           <p>
-            Premium Studio ile mimari ofisler, dış kaynak bağımlılığını azaltır, birden fazla
+            Mimari Destek ile mimari ofisler, dış kaynak bağımlılığını azaltır, birden fazla
             konsepti aynı gün içinde üretebilir ve müşteri geri bildirimlerine anında yanıt
             verebilir. Bu hem maliyet avantajı hem de rekabet gücü sağlar.
           </p>
@@ -146,10 +146,10 @@ export function AiRenderRehber() {
 
         <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
           <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'rehber_render_cta', location: 'RehberPages' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all">
-            Premium Studio'yu Dene <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Mimari Destek'yu Dene <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
           <Link to="/ai-studio" className="inline-flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-            Premium Studio Özellikleri
+            Mimari Destek Özellikleri
           </Link>
         </div>
       </div>

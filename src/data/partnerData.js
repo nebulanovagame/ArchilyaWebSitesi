@@ -1,7 +1,7 @@
 export const PARTNER_FIRMS = [
   {
     id: 1,
-    name: 'Archilya Design Studio & Mimari Proje ve Ruhsat',
+    name: 'Archilya & Mimari Proje ve Ruhsat',
     type: 'merkez',
     category: 'Merkez',
     address: 'Çorlu Teknokent',
@@ -19,7 +19,7 @@ export const PARTNER_FIRMS = [
   },
   {
     id: 4,
-    name: 'Archilya Design Studio & Mimari Proje ve Ruhsat',
+    name: 'Archilya & Mimari Proje ve Ruhsat',
     type: 'branch',
     category: 'Merkez',
     address: 'Gazi Osman Paşa, Gürsoy Sk. Say Apt Sitesi A Blok No:12a, 59500 Çerkezköy/Tekirdağ',
@@ -37,7 +37,7 @@ export const PARTNER_FIRMS = [
   },
   {
     id: 3,
-    name: 'Archilya Design Studio Mimarlık İnşaat',
+    name: 'Archilya Mimarlık İnşaat',
     type: 'branch',
     category: 'Merkez',
     address: 'Denizli Merkez',

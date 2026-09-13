@@ -414,7 +414,7 @@ export function IptalIade() {
         </p>
         <ul className="list-disc list-inside space-y-2 text-gray-400 text-sm leading-relaxed pl-4">
           <li><strong className="text-white">Premium Render Kredileri:</strong> Tek kullanımlık render işleme kredileri.</li>
-          <li><strong className="text-white">Premium Studio Aboneliği:</strong> Aylık/yıllık abonelik bazlı hizmet paketleri.</li>
+          <li><strong className="text-white">Platform Aboneliği:</strong> Aylık/yıllık abonelik bazlı hizmet paketleri.</li>
           <li><strong className="text-white">VR Sunum ve Pixel Streaming:</strong> Proje bazlı sunum hizmetleri.</li>
           <li><strong className="text-white">Franchise Başvuru ve Lisans:</strong> İş ortaklığı ve lisans ücretleri.</li>
         </ul>
@@ -527,7 +527,7 @@ export function MesafeliSatis() {
         </p>
         <ul className="list-disc list-inside space-y-2 text-gray-400 text-sm leading-relaxed pl-4">
           <li><strong className="text-white">Premium Render:</strong> Sipariş onayı sonrası kredi hesaba tanımlanır.</li>
-          <li><strong className="text-white">Premium Studio Aboneliği:</strong> Anında aktifleşir, kullanıma hazırdır.</li>
+          <li><strong className="text-white">Platform Aboneliği:</strong> Anında aktifleşir, kullanıma hazırdır.</li>
           <li><strong className="text-white">VR Sunum / Pixel Streaming:</strong> Proje teslimi sonrası 1-5 iş günü içinde hazırlanır.</li>
         </ul>
       </section>

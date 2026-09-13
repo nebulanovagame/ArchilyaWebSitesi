@@ -35,7 +35,7 @@ function LocalHeader() {
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <Link to="/" className="flex flex-col items-center group">
           <span className="font-serif text-2xl text-white tracking-wider italic">Archilya</span>
-          <span className="text-[8px] text-primary uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity">Premium Studio</span>
+          <span className="text-[8px] text-primary uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity">Mimari Destek</span>
         </Link>
 
         {/* Desktop */}
@@ -652,7 +652,7 @@ export default function TrakyaRuhsatIsTakibi() {
             <div className="md:col-span-5">
               <Link to="/" className="inline-flex flex-col mb-4">
                 <span className="font-serif text-3xl text-white italic tracking-wide">Archilya</span>
-                <span className="text-[9px] text-primary uppercase tracking-[0.3em] mt-0.5">Premium Studio</span>
+                <span className="text-[9px] text-primary uppercase tracking-[0.3em] mt-0.5">Mimari Destek</span>
               </Link>
               <p className="text-xs text-gray-600 font-sans leading-relaxed mt-4 mb-6 max-w-[320px]">
                 Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul, Çanakkale, Bursa, Balıkesir, Sakarya ve Yalova bölgelerinde imar durumundan iskâna tüm resmi kurum süreçlerini tek elden yönetiyoruz.
