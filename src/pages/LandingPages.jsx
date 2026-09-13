@@ -27,12 +27,12 @@ function PageShell({ children, id }) {
 function CTAButtons() {
   return (
     <div className="flex flex-col sm:flex-row items-center gap-4 mt-8">
-      <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'landing_demo_talep', location: 'LandingPages' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all duration-300">
-        Ücretsiz Demo Talep Et
+      <Link to="/#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'landing_teklif', location: 'LandingPages' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white transition-all duration-300">
+        Teklif Al
         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
       </Link>
-      <Link to="/" className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
-        Ana Sayfaya Dön
+      <Link to="/hizmetler" className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white px-8 py-4 rounded-sm font-sans text-[11px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all duration-300">
+        Hizmetleri İncele
       </Link>
     </div>
   );
@@ -51,18 +51,18 @@ export function AiStudioLanding() {
           <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-primary">Archilya Mimari Destek</span>
         </div>
         <h1 className="text-5xl md:text-7xl font-serif text-white italic mb-6 leading-tight">
-          Profesyonel Görselleştirme<br /><span className="text-primary/80">Yeniden Tanımlanıyor.</span>
+          Görselleştirme ve Revizyon<br /><span className="text-primary/80">Tek Akışta.</span>
         </h1>
         <p className="text-gray-400 text-sm font-sans max-w-2xl mx-auto leading-relaxed mb-6">
-          Premium render, kontrollü revizyon, plan boyama ve tasarım analizi. 
-          SketchUp, Revit veya ham görselinizi yükleyin; profesyonel mimari çıktıya dönüşsün.
+          Fotogerçekçi görselleştirme, kontrollü revizyon ve plan renklendirme; mimari destek hizmetlerimizin bir parçası.
+          SketchUp, Revit veya ham görselinizi bize iletin; profesyonel mimari çıktıya dönüşsün.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-12">
           {[
-            { label: 'Premium Render', desc: 'Fotorealistik çıktı' },
+            { label: 'Fotogerçekçi Görsel', desc: 'Yüksek kaliteli çıktı' },
             { label: 'Revizyon', desc: 'Kontrollü düzenleme' },
-            { label: 'Plan Boyama', desc: 'Sunuma hazır pafta' },
+            { label: 'Plan Renklendirme', desc: 'Sunuma hazır pafta' },
             { label: 'Tasarım Analizi', desc: 'Kalite raporu' },
           ].map((item) => (
             <div key={item.label} className="rounded-sm border border-white/[0.06] bg-white/[0.015] p-5 text-center">
@@ -73,8 +73,8 @@ export function AiStudioLanding() {
         </div>
 
         <div className="mt-10">
-          <Link to="/#platform" className="inline-flex items-center gap-2 text-primary text-[11px] font-bold uppercase tracking-widest border-b border-primary/30 pb-1 hover:text-white hover:border-white transition-all">
-            Mimari Destek'yu Keşfet <ArrowRight className="w-3.5 h-3.5" />
+          <Link to="/hizmetler" className="inline-flex items-center gap-2 text-primary text-[11px] font-bold uppercase tracking-widest border-b border-primary/30 pb-1 hover:text-white hover:border-white transition-all">
+            Hizmetleri İncele <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
       </div>
@@ -92,14 +92,14 @@ export function VrSunumLanding() {
       <div className="max-w-4xl mx-auto text-center">
         <div className="inline-flex items-center gap-3 px-5 py-2 border border-amber-400/20 rounded-sm bg-amber-400/5 mb-8">
           <MonitorPlay className="w-4 h-4 text-amber-400" />
-          <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-400">Pixel Streaming & VR Sunum</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-amber-400">Canlı Sunum Hizmeti</span>
         </div>
         <h1 className="text-5xl md:text-7xl font-serif text-white italic mb-6 leading-tight">
-          Projenizi Web'e Taşıyın.<br /><span className="text-amber-400/80">4K, Kurulum Yok, Anında Erişim.</span>
+          Canlı Sunum ile<br /><span className="text-amber-400/80">Projenizi Paylaşın.</span>
         </h1>
         <p className="text-gray-400 text-sm font-sans max-w-2xl mx-auto leading-relaxed mb-6">
-          Pixel Streaming teknolojisiyle yüksek kaliteli 3D sahnelerinizi doğrudan web tarayıcısına aktarın. 
-          VR başlık, tablet veya telefon fark etmez. Linki paylaşın, müşteriniz projenin içinde yürüsün.
+          Canlı sunum (Pixel Streaming) ile yüksek kaliteli 3D sahnelerinizi doğrudan web tarayıcısına aktarın.
+          Kurulum gerekmez; linki paylaşın, müşteriniz projenin içinde gezsin.
         </p>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-12">
@@ -135,18 +135,18 @@ export function MimarlikOfisleriLanding() {
     <PageShell id="mimarlik-landing">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-5xl md:text-7xl font-serif text-white italic mb-6 leading-tight">
-          Mimarlık Ofisleri İçin<br /><span className="text-primary/80">AI + VR + Workspace.</span>
+          Mimarlık Ofisleri İçin<br /><span className="text-primary/80">Mimari Destek.</span>
         </h1>
         <p className="text-gray-400 text-sm font-sans max-w-2xl mx-auto leading-relaxed mb-8">
-          Archilya, mimarlık ofislerinin üretim akışını AI ile hızlandırır, Pixel Streaming ve VR ile 
-          müşteri sunumlarını güçlendirir, workspace ile proje ve ekip yönetimini tek merkezde toplar.
+          Archilya; konsept tasarım, modelleme, görselleştirme ve ruhsat süreçleriyle mimarlık ofislerinin
+          üretim akışını hızlandırır, müşteri sunumlarını güçlendirir.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mt-10">
           {[
-            { icon: Sparkles, title: 'AI Üretim', desc: 'Render, revizyon, analiz ve plan boyama araçlarıyla üretim sürenizi kısaltın.' },
-            { icon: Globe, title: 'Pixel Streaming & VR', desc: 'Projelerinizi web ve VR üzerinden müşteriye yaşanabilir deneyime dönüştürün.' },
-            { icon: BarChart3, title: 'Workspace', desc: 'Proje dosyaları, ekip rolleri, işlem hakkı ve abonelik yönetimi tek panelde.' },
+            { icon: Sparkles, title: 'Konsept & Modelleme', desc: 'Konsept tasarım ve 3D modelleme ile üretim sürecinizi kısaltın.' },
+            { icon: Globe, title: 'Görselleştirme & Canlı Sunum', desc: 'Fotogerçekçi görseller ve canlı sunumla müşteri onayını hızlandırın.' },
+            { icon: BarChart3, title: 'Ruhsat & Uygulama', desc: 'İmar durumundan iskâna; ruhsat ve resmi süreçleri tek ekipten yönetin.' },
           ].map((item) => {
             const Icon = item.icon;
             return (
@@ -181,14 +181,14 @@ export function EmlakVrLanding() {
           Emlak Projelerinizi<br /><span className="text-amber-400/80">Dijital Satış Ofisine Dönüştürün.</span>
         </h1>
         <p className="text-gray-400 text-sm font-sans max-w-2xl mx-auto leading-relaxed mb-6">
-          VR sunum, Pixel Streaming ve 360 turlarla daire, villa ve ticari projelerinizi 
+          Canlı sunum, pixel streaming ve 360 turlarla daire, villa ve ticari projelerinizi
           uzaktan gezilebilir deneyime dönüştürün. Alıcılar linke tıklar, projeyi keşfeder, karar verir.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mt-10">
           {[
-            { title: 'VR Aktarma — Emlak', desc: 'Hazır 3D modeli VR\'a optimize edin, daire seçim ekranlı emlak sunumu oluşturun.' },
-            { title: 'VR Modelleme — Emlak', desc: '2D plandan sıfırdan modelleyin, toplu daire tipleriyle satış ofisi kurun.' },
+            { title: 'Sanal Tur — Emlak', desc: 'Hazır 3D modeli canlı sunuma optimize edin, daire seçim ekranlı emlak sunumu oluşturun.' },
+            { title: 'Modelden Sunuma — Emlak', desc: '2D plandan sıfırdan modelleyin, toplu daire tipleriyle satış ofisi kurun.' },
           ].map((item) => (
             <div key={item.title} className="rounded-sm border border-amber-400/10 bg-white/[0.015] p-6 text-left">
               <h2 className="text-white font-serif italic text-lg mb-2">{item.title}</h2>
@@ -287,7 +287,7 @@ export function FranchisePartnerLanding() {
               Archilya ile Büyüyün.<br /><span className="text-emerald-400/80">Franchise / Partner Olun.</span>
             </h1>
             <p className="text-gray-400 text-sm font-sans max-w-2xl mx-auto leading-relaxed mb-10">
-              Archilya'nın premium görselleştirme ve VR sunum ekosistemini kendi şehrinizde temsil edin.
+              Archilya'nın mimari destek ekosistemini kendi şehrinizde temsil edin.
               Mimarlık ofisleri, emlak firmaları ve müteahhitlere yönelik çözümlerimizi geniş bir iş ağıyla buluşturuyoruz.
             </p>
             <a href="#franchise-form"
@@ -309,12 +309,12 @@ export function FranchisePartnerLanding() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { title: 'Kanıtlanmış Teknoloji', desc: 'Premium görselleştirme ve VR sunum altyapısıyla farklılaşın. Rakipsiz bir hizmet portföyü sunun.' },
+              { title: 'Kanıtlanmış Teknoloji', desc: 'Mimari destek hizmet altyapısıyla farklılaşın. Rakipsiz bir hizmet portföyü sunun.' },
               { title: 'Kapsamlı Eğitim', desc: 'Kurulum, teknik eğitim, pazarlama desteği ve sürekli danışmanlık ile işinizi hızla büyütün.' },
               { title: 'Marka & Pazarlama', desc: 'Archilya markası altında premium hizmet verin. Satış materyalleri, demo ortamları ve kurumsal kimlik desteği.' },
               { title: 'Operasyonel Altyapı', desc: 'Panel, işlem hakkı sistemi, müşteri yönetimi ve otomasyon araçlarıyla işinizi dijital yönetin.' },
               { title: 'Sürekli Güncelleme', desc: 'Yeni özellikler, araçlar ve pazar fırsatlarıyla franchise ağımız sürekli büyüyor.' },
-              { title: 'Yüksek Talep', desc: 'Mimarlık, emlak ve müteahhit sektörlerinde VR sunum ve premium görselliğe talep hızla artıyor.' },
+              { title: 'Yüksek Talep', desc: 'Mimarlık, emlak ve müteahhit sektörlerinde mimari destek ve görselleştirmeye talep hızla artıyor.' },
             ].map((item) => (
               <motion.div key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                 className="rounded-sm border border-white/[0.06] bg-white/[0.015] p-6 hover:border-emerald-400/20 transition-all">
@@ -456,7 +456,7 @@ export function MuteahhitLanding() {
           Proje Lansmanı ve Satış<br /><span className="text-primary/80">Dijital Sunumla Güçlensin.</span>
         </h1>
         <p className="text-gray-400 text-sm font-sans max-w-2xl mx-auto leading-relaxed mb-6">
-          Müteahhitler için VR proje sunumu, Pixel Streaming ile web tabanlı lansman ve 
+          Müteahhitler için görselleştirme, canlı sunum ile web tabanlı lansman ve
           360 görüntüleme çözümleri. Yatırımcı sunumlarınızı ve satış ofisi deneyimlerinizi dijitalleştirin.
         </p>
 
