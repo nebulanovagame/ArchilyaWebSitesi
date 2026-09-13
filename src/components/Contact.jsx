@@ -122,7 +122,7 @@ export default function Contact() {
               İletişim
             </motion.h2>
             <motion.p variants={itemVariants} className="text-gray-400 font-light text-lg mb-12 max-w-md">
-              Premium Studio, VR/Web sunum veya profesyonel görselleştirme hizmetleri için doğru başlangıç planını birlikte çıkaralım.
+              Hangi hizmete ihtiyacınız olduğunu birlikte netleştirelim; konsept tasarım, modelleme, görselleştirme, canlı sunum veya ruhsat süreçlerinde yanınızdayız.
             </motion.p>
 
             <div className="space-y-6">
@@ -202,7 +202,7 @@ export default function Contact() {
 
             <motion.div variants={itemVariants}>
               <AnimatedTextarea
-                  placeholder="Proje, sunum veya VR ihtiyaçlarınız"
+                  placeholder="Hangi hizmete ihtiyacınız var?"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 required

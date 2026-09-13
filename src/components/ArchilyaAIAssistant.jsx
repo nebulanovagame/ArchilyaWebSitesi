@@ -8,12 +8,12 @@ import clsx from 'clsx';
 const SALES_CONTACT_PHONE = '0 (282) 606 06 39';
 const SALES_CONTACT_EMAIL = 'info@nebulanovagames.com';
 
-const WELCOME_MESSAGE = 'Merhaba, ben Archilya satış asistanı. Premium Studio, VR/Web sunum ve profesyonel görselleştirme hizmetleri konusunda hızlı yönlendirme sağlayabilirim. Özel teklif ihtiyacınız varsa sizi doğrudan satış ekibimize yönlendiririm.';
+const WELCOME_MESSAGE = 'Merhaba, ben Archilya asistanı. Konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama hizmetlerimiz hakkında hızlı yönlendirme sağlayabilirim. Özel teklif ihtiyacınız varsa sizi doğrudan ekibimize yönlendiririm.';
 
 const QUICK_QUESTIONS = [
-  'Premium Studio neler sunuyor?',
-  'VR/Web sunum nasıl çalışır?',
-
+  'Hangi hizmetleri sunuyorsunuz?',
+  'Ruhsat sürecini nasıl yönetiyorsunuz?',
+  'Görselleştirme ve canlı sunum nasıl çalışır?',
 ];
 
 const SALES_FALLBACK_MESSAGE = `Size en doğru yönlendirmeyi satış ekibimiz sağlayacaktır. Demo, teklif ve genel bilgi talepleriniz için ${SALES_CONTACT_EMAIL} veya ${SALES_CONTACT_PHONE} üzerinden bize ulaşabilirsiniz.`;

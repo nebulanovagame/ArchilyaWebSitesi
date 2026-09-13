@@ -41,12 +41,12 @@ export default function KurumsalBasvuru() {
             {
               icon: Building2,
               title: 'Mimarlık Ofisleri',
-              desc: 'Premium Studio, VR sunum ve workspace panel ile üretim hattınızı dijitalleştirin. Ekip bazlı abonelik, özel entegrasyon ve beyaz etiket çözümleri.',
+              desc: 'Konsept, modelleme, görselleştirme ve ruhsat süreçlerini tek ekip olarak yönetin; ofisinizin üretim hattını dijitalleştirin.',
             },
             {
               icon: Globe,
               title: 'Emlak & Müteahhit',
-              desc: 'Proje lansmanı, satış ofisi ve dijital showroom için Pixel Streaming, VR sunum ve 360 tur paketleri. Toplu proje ve daire stoğu çözümleri.',
+              desc: 'Proje lansmanı, satış ofisi ve dijital showroom için görselleştirme, canlı sunum ve 360 tur paketleri. Toplu proje ve daire stoğu çözümleri.',
             },
             {
               icon: BarChart3,
@@ -112,7 +112,7 @@ export default function KurumsalBasvuru() {
               onClick={scrollToContact}
               className="group inline-flex items-center gap-3 bg-primary text-black px-10 py-5 rounded-sm font-sans text-[13px] font-bold uppercase tracking-widest hover:bg-white transition-all duration-300 shadow-[0_0_30px_rgba(198,168,124,0.3)] hover:shadow-[0_0_50px_rgba(198,168,124,0.5)]"
             >
-              Kurumsal Başvuru / Teklif Al
+              Teklif Al
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
