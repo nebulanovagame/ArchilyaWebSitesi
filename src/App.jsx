@@ -45,6 +45,7 @@ const Emlak360Rehber = lazy(() => import('./pages/RehberPages').then(m => ({ def
 
 /* Lazy-loaded ana sayfa bölümleri — scroll ile yüklenir */
 const ProductFeatures = lazy(() => import('./components/ProductFeatures'));
+const Services = lazy(() => import('./components/Services'));
 const Features = lazy(() => import('./components/Features'));
 const BeforeAfter = lazy(() => import('./components/BeforeAfter'));
 const Portfolio = lazy(() => import('./components/Portfolio'));
@@ -73,6 +74,7 @@ function HomePage() {
       <Navbar />
       <main>
         <Hero />
+        <Suspense fallback={<div className="h-screen" />}><Services /></Suspense>
         <Suspense fallback={<div className="h-screen" />}><ProductFeatures /></Suspense>
         <Suspense fallback={<div className="h-[400px]" />}><Features /></Suspense>
         <Suspense fallback={<div className="h-[300px]" />}><BeforeAfter /></Suspense>
@@ -105,7 +107,7 @@ function SiteNotFound() {
   useEffect(() => {
     setPageMeta(
       '404 Sayfa Bulunamadı',
-        'Aradığınız Archilya sayfası bulunamadı. Ana sayfadan premium görselleştirme, VR sunum ve kurumsal çözümlerimize ulaşabilirsiniz.',
+        'Aradığınız Archilya sayfası bulunamadı. Ana sayfadan mimari destek hizmetlerimize, hizmet kataloğumuza ve kurumsal çözümlerimize ulaşabilirsiniz.',
       { robots: 'noindex,follow' },
     );
     document.title = '404 | Sayfa Bulunamadı';
