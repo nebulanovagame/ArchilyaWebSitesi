@@ -8,6 +8,7 @@ import {
   modernTower,
   constructionDrawing,
 } from '../assets/images';
+import { AI_ORNEKLER } from '../data/aiOrnekler';
 
 const services = [
   {
@@ -179,6 +180,37 @@ export default function Services() {
             </div>
           );
         })}
+      </div>
+
+      <div className="container mx-auto px-6 mt-28">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+          <div>
+            <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-3">Gerçek Üretim Örnekleri</p>
+            <h3 className="text-3xl md:text-4xl font-serif text-white italic leading-tight">Archilya çıktılarından örnekler.</h3>
+          </div>
+          <p className="text-gray-500 text-xs font-sans max-w-sm leading-relaxed">
+            AI Studio ile üretilmiş gerçek örnekler; hizmetlerimize karşılık gelen çıktılar.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {AI_ORNEKLER.map((ex) => (
+            <figure key={ex.src} className="group relative overflow-hidden rounded-sm border border-white/8 bg-white/[0.015]">
+              <img
+                src={ex.src}
+                alt={ex.alt}
+                width="1600"
+                height="1200"
+                loading="lazy"
+                decoding="async"
+                className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <figcaption className="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-sm px-3 py-2 flex items-center justify-between gap-2">
+                <span className="text-[9px] uppercase tracking-widest text-primary/80 font-bold">Gerçek üretim örneği</span>
+                <span className="text-[9px] uppercase tracking-widest text-gray-400">{ex.label}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   );
