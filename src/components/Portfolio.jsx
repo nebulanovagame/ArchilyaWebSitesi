@@ -26,10 +26,10 @@ function useCounter(target, duration = 2000, start = false) {
 }
 
 const STATS = [
-  { value: 4, suffix: '', label: 'Ürün Ailesi' },
-    { value: 12, suffix: '+', label: 'Premium Studio Aracı' },
-  { value: 3, suffix: '', label: 'Sunum Katmanı' },
-  { value: 1, suffix: '', label: 'Premium Platform' },
+  { value: 6, suffix: '', label: 'Hizmet Alanı' },
+  { value: 20, suffix: '+', label: 'Uzman Ekip' },
+  { value: 9, suffix: '', label: 'Hizmet Bölgesi' },
+  { value: 1, suffix: '', label: 'Uçtan Uca Süreç' },
 ];
 
 const CASE_STUDIES = [
@@ -41,10 +41,10 @@ const CASE_STUDIES = [
     accent: 'primary',
     image: luxuryBuilding,
     challenge: 'Müşteri, zemin ve duvar malzemelerini tekrar tekrar değiştirip karar veremiyor, her revizyon 3–5 gün sürüyordu.',
-    solution: 'Premium Studio ile alternatif render dili hazırlandı; Archilya VR Tasarım Modu ile malzeme seçimi sunum içinde canlı yapıldı.',
+    solution: 'Görselleştirme ve canlı sunum ile alternatif tasarım dili hazırlandı; malzeme seçimi sunum içinde anlık yapıldı.',
     result: '2 Saatte Satış Kapama',
     resultSub: 'Müşteri, hazırlanan 3 konsepti VR turunda deneyip toplantı bitmeden imzaladı.',
-    tags: ['Premium Render', 'Canlı Malzeme Değişimi', 'VR Sunum'],
+    tags: ['Görselleştirme', 'Canlı Malzeme Değişimi', 'Canlı Sunum'],
   },
   {
     id: '02',
@@ -67,7 +67,7 @@ const CASE_STUDIES = [
     accent: 'primary',
     image: culturalBuilding,
     challenge: 'Belediye kuruluna sunum yapılacaktı. Mevcut 2D çizimler ve statik görseller projenin etkisini yeterince aktaramıyordu.',
-    solution: 'Plan ve görseller Premium Studio ile sunuma hazırlandı; farklı mevsim ve ışık senaryolarıyla güçlendirilmiş 4K çıktı ve VR turu canlı gösterildi.',
+    solution: 'Plan ve görseller sunuma hazırlandı; farklı mevsim ve ışık senaryolarıyla güçlendirilmiş 4K çıktı ve canlı tur gösterildi.',
     result: 'İlk Toplantıda Onay',
     resultSub: 'Belediye kurulu oybirliğiyle onayladı. Standart 3 toplantılık süreç tek oturuma indi.',
     tags: ['Plan Sunumu', '4K Sinematik Çıktı', 'Kurul Sunumu'],
@@ -80,7 +80,7 @@ const CASE_STUDIES = [
     accent: 'amber',
     image: villaEstate,
     challenge: 'Proje; 12 farklı villa tipini kapsıyordu. Her opsiyonu ayrı ayrı sunmak haftalar alacaktı ve maliyet karşılaştırması yapılamıyordu.',
-    solution: 'Workspace içinde villa tipleri organize edildi; Archilya VR\'ın çoklu ünite desteğiyle tüm seçenekler tek sunum projesinde toplandı.',
+    solution: 'Workspace içinde villa tipleri organize edildi; çoklu ünite desteğiyle tüm seçenekler tek sunum projesinde toplandı.',
     result: '%60 Daha Az Revizyon',
     resultSub: 'Müşteri tüm opsiyonları ilk turda gördü, bütçe sınırını aşmadan tercihini belirledi.',
     tags: ['Workspace Yönetimi', 'Çoklu Ünite', 'Bütçe Limiti'],
@@ -279,9 +279,9 @@ export default function Portfolio() {
 
         <div className="container mx-auto px-6 py-16 md:py-24 relative z-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true, margin: '-60px' }} className="text-center mb-20">
-            <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Platform Kapsamı</p>
+            <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Hizmet Kapsamı</p>
             <h2 className="text-5xl md:text-7xl font-serif text-white italic leading-tight mb-4">Sayılarla Archilya.</h2>
-            <p className="text-gray-600 text-sm font-sans max-w-sm mx-auto leading-relaxed">Premium görselleştirme, interaktif sunum ve workspace katmanlarını tek akışta toplar.</p>
+            <p className="text-gray-600 text-sm font-sans max-w-sm mx-auto leading-relaxed">Konsept tasarımdan ruhsata; mimari destek hizmetlerini tek akışta toplar.</p>
           </motion.div>
 
           <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -305,7 +305,7 @@ export default function Portfolio() {
             <div className="flex items-center gap-3 text-gray-600">
               <div className="w-8 h-px bg-white/10" />
               <p className="text-xs font-sans max-w-xs leading-relaxed text-right">
-                Kaydırarak AI, VR ve workspace katmanlarının örnek bir projede nasıl çalıştığını inceleyin.
+                Kaydırarak mimari destek hizmetlerinin örnek bir projede nasıl çalıştığını inceleyin.
               </p>
             </div>
           </motion.div>
@@ -327,7 +327,7 @@ export default function Portfolio() {
             </div>
             <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0">
               <a href="#contact" onClick={() => logAnalyticsEvent('cta_click', { label: 'portfolio_cta_2', location: 'Portfolio' })} className="group inline-flex items-center gap-3 bg-primary text-black px-8 py-4 rounded-sm font-bold text-[11px] uppercase tracking-widest hover:bg-white transition-colors duration-300 whitespace-nowrap">
-                Ücretsiz Demo Talep Et
+                Teklif Al
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </a>
               <a href="#kurumsal" className="inline-flex items-center gap-2 text-gray-500 hover:text-white text-[11px] uppercase tracking-widest transition-colors duration-300 whitespace-nowrap">

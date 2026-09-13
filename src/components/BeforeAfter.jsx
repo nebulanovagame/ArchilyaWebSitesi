@@ -20,12 +20,12 @@ export default function BeforeAfter() {
         >
           <p className="text-primary text-[10px] uppercase tracking-[0.4em] mb-4">Önce & Sonra</p>
           <h2 className="text-4xl md:text-5xl font-serif text-white italic mb-4">
-            Eskizden Render'a.<br />
-            <span className="text-primary/80">Render'dan Sunuma.</span>
+            Ham Modelden<br />
+            <span className="text-primary/80">Hizmet Çıktısına.</span>
           </h2>
           <p className="text-gray-500 text-sm font-sans max-w-md mx-auto leading-relaxed">
-            Ham modelinizi veya proje görselinizi Archilya'ya aktarın. Premium görselleştirme kalitesini
-            yükseltsin; Pixel Streaming ve VR sunum katmanı müşteriye yaşanabilir bir deneyim sunsun.
+            Ham modelinizi veya proje görselinizi Archilya'ya iletin. Görselleştirme kalitesi yükselsin;
+            canlı sunum katmanı müşteriye yaşanabilir bir deneyim sunsun.
           </p>
         </motion.div>
 
@@ -38,7 +38,7 @@ export default function BeforeAfter() {
           <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-sm select-none group border border-white/6">
             <img
               src={heroBg}
-              alt="Archilya premium fotorealistik mimari render çıktısı"
+              alt="Archilya mimari görselleştirme çıktısı"
               width="1600"
               height="1088"
               loading="lazy"
@@ -49,7 +49,7 @@ export default function BeforeAfter() {
               className="absolute top-6 right-6 bg-black/60 backdrop-blur-md border border-primary/20 px-4 py-2 text-primary text-[10px] font-bold uppercase tracking-widest pointer-events-none z-10 transition-opacity duration-300 rounded-sm"
               style={{ opacity: sliderPosition < 92 ? 1 : 0 }}
             >
-              Archilya Premium + Pixel Streaming
+              Archilya — Görselleştirme + Sunum
             </div>
 
             <img
@@ -108,7 +108,7 @@ export default function BeforeAfter() {
             className="flex flex-col md:flex-row items-center justify-between gap-4 mt-6 px-1"
           >
             <p className="text-gray-600 text-xs font-sans">
-              Kaydırarak ham modelden profesyonel sunum sahnesine geçişi inceleyin.
+              Kaydırarak ham modelden hizmet çıktısına (görselleştirme + sunum) geçişi inceleyin.
             </p>
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
@@ -117,7 +117,7 @@ export default function BeforeAfter() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-3 h-px bg-primary" />
-                <span className="text-primary text-[10px] uppercase tracking-widest">Premium + Pixel Streaming</span>
+                <span className="text-primary text-[10px] uppercase tracking-widest">Görselleştirme + Sunum</span>
               </div>
             </div>
           </motion.div>
