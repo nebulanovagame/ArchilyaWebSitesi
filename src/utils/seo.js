@@ -83,7 +83,7 @@ export function clearPageJsonLd(id) {
 export const SEO_PAGES = {
   HOME: {
     title: 'Mimari Destek Platformu',
-    desc: 'Mimari destek platformu Archilya; konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama hizmetleriyle projenizi ilk toplantıda karara taşır. Tasarımınıza sadık. Kararınıza hızlı.',
+    desc: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama. Tasarımınıza sadık, kararınıza hızlı.',
   },
   HIZMETLER: {
     title: 'Mimari Destek Hizmetleri',

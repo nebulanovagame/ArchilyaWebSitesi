@@ -7,6 +7,8 @@ import {
 import { setPageMeta, SEO_PAGES } from '../utils/seo';
 import { logAnalyticsEvent } from '../firebase';
 import { AI_ORNEKLER } from '../data/aiOrnekler';
+import Breadcrumb from '../components/Breadcrumb';
+import RelatedLinks from '../components/RelatedLinks';
 
 const SERVICES = [
   {
@@ -79,6 +81,7 @@ export default function HizmetlerPage() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
+        <Breadcrumb items={[{ label: 'Hizmetler' }]} className="mb-10" />
         <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl mx-auto text-center mb-16">
           <div className="inline-flex items-center gap-3 px-5 py-2 border border-primary/20 rounded-sm bg-primary/5 mb-8">
             <Sparkles className="w-4 h-4 text-primary" />
@@ -185,6 +188,16 @@ export default function HizmetlerPage() {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </motion.div>
+
+        <RelatedLinks
+          title="İlgili Çözümler"
+          links={[
+            { to: '/ai-studio', label: 'Görselleştirme ve Revizyon' },
+            { to: '/vr-sunum', label: 'Canlı Sunum (Pixel Streaming)' },
+            { to: '/mimarlik-ofisleri', label: 'Mimarlık Ofisleri' },
+            { to: '/trakya-ruhsat-is-takibi', label: 'Ruhsat İş Takibi' },
+          ]}
+        />
       </div>
     </section>
   );

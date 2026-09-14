@@ -4,6 +4,7 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { ArrowRight, Building2, MapPin, Phone, Mail, FileText, ChevronDown, Workflow, FileCheck, Timer, ClipboardCheck, Map, Droplets, Flame, Zap, ScrollText, CheckCircle } from 'lucide-react';
 import { setPageMeta, SEO_PAGES } from '../utils/seo';
 import { logAnalyticsEvent } from '../firebase';
+import Breadcrumb from '../components/Breadcrumb';
 import toast from 'react-hot-toast';
 import { constructionDrawing, trakyaHaritasi, partnerModulYapi, partnerMarmaraYapi, partnerUysallar, partnerKarmod, partnerEmirkon, partnerModernPrefabrik, partnerArtvila } from '../assets/images/index';
 
@@ -99,6 +100,7 @@ export default function TrakyaRuhsatIsTakibi() {
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-primary/4 rounded-full blur-[140px] pointer-events-none" />
         <img src="/hero-bg.webp" alt="" className="absolute inset-0 w-full h-full object-cover opacity-10" width="1920" height="1080" loading="eager" decoding="async" />
         <div className="container mx-auto px-6 relative z-10 text-center">
+          <Breadcrumb items={[{ label: 'Ruhsat İş Takibi' }]} className="mb-10" />
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
             <div className="inline-flex items-center gap-3 px-5 py-2 border border-primary/20 rounded-sm bg-primary/5 mb-8">
               <Building2 className="w-4 h-4 text-primary" />

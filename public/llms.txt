@@ -1,0 +1,34 @@
+# Archilya
+
+> Mimari destek platformu. Konsept tasarım, iç mekan, peyzaj, 3D modelleme, görselleştirme, canlı sunum (Pixel Streaming / VR / 360 panorama) ve ruhsat & uygulama süreçlerini tek ekipten sunar. Türkiye (Trakya ve İstanbul) odaklı mimarlık ofisleri, müteahhitler ve emlak projeleri için uçtan uca destek sağlar.
+
+Archilya, mimari projelerde tasarım kararlarını ilk toplantıda hızlandırmayı hedefler: projeyi yükleyin, ekip konseptten ruhsata kadar yanınızda olsun.
+
+## Hizmetler
+- Konsept Tasarım ve 3D Modelleme
+- İç Mekan, Peyzaj ve Görselleştirme
+- Canlı Sunum (Pixel Streaming), 360 Panorama ve VR
+- Ruhsat ve Uygulama Süreç Yönetimi
+
+## Çözüm Sayfaları
+- [Hizmetler](https://archilya.com/hizmetler)
+- [AI Studio — Mimari Görselleştirme ve Revizyon](https://archilya.com/ai-studio)
+- [Canlı Sunum (VR ve Pixel Streaming)](https://archilya.com/vr-sunum)
+- [Mimarlık Ofisleri](https://archilya.com/mimarlik-ofisleri)
+- [Emlak için 360 Sanal Tur ve Canlı Sunum](https://archilya.com/emlak-vr-sunum)
+- [Emlak Pixel Streaming ile 4K Sunum](https://archilya.com/emlak-pixel-streaming-sunum)
+- [Müteahhit Proje Sunumu](https://archilya.com/muteahhit-proje-sunumu)
+- [Trakya ve Marmara Ruhsat İş Takibi](https://archilya.com/trakya-ruhsat-is-takibi)
+- [Franchise ve İş Ortaklığı](https://archilya.com/franchise-partner)
+- [Hakkımızda](https://archilya.com/hakkimizda)
+
+## Rehberler
+- [Canlı Sunum ile Satış Kararını Hızlandırma](https://archilya.com/rehber/vr-sunum-satis)
+- [Görselleştirme ve Revizyon Rehberi](https://archilya.com/rehber/ai-render-revizyon)
+- [Emlak 360 Sanal Tur Rehberi](https://archilya.com/rehber/emlak-360-vr)
+
+## İletişim
+- Web: https://archilya.com
+- Panel: https://panel.archilya.com
+- Adres: Silahtarağa Mah. Üniversite 1. Sk. No:13/1 İç Kapı No:Z109, Çorlu / Tekirdağ, Türkiye
+- Telefon: +90 282 606 06 39
