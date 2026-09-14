@@ -54,6 +54,28 @@ const PRERENDER_ROUTES = [
     description: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama. Tasarımınıza sadık, kararınıza hızlı.',
     h1: 'Projenizi yükleyin. Müşteriniz kararını ilk toplantıda versin.',
     intro: 'Mimari destek platformu Archilya; konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama süreçlerini tek ekipten sunar.',
+    sections: [
+      {
+        heading: 'Mimari projelerde karar sürecini netleştirin',
+        paragraphs: [
+          'Archilya; mimarlık ofisleri, proje sahipleri, müteahhitler ve emlak profesyonelleri için konsept tasarımdan uygulama aşamasına kadar mimari destek sunar. Her aşamada tasarım kararlarını görünür, anlaşılır ve uygulanabilir hale getirmeyi hedefler.',
+          '3D modelleme, fotogerçekçi görselleştirme, canlı sunum ve kontrollü revizyon akışlarıyla projenizi paydaşlarınıza daha açık anlatmanıza yardımcı olur. Böylece ilk toplantıdan itibaren ihtiyaçları netleştirebilir, geri bildirimleri aynı proje bağlamında yönetebilirsiniz.',
+        ],
+      },
+      {
+        heading: 'Tek ekipte altı mimari destek hizmeti',
+        paragraphs: [
+          'Konsept tasarım; kütle, plan ve tasarım kararlarını erken aşamada olgunlaştırır. İç mekan ve peyzaj tasarımı; mekanın kullanımını, malzeme kararlarını ve yapı-çevre ilişkisini birlikte ele alır.',
+          'Modelleme ve görselleştirme; projenin doğru ölçekte kurulmasını, tasarımın görsel olarak anlatılmasını ve revizyonların kontrollü ilerlemesini destekler. Ruhsat ve uygulama hizmeti ise imar durumundan iskâna uzanan resmi süreçlerde proje takibini tek akışta birleştirir.',
+        ],
+      },
+      {
+        heading: 'Sunuma hazır proje deneyimi',
+        paragraphs: [
+          'Canlı sunum ve Pixel Streaming ile yüksek kaliteli 3D sahneleri tarayıcı üzerinden paylaşabilir; müşterinizin kurulum yapmadan projeyi incelemesini sağlayabilirsiniz. Görselleştirme, sunum ve uygulama koordinasyonunu bir arada ele almak; proje anlatımını güçlendirirken sonraki adımları daha net planlamanıza yardımcı olur.',
+        ],
+      },
+    ],
     links: [
       { to: '/hizmetler', label: 'Mimari Destek Hizmetleri' },
       { to: '/ai-studio', label: 'Görselleştirme ve Revizyon' },
@@ -275,16 +297,30 @@ function buildRouteHtml(baseHtml, route) {
   const linkItems = (route.links || [])
     .map((link) => `<li><a href="${link.to}">${esc(link.label)}</a></li>`)
     .join('');
+  const contentSections = (route.sections || [])
+    .map((section) => [
+      '<section>',
+      `<h2>${esc(section.heading)}</h2>`,
+      ...section.paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`),
+      '</section>',
+    ].join('\n'))
+    .join('\n');
   const fallback = [
-    '<noscript>',
-    `<main><h1>${esc(route.h1)}</h1>`,
+    '<main>',
+    '<header>',
+    `<h1>${esc(route.h1)}</h1>`,
     `<p>${esc(route.intro)}</p>`,
+    '</header>',
+    contentSections,
     linkItems ? `<nav aria-label="İlgili sayfalar"><ul>${linkItems}</ul></nav>` : '',
-    `<p><a href="${SITE_URL}/">Archilya — Mimari Destek Platformu</a></p></main>`,
-    '</noscript>',
+    `<p><a href="${SITE_URL}/">Archilya — Mimari Destek Platformu</a></p>`,
+    '</main>',
   ].join('\n    ');
 
-  html = html.replace('<div id="root"></div>', `<div id="root"></div>\n    ${fallback}`);
+  // React açıldığında createRoot bu içeriği kendi arayüzüyle değiştirir. JavaScript
+  // çalışmayan istemciler ve HTML'i ilk yanıt üzerinden değerlendiren tarayıcılar ise
+  // sayfanın gerçek konu ve iç bağlantılarını anlamlı bir HTML yapısında görür.
+  html = html.replace('<div id="root"></div>', `<div id="root">${fallback}</div>`);
   return html;
 }
 
