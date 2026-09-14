@@ -310,9 +310,12 @@ function prerenderRoutes() {
         if (route.path === '/') {
           fs.writeFileSync(basePath, routeHtml, 'utf8');
         } else {
-          const routeDir = path.join(distDir, route.path.replace(/^\//, ''));
-          fs.mkdirSync(routeDir, { recursive: true });
-          fs.writeFileSync(path.join(routeDir, 'index.html'), routeHtml, 'utf8');
+          // Düz `<path>.html` üretilir; `serve` (serve-handler) `cleanUrls: true`
+          // ile `/path` isteğini `/path.html` dosyasına çözer (dosya varsa rewrite uygulanmaz).
+          const rel = route.path.replace(/^\//, '');
+          const target = path.join(distDir, `${rel}.html`);
+          fs.mkdirSync(path.dirname(target), { recursive: true });
+          fs.writeFileSync(target, routeHtml, 'utf8');
         }
         count += 1;
       }
