@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { ArrowRight, Building2, MapPin, Phone, Mail, FileText, ChevronDown, Workflow, FileCheck, Timer, ClipboardCheck, Map, Droplets, Flame, Zap, ScrollText, CheckCircle } from 'lucide-react';
-import { setPageMeta, SEO_PAGES } from '../utils/seo';
+import { setPageMeta, setPageJsonLd, clearPageJsonLd, SEO_PAGES } from '../utils/seo';
 import { logAnalyticsEvent } from '../firebase';
 import Breadcrumb from '../components/Breadcrumb';
 import toast from 'react-hot-toast';
@@ -87,6 +87,30 @@ function PageShell({ children, id, className = '' }) {
 
 export default function TrakyaRuhsatIsTakibi() {
   useEffect(() => { setPageMeta(SEO_PAGES.TRAKYA_IS_TAKIBI.title, SEO_PAGES.TRAKYA_IS_TAKIBI.desc); }, []);
+
+  useEffect(() => {
+    setPageJsonLd('trakya-service', {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Trakya & İstanbul Bölgesi Ruhsat / Süreç Yönetimi',
+      description: "İmar durumundan iskâna; Tekirdağ ve İstanbul'daki LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerini uzman mimar kadromuzla uçtan uca yönetiyoruz.",
+      serviceType: 'Ruhsat ve resmi süreç yönetimi',
+      provider: {
+        '@type': 'Organization',
+        '@id': 'https://archilya.com#organization',
+        name: 'Archilya',
+        url: 'https://archilya.com',
+      },
+      areaServed: [
+        { '@type': 'State', name: 'Tekirdağ' },
+        { '@type': 'State', name: 'Edirne' },
+        { '@type': 'State', name: 'Kırklareli' },
+        { '@type': 'City', name: 'İstanbul' },
+        { '@type': 'State', name: 'Çanakkale' },
+      ],
+    });
+    return () => clearPageJsonLd('trakya-service');
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-white selection:bg-primary/30 selection:text-white">
