@@ -31,6 +31,25 @@ function updateCanonical(canonicalUrl) {
   canonical.setAttribute('href', canonicalUrl);
 }
 
+/**
+ * Client-side gezinmede hreflang hedeflerini canonical ile senkron tutar.
+ * Statik HTML'de tr + x-default kendine referans verir; SPA gezinmesinde de
+ * aynı davranış korunur (aksi halde alt sayfada ana sayfa hreflang'i kalır).
+ */
+function updateHreflang(canonicalUrl) {
+  if (!canonicalUrl) return;
+  for (const lang of ['tr', 'x-default']) {
+    let link = document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`);
+    if (!link) {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'alternate');
+      link.setAttribute('hreflang', lang);
+      document.head.appendChild(link);
+    }
+    link.setAttribute('href', canonicalUrl);
+  }
+}
+
 export function setPageMeta(title, description, options = {}) {
   if (typeof document === 'undefined') return;
 
@@ -50,6 +69,7 @@ export function setPageMeta(title, description, options = {}) {
   updateMetaTag('meta[name="twitter:description"]', description);
 
   updateCanonical(canonicalUrl);
+  updateHreflang(canonicalUrl);
 }
 
 /**

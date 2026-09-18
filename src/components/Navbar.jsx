@@ -38,7 +38,7 @@ export default function Navbar() {
         )}
       >
         <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-          <Link to="/" className="flex flex-col items-center group">
+          <Link to="/" title="Archilya — Mimari Destek Platformu ana sayfa" className="flex flex-col items-center group">
             <span className="font-serif text-2xl text-white tracking-wider italic">Archilya</span>
               <span className="text-[8px] text-primary uppercase tracking-[0.3em] opacity-0 group-hover:opacity-100 transition-opacity">Mimari Destek</span>
           </Link>
@@ -49,6 +49,7 @@ export default function Navbar() {
                 <Link
                   key={`${item.label}-${item.to}`}
                   to={item.to}
+                  title={item.label}
                   className="text-xs font-sans font-medium text-gray-300 hover:text-primary uppercase tracking-widest transition-colors"
                 >
                   {item.label}
@@ -57,6 +58,7 @@ export default function Navbar() {
                 <a
                   key={`${item.label}-${item.href}`}
                   href={item.href}
+                  title={item.label}
                   className="text-xs font-sans font-medium text-gray-300 hover:text-primary uppercase tracking-widest transition-colors"
                 >
                   {item.label}

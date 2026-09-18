@@ -14,6 +14,14 @@
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href="https://archilya.com/" />
 
+    <!-- Dil / Hreflang (tek dilli site: tr + x-default kendine referans) -->
+    <link rel="alternate" hreflang="tr" href="https://archilya.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://archilya.com/" />
+
+    <!-- Yazar / Yayımcı -->
+    <meta name="author" content="Archilya" />
+    <meta name="publisher" content="Nebula Nova Games Dış Ticaret Limited Şirketi" />
+
     <!-- LCP hero görseli: erken keşif için preload (kararlı public URL) -->
     <link rel="preload" as="image" href="/hero-bg.webp" imagesrcset="/hero-bg-800.webp 800w, /hero-bg-1200.webp 1200w, /hero-bg.webp 1600w" imagesizes="100vw" fetchpriority="high" />
 
@@ -41,6 +49,51 @@
         "email": "info@nebulanovagames.com",
         "contactType": "sales"
       }
+    }
+    </script>
+
+    <!-- Structured Data: LocalBusiness (yerel SEO + zengin sonuç) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://archilya.com#business",
+      "name": "Archilya",
+      "description": "Mimari destek platformu: konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme, canlı sunum, ruhsat ve uygulama hizmetleri.",
+      "url": "https://archilya.com",
+      "image": "https://archilya.com/og-image.jpg",
+      "logo": "https://archilya.com/favicon.ico",
+      "telephone": "+90-282-606-06-39",
+      "email": "info@nebulanovagames.com",
+      "priceRange": "₺₺",
+      "currenciesAccepted": "TRY",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Silahtarağa Mah. Üniversite 1. Sk. No:13/1 İç Kapı No:Z109",
+        "addressLocality": "Çorlu",
+        "addressRegion": "Tekirdağ",
+        "postalCode": "59000",
+        "addressCountry": "TR"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Türkiye"
+      },
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Nebula Nova Games Dış Ticaret Limited Şirketi"
+      },
+      "knowsAbout": [
+        "Mimari Destek",
+        "Konsept Tasarım",
+        "İç Mekan Tasarımı",
+        "Peyzaj Tasarımı",
+        "3D Modelleme",
+        "Mimari Görselleştirme",
+        "Ruhsat ve Uygulama",
+        "Pixel Streaming",
+        "360 Sanal Tur"
+      ]
     }
     </script>
 
@@ -171,6 +224,22 @@
     }
     </script>
 
+    <!-- Statik (JS'siz) içerik için temel görsel stil — React mount olunca kaldırılır -->
+    <style>
+      .archilya-prerender{background:#0f1115;color:#d9d9d9;font-family:Montserrat,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.7;padding:56px 20px;max-width:1080px;margin:0 auto}
+      .archilya-prerender h1{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:2.1rem;line-height:1.2;color:#fff;margin:0 0 18px}
+      .archilya-prerender h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;color:#c6a87c;margin:34px 0 12px}
+      .archilya-prerender h3{font-size:1.05rem;color:#ededed;margin:22px 0 8px}
+      .archilya-prerender p{margin:0 0 12px}
+      .archilya-prerender ul{margin:0 0 16px 22px}
+      .archilya-prerender li{margin:0 0 6px}
+      .archilya-prerender a{color:#c6a87c;text-decoration:none}
+      .archilya-prerender a:hover{text-decoration:underline}
+      .archilya-prerender details{border:1px solid rgba(255,255,255,.08);border-radius:2px;padding:12px 16px;margin:0 0 10px;background:rgba(255,255,255,.015)}
+      .archilya-prerender summary{cursor:pointer;color:#fff;font-size:.95rem}
+    </style>
+
+    <!--PRERENDER_ROUTE_JSONLD-->
   </head>
   <body>
     <div id="root"></div>

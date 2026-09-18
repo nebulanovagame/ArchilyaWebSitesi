@@ -30,7 +30,7 @@ export default function Footer() {
           className="py-16 grid grid-cols-1 md:grid-cols-6 gap-12 border-b border-white/5"
         >
           <motion.div variants={itemVariants} className="md:col-span-2">
-            <Link to="/" className="inline-flex flex-col mb-4">
+            <Link to="/" title="Archilya — Mimari Destek Platformu ana sayfa" className="inline-flex flex-col mb-4">
               <span className="font-serif text-3xl text-white italic tracking-wide">Archilya</span>
               <span className="text-[9px] text-primary uppercase tracking-[0.3em] mt-0.5">Mimari Destek</span>
             </Link>
