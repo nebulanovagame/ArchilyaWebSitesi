@@ -3,7 +3,8 @@ import { createRoot } from 'react-dom/client';
 import { Toaster } from 'react-hot-toast';
 import './index.css';
 import App from './App.jsx';
-import { Sentry, initErrorTracking } from './services/errorTracking.js';
+import AppErrorBoundary from './components/AppErrorBoundary.jsx';
+import { initErrorTracking } from './services/errorTracking.js';
 
 try {
   window.__ARCHILYA_ANALYTICS_CONSENT__ = localStorage.getItem('archilya-cookie-consent') === 'accepted';
@@ -20,9 +21,9 @@ if ('requestIdleCallback' in window) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Sentry.ErrorBoundary fallback={<div className="min-h-screen bg-black text-white flex flex-col items-center justify-center gap-4 p-8"><div className="text-[#c6a87c] font-serif text-3xl tracking-[0.2em] uppercase">Archilya</div><p className="text-gray-400 text-sm">Sayfa yüklenirken bir hata oluştu. Lütfen sayfayı yenileyin.</p><button onClick={() => window.location.reload()} className="mt-2 px-6 py-2 bg-[#c6a87c] text-black text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors">Sayfayı Yenile</button></div>}>
+    <AppErrorBoundary fallback={<div className="min-h-screen bg-black text-white flex flex-col items-center justify-center gap-4 p-8"><div className="text-[#c6a87c] font-serif text-3xl tracking-[0.2em] uppercase">Archilya</div><p className="text-gray-400 text-sm">Sayfa yüklenirken bir hata oluştu. Lütfen sayfayı yenileyin.</p><button onClick={() => window.location.reload()} className="mt-2 px-6 py-2 bg-[#c6a87c] text-black text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-white transition-colors">Sayfayı Yenile</button></div>}>
       <App />
-    </Sentry.ErrorBoundary>
+    </AppErrorBoundary>
     <Toaster
       position="top-right"
       toastOptions={{
