@@ -63,7 +63,7 @@ function inlineCss() {
 const PRERENDER_ROUTES = [
   {
     path: '/',
-    title: 'Archilya | Mimari Destek Platformu',
+    title: 'Archilya | Mimari Destek Platformu - Projenizi Yükleyin, Karar Verin',
     description: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama. Tasarımınıza sadık, kararınıza hızlı.',
     h1: 'Projenizi yükleyin. Müşteriniz kararını ilk toplantıda versin.',
     intro: 'Archilya, mimari projelerde karar sürecini netleştiren bir mimari destek platformudur. Konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme ve ruhsat & uygulama süreçlerini tek ekipten sunar.',
@@ -352,55 +352,36 @@ const esc = (value) =>
     .replace(/"/g, '&quot;');
 
 /**
- * Rota bazlı JSON-LD: BreadcrumbList + (yalnızca görünür SSS varsa) FAQPage.
- * FAQPage `data-seo-id="faq"` taşır; istemci tarafındaki FaqSection aynı kaydı
- * bulup günceller, böylece çift şema oluşmaz. `faq` tanımlı olmayan rotalarda
- * FAQPage üretilmez (görünmeyen içeriği işaretlemek kurallara aykırıdır).
+ * Rota bazlı JSON-LD.
+ *
+ * - Ana sayfada rota-bazlı şema üretilmez: Organization / LocalBusiness / WebSite /
+ *   Service zaten `index.html` içinde global tanımlıdır ve ana sayfada görünür
+ *   breadcrumb yoktur.
+ * - `FAQPage` bilinçli olarak ÜRETİLMEZ: Google FAQ zengin sonuçlarını kaldırdı
+ *   (deprecated) ve araç bunu "schema deprecation" uyarısı olarak işaretliyor.
+ *   SSS içeriği görünür HTML olarak korunur.
+ * - Alt rotalarda `BreadcrumbList` üretilir, çünkü `Breadcrumb` bileşeni orada
+ *   görünür breadcrumb render eder (şema ↔ görünür içerik uyumu).
  */
 function buildRouteJsonLd(route, url) {
+  if (route.path === '/') return '';
+
   const cleanTitle = route.title.replace(/\s*\|\s*Archilya\s*$/, '');
-  const crumbs = route.path === '/'
-    ? [{ name: 'Ana Sayfa', item: url }]
-    : [
-        { name: 'Ana Sayfa', item: `${SITE_URL}/` },
-        { name: cleanTitle, item: url },
-      ];
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { name: 'Ana Sayfa', item: `${SITE_URL}/` },
+      { name: cleanTitle, item: url },
+    ].map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: crumb.item,
+    })),
+  };
 
-  // Ana sayfada görünen breadcrumb yoktur; şema da üretilmez
-  // (şema ↔ görünür içerik uyumu). Alt rotalarda Breadcrumb bileşeni
-  // görünür breadcrumb render ettiği için şema geçerlidir.
-  const blocks = [];
-  if (route.path !== '/') {
-    blocks.push({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: crumbs.map((crumb, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        name: crumb.name,
-        item: crumb.item,
-      })),
-    });
-  }
-
-  if (route.faq && route.faq.length) {
-    blocks.push({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: route.faq.map((item) => ({
-        '@type': 'Question',
-        name: item.q,
-        acceptedAnswer: { '@type': 'Answer', text: item.a },
-      })),
-    });
-  }
-
-  return blocks
-    .map((block) => {
-      const attr = block['@type'] === 'FAQPage' ? ' data-seo-id="faq"' : ' data-seo-id="breadcrumb"';
-      return `<script type="application/ld+json"${attr}>\n${JSON.stringify(block, null, 2)}\n</script>`;
-    })
-    .join('\n    ');
+  return `<script type="application/ld+json" data-seo-id="breadcrumb">\n${JSON.stringify(breadcrumb, null, 2)}\n</script>`;
 }
 
 const renderParagraphs = (list) => (list || []).map((text) => `<p>${esc(text)}</p>`).join('\n');

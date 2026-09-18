@@ -7,7 +7,7 @@
  */
 
 const SITE_URL = 'https://archilya.com';
-const DEFAULT_TITLE = 'Archilya | Mimari Destek Platformu';
+const DEFAULT_TITLE = 'Archilya | Mimari Destek Platformu - Projenizi Yükleyin, Karar Verin';
 
 function canonicalUrlFor(pathname) {
   const path = pathname || (typeof window !== 'undefined' ? window.location.pathname : '/');
@@ -53,7 +53,11 @@ function updateHreflang(canonicalUrl) {
 export function setPageMeta(title, description, options = {}) {
   if (typeof document === 'undefined') return;
 
-  const pageTitle = title ? `${title} | Archilya` : DEFAULT_TITLE;
+  // Marka adı zaten varsa tekrar eklenmez → statik HTML title'ı ile birebir aynı
+  // (başlık tutarlılığı: title ↔ H1 uyumu ve önizleme tutarlılığı için).
+  const pageTitle = title
+    ? (title.includes('Archilya') ? title : `${title} | Archilya`)
+    : DEFAULT_TITLE;
   const canonicalUrl = options.canonicalUrl || canonicalUrlFor(options.pathname);
 
   document.title = pageTitle;
@@ -102,7 +106,7 @@ export function clearPageJsonLd(id) {
 
 export const SEO_PAGES = {
   HOME: {
-    title: 'Mimari Destek Platformu',
+    title: 'Archilya | Mimari Destek Platformu - Projenizi Yükleyin, Karar Verin',
     desc: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama. Tasarımınıza sadık, kararınıza hızlı.',
   },
   HIZMETLER: {

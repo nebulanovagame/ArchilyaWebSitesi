@@ -1,36 +1,19 @@
-import { useEffect } from 'react';
 import { HOME_SEO_SECTIONS, HOME_FAQ, HOME_SEO_FAQ_TITLE } from '../data/homeSeoContent';
-import { setPageJsonLd, clearPageJsonLd } from '../utils/seo';
-
-const FAQ_ID = 'faq';
 
 /**
  * Ana sayfanın görünür mimari destek içeriği.
  *
  * Statik HTML fallback'i (`vite.config.js`) ile AYNI veri kaynağını
  * (`src/data/homeSeoContent.js`) kullanır. Böylece JS çalıştırmayan
- * crawler'ların gördüğü metin ile kullanıcının gördüğü metin aynıdır ve
- * FAQPage yapılandırılmış verisi görünür SSS içeriğini işaret eder.
+ * crawler'ların gördüğü metin ile kullanıcının gördüğü metin aynıdır.
+ *
+ * SSS içeriği görünür HTML olarak render edilir; `FAQPage` şeması
+ * bilinçli olarak eklenmez (Google FAQ zengin sonuçlarını kaldırdı).
  *
  * Bilinçli olarak framer-motion kullanılmaz: bu bölüm her zaman DOM'dadır
  * (içerik parity) ve animasyon kütüphanesi yükü TBT'yi artırırdı.
  */
 export default function HomeSeoContent() {
-  // SSS JSON-LD'sini görünür içerikle senkron tut; başka rotaya geçince temizle.
-  useEffect(() => {
-    setPageJsonLd(FAQ_ID, {
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: HOME_FAQ.map((item) => ({
-        '@type': 'Question',
-        name: item.q,
-        acceptedAnswer: { '@type': 'Answer', text: item.a },
-      })),
-    });
-
-    return () => clearPageJsonLd(FAQ_ID);
-  }, []);
-
   return (
     <section id="mimari-destek-rehberi" className="relative overflow-hidden border-t border-white/5 bg-background py-16 md:py-24">
       <div
