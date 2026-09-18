@@ -71,11 +71,6 @@ const PRERENDER_ROUTES = [
     faqTitle: HOME_SEO_FAQ_TITLE,
     faq: HOME_FAQ,
     linkGroups: HOME_LINK_GROUPS,
-    links: [
-      { to: '/hizmetler', label: 'Mimari Destek Hizmetleri' },
-      { to: '/ai-studio', label: 'Görselleştirme ve Revizyon' },
-      { to: '/vr-sunum', label: 'Canlı Sunum (Pixel Streaming)' },
-    ],
   },
   {
     path: '/hizmetler',
@@ -371,8 +366,12 @@ function buildRouteJsonLd(route, url) {
         { name: cleanTitle, item: url },
       ];
 
-  const blocks = [
-    {
+  // Ana sayfada görünen breadcrumb yoktur; şema da üretilmez
+  // (şema ↔ görünür içerik uyumu). Alt rotalarda Breadcrumb bileşeni
+  // görünür breadcrumb render ettiği için şema geçerlidir.
+  const blocks = [];
+  if (route.path !== '/') {
+    blocks.push({
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: crumbs.map((crumb, index) => ({
@@ -381,8 +380,8 @@ function buildRouteJsonLd(route, url) {
         name: crumb.name,
         item: crumb.item,
       })),
-    },
-  ];
+    });
+  }
 
   if (route.faq && route.faq.length) {
     blocks.push({
