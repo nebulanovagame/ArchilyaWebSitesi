@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 const ArchilyaAIAssistant = lazy(() => import('./components/ArchilyaAIAssistant'));
 import CookieConsent from './components/CookieConsent';
+import HomeSeoContent from './components/HomeSeoContent';
 import { SEO_PAGES, setPageMeta } from './utils/seo';
 
 /* Lazy-loaded route’lar */
@@ -142,6 +143,8 @@ function HomePage() {
         <LazySection force={forceAll} minHeight={900}><Suspense fallback={<div className="h-screen" />}><BranchesPartners /></Suspense></LazySection>
         <LazySection force={forceAll} minHeight={700}><Suspense fallback={<div className="h-screen" />}><KurumsalBasvuru /></Suspense></LazySection>
         <LazySection force={forceAll} minHeight={500}><Suspense fallback={<div className="h-[300px]" />}><Contact /></Suspense></LazySection>
+        {/* SEO içeriği statik HTML fallback'iyle birebir aynı kaynaktan gelir; bu yüzden lazy DEĞİL. */}
+        <HomeSeoContent />
       </main>
       <Footer />
     </div>

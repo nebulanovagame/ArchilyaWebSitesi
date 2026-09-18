@@ -4,6 +4,12 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { SEO_PAGES } from './src/utils/seo.js';
+import {
+  HOME_SEO_SECTIONS,
+  HOME_FAQ,
+  HOME_LINK_GROUPS,
+  HOME_SEO_FAQ_TITLE,
+} from './src/data/homeSeoContent.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SITE_URL = 'https://archilya.com';
@@ -42,50 +48,17 @@ function inlineCss() {
 }
 
 /**
- * Ana sayfa SSS seti — statik HTML'e gömülür, aynı zamanda FAQPage
- * şemasına dönüştürülür. Seo/AI crawler'ları JS çalıştırmadan görür.
- */
-const HOME_FAQ = [
-  {
-    q: 'Archilya hangi hizmetleri sunar?',
-    a: 'Konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme ve ruhsat & uygulama olmak üzere altı mimari destek hizmetini tek ekipten sunar.',
-  },
-  {
-    q: 'Mimari destek hizmeti kimler için uygundur?',
-    a: 'Mimarlık ofisleri, müteahhitler, emlak profesyonelleri, proje sahipleri ve kurumsal markalar için uygundur.',
-  },
-  {
-    q: 'Mimari görselleştirmeyi ne kadar sürede teslim ediyorsunuz?',
-    a: 'Süre; kapsam, revizyon sayısı ve sahne karmaşıklığına göre değişir. İlk görseller genellikle birkaç iş günü içinde hazırlanır ve kesin takvim teklif aşamasında netleştirilir.',
-  },
-  {
-    q: 'Canlı sunum için müşterinin özel bir kurulum yapması gerekir mi?',
-    a: 'Hayır. Canlı sunum (Pixel Streaming) ve 360 sanal tur tarayıcı üzerinden çalışır. Müşteri herhangi bir uygulama veya güçlü bir bilgisayar olmadan bağlantıyı açar ve projeyi inceler.',
-  },
-  {
-    q: 'Ruhsat ve uygulama süreçlerini de yönetiyor musunuz?',
-    a: 'Evet. İmar durumundan iskâna kadar ruhsat, LİHKAB, TESKİ, İtfaiye ve Belediye adımları uçtan uca takip edilir.',
-  },
-  {
-    q: 'Revizyon süreci nasıl işliyor?',
-    a: 'Geri bildirimler tek bir proje bağlamında toplanır, her revizyon kayıt altına alınır ve süreç kontrollü ilerler. Bu yaklaşım revizyon süresini ve tekrar toplantı ihtiyacını azaltır.',
-  },
-  {
-    q: 'Fiyatlandırma nasıl belirlenir?',
-    a: 'Fiyat; hizmet kapsamı, proje büyüklüğü ve teslim süresine göre projeye özel olarak belirlenir. Teklif, ihtiyaçlar netleştirildikten sonra oluşturulur.',
-  },
-  {
-    q: 'Hangi bölgelere hizmet veriyorsunuz?',
-    a: 'Hizmet Türkiye genelinde verilir. Ruhsat ve uygulama süreçlerinde Trakya (Tekirdağ, Edirne, Kırklareli), İstanbul ve Çanakkale bölgelerinde uzmanlaşmış saha deneyimi bulunur.',
-  },
-];
-
-/**
- * Route meta verisi. `/` hariç her rota için `dist/<path>/index.html` üretilir.
+ * Route meta verisi. `/` hariç her rota için `dist/<path>.html` üretilir.
  * Böylece JS çalıştırmayan crawler'lar (Bing, AI botları, sosyal önizleme)
  * doğru title/description/canonical + H1 + içerik + iç linkleri görür.
  * `serve` (serve-handler) `cleanUrls: true` ile `/path` isteğini `/path.html`
  * dosyasına çözer.
+ *
+ * İÇERİK PARITY: Ana sayfanın statik içeriği `src/data/homeSeoContent.js`'den
+ * gelir ve AYNI veri `src/components/HomeSeoContent.jsx` üzerinden kullanıcıya
+ * görünür şekilde render edilir. Alt rotalarda `faq` TANIMLANMAZ; çünkü o
+ * rotaların React arayüzünde görünür SSS yoktur ve görünmeyen içeriği FAQPage
+ * ile işaretlemek Google kurallarına aykırıdır.
  */
 const PRERENDER_ROUTES = [
   {
@@ -94,215 +67,10 @@ const PRERENDER_ROUTES = [
     description: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama. Tasarımınıza sadık, kararınıza hızlı.',
     h1: 'Projenizi yükleyin. Müşteriniz kararını ilk toplantıda versin.',
     intro: 'Archilya, mimari projelerde karar sürecini netleştiren bir mimari destek platformudur. Konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme ve ruhsat & uygulama süreçlerini tek ekipten sunar.',
-    sections: [
-      {
-        heading: 'Mimari Destek Platformu Archilya Nedir?',
-        paragraphs: [
-          'Archilya; mimarlık ofisleri, proje sahipleri, müteahhitler ve emlak profesyonelleri için konsept tasarımdan ruhsata uzanan uçtan uca mimari destek sunar. Amaç, tasarım kararlarını erken aşamada netleştirmek ve projeyi tüm paydaşların ortak anlayışına taşımaktır.',
-          'Platform; konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme ve ruhsat & uygulama olmak üzere altı hizmeti tek çatı altında birleştirir. Böylece disiplinler arası kopukluk azalır, revizyon süreçleri kısalır ve proje kararları daha hızlı alınır.',
-        ],
-        subsections: [
-          {
-            heading: 'Kimler için uygundur?',
-            paragraphs: [
-              'Yeni proje geliştiren mimarlık ofisleri, konut ve ticari proje üreten müteahhitler, projesini satışa hazır sunmak isteyen emlak profesyonelleri ve kendi projesini baştan sona takip etmek isteyen proje sahipleri Archilya’dan yararlanır.',
-            ],
-          },
-          {
-            heading: 'Hangi sorunları çözer?',
-            paragraphs: [
-              'Tasarım kararlarının geç netleşmesi, müşteri onayının uzaması, revizyon döngülerinin çoğalması, ruhsat süreçlerinde zaman kaybı ve bütçe belirsizliği; Archilya’nın çözmeyi hedeflediği temel sorunlardır.',
-            ],
-          },
-        ],
-      },
-      {
-        heading: 'Tek Ekipte Altı Mimari Destek Hizmeti',
-        paragraphs: [
-          'Mimari süreç, birbirini besleyen altı adımdan oluşur. Archilya bu adımların tamamını aynı ekip ve aynı proje hafızasıyla yürütür; böylece tasarım niyeti projenin her aşamasında korunur.',
-        ],
-        subsections: [
-          {
-            heading: 'Konsept Tasarım',
-            paragraphs: [
-              'Kütle, plan ve tasarım kararlarını erken aşamada olgunlaştırır; projenin ilk fikrini uygulanabilir bir konsepte dönüştürür.',
-            ],
-          },
-          {
-            heading: 'İç Mekan Tasarımı',
-            paragraphs: [
-              'Mekan kurgusu, malzeme seçimi ve atmosfer kararlarını birlikte ele alır; iç mekanın inşa edilmeden önce deneyimlenmesini sağlar.',
-            ],
-          },
-          {
-            heading: 'Peyzaj Tasarımı',
-            paragraphs: [
-              'Yapı ve çevre ilişkisini kurar; açık alan, dolaşım ve dış mekan kurgusunu projenin bütünüyle uyumlu hale getirir.',
-            ],
-          },
-          {
-            heading: '3D Modelleme ve BIM',
-            paragraphs: [
-              'Projeyi doğru ölçekte ve koordineli biçimde modeller; disiplinler arası çakışmaları erken yakalar, uygulama öncesi hataları azaltır.',
-            ],
-          },
-          {
-            heading: 'Mimari Görselleştirme',
-            paragraphs: [
-              'Fotogerçekçi görseller ve yüksek 3D render kalitesiyle tasarımı net biçimde anlatır; görsel üretim standartlarını hızlı teslim için kullanır.',
-            ],
-          },
-          {
-            heading: 'Ruhsat ve Uygulama',
-            paragraphs: [
-              'İmar durumundan iskâna; ruhsat, LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerini uçtan uca takip eder.',
-            ],
-          },
-        ],
-      },
-      {
-        heading: 'Mimari Tasarım Süreci: Fikirden İskâna',
-        paragraphs: [
-          'Archilya’da her proje, kararların kademeli olarak netleştiği beş aşamalı bir akışla ilerler. Bu akış hem tasarım kalitesini hem de teslim sürelerini öngörülebilir kılar.',
-        ],
-        subsections: [
-          {
-            heading: '1. Keşif ve Brief',
-            paragraphs: [
-              'İhtiyaçlar, arsa verileri, imar durumu ve bütçe çerçevesi birlikte netleştirilir; projenin başarı kriterleri baştan tanımlanır.',
-            ],
-          },
-          {
-            heading: '2. Konsept ve Kütle',
-            paragraphs: [
-              'Alternatif kütle ve plan şemaları üretilir; en doğru tasarım yönü karşılaştırmalı olarak seçilir.',
-            ],
-          },
-          {
-            heading: '3. Modelleme ve Görselleştirme',
-            paragraphs: [
-              'Seçilen konsept 3D olarak modellenir ve fotogerçekçi görsellerle sunuma hazırlanır.',
-            ],
-          },
-          {
-            heading: '4. Revizyon ve Onay',
-            paragraphs: [
-              'Geri bildirimler kontrollü bir revizyon akışıyla toplanır; kararlar tek bir proje bağlamında kayıt altına alınır.',
-            ],
-          },
-          {
-            heading: '5. Ruhsat ve Uygulama Takibi',
-            paragraphs: [
-              'Resmi süreçler yürütülür ve uygulama aşamasında tasarım niyetinin korunması gözetilir.',
-            ],
-          },
-        ],
-      },
-      {
-        heading: 'Canlı Sunum, Pixel Streaming ve 360 Sanal Tur',
-        paragraphs: [
-          'Mimari projelerde en kritik an, müşterinin karar verdiği andır. Archilya; canlı sunum, pixel streaming ve 360 sanal tur ile projeyi tarayıcı üzerinden gezilebilir hale getirir. Müşteri kurulum yapmadan, güçlü bir bilgisayara ihtiyaç duymadan projeyi deneyimler.',
-          'Sunum sırasında malzeme, zemin ve aydınlatma alternatifleri anında değiştirilebilir. Maliyet ve malzeme kararları eşzamanlı izlenebildiği için bütçe yönetimi şeffaflaşır; revizyon süreçleri günler yerine dakikalara iner.',
-        ],
-        subsections: [
-          {
-            heading: 'Müşteri onayı nasıl hızlanır?',
-            paragraphs: [
-              'Karar, soyut çizimlerin değil gerçek mekanın üzerinden verilir. Paydaşlar aynı sahneye aynı anda bakabildiği için yorum farklılıkları ve tekrar toplantı ihtiyacı azalır.',
-            ],
-          },
-          {
-            heading: 'Mimari proje yönetimi ve bütçe yönetimi',
-            paragraphs: [
-              'Seçimler kayıt altına alınır, alternatifler karşılaştırılır ve maliyet etkisi anında görülür. Böylece tasarım süreci optimizasyonu ile bütçe disiplini bir arada yürütülür.',
-            ],
-          },
-        ],
-      },
-      {
-        heading: 'Sektöre Özel Mimari Destek Çözümleri',
-        paragraphs: [
-          'Archilya, farklı sektörlerin farklı ihtiyaçlarını aynı platformda karşılar. Mimarlık ofisleri için üretim kapasitesini artırır; müteahhitler için lansman ve satış sunumunu güçlendirir; emlak profesyonelleri için projeyi dijital satış ofisine dönüştürür.',
-        ],
-        list: [
-          'Mimarlık ofisleri için konsept tasarım, 3D modelleme, görselleştirme ve ruhsat desteği.',
-          'Müteahhitler için proje lansmanı, yatırımcı sunumu ve satış ofisi deneyimi.',
-          'Emlak için 360 sanal tur, pixel streaming ve web tabanlı 4K sunum.',
-          'Kurumsal markalar için franchise ve iş ortaklığı modeli.',
-        ],
-      },
-      {
-        heading: 'Teknik Altyapı, Çıktı Kalitesi ve Sürdürülebilirlik',
-        paragraphs: [
-          'Teknik çizimler, model standartları ve görsel üretim; projenin uygulanabilirliğini belirler. Archilya, BIM/CAD temelli bir altyapıyla çalışır ve her çıktıyı teslim öncesi kontrol eder.',
-        ],
-        subsections: [
-          {
-            heading: '3D render kalitesi ve teknik çizimler',
-            paragraphs: [
-              'Sahne kurulumu, ışık, malzeme ve kamera ayarları standart bir kalite kontrolünden geçer. Teknik çizimler ölçekli ve koordineli üretilir.',
-            ],
-          },
-          {
-            heading: 'Sürdürülebilir mimari ve malzeme kararları',
-            paragraphs: [
-              'Malzeme ve enerji kararları erken aşamada tartışılır; uzun ömürlü ve sürdürülebilir mimari yaklaşımları projeye dahil edilir.',
-            ],
-          },
-          {
-            heading: 'Bilgi güvenliği ve gizlilik',
-            paragraphs: [
-              'Proje dosyaları gizlilik esaslarına göre işlenir; müşteri verileri KVKK kapsamında korunur.',
-            ],
-          },
-        ],
-      },
-      {
-        heading: 'Neden Archilya? Ekip, Deneyim ve Referanslar',
-        paragraphs: [
-          'Archilya, mimarlık ve görselleştirme alanında uzmanlaşmış bir ekip tarafından yürütülür. Ekip; konsept tasarım, 3D modelleme, mimari görselleştirme ve ruhsat süreçlerinde saha deneyimine sahiptir.',
-          'Projeler sektör ayrımı gözetilmeden belirli bir kalite eşiğinde teslim edilir. Mimarlık ofisleri, müteahhitler ve emlak profesyonelleriyle yürütülen iş birlikleri; süreçlerin şeffaflığını ve müşteri memnuniyetini önceliklendirir.',
-        ],
-        list: [
-          'Konseptten ruhsata tek ekipten hizmet; ek koordinasyon ihtiyacını azaltır.',
-          'Kontrollü revizyon akışı; her karar kayıt altında ve izlenebilir.',
-          'Kurumsal iş birlikleri ve referanslarla desteklenen saha deneyimi.',
-          'Trakya ve Marmara bölgesinde ruhsat süreç uzmanlığı.',
-        ],
-      },
-    ],
-    faqTitle: 'Mimari Destek Hakkında Sık Sorulan Sorular',
+    sections: HOME_SEO_SECTIONS,
+    faqTitle: HOME_SEO_FAQ_TITLE,
     faq: HOME_FAQ,
-    linkGroups: [
-      {
-        heading: 'Mimari Destek Hizmetleri',
-        links: [
-          { to: '/hizmetler', label: 'Tüm Mimari Destek Hizmetleri' },
-          { to: '/ai-studio', label: 'Görselleştirme ve Revizyon' },
-          { to: '/vr-sunum', label: 'Canlı Sunum (Pixel Streaming)' },
-          { to: '/trakya-ruhsat-is-takibi', label: 'Ruhsat İş Takibi' },
-          { to: '/franchise-partner', label: 'Franchise ve İş Ortaklığı' },
-          { to: '/hakkimizda', label: 'Hakkımızda' },
-        ],
-      },
-      {
-        heading: 'Sektöre Özel Çözümler',
-        links: [
-          { to: '/mimarlik-ofisleri', label: 'Mimarlık Ofisleri İçin Mimari Destek' },
-          { to: '/emlak-vr-sunum', label: 'Emlak İçin Sanal Tur ve Canlı Sunum' },
-          { to: '/emlak-pixel-streaming-sunum', label: 'Emlak Pixel Streaming ile 4K Sunum' },
-          { to: '/muteahhit-proje-sunumu', label: 'Müteahhitler İçin Proje Sunumu' },
-        ],
-      },
-      {
-        heading: 'Mimari Rehberler',
-        links: [
-          { to: '/rehber/vr-sunum-satis', label: 'Canlı Sunum ile Satış Kararını Hızlandırma' },
-          { to: '/rehber/ai-render-revizyon', label: 'Görselleştirme ve Revizyon Rehberi' },
-          { to: '/rehber/emlak-360-vr', label: 'Emlak 360 Sanal Tur Rehberi' },
-        ],
-      },
-    ],
+    linkGroups: HOME_LINK_GROUPS,
     links: [
       { to: '/hizmetler', label: 'Mimari Destek Hizmetleri' },
       { to: '/ai-studio', label: 'Görselleştirme ve Revizyon' },
@@ -315,11 +83,21 @@ const PRERENDER_ROUTES = [
     description: SEO_PAGES.HIZMETLER.desc,
     h1: 'Mimari Destek Hizmetleri',
     intro: 'Konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama; altı hizmetle mimari sürecin tamamını tek ekipten yönetin.',
-    faqTitle: 'Mimari Destek Hizmetleri Hakkında SSS',
-    faq: [
-      { q: 'Hizmetleri ayrı ayrı alabilir miyim?', a: 'Evet. Konsept tasarım, görselleştirme veya ruhsat desteği gibi hizmetler tek başına da alınabilir; tüm süreç de tek ekipten yürütülebilir.' },
-      { q: 'Bir proje için ortalama teslim süresi nedir?', a: 'Kapsam ve revizyon sayısına göre değişir. İlk çıktılar genellikle birkaç iş günü içinde teslim edilir; kesin takvim teklif aşamasında belirlenir.' },
-      { q: 'Ruhsat süreçlerinde hangi kurumlarla çalışıyorsunuz?', a: 'Belediye, LİHKAB, TESKİ ve İtfaiye gibi ilgili kurumlarla yürütülen resmi süreçler uçtan uca takip edilir.' },
+    sections: [
+      {
+        heading: 'Altı Hizmet, Tek Ekip',
+        paragraphs: [
+          'Konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme ve ruhsat & uygulama; mimari sürecin altı temel adımıdır. Archilya bu adımların tamamını aynı ekip ve aynı proje hafızasıyla yürütür.',
+        ],
+        subsections: [
+          { heading: 'Konsept Tasarım', paragraphs: ['Kütle, plan ve tasarım kararlarını erken aşamada olgunlaştırır; projenin ilk fikrini uygulanabilir bir konsepte dönüştürür.'] },
+          { heading: 'İç Mekan', paragraphs: ['Mekan kurgusu, malzeme ve atmosfer kararlarını birlikte ele alır; iç mekanın inşa edilmeden önce deneyimlenmesini sağlar.'] },
+          { heading: 'Peyzaj', paragraphs: ['Yapı ve çevre ilişkisini kurar; açık alan ve dış mekan kurgusunu projenin bütünüyle uyumlu hale getirir.'] },
+          { heading: '3D Modelleme', paragraphs: ['Projeyi doğru ölçekte ve koordineli biçimde modeller; disiplinler arası çakışmaları erken yakalar.'] },
+          { heading: 'Görselleştirme', paragraphs: ['Fotogerçekçi görseller ve yüksek 3D render kalitesiyle tasarımı net biçimde anlatır.'] },
+          { heading: 'Ruhsat & Uygulama', paragraphs: ['İmar durumundan iskâna; ruhsat, LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerini uçtan uca takip eder.'] },
+        ],
+      },
     ],
     links: [
       { to: '/ai-studio', label: 'Görselleştirme ve Revizyon' },
@@ -333,11 +111,17 @@ const PRERENDER_ROUTES = [
     description: SEO_PAGES.AI_STUDIO.desc,
     h1: 'Görselleştirme ve Revizyon Tek Akışta',
     intro: 'Fotogerçekçi görselleştirme, kontrollü revizyon ve plan renklendirme; mimari destek hizmetlerimizin bir parçası. SketchUp, Revit veya ham görselinizi iletin.',
-    faqTitle: 'Görselleştirme ve Revizyon Hakkında SSS',
-    faq: [
-      { q: 'Hangi dosya türleriyle çalışıyorsunuz?', a: 'SketchUp, Revit, ArchiCAD gibi model dosyaları, 2D planlar ve ham görsellerle çalışılır.' },
-      { q: 'Revizyon hakkım kaç adet?', a: 'Revizyon sayısı proje kapsamına göre belirlenir ve teklifte netleştirilir; süreç kontrollü revizyon akışıyla yönetilir.' },
-      { q: 'Plan renklendirme hizmeti veriyor musunuz?', a: 'Evet. Kat planları ve teknik çizimler okunabilir, sunuma hazır hale getirilerek renklendirilir.' },
+    sections: [
+      {
+        heading: 'Görselleştirme ve Revizyon Nasıl İşler?',
+        paragraphs: [
+          'Model veya ham görsel iletilir; sahne kurulumu, ışık ve malzeme ayarları yapılır. İlk görseller teslim edilir, geri bildirimler kontrollü revizyon akışıyla toplanır ve süreç tek proje bağlamında ilerler.',
+        ],
+        subsections: [
+          { heading: 'Desteklenen dosyalar', paragraphs: ['SketchUp, Revit ve ArchiCAD modelleri, 2D planlar ve ham görsellerle çalışılır.'] },
+          { heading: 'Plan renklendirme', paragraphs: ['Kat planları ve teknik çizimler okunabilir, sunuma hazır hale getirilerek renklendirilir.'] },
+        ],
+      },
     ],
     links: [
       { to: '/rehber/ai-render-revizyon', label: 'Görselleştirme ve Revizyon Rehberi' },
@@ -351,11 +135,17 @@ const PRERENDER_ROUTES = [
     description: SEO_PAGES.VR_SUNUM.desc,
     h1: 'Canlı Sunum ile Projenizi Paylaşın',
     intro: 'Canlı sunum (Pixel Streaming) ile yüksek kaliteli 3D sahnelerinizi doğrudan web tarayıcısına aktarın. Kurulum gerekmez; linki paylaşın, müşteriniz projede gezsin.',
-    faqTitle: 'Canlı Sunum ve Pixel Streaming Hakkında SSS',
-    faq: [
-      { q: 'Müşteri tarafında kurulum gerekiyor mu?', a: 'Hayır. Pixel Streaming tarayıcı üzerinden çalışır; linke tıklayan müşteri projeyi anında inceler.' },
-      { q: 'Mobil cihazlardan kullanılabilir mi?', a: 'Evet. Sunum; telefon, tablet ve bilgisayar gibi farklı cihazlardan erişilebilir.' },
-      { q: 'Malzeme değişikliği canlı yapılabiliyor mu?', a: 'Evet. Zemin, duvar ve mobilya alternatifleri sunum sırasında değiştirilebilir; seçimler kayıt altına alınır.' },
+    sections: [
+      {
+        heading: 'Canlı Sunum ve Pixel Streaming',
+        paragraphs: [
+          'Pixel Streaming, yüksek kaliteli 3D sahneyi sunucudan yayınlar; müşteri herhangi bir uygulama kurmadan tarayıcıdan projeyi inceler. Malzeme, zemin ve aydınlatma alternatifleri sunum sırasında değiştirilebilir.',
+        ],
+        subsections: [
+          { heading: 'Müşteri deneyim akışı', paragraphs: ['Bağlantı paylaşılır, müşteri tıklar ve proje açılır; malzeme değişiklikleri canlı denenir ve kararlar toplantı bitmeden netleşir.'] },
+          { heading: 'Cihaz bağımsızlığı', paragraphs: ['Telefon, tablet ve bilgisayar gibi farklı cihazlardan erişilebilir; güçlü donanım gerekmez.'] },
+        ],
+      },
     ],
     links: [
       { to: '/rehber/vr-sunum-satis', label: 'Canlı Sunum Satış Rehberi' },
@@ -369,11 +159,13 @@ const PRERENDER_ROUTES = [
     description: SEO_PAGES.MIMARLIK_OFISLERI.desc,
     h1: 'Mimarlık Ofisleri İçin Mimari Destek',
     intro: 'Archilya; konsept tasarım, modelleme, görselleştirme ve ruhsat süreçleriyle mimarlık ofislerinin üretim akışını hızlandırır, müşteri sunumlarını güçlendirir.',
-    faqTitle: 'Mimarlık Ofisleri İçin Sık Sorulan Sorular',
-    faq: [
-      { q: 'Ofisimizin üretim kapasitesini nasıl artırıyor?', a: 'Yoğun dönemlerde modelleme, görselleştirme ve ruhsat iş yükü devredilebilir; ofis ana tasarım kararlarına odaklanır.' },
-      { q: 'Beyaz etiket (white-label) çalışıyor musunuz?', a: 'Evet. Çıktılar ofis kimliğine uyarlanabilir; süreç ofis adına yürütülebilir.' },
-      { q: 'Mevcut model dosyalarımızla devam edebilir miyiz?', a: 'Evet. Mevcut BIM/CAD dosyaları üzerinden çalışılabilir; standartlara uyum gözetilir.' },
+    sections: [
+      {
+        heading: 'Ofisler İçin Üretim Desteği',
+        paragraphs: [
+          'Yoğun dönemlerde modelleme, görselleştirme ve ruhsat iş yükü devredilebilir; ofis ana tasarım kararlarına odaklanır. Çıktılar ofis kimliğine uyarlanabilir ve mevcut BIM/CAD dosyaları üzerinden çalışılabilir.',
+        ],
+      },
     ],
     links: [
       { to: '/hizmetler', label: 'Mimari Destek Hizmetleri' },
@@ -387,11 +179,13 @@ const PRERENDER_ROUTES = [
     description: SEO_PAGES.EMLAK_VR.desc,
     h1: 'Emlak Projelerinizi Dijital Satış Ofisine Dönüştürün',
     intro: 'Canlı sunum, pixel streaming ve 360 turlarla daire, villa ve ticari projelerinizi uzaktan gezilebilir deneyime dönüştürün.',
-    faqTitle: 'Emlak Sanal Tur ve Canlı Sunum SSS',
-    faq: [
-      { q: '360 sanal tur nasıl paylaşılır?', a: 'Tur bağlantısı web sitesine, ilan platformuna veya doğrudan müşteriye gönderilebilir; kurulum gerekmez.' },
-      { q: 'Daire tiplerini ayrı ayrı sunabilir miyim?', a: 'Evet. Farklı daire tipleri ve kat planları ayrı sahneler veya seçenekler olarak sunulabilir.' },
-      { q: 'Ön satışta nasıl fayda sağlar?', a: 'Alıcı projeyi yerinde görmeden deneyimler; karar süresi kısalır ve ön satış performansı güçlenir.' },
+    sections: [
+      {
+        heading: 'Emlakta Sanal Tur ve Canlı Sunum',
+        paragraphs: [
+          '360 sanal tur bağlantısı ilan platformuna, web sitesine veya doğrudan alıcıya gönderilebilir; kurulum gerekmez. Alıcı projeyi yerinde görmeden deneyimlediği için karar süresi kısalır ve ön satış güçlenir.',
+        ],
+      },
     ],
     links: [
       { to: '/rehber/emlak-360-vr', label: 'Emlak 360 Sanal Tur Rehberi' },
@@ -405,11 +199,13 @@ const PRERENDER_ROUTES = [
     description: SEO_PAGES.EMLAK_PIXEL.desc,
     h1: 'Emlak Sunumlarınızı Web’de 4K Yaşatın',
     intro: 'Pixel Streaming ile emlak projelerinizi web tarayıcısına taşıyın. Kurulum gerektirmez, güçlü bilgisayar şartı yoktur; linki paylaşın, müşteri 4K kalitede gezsin.',
-    faqTitle: 'Emlak Pixel Streaming SSS',
-    faq: [
-      { q: 'Pixel Streaming normal 360 turdan nasıl farklı?', a: 'Pixel Streaming, yüksek kaliteli 3D sahneyi sunucudan yayınlar; görsel kalite ve etkileşim seviyesi daha yüksektir.' },
-      { q: 'İnternet hızı yeterli olmalı mı?', a: 'Standart bir geniş bant bağlantısı yeterlidir; ağır cihaz gereksinimi yoktur.' },
-      { q: 'Mevcut proje görsellerim kullanılabilir mi?', a: 'Evet. Mevcut görseller ve modeller Pixel Streaming sahnelerine dönüştürülebilir.' },
+    sections: [
+      {
+        heading: 'Pixel Streaming ile Yüksek Kaliteli Sunum',
+        paragraphs: [
+          'Pixel Streaming, normal 360 tura göre daha yüksek görsel kalite ve etkileşim sunar; sahne sunucudan yayınlandığı için istemci tarafında ağır donanım gerekmez. Standart bir geniş bant bağlantısı yeterlidir.',
+        ],
+      },
     ],
     links: [
       { to: '/emlak-vr-sunum', label: 'Emlak VR ve Sanal Tur' },
@@ -423,11 +219,13 @@ const PRERENDER_ROUTES = [
     description: SEO_PAGES.MUTEAHHIT.desc,
     h1: 'Proje Lansmanı ve Satış Dijital Sunumla Güçlensin',
     intro: 'Müteahhitler için görselleştirme, canlı sunum ile web tabanlı lansman ve 360 görüntüleme çözümleri; yatırımcı ve satış ofisi deneyimini dijitalleştirin.',
-    faqTitle: 'Müteahhit Proje Sunumu SSS',
-    faq: [
-      { q: 'Yatırımcı sunumları için nasıl kullanılır?', a: 'Proje, yatırımcıya canlı sunum veya 360 tur ile gösterilir; kütle, plan ve malzeme kararları birlikte incelenir.' },
-      { q: 'Lansman öncesi kullanılabilir mi?', a: 'Evet. İnşaat tamamlanmadan önce proje görselleştirme ve canlı sunum ile tanıtılabilir.' },
-      { q: 'Satış ofisinde nasıl konumlandırılır?', a: 'Satış ofisinde tablet veya ekran üzerinden proje gezilebilir; müşteri daireleri ve malzeme seçeneklerini anında görebilir.' },
+    sections: [
+      {
+        heading: 'Lansman ve Satış Ofisi Deneyimi',
+        paragraphs: [
+          'İnşaat tamamlanmadan proje görselleştirme ve canlı sunum ile tanıtılabilir. Satış ofisinde tablet veya ekran üzerinden proje gezilebilir; yatırımcı kütle, plan ve malzeme kararlarını birlikte inceler.',
+        ],
+      },
     ],
     links: [
       { to: '/emlak-vr-sunum', label: 'Emlak Dijital Satış Ofisi' },
@@ -441,11 +239,13 @@ const PRERENDER_ROUTES = [
     description: SEO_PAGES.FRANCHISE_PARTNER.desc,
     h1: 'Archilya ile Büyüyün: Franchise / Partner Olun',
     intro: 'Archilya’nın mimari destek ekosistemini kendi şehrinizde temsil edin. Mimarlık ofisleri, emlak firmaları ve müteahhitlere yönelik çözümler.',
-    faqTitle: 'Franchise ve İş Ortaklığı SSS',
-    faq: [
-      { q: 'Kimler partner olabilir?', a: 'Mimarlık ofisleri, görselleştirme stüdyoları, emlak firmaları ve müteahhitlik yapan kurumlar partner olabilir.' },
-      { q: 'Hangi destekler sağlanıyor?', a: 'Marka, teknik altyapı, süreç eğitimi ve operasyonel destek sağlanır.' },
-      { q: 'Başvuru süreci nasıl işliyor?', a: 'Web sitesindeki kurumsal başvuru formu doldurulur; ardından uygunluk değerlendirmesi için iletişime geçilir.' },
+    sections: [
+      {
+        heading: 'Partnerlik Modeli',
+        paragraphs: [
+          'Mimarlık ofisleri, görselleştirme stüdyoları, emlak firmaları ve müteahhitlik yapan kurumlar partner olabilir. Marka, teknik altyapı, süreç eğitimi ve operasyonel destek sağlanır; başvuru kurumsal başvuru formu üzerinden alınır.',
+        ],
+      },
     ],
     links: [
       { to: '/hizmetler', label: 'Mimari Destek Hizmetleri' },
@@ -459,11 +259,13 @@ const PRERENDER_ROUTES = [
     description: SEO_PAGES.TRAKYA_IS_TAKIBI.desc,
     h1: 'Belediyelerde Vakit Kaybetmeyin. Süreçleri Bize Bırakın.',
     intro: 'İmar durumundan iskâna; Trakya (Tekirdağ, Edirne, Kırklareli), İstanbul ve Çanakkale’deki LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerini uzman kadromuzla yönetiyoruz.',
-    faqTitle: 'Ruhsat ve İş Takibi SSS',
-    faq: [
-      { q: 'Hangi bölgelerde hizmet veriyorsunuz?', a: 'Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul ve Çanakkale bölgelerinde ruhsat ve iş takibi hizmeti verilir.' },
-      { q: 'İş takibi hangi aşamaları kapsar?', a: 'İmar durumu, ruhsat başvurusu, LİHKAB, TESKİ, İtfaiye ve Belediye süreçleri ile iskân aşamasına kadar takip edilir.' },
-      { q: 'Süreçler ne kadar sürer?', a: 'Süre; belediyeye, proje niteliğine ve onay akışına göre değişir. Takip edilen her adım müşteriyle şeffaf biçimde paylaşılır.' },
+    sections: [
+      {
+        heading: 'Ruhsat ve Resmi Süreç Takibi',
+        paragraphs: [
+          'İmar durumu, ruhsat başvurusu, LİHKAB, TESKİ, İtfaiye ve Belediye süreçleri iskân aşamasına kadar takip edilir. Süre; belediyeye, proje niteliğine ve onay akışına göre değişir ve her adım müşteriyle şeffaf biçimde paylaşılır.',
+        ],
+      },
     ],
     links: [
       { to: '/hizmetler', label: 'Ruhsat & Uygulama Hizmeti' },
@@ -555,9 +357,10 @@ const esc = (value) =>
     .replace(/"/g, '&quot;');
 
 /**
- * Rota bazlı JSON-LD: BreadcrumbList + (varsa) FAQPage.
- * FAQPage `data-seo-id="faq"` taşır; böylece istemci tarafındaki
- * FaqSection bileşeni aynı kaydı bulup günceller, çift şema oluşmaz.
+ * Rota bazlı JSON-LD: BreadcrumbList + (yalnızca görünür SSS varsa) FAQPage.
+ * FAQPage `data-seo-id="faq"` taşır; istemci tarafındaki FaqSection aynı kaydı
+ * bulup günceller, böylece çift şema oluşmaz. `faq` tanımlı olmayan rotalarda
+ * FAQPage üretilmez (görünmeyen içeriği işaretlemek kurallara aykırıdır).
  */
 function buildRouteJsonLd(route, url) {
   const cleanTitle = route.title.replace(/\s*\|\s*Archilya\s*$/, '');
@@ -666,14 +469,16 @@ function buildRouteHtml(baseHtml, route) {
     html = html.replace(/\s*<link rel="preload" as="image"[^>]*>\s*/, '\n    ');
   }
 
-  // Rota bazlı JSON-LD (BreadcrumbList + FAQPage)
+  // Rota bazlı JSON-LD (BreadcrumbList + varsa görünür SSS için FAQPage)
   html = html.replace('<!--PRERENDER_ROUTE_JSONLD-->', buildRouteJsonLd(route, url));
 
   const fallback = [
     '<div class="archilya-prerender">',
     '<header>',
+    '<div class="archilya-prerender-inner">',
     `<h1>${esc(route.h1)}</h1>`,
     `<p>${esc(route.intro)}</p>`,
+    '</div>',
     '</header>',
     renderSections(route.sections),
     renderFaq(route),

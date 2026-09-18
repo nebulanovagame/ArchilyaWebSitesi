@@ -152,6 +152,7 @@
       "description": "Mimari destek platformu",
       "provider": {
         "@type": "Organization",
+        "@id": "https://archilya.com#organization",
         "name": "Archilya",
         "url": "https://archilya.com"
       },
@@ -226,9 +227,11 @@
 
     <!-- Statik (JS'siz) içerik için temel görsel stil — React mount olunca kaldırılır -->
     <style>
-      .archilya-prerender{background:#0f1115;color:#d9d9d9;font-family:Montserrat,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.7;padding:56px 20px;max-width:1080px;margin:0 auto}
-      .archilya-prerender h1{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:2.1rem;line-height:1.2;color:#fff;margin:0 0 18px}
-      .archilya-prerender h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;color:#c6a87c;margin:34px 0 12px}
+      .archilya-prerender{background:#0f1115;color:#d9d9d9;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.7;padding:0 20px 56px;max-width:1080px;margin:0 auto}
+      .archilya-prerender header{display:flex;align-items:center;justify-content:center;min-height:88vh;text-align:center}
+      .archilya-prerender-inner{max-width:720px;margin:0 auto}
+      .archilya-prerender h1{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:2.2rem;line-height:1.2;color:#fff;margin:0 0 18px}
+      .archilya-prerender h2{font-family:Georgia,'Times New Roman',serif;font-size:1.5rem;color:#c6a87c;margin:34px 0 12px}
       .archilya-prerender h3{font-size:1.05rem;color:#ededed;margin:22px 0 8px}
       .archilya-prerender p{margin:0 0 12px}
       .archilya-prerender ul{margin:0 0 16px 22px}
