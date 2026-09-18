@@ -7,7 +7,7 @@
  */
 
 const SITE_URL = 'https://archilya.com';
-const DEFAULT_TITLE = 'Archilya | Mimari Destek Platformu - Projenizi Yükleyin, İlk Toplantıda Karar Verin';
+const DEFAULT_TITLE = 'Archilya Mimari Destek: Projenizi Yükleyin, İlk Toplantıda';
 
 function canonicalUrlFor(pathname) {
   const path = pathname || (typeof window !== 'undefined' ? window.location.pathname : '/');
@@ -106,7 +106,7 @@ export function clearPageJsonLd(id) {
 
 export const SEO_PAGES = {
   HOME: {
-    title: 'Archilya | Mimari Destek Platformu - Projenizi Yükleyin, İlk Toplantıda Karar Verin',
+    title: 'Archilya Mimari Destek: Projenizi Yükleyin, İlk Toplantıda',
     desc: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama. Tasarımınıza sadık, kararınıza hızlı.',
   },
   HIZMETLER: {

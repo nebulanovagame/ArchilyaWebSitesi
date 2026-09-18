@@ -63,7 +63,7 @@ function inlineCss() {
 const PRERENDER_ROUTES = [
   {
     path: '/',
-    title: 'Archilya | Mimari Destek Platformu - Projenizi Yükleyin, İlk Toplantıda Karar Verin',
+    title: 'Archilya Mimari Destek: Projenizi Yükleyin, İlk Toplantıda',
     description: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama. Tasarımınıza sadık, kararınıza hızlı.',
     h1: 'Projenizi yükleyin. Müşteriniz kararını ilk toplantıda versin.',
     intro: 'Archilya, mimari projelerde karar sürecini netleştiren bir mimari destek platformudur. Konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme ve ruhsat & uygulama süreçlerini tek ekipten sunar.',
