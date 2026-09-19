@@ -107,11 +107,11 @@ export function clearPageJsonLd(id) {
 export const SEO_PAGES = {
   HOME: {
     title: 'Archilya Mimari Destek: Projenizi Yükleyin, İlk Toplantıda',
-    desc: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme, ruhsat & uygulama, mühendislik disiplin projeleri ve teknik raporlar. Tasarımınıza sadık, kararınıza hızlı.',
+    desc: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, 3D modelleme, görselleştirme, ruhsat ve uygulama. Tasarımınıza sadık, kararınıza hızlı.',
   },
   HIZMETLER: {
     title: 'Mimari Destek Hizmetleri',
-    desc: 'Konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme, ruhsat & uygulama, mühendislik disiplin projeleri ve teknik raporlar — uçtan uca mimari destek hizmetleri tek platformda.',
+    desc: 'Konsept tasarım, iç mekan, peyzaj, 3D modelleme, görselleştirme, ruhsat ve uygulama; uçtan uca mimari destek hizmetleri tek platformda.',
   },
   AI_STUDIO: {
     title: 'Mimari Görselleştirme ve Revizyon',
@@ -155,6 +155,6 @@ export const SEO_PAGES = {
   },
   TRAKYA_IS_TAKIBI: {
     title: 'Trakya & Marmara Ruhsat İş Takibi',
-    desc: 'İmar durumundan iskâna; Trakya geneli (Tekirdağ, Edirne, Kırklareli), İstanbul ve Çanakkale\'deki LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerinizi uzman mimar kadromuzla uçtan uca yönetiyoruz. Bölgenin ruhsat süreç uzmanı.',
+    desc: 'İmar durumundan iskâna; Trakya ve Marmara\'da LİHKAB, TESKİ, İtfaiye ve Belediye ruhsat süreçlerini uzman mimar kadromuzla uçtan uca yönetiyoruz.',
   },
 };
