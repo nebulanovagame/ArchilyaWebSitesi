@@ -64,9 +64,9 @@ const PRERENDER_ROUTES = [
   {
     path: '/',
     title: 'Archilya Mimari Destek: Projenizi Yükleyin, İlk Toplantıda',
-    description: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama. Tasarımınıza sadık, kararınıza hızlı.',
+    description: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme, ruhsat & uygulama, mühendislik disiplin projeleri ve teknik raporlar. Tasarımınıza sadık, kararınıza hızlı.',
     h1: 'Projenizi yükleyin. Müşteriniz kararını ilk toplantıda versin.',
-    intro: 'Archilya, mimari projelerde karar sürecini netleştiren bir mimari destek platformudur. Konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme ve ruhsat & uygulama süreçlerini tek ekipten sunar.',
+    intro: 'Archilya, mimari projelerde karar sürecini netleştiren bir mimari destek platformudur. Konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme, ruhsat & uygulama süreçleri ile mühendislik disiplin projeleri ve teknik raporları tek ekipten sunar.',
     sections: HOME_SEO_SECTIONS,
     faqTitle: HOME_SEO_FAQ_TITLE,
     faq: HOME_FAQ,
@@ -77,12 +77,12 @@ const PRERENDER_ROUTES = [
     title: `${SEO_PAGES.HIZMETLER.title} | Archilya`,
     description: SEO_PAGES.HIZMETLER.desc,
     h1: 'Mimari Destek Hizmetleri',
-    intro: 'Konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama; altı hizmetle mimari sürecin tamamını tek ekipten yönetin.',
+    intro: 'Konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme, ruhsat & uygulama, mühendislik disiplin projeleri ve teknik raporlar; genişleyen hizmet yelpazesiyle mimari sürecin tamamını tek ekipten yönetin.',
     sections: [
       {
-        heading: 'Altı Hizmet, Tek Ekip',
+        heading: 'On Üç Hizmet, Tek Ekip',
         paragraphs: [
-          'Konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme ve ruhsat & uygulama; mimari sürecin altı temel adımıdır. Archilya bu adımların tamamını aynı ekip ve aynı proje hafızasıyla yürütür.',
+          'Konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme ve ruhsat & uygulama; mimari sürecin altı temel adımıdır. Mühendislik disiplin projeleri ve teknik raporlarla genişleyen yelpaze, aynı ekip ve aynı proje hafızasıyla yürütülür.',
         ],
         subsections: [
           { heading: 'Konsept Tasarım', paragraphs: ['Kütle, plan ve tasarım kararlarını erken aşamada olgunlaştırır; projenin ilk fikrini uygulanabilir bir konsepte dönüştürür.'] },
@@ -91,6 +91,13 @@ const PRERENDER_ROUTES = [
           { heading: '3D Modelleme', paragraphs: ['Projeyi doğru ölçekte ve koordineli biçimde modeller; disiplinler arası çakışmaları erken yakalar.'] },
           { heading: 'Görselleştirme', paragraphs: ['Fotogerçekçi görseller ve yüksek 3D render kalitesiyle tasarımı net biçimde anlatır.'] },
           { heading: 'Ruhsat & Uygulama', paragraphs: ['İmar durumundan iskâna; ruhsat, LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerini uçtan uca takip eder.'] },
+          { heading: 'Statik Betonarme Proje', paragraphs: ['Betonarme taşıyıcı sistem hesabı ve statik proje çizimini mimari tasarımla uyumlu biçimde DWG olarak hazırlar.'] },
+          { heading: 'Elektrik Tesisat Projesi', paragraphs: ['Kuvvetli ve zayıf akım tesisat projelerini mimari planla koordineli biçimde DWG olarak hazırlar.'] },
+          { heading: 'Mekanik Tesisat Projesi', paragraphs: ['Sıhhi tesisat, ısıtma ve havalandırma projelerini tek kapsamda, koordineli çizimlerle sunar.'] },
+          { heading: 'Yangın Güvenliği Projesi', paragraphs: ['Yangın algılama, söndürme ve kaçış güzergâhı kurgusunu projeye özel biçimde planlar.'] },
+          { heading: 'Isı Yalıtım Projesi', paragraphs: ['TS 825 esaslı ısı yalıtım hesabı ve detay çizimleriyle yalıtım kararlarını projeye özel netleştirir.'] },
+          { heading: 'Akustik Rapor', paragraphs: ['Gürültü ve akustik performans raporunu projenin ihtiyaçlarına özel biçimde hazırlar.'] },
+          { heading: 'Enerji Performansı ve EKB Hazırlığı', paragraphs: ['BEP-TR esaslı enerji performansı hesabıyla EKB hazırlık sürecine sağlam bir altyapı oluşturur.'] },
         ],
       },
     ],
