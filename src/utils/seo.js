@@ -107,11 +107,11 @@ export function clearPageJsonLd(id) {
 export const SEO_PAGES = {
   HOME: {
     title: 'Archilya Mimari Destek: Projenizi Yükleyin, İlk Toplantıda',
-    desc: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama. Tasarımınıza sadık, kararınıza hızlı.',
+    desc: 'Mimari destek platformu Archilya: konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme, ruhsat & uygulama, mühendislik disiplin projeleri ve teknik raporlar. Tasarımınıza sadık, kararınıza hızlı.',
   },
   HIZMETLER: {
     title: 'Mimari Destek Hizmetleri',
-    desc: 'Konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme ve ruhsat & uygulama — uçtan uca mimari destek hizmetleri tek platformda.',
+    desc: 'Konsept tasarım, iç mekan, peyzaj, modelleme, görselleştirme, ruhsat & uygulama, mühendislik disiplin projeleri ve teknik raporlar — uçtan uca mimari destek hizmetleri tek platformda.',
   },
   AI_STUDIO: {
     title: 'Mimari Görselleştirme ve Revizyon',

@@ -12,7 +12,7 @@ const LAYERS = [
     label: 'Mimari Destek Hizmetleri',
     icon: Sparkles,
     slogan: ['Konseptten Ruhsata,', 'Tek Ekip.'],
-    desc: 'Konsept tasarım, iç mekan, peyzaj, 3D modelleme, görselleştirme ve ruhsat & uygulama; mimari sürecin tamamını tek ekipten yönetin. Tasarımınıza sadık kalır, kararınızı hızlandırırız.',
+    desc: 'Konsept tasarım, iç mekan, peyzaj, 3D modelleme, görselleştirme, ruhsat & uygulama, mühendislik disiplin projeleri ve teknik raporlar; mimari sürecin tamamını tek ekipten yönetin. Tasarımınıza sadık kalır, kararınızı hızlandırırız.',
     badges: ['Konsept Tasarım & 3D Modelleme', 'İç Mekan, Peyzaj & Görselleştirme', 'Ruhsat & Uygulama Süreçleri'],
     accent: 'primary',
     image: techWorkspace,

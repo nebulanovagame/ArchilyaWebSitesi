@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowRight, Sparkles, Palette, Sun, Settings2, MonitorPlay, ShieldCheck,
+  Building2, Zap, Wrench, Flame, Thermometer, Volume2, Leaf,
 } from 'lucide-react';
 import { setPageMeta, SEO_PAGES } from '../utils/seo';
 import { logAnalyticsEvent } from '../firebase';
@@ -65,6 +66,69 @@ const SERVICES = [
     to: '/trakya-ruhsat-is-takibi',
     cta: 'Ruhsat İş Takibi',
   },
+  {
+    id: 'statik-betonarme',
+    icon: Building2,
+    title: 'Statik Betonarme Proje',
+    desc: 'Betonarme taşıyıcı sistem hesabı ve statik proje çizimini mimari tasarımla uyumlu biçimde DWG olarak hazırlarız.',
+    includes: ['Taşıyıcı sistem hesabı', 'Statik proje çizimi (DWG)', 'Mimariyle uyumlu kurgu'],
+    to: '/#contact',
+    cta: 'Teklif Al',
+  },
+  {
+    id: 'elektrik-tesisat',
+    icon: Zap,
+    title: 'Elektrik Tesisat Projesi',
+    desc: 'Kuvvetli ve zayıf akım tesisat projelerini mimari planla koordineli biçimde DWG olarak hazırlarız.',
+    includes: ['Kuvvetli akım tesisatı', 'Zayıf akım tesisatı', 'Proje çizimi (DWG)'],
+    to: '/#contact',
+    cta: 'Teklif Al',
+  },
+  {
+    id: 'mekanik-tesisat',
+    icon: Wrench,
+    title: 'Mekanik Tesisat Projesi',
+    desc: 'Sıhhi tesisat, ısıtma ve havalandırma projelerini tek kapsamda, koordineli çizimlerle sunarız.',
+    includes: ['Sıhhi tesisat', 'Isıtma ve havalandırma', 'Proje çizimi (DWG)'],
+    to: '/#contact',
+    cta: 'Teklif Al',
+  },
+  {
+    id: 'yangin-guvenligi',
+    icon: Flame,
+    title: 'Yangın Güvenliği Projesi',
+    desc: 'Yangın algılama, söndürme ve kaçış güzergâhı kurgusunu projenize özel biçimde planlar, çizeriz.',
+    includes: ['Yangın algılama kurgusu', 'Söndürme ve kaçış güzergâhı', 'Tesisatla koordineli yerleşim'],
+    to: '/#contact',
+    cta: 'Teklif Al',
+  },
+  {
+    id: 'isi-yalitim',
+    icon: Thermometer,
+    title: 'Isı Yalıtım Projesi',
+    desc: 'TS 825 esaslı ısı yalıtım hesabı ve detay çizimlerini projenize özel biçimde hazırlarız.',
+    includes: ['TS 825 esaslı hesap', 'Isı yalıtım detay çizimleri', 'Malzeme ve kalınlık kurgusu'],
+    to: '/#contact',
+    cta: 'Teklif Al',
+  },
+  {
+    id: 'akustik-rapor',
+    icon: Volume2,
+    title: 'Akustik Rapor',
+    desc: 'Gürültü ve akustik performans raporunu projenizin ihtiyaçlarına özel biçimde hazırlarız.',
+    includes: ['Gürültü değerlendirmesi', 'Akustik performans raporu', 'İyileştirme önerileri'],
+    to: '/#contact',
+    cta: 'Teklif Al',
+  },
+  {
+    id: 'enerji-ekb',
+    icon: Leaf,
+    title: 'Enerji Performansı ve EKB Hazırlığı',
+    desc: 'BEP-TR esaslı enerji performansı hesabıyla EKB hazırlık sürecinize sağlam bir altyapı oluştururuz.',
+    includes: ['BEP-TR enerji hesabı', 'EKB hazırlık dosyası', 'Performans iyileştirme önerileri'],
+    to: '/#contact',
+    cta: 'Teklif Al',
+  },
 ];
 
 export default function HizmetlerPage() {
@@ -91,7 +155,7 @@ export default function HizmetlerPage() {
             Mimari Destek<br /><span className="text-primary/80">Hizmetleri.</span>
           </h1>
           <p className="text-gray-400 text-sm font-sans max-w-2xl mx-auto leading-relaxed">
-            Konsept tasarımdan ruhsata; altı hizmetle mimari sürecin tamamını tek ekipten yönetin.
+            Konsept tasarımdan ruhsata; mühendislik projeleri ve teknik raporlarla genişleyen on üç hizmetle mimari sürecin tamamını tek ekipten yönetin.
             Tasarımınıza sadık kalır, kararınızı hızlandırırız.
           </p>
         </motion.div>
@@ -142,7 +206,7 @@ export default function HizmetlerPage() {
               <h2 className="text-3xl md:text-4xl font-serif text-white italic leading-tight">Hizmetlerimizden örnek çıktılar.</h2>
             </div>
             <p className="text-gray-500 text-xs font-sans max-w-sm leading-relaxed">
-              AI Studio ile üretilmiş gerçek örnekler; altı hizmetimize karşılık gelen çıktılar.
+              AI Studio ile üretilmiş gerçek örnekler; hizmetlerimize karşılık gelen çıktılar.
             </p>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">

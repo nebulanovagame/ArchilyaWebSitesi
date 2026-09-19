@@ -13,7 +13,7 @@ export const HOME_SEO_SECTIONS = [
     heading: 'Mimari Destek Platformu Archilya Nedir?',
     paragraphs: [
       'Archilya; mimarlık ofisleri, proje sahipleri, müteahhitler ve emlak profesyonelleri için konsept tasarımdan ruhsata uzanan uçtan uca mimari destek sunar. Amaç, tasarım kararlarını erken aşamada netleştirmek ve projeyi tüm paydaşların ortak anlayışına taşımaktır.',
-      'Platform; konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme ve ruhsat & uygulama olmak üzere altı hizmeti tek çatı altında birleştirir. Böylece disiplinler arası kopukluk azalır, revizyon süreçleri kısalır ve proje kararları daha hızlı alınır.',
+      'Platform; konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme, ruhsat & uygulama, mühendislik disiplin projeleri ve teknik raporlar olmak üzere on üç hizmeti tek çatı altında birleştirir. Böylece disiplinler arası kopukluk azalır, revizyon süreçleri kısalır ve proje kararları daha hızlı alınır.',
     ],
     subsections: [
       {
@@ -31,9 +31,9 @@ export const HOME_SEO_SECTIONS = [
     ],
   },
   {
-    heading: 'Tek Ekipte Altı Mimari Destek Hizmeti',
+    heading: 'Tek Ekipte On Üç Mimari Destek Hizmeti',
     paragraphs: [
-      'Mimari süreç, birbirini besleyen altı adımdan oluşur. Archilya bu adımların tamamını aynı ekip ve aynı proje hafızasıyla yürütür; böylece tasarım niyeti projenin her aşamasında korunur.',
+      'Mimari süreç, birbirini besleyen on üç hizmetten oluşur. Archilya bu adımların tamamını aynı ekip ve aynı proje hafızasıyla yürütür; böylece tasarım niyeti projenin her aşamasında korunur.',
     ],
     subsections: [
       {
@@ -70,6 +70,48 @@ export const HOME_SEO_SECTIONS = [
         heading: 'Ruhsat ve Uygulama',
         paragraphs: [
           'İmar durumundan iskâna; ruhsat, LİHKAB, TESKİ, İtfaiye ve Belediye süreçlerini uçtan uca takip eder.',
+        ],
+      },
+      {
+        heading: 'Statik Betonarme Proje',
+        paragraphs: [
+          'Betonarme taşıyıcı sistem hesabı ve statik proje çizimini mimari tasarımla uyumlu biçimde DWG olarak hazırlar; taşıyıcı kurguyu erken aşamada netleştirir.',
+        ],
+      },
+      {
+        heading: 'Elektrik Tesisat Projesi',
+        paragraphs: [
+          'Kuvvetli ve zayıf akım tesisat projelerini mimari planla koordineli biçimde DWG olarak hazırlar.',
+        ],
+      },
+      {
+        heading: 'Mekanik Tesisat Projesi',
+        paragraphs: [
+          'Sıhhi tesisat, ısıtma ve havalandırma projelerini tek kapsamda, koordineli çizimlerle sunar.',
+        ],
+      },
+      {
+        heading: 'Yangın Güvenliği Projesi',
+        paragraphs: [
+          'Yangın algılama, söndürme ve kaçış güzergâhı kurgusunu projeye özel biçimde planlar.',
+        ],
+      },
+      {
+        heading: 'Isı Yalıtım Projesi',
+        paragraphs: [
+          'TS 825 esaslı ısı yalıtım hesabı ve detay çizimleriyle yalıtım kararlarını projeye özel netleştirir.',
+        ],
+      },
+      {
+        heading: 'Akustik Rapor',
+        paragraphs: [
+          'Gürültü ve akustik performans raporunu projenin ihtiyaçlarına özel biçimde hazırlar.',
+        ],
+      },
+      {
+        heading: 'Enerji Performansı ve EKB Hazırlığı',
+        paragraphs: [
+          'BEP-TR esaslı enerji performansı hesabıyla EKB hazırlık sürecine sağlam bir altyapı oluşturur.',
         ],
       },
     ],
@@ -189,7 +231,7 @@ export const HOME_SEO_SECTIONS = [
 export const HOME_FAQ = [
   {
     q: 'Archilya hangi hizmetleri sunar?',
-    a: 'Konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme ve ruhsat & uygulama olmak üzere altı mimari destek hizmetini tek ekipten sunar.',
+    a: 'Konsept tasarım, iç mekan, peyzaj, 3D modelleme, mimari görselleştirme, ruhsat & uygulama, mühendislik disiplin projeleri ve teknik raporlar dahil on üç mimari destek hizmetini tek ekipten sunar.',
   },
   {
     q: 'Mimari destek hizmeti kimler için uygundur?',

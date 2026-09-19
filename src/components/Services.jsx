@@ -7,6 +7,13 @@ import {
   villaEstate,
   modernTower,
   constructionDrawing,
+  blueprintAnalysis,
+  techWorkspace,
+  luxuryBuilding,
+  culturalBuilding,
+  workspaceMeeting,
+  clientMeeting,
+  laptopMockup,
 } from '../assets/images';
 import { AI_ORNEKLER } from '../data/aiOrnekler';
 
@@ -59,6 +66,62 @@ const services = [
     image: constructionDrawing,
     accent: 'amber',
   },
+  {
+    id: '07',
+    tag: 'Statik Betonarme',
+    title: 'Taşıyıcı Sistemi Erken Aşamada Netleştirin.',
+    desc: 'Betonarme taşıyıcı sistem hesabı ve statik proje çizimini mimari tasarımla uyumlu biçimde DWG olarak teslim edin.',
+    image: blueprintAnalysis,
+    accent: 'amber',
+  },
+  {
+    id: '08',
+    tag: 'Elektrik Tesisatı',
+    title: 'Kuvvetli ve Zayıf Akımı Tek Çizimde Toplayın.',
+    desc: 'Kuvvetli ve zayıf akım tesisat projelerini mimari planla koordineli biçimde DWG olarak hazırlayın.',
+    image: techWorkspace,
+    accent: 'primary',
+  },
+  {
+    id: '09',
+    tag: 'Mekanik Tesisat',
+    title: 'Isıtma ve Havalandırmayı Projeyle Uyumlu Çözün.',
+    desc: 'Sıhhi tesisat, ısıtma ve havalandırma projelerini tek kapsamda, koordineli çizimlerle ilerletin.',
+    image: luxuryBuilding,
+    accent: 'amber',
+  },
+  {
+    id: '10',
+    tag: 'Yangın Güvenliği',
+    title: 'Algılama, Söndürme ve Kaçışı Birlikte Planlayın.',
+    desc: 'Yangın algılama, söndürme ve kaçış güzergâhı kurgusunu projenize özel biçimde planlayın.',
+    image: culturalBuilding,
+    accent: 'primary',
+  },
+  {
+    id: '11',
+    tag: 'Isı Yalıtım',
+    title: 'TS 825 Hesabını Detay Çizimle Tamamlayın.',
+    desc: 'TS 825 esaslı ısı yalıtım hesabı ve detay çizimleriyle yalıtım kararlarını projenize özel netleştirin.',
+    image: workspaceMeeting,
+    accent: 'amber',
+  },
+  {
+    id: '12',
+    tag: 'Akustik Rapor',
+    title: 'Gürültü Performansını Raporla Belgeleyin.',
+    desc: 'Gürültü ve akustik performans raporunu projenizin ihtiyaçlarına özel biçimde hazırlayın.',
+    image: clientMeeting,
+    accent: 'primary',
+  },
+  {
+    id: '13',
+    tag: 'Enerji & EKB',
+    title: 'Enerji Performansını BEP-TR ile Hesaplayın.',
+    desc: 'BEP-TR esaslı enerji performansı hesabıyla EKB hazırlık sürecinize sağlam bir altyapı oluşturun.',
+    image: laptopMockup,
+    accent: 'amber',
+  },
 ];
 
 const ACCENT = {
@@ -105,8 +168,8 @@ export default function Services() {
             </h2>
           </div>
           <p className="text-gray-500 text-sm font-sans max-w-sm leading-relaxed md:text-right">
-            Archilya; konsept tasarımdan ruhsata, modellemeden görselleştirmeye uzanan altı hizmetle
-            mimari sürecin tamamını tek çatı altında toplar.
+            Archilya; konsept tasarımdan ruhsata, modellemeden görselleştirmeye uzanan, mühendislik projeleri ve
+            teknik raporlarla genişleyen hizmet yelpazesiyle mimari sürecin tamamını tek çatı altında toplar.
           </p>
         </motion.div>
       </div>

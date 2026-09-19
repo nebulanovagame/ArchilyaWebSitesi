@@ -435,7 +435,7 @@ export function MimarlikOfisleriLanding() {
             { q: 'Faturalama ve ödeme nasıl ilerliyor?', a: 'Kurumsal müşteriler için proje bazlı veya dönemsel faturalama yapılabilir. Ödeme planı teklif aşamasında iş kapsamına göre belirlenir.' },
             { q: 'Teslim süreleri nasıl belirleniyor?', a: 'Teslim süresi; proje kapsamı, görsel adedi ve revizyon sayısına göre teklifte net olarak taahhüt edilir. Acil projeler için öncelikli takvim sunulabilir.' },
             { q: 'Mevcut iş akışımıza entegre olabilir misiniz?', a: 'Evet. Kendi dosya isimlendirme, katman ve teslim standartlarınıza uyum sağlayabiliriz; süreklilik için ortak çalışma düzeni kurulur.' },
-            { q: 'Hangi hizmetleri birlikte alabiliriz?', a: 'Konsept tasarım, modelleme, görselleştirme, canlı sunum ve ruhsat süreç yönetimini ihtiyaca göre tek kapsamda birleştirebiliriz.' },
+            { q: 'Hangi hizmetleri birlikte alabiliriz?', a: 'Konsept tasarım, modelleme, görselleştirme, canlı sunum, ruhsat süreç yönetimi ile mühendislik disiplin projelerini ihtiyaca göre tek kapsamda birleştirebiliriz.' },
             { q: 'Teklif almak için ne gerekiyor?', a: 'Proje kapsamını kısaca anlatmanız yeterli. İhtiyaç halinde dosyalarınızı inceleyip kapsam ve fiyatlandırma içeren bir teklif hazırlarız.' },
           ]}
         />
